@@ -1,41 +1,23 @@
 body
 {
-    margin: 0px;
+    margin: 50px;
+
     font-family: 'Raleway', sans-serif;
 }
 
+/*Top Section*/
 .construction-text
 {
-    padding-left: 5%;
+    font-size: 8em;
     font-weight: 700;
-    font-size: 9.5em;
-    width: 300px;
-    color: #121619;
-
-    padding-top: 75px;
-}
-
-.back-home
-{
-    font-size: 3em;
-    font-weight: 700;
-
-    position: absolute;
-    right: 0px;
-    top: 100px;
-}
-
-.back-home a
-{
-    text-decoration: none;
     color: #121619;
 }
 
 .belt
 {
     position: absolute;
-    padding-top: 555px;
-    padding-left: 55px;
+
+    top: 190px;
 }
 
 .belt img
@@ -44,297 +26,427 @@ body
     height: auto;
 }
 
-.gif
+.home-button
+{
+    font-size: 2em;
+    font-weight: 700;
+    text-align: right;
+
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 0px;
+    transition: border-bottom 0.5s;
+}
+
+.home-button a
+{
+    text-decoration: none;
+    color: #121619;
+    
+    opacity: 50%;
+    transition: opacity 0.5s;
+}
+
+.home-button:hover
+{
+    border-bottom: 1px solid black;
+    border-bottom-width: 3px;
+}
+
+.home-button a:hover
+{
+    opacity: 100%;
+}
+
+/*Display*/
+
+.display-wrapper
 {
     position: absolute;
-    bottom: 0px;
-    padding-left: 260px;
+
+    width: 100%;
+    height: auto;
+
+    top: 175px;
+    padding-left: 125px;
 }
 
 .barrel-and-bench
 {
     position: absolute;
-    bottom: 60px;
-    left: -310px;
 }
 
 .step-ladder
 {
     position: absolute;
-    bottom: 90px;
-    padding-left: 700px;
+
+    padding-top: 200px;
+    padding-left: 1325px;
 }
 
 .pump
 {
     position: absolute;
-    bottom: 140px;
-    padding-left: 830px;
+
+    padding-top: 360px;
+    padding-left: 1000px;
 }
 
 .gas
 {
     position: absolute;
-    bottom: 120px;
-    padding-left: 900px;
+
+    padding-top: 550px;
+    padding-left: 1200px;
 }
 
-@media (min-device-width: 768px)
+.gif
 {
+    position: absolute;
+
+    padding-top: 300px;
+    padding-left: 750px;
+}
+
+@media(max-width: 1440px)
+{
+    body
+    {
+        margin: 50px;
+    
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    /*Top Section*/
     .construction-text
     {
-        font-size: 6em;
-        width: 800px;
-
-        padding-top: 50px;
+        font-size: 5.75em;
+        font-weight: 700;
+        color: #121619;
     }
-
+    
     .belt
     {
-        padding-top: 240px;
-        padding-left: 90px;
+        position: absolute;
+    
+        top: 150px;
     }
-
-    .back-home
+    
+    .belt img
     {
-        font-size: 2em;
-
-        right: 25px;
-        top: 75px;
-    }
-}
-
-@media (min-width: 1024px)
-{
-    .construction-text
-    {
-        font-size: 7em;
-        width: 900px;
-        padding-top: 55px;
-        padding-left: 75px;
-    }
-
-    .gif
-    {
-        bottom: -250px;
-        padding-left: 570px;
-    }
-
-    .gif img
-    {
-        width: 600px;
+        width: 68px;
         height: auto;
     }
-
-    .barrel-and-bench
+    
+    .home-button
     {
-        bottom: -200px;
-        left: 0;
+        font-size: 1.5em;
+        font-weight: 700;
+        text-align: right;
+    
+        border-bottom: 1px solid transparent;
+        border-bottom-width: 0px;
+        transition: border-bottom 0.5s;
+    }
+    
+    .home-button a
+    {
+        text-decoration: none;
+        color: #121619;
+        
+        opacity: 50%;
+        transition: opacity 0.5s;
+    }
+    
+    .home-button:hover
+    {
+        border-bottom: 1px solid black;
+        border-bottom-width: 3px;
+    }
+    
+    .home-button a:hover
+    {
+        opacity: 100%;
+    }
+    
+    /*Display*/
+    
+    .display-wrapper
+    {
+        position: absolute;
+    
+        top: 175px;
+        padding-left: 0px;
     }
 
     .barrel-and-bench img
     {
-        width: 1100px;
+        width: 80%;
         height: auto;
     }
-
+    
     .step-ladder
     {
-        bottom: -230px;
-        padding-left: 1100px;
-    }
-
-    .pump
-    {
-        bottom: -150px;
+        padding-top: 175px;
         padding-left: 1050px;
     }
 
-    .gas
+    .step-ladder img
     {
-        bottom: -200px;
-        padding-left: 300px;
-    }
-
-    .belt
-    {
-        padding-top: 275px;
-        padding-left: 65px;
+        width: 80%;
+        height: auto;
     }
     
-    .back-home
+    .pump
     {
-        position: absolute;
-        right: -250px;
-        top: 75px;
-    }
-}
-
-@media (min-width: 1440px)
-{
-    .construction-text
-    {
-        font-size: 6em;
-        width: 1300px;
-        padding-top: 50px;
+        padding-top: 300px;
+        padding-left: 800px;
     }
 
+    .pump img
+    {
+        width: 80%;
+        height: auto;
+    }
+    
+    .gas
+    {
+        padding-top: 475px;
+        padding-left: 975px;
+    }
+
+    .gas img
+    {
+        width: 80%;
+        height: auto;
+    }
+    
     .gif
     {
-        bottom: 10px;
-        padding-left: 570px;
+        padding-top: 250px;
+        padding-left: 600px;
     }
 
     .gif img
     {
-        width: 600px;
+        width: 80%;
         height: auto;
     }
+}
 
-    .barrel-and-bench
+@media(max-width: 1024px)
+{
+    body
     {
-        bottom: 35px;
-        left: 0;
+        margin: 50px;
+    
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    /*Top Section*/
+    .construction-text
+    {
+        font-size: 5em;
+        font-weight: 700;
+        color: #121619;
+    }
+    
+    .belt
+    {
+        position: absolute;
+    
+        top: 235px;
+    }
+    
+    .belt img
+    {
+        width: 50px;
+        height: auto;
+    }
+    
+    .home-button
+    {
+        font-size: 1.5em;
+        font-weight: 700;
+        text-align: right;
+    
+        border-bottom: 1px solid transparent;
+        border-bottom-width: 0px;
+        transition: border-bottom 0.5s;
+    }
+    
+    .home-button a
+    {
+        text-decoration: none;
+        color: #121619;
+        
+        opacity: 50%;
+        transition: opacity 0.5s;
+    }
+    
+    .home-button:hover
+    {
+        border-bottom: 1px solid black;
+        border-bottom-width: 3px;
+    }
+    
+    .home-button a:hover
+    {
+        opacity: 100%;
+    }
+    
+    /*Display*/
+    .display-wrapper
+    {
+        position: absolute;
+    
+        top: 350px;
+        padding-left: 75px;
     }
 
     .barrel-and-bench img
     {
-        width: 1100px;
+        width: 58%;
         height: auto;
     }
-
+    
     .step-ladder
     {
-        bottom: 25px;
-        padding-left: 1100px;
+        padding-top: 100px;
+        padding-left: 680px;
     }
 
+    .step-ladder img
+    {
+        width: 50%;
+        height: auto;
+    }
+    
     .pump
     {
-        bottom: 115px;
-        padding-left: 1080px;
+        padding-top: 160px;
+        padding-left: 500px;
     }
 
+    .pump img
+    {
+        width: 58%;
+        height: auto;
+    }
+    
     .gas
     {
-        bottom: 50px;
-        padding-left: 300px;
+        padding-top: 270px;
+        padding-left: 625px;
     }
 
-    .belt
+    .gas img
     {
-        padding-top: 240px;
-        padding-left: 60px;
+        width: 55%;
+        height: auto;
+    }
+    
+    .gif
+    {
+        padding-top: 155px;
+        padding-left: 400px;
     }
 
-    .back-home
+    .gif img
+    {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media(max-device-width: 768px)
+{
+    .construction-text
+    {
+        font-size: 5.75em;
+        font-weight: 700;
+        color: #121619;
+    }
+    
+    .belt
     {
         position: absolute;
-        right: 75px;
-        top: 75px;
+    
+        top: 260px;
+    }
+    
+    .belt img
+    {
+        width: 45px;
+        height: auto;
+    }
+    
+    .home-button
+    {
+        font-size: 1.5em;
+        font-weight: 700;
+        text-align: right;
+    
+        border-bottom: 1px solid transparent;
+        border-bottom-width: 0px;
+        transition: border-bottom 0.5s;
+    }
+    
+    .home-button a
+    {
+        text-decoration: none;
+        color: #121619;
+        
+        opacity: 100%;
+        transition: opacity 0.5s;
+    }
+
+    .display-wrapper
+    {
+        position: absolute;
+    
+        top: 600px;
+        padding-left: 75px;
     }
 }
 
-
-@media (min-width: 1920px)
+@media(max-device-width: 425px)
 {
     .construction-text
     {
-        font-size: 8em;
-
-        padding-top: 25px;
-    }
-
-    .belt
-    {
-        top: 40px;
-        padding-left: 70px;
-    }
-
-    .gif
-    {
-        bottom: 0px;
-        padding-left: 900px;
-    }
-
-    .barrel-and-bench
-    {
-        bottom: 0;
-        padding-left: 180px;
-        padding-bottom: 1%;
-    }
-
-    .step-ladder
-    {
-        bottom: 40px;
-        padding-left: 1460px;
-    }
-
-    .gas
-    {
-        bottom: 0;
-        padding-left: 1730px;
-        padding-bottom: 3%;
-    }
-
-    .pump
-    {
-        bottom: 130px;
-        padding-left: 1420px;
-    }
-
-    .back-home
-    {
-        right: 100px;
-        top: 75px;
-    }
-}
-
-@media (min-width: 2560px)
-{
-    .construction-text
-    {
-        font-size: 8em;
-
+        font-size: 6em;
+        
         padding-top: 50px;
     }
-
-    .gif
-    {
-        padding-left: 1550px;
-    }
-
+    
     .belt
     {
-        padding-top: 250px;
-        padding-left: 150px;
+        position: absolute;
+    
+        top: 325px;
+    }
+    
+    .belt img
+    {
+        width: 42px;
+        height: auto;
+    }
+    
+    .home-button
+    {
+        font-size: 2em;
+        font-weight: 700;
+        text-align: right;
+    
+        border-bottom: 1px solid transparent;
+        border-bottom-width: 0px;
+        transition: border-bottom 0.5s;
     }
 
-    .barrel-and-bench
+    .display-wrapper
     {
-        padding-left: 900px;
-    }
-
-    .step-ladder
-    {
-        padding-left: 2070px;
-    }
-
-    .pump
-    {
-        bottom: 110px;
-        padding-left: 2040px;
-    }
-
-    .gas
-    {
-        padding-left: 2300px;
-    }
-
-    .back-home
-    {
-        right: 75px;
-        top: 75px;
+        position: absolute;
+    
+        top: 850px;
+        padding-left: 0px;
     }
 }
-
