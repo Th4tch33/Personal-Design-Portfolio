@@ -89,6 +89,13 @@ body
     font-weight: 700;
 }
 
+.opphub-subhead
+{
+    font-family: "Rubik", sans-serif;
+    font-size: 26.667px;
+    font-weight: 500;
+}
+
 .green
 {
     color: #06B475;
