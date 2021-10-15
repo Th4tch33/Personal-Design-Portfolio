@@ -74,6 +74,25 @@ body
     border-bottom-width: 4px;
 }
 
+.opphub-initial-design
+{
+    text-align: center;
+    padding-top: 25px;
+}
+
+.opphub-head
+{
+    display: flex;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.green
+{
+    color: #06B475;
+}
 
 .footer
 {
