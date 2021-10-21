@@ -157,12 +157,11 @@ body
 .ig-post-head
 {
     grid-column: 1/3;
-    text-align: right;
+    margin: auto;
     font-family: "Rubik", sans-serif;
-    font-size: 200px;
+    font-size: 150px;
     font-weight: 700;
     color: #FFFDF4;
-    
 }
 
 .opphub-ig-post-wrapper img
