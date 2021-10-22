@@ -81,6 +81,7 @@ body
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 30px;
 }
 
 .work-piece
@@ -93,6 +94,8 @@ body
 .work-piece img
 {
     position: absolute;
+    width: 540px;
+    height: 540px;
 }
 
 .work-piece a
@@ -128,6 +131,7 @@ body
     font-size: 26.667px;
     font-weight: 500;
     width: 400px;
+    opacity: 100%;
 }
 
 .footer

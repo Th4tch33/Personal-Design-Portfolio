@@ -95,12 +95,13 @@ body
     font-family: "Rubik", sans-serif;
     font-size: 26.667px;
     font-weight: 500;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
 }
 
 .video-wrapper
 {
-    margin-top: 100px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     text-align: center;
 }
 
@@ -111,8 +112,8 @@ body
     grid-gap: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     text-align: center;
 }
 
@@ -129,11 +130,6 @@ body
 .phone-gap
 {
     height: 150px;
-}
-
-.single-phone
-{
-    padding-top: 500px;
 }
 
 .opphub-ig-post-container
@@ -168,6 +164,24 @@ body
 {
     width: 100%;
     height: 100%;
+}
+
+.opptalks-wrapper img
+{
+    width: 1720px;
+    height: 100%;
+}
+
+.webpage-prototypes
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.webpage-prototypes img
+{
+    width: 100%;
 }
 
 .green
