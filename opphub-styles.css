@@ -75,10 +75,11 @@ body
     border-bottom-width: 4px;
 }
 
+/*Starting Section*/
 .opphub-initial-design
 {
     text-align: center;
-    padding-top: 75px;
+    padding-top: 25px;
 }
 
 .opphub-head
@@ -95,15 +96,17 @@ body
     font-family: "Rubik", sans-serif;
     font-size: 26.667px;
     font-weight: 500;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 .video-wrapper
 {
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
 }
+
+/*Mobile Showcase*/
 
 .mobile-showcase
 {
@@ -112,8 +115,8 @@ body
     grid-gap: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     text-align: center;
 }
 
@@ -132,6 +135,8 @@ body
     height: 150px;
 }
 
+/*IG Announcement Post*/
+
 .opphub-ig-post-container
 {
     background-color: #17171A;
@@ -145,7 +150,6 @@ body
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
 
-    margin-top: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -165,6 +169,8 @@ body
     width: 100%;
     height: 100%;
 }
+
+/*More Work*/
 
 .opptalks-wrapper img
 {
