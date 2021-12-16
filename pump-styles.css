@@ -1,0 +1,75 @@
+body
+{
+    margin: 0;
+    background-color: #FFFDF4;
+}
+
+.content-wrapper
+{
+    max-width: 1720px;
+    margin: auto;
+    margin-top: 50px;
+    
+
+    font-family: 'Sora', sans-serif;
+    color: #17171A;
+}
+
+/*Multi Use Styles*/
+.head
+{
+    font-size: 80px;
+    font-weight: 700;
+    padding-top: 50px;
+}
+
+.subhead
+{
+    font-size: 26.667px;
+    font-weight: 500;
+}
+
+/*Navbar Styles*/
+.nav-bar
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-button
+{
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 0px;
+    font-weight: 700;
+}
+
+.home-button a
+{
+    text-decoration: none;
+    color: #17171A;
+}
+
+.website-pages
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.website-pages a
+{
+    margin-left: 100px;
+    text-decoration: none;
+    color: #17171A;
+    
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 0px;
+    transition: border-bottom 0.5s;
+}
+
+.website-pages a:hover
+{
+    border-bottom: 1px solid #17171A;
+    border-bottom-width: 4px;
+}
