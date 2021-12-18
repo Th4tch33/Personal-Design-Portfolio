@@ -1,144 +1,117 @@
-body
-{
-    background-color: #FFFDF4;
-    margin: 0px;
+/*Variables*/
+body {
+  background-color: #17171A;
+  margin: 0px;
+  font-family: "Sora", sans-serif;
+  color: #FFFDF4;
 }
 
-.content-wrapper
-{
-    max-width: 1720px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
-
-    font-family: 'Sora', sans-serif;
-    color: #17171A;
+.content-wrapper {
+  max-width: clamp(900px, 90%, 1920px);
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /*Navbar Syles*/
-.nav-bar
-{
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    font-weight: 500;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 400;
 }
-
-.home-button
-{
-    border-bottom: 1px solid transparent;
-    border-bottom-width: 0px;
-    font-weight: 700;
+.nav .home {
+  border-bottom: 1px solid transparent;
+  border-bottom-width: 0px;
+  font-weight: 600;
 }
-
-.home-button a
-{
-    text-decoration: none;
-    color: #17171A;
+.nav .home a {
+  text-decoration: none;
+  color: #FFFDF4;
 }
-
-.website-pages
-{
-    display: flex;
-    justify-content: space-between;
+.nav .pages {
+  display: flex;
+  justify-content: space-between;
 }
-
-.website-pages a
-{
-    margin-left: 100px;
-    text-decoration: none;
-    color: #17171A;
-    
-    border-bottom: 1px solid transparent;
-    border-bottom-width: 0px;
-    transition: border-bottom 0.5s;
+.nav .pages a {
+  margin-left: clamp(50px, 6vw, 100px);
+  text-decoration: none;
+  color: #FFFDF4;
+  border-bottom: 1px solid transparent;
+  border-bottom-width: 0px;
+  transition: border-bottom 0.5s;
 }
-
-.website-pages a:hover
-{
-    border-bottom: 1px solid #17171A;
-    border-bottom-width: 4px;
+.nav .pages a:hover {
+  border-bottom: 1px solid #FFFDF4;
+  border-bottom-width: 4px;
 }
 
 /*Page Styles*/
-.work-head
-{
-    font-size: 80px;
-    font-weight: 700;
-
-    padding-top: 50px;
+.work-head {
+  font-size: clamp(60px, 6vw, 80px);
+  font-weight: 700;
+  padding-top: clamp(25px, 3vw, 50px);
 }
 
-.work-subhead
-{
-    font-size: 26.667px;
-    font-weight: 500;
+.work-subhead {
+  font-size: clamp(20px, 2vw, 26.667px);
+  font-weight: 500;
 }
 
-.work-grid
-{
-    padding-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 30px;
+.work-grid {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 30px;
 }
 
-.work-piece
-{
-    position: relative;
-    width: 540px;
-    height: 540px;
+.work-piece {
+  position: relative;
+  width: clamp(240px, 28vw, 540px);
+  height: clamp(240px, 28vw, 540px);
 }
 
-.work-piece img
-{
-    position: absolute;
-    width: 540px;
-    height: 540px;
+.work-piece img {
+  position: absolute;
+  width: clamp(240px, 28vw, 540px);
+  height: clamp(240px, 28vw, 540px);
 }
 
-.work-piece a
-{
-    opacity: 0%;
-    transition: 0.5s;
+.work-piece a {
+  opacity: 0%;
+  transition: 0.5s;
+}
+.work-piece a:hover {
+  opacity: 100%;
 }
 
-.work-piece a:hover
-{
-    opacity: 100%;
+.overlay {
+  position: absolute;
+  background-color: black;
+  width: clamp(240px, 28vw, 540px);
+  height: 100%;
+  opacity: 75%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
-.overlay
-{
-    position: absolute;
-    background-color: black;
-    width: 540px;
-    height: 100%;
-    opacity: 75%;
-
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+.subtitle {
+  position: absolute;
+  color: #FFFDF4;
+  text-decoration: none;
+  font-size: 26.667px;
+  font-weight: 500;
+  width: 400px;
+  opacity: 100%;
 }
 
-.subtitle
-{
-    position: absolute;
-    color: #FFFDF4;
-    text-decoration: none;
-    font-size: 26.667px;
-    font-weight: 500;
-    width: 400px;
-    opacity: 100%;
+.footer {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  height: 350px;
+  background-color: #17171A;
 }
 
-.footer
-{
-    margin-top: 50px;
-    padding-bottom: 50px;
-    height: 350px;
-
-    background-color: #17171A;
-}
+/*# sourceMappingURL=work-styles.css.map */
