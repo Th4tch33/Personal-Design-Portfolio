@@ -1,28 +1,28 @@
 /*Variables*/
 body {
   margin: 0;
+  background-color: #17171A;
   font-family: "Sora", sans-serif;
-  background-color: #121619;
 }
 
 .content-wrapper {
-  max-width: 1720px;
+  max-width: clamp(640px, 90%, 1720px);
   margin: auto;
-  margin-bottom: 100px;
-  margin-top: 50px;
+  padding-bottom: clamp(50px, 8vw, 150px);
 }
 
 /*Navbar Styles*/
 .nav {
   display: flex;
   justify-content: space-between;
-  font-size: clamp(1em, 1.5vw, 1.5em);
-  font-weight: 400;
+  padding-top: 50px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .nav .home {
   border-bottom: 1px solid transparent;
   border-bottom-width: 0px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .nav .home a {
   text-decoration: none;
@@ -41,49 +41,58 @@ body {
   transition: border-bottom 0.5s;
 }
 .nav .pages a:hover {
-  border-bottom: 1px solid #F0A202;
+  border-bottom: 1px solid #E28413;
   border-bottom-width: 4px;
 }
 
 /*Content Styles*/
+.cream-wrapper {
+  background-color: #FFFDF4;
+  max-width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .title-gif {
-  padding-top: 75px;
+  padding-top: clamp(50px, 4vw, 75px);
 }
 
 .title-gif img {
   object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: clamp(275px, 30vw, 500px);
 }
 
 .title-subheading {
-  color: #F0A202;
+  color: #E28413;
   font-size: 5em;
   font-weight: 700;
   text-align: center;
-  padding-top: 50px;
+  padding-top: clamp(12.5px, 2.75vw, 50px);
 }
 
 .project-details {
-  color: #F0A202;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #E28413;
   font-size: 2.5em;
   font-weight: 500;
-  text-align: center;
 }
 
 .video {
-  padding-top: 125px;
+  padding-top: clamp(50px, 8vw, 150px);
   text-align: center;
 }
 
 .video iframe {
-  width: 1280px;
-  height: 720px;
+  width: clamp(640px, 75%, 1280px);
+  aspect-ratio: 16/9;
 }
 
 .paragraph {
-  color: #F0A202;
-  width: 1280px;
+  color: #E28413;
+  width: clamp(640px, 75%, 1280px);
   margin: auto;
   font-size: 2em;
   font-weight: 500;
@@ -107,16 +116,13 @@ body {
   grid-column-gap: 20px;
   padding-top: 100px;
 }
-
-.left-image {
+.collage-wrapper .left-image {
   grid-column: 1/2;
 }
-
-.right-image {
+.collage-wrapper .right-image {
   grid-column: 2/3;
 }
-
-.collage-image img {
+.collage-wrapper .collage-image img {
   padding-top: 20px;
   width: 100%;
   height: auto;
@@ -130,7 +136,7 @@ body {
 
 .gif-line-one img {
   width: auto;
-  height: 400px;
+  height: clamp(150px, 22vw, 400px);
 }
 
 .gif-line-two {
@@ -141,7 +147,7 @@ body {
 
 .cheeto img {
   width: auto;
-  height: 300px;
+  height: clamp(125px, 22vw, 300px);
 }
 
 .lime-cross-section {
@@ -150,12 +156,12 @@ body {
 
 .lime-cross-section img {
   width: auto;
-  height: 250px;
+  height: clamp(100px, 19vw, 250px);
 }
 
 .lime img {
   width: auto;
-  height: 300px;
+  height: clamp(125px, 22vw, 300px);
 }
 
 /*Footer*/
@@ -227,6 +233,60 @@ body {
 .footer-email a:hover {
   border-bottom: 1px solid black;
   border-bottom-width: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    font-size: 16.667px;
+  }
+
+  .content-wrapper {
+    padding-bottom: 50px;
+  }
+
+  .title-gif {
+    padding-top: 50px;
+  }
+
+  .title-gif img {
+    object-fit: cover;
+    width: 100%;
+    height: clamp(200px, 26vw, 300px);
+  }
+
+  .title-subheading {
+    font-size: 60px;
+  }
+
+  .project-details {
+    font-size: 30px;
+  }
+
+  .video {
+    padding-top: 50px;
+  }
+
+  .paragraph {
+    font-size: 25px;
+    padding-top: 50px;
+  }
+
+  .full-size-image {
+    padding-top: 50px;
+  }
+
+  .collage-wrapper {
+    grid-column-gap: 20px;
+    padding-top: 50px;
+  }
+
+  .gif-line-one {
+    padding-top: 50px;
+  }
+
+  .gif-line-two {
+    padding-top: 50px;
+  }
 }
 
 /*# sourceMappingURL=brown-justin-bieber-styles.css.map */
