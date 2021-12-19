@@ -1,0 +1,75 @@
+/*Variables*/
+body {
+  margin: 0;
+  background-color: #FFFDF4;
+  font-family: "Sora", sans-serif;
+  color: #17171A;
+}
+
+.content-wrapper {
+  max-width: clamp(900px, 90%, 1920px);
+  margin: auto;
+  margin-top: clamp(25px, 2.75vw, 50px);
+}
+
+/*Navbar Styles*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+}
+.nav .home {
+  font-weight: 700;
+}
+.nav .home a {
+  text-decoration: none;
+  color: #17171A;
+}
+.nav .pages {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .pages a {
+  text-decoration: none;
+  color: #17171A;
+  margin-left: clamp(50px, 6vw, 100px);
+  border-bottom: 1px solid transparent;
+  border-bottom-width: 0px;
+  transition: border-bottom 0.25s;
+}
+.nav .pages a:hover {
+  border-bottom: 1px solid #17171A;
+  border-bottom-width: 3px;
+}
+
+/*Top Section*/
+.construction-text {
+  padding-top: 25px;
+  font-size: 6em;
+  font-weight: 700;
+  color: #17171A;
+}
+
+.belt {
+  position: absolute;
+  top: 180px;
+}
+
+.belt img {
+  width: 75px;
+  height: auto;
+}
+
+/*Display*/
+.contruction-background-items {
+  padding-left: 100px;
+}
+
+.gif {
+  position: absolute;
+  padding-top: 300px;
+  padding-left: 850px;
+}
+
+/*# sourceMappingURL=under-construction-styles.css.map */
