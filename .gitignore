@@ -1,6 +1,5 @@
 *.scss
 *.map
 
-Pump/
 proxy.css
 .htaccess
