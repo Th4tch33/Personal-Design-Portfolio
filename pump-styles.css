@@ -150,6 +150,12 @@ body {
   height: auto;
 }
 
+.ig-post-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+}
+
 .video-project-container {
   background-color: #53B7F2;
 }
