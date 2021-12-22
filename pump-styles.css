@@ -6,6 +6,14 @@ body {
 }
 
 /*Multi Use Styles*/
+.caption {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0D1D3F;
+}
+
 /*First Section*/
 .top-section-container {
   background-image: linear-gradient(to bottom right, white, grey);
@@ -110,7 +118,7 @@ body {
   width: 100%;
   height: auto;
   margin-top: calc(var(--order) * 100px);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /*Second Section*/
@@ -127,42 +135,70 @@ body {
   margin-bottom: 0;
 }
 
-.text-group {
+.purpose-text-group {
   padding-top: 500px;
   padding-bottom: 50px;
   width: 70%;
   margin: auto;
 }
 
-.second-section-head {
+.purpose-head {
   margin-bottom: 25px;
   font-weight: 700;
   font-size: 80px;
   color: #0D1D3F;
 }
 @media screen and (max-width: 1200px) {
-  .second-section-head {
+  .purpose-head {
     font-size: 50px;
   }
 }
 
-.second-section-subhead {
+.purpose-subhead {
   font-size: 26.667px;
   font-weight: 500;
   color: #465678;
 }
 @media screen and (max-width: 1200px) {
-  .second-section-subhead {
+  .purpose-subhead {
     font-size: 16.667px;
   }
 }
 
-/*Third Section*/
+.role-text-group {
+  padding-top: 100px;
+  width: 70%;
+  margin: auto;
+}
+
+.role-head {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 80px;
+  color: #0D1D3F;
+}
+@media screen and (max-width: 1200px) {
+  .role-head {
+    font-size: 50px;
+  }
+}
+
+.role-subhead {
+  font-size: 26.667px;
+  font-weight: 500;
+  color: #465678;
+}
+@media screen and (max-width: 1200px) {
+  .role-subhead {
+    font-size: 16.667px;
+  }
+}
+
 .content-wrapper img {
   width: 100%;
   height: auto;
   margin-top: 100px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .ig-post-grid {
@@ -171,34 +207,35 @@ body {
   grid-column-gap: 25px;
 }
 
-/*Fourth Section*/
-.fourth-section-head {
-  font-weight: 700;
-  font-size: 80px;
-  color: #FF9C01;
-}
-@media screen and (max-width: 1200px) {
-  .fourth-section-head {
-    font-size: 50px;
-  }
-}
-
-.fourth-section-subhead {
-  font-size: 26.667px;
-  font-weight: 500;
-  color: #FEC63D;
-}
-@media screen and (max-width: 1200px) {
-  .fourth-section-subhead {
-    font-size: 16.667px;
-  }
-}
-
 .online-video-adjust {
   width: 70%;
   aspect-ratio: 16/9;
   margin: auto;
+  margin-top: 100px;
   display: block;
+  border-radius: 15px;
+}
+
+.pump-digest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 25px;
+}
+
+.pump-pod-wrapper {
+  width: 70%;
+  margin: auto;
+  margin-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  background-color: #0D1D3F;
+  border-radius: 15px;
+}
+
+.pump-pod-logo {
+  width: 70%;
+  margin: auto;
 }
 
 /*Footer*/
