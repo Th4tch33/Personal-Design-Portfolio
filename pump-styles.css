@@ -25,7 +25,7 @@ body {
   padding-top: clamp(25px, 2.75vw, 50px);
   padding-bottom: 0px;
   margin-top: 0;
-  margin-bottom: -500px;
+  margin-bottom: clamp(-500px, -25vw, -350px);
 }
 
 /*Navbar Styles*/
@@ -40,7 +40,7 @@ body {
 }
 .nav .home a {
   text-decoration: none;
-  color: #0D1D3F;
+  color: #17171A;
 }
 .nav .pages {
   display: flex;
@@ -48,14 +48,14 @@ body {
 }
 .nav .pages a {
   text-decoration: none;
-  color: #0D1D3F;
+  color: #17171A;
   margin-left: clamp(50px, 6vw, 100px);
   border-bottom: 1px solid transparent;
   border-bottom-width: 0px;
   transition: border-bottom 0.25s;
 }
 .nav .pages a:hover {
-  border-bottom: 1px solid #53B7F2;
+  border-bottom: 1px solid #17171A;
   border-bottom-width: 3px;
 }
 
@@ -73,19 +73,56 @@ body {
 }
 
 .intro-text-wrapper {
-  margin-top: 100px;
+  margin-top: clamp(50px, 5vw, 100px);
   margin-bottom: auto;
   color: #0D1D3F;
 }
 
 .intro-head {
   font-weight: 700;
-  font-size: 90px;
+  font-size: 80px;
+  color: #0D1D3F;
+}
+@media screen and (max-width: 1440px) {
+  .intro-head {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .intro-head {
+    font-size: 50px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .intro-head {
+    font-size: 40px;
+  }
 }
 
 .intro-subhead {
+  font-size: 26.667px;
   font-weight: 500;
-  font-size: 30px;
+  color: #465678;
+}
+@media screen and (max-width: 1200px) {
+  .intro-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .intro-subhead {
+    font-size: 16.667px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .intro-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-device-width: 425px) {
+  .intro-subhead {
+    font-size: 25px;
+  }
 }
 
 .text-animation-wrapper-three {
@@ -93,25 +130,11 @@ body {
   margin: auto;
   padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 25px;
   margin-bottom: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 25px;
-}
-
-.text-animation-wrapper-two {
-  max-width: clamp(900px, 85%, 1920px);
-  margin: auto;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 70%;
-  padding-top: 100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 150px;
+  grid-column-gap: 50px;
 }
 
 .video-adjust {
@@ -148,9 +171,19 @@ body {
   font-size: 80px;
   color: #0D1D3F;
 }
+@media screen and (max-width: 1440px) {
+  .purpose-head {
+    font-size: 60px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .purpose-head {
     font-size: 50px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .purpose-head {
+    font-size: 40px;
   }
 }
 
@@ -161,8 +194,36 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .purpose-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .purpose-subhead {
     font-size: 16.667px;
   }
+}
+@media screen and (max-device-width: 768px) {
+  .purpose-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-device-width: 425px) {
+  .purpose-subhead {
+    font-size: 25px;
+  }
+}
+
+.text-animation-wrapper-two {
+  max-width: clamp(900px, 85%, 1920px);
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 150px;
 }
 
 .role-text-group {
@@ -177,9 +238,19 @@ body {
   font-size: 80px;
   color: #0D1D3F;
 }
+@media screen and (max-width: 1440px) {
+  .role-head {
+    font-size: 60px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .role-head {
     font-size: 50px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .role-head {
+    font-size: 40px;
   }
 }
 
@@ -190,14 +261,29 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .role-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .role-subhead {
     font-size: 16.667px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .role-subhead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-device-width: 425px) {
+  .role-subhead {
+    font-size: 25px;
   }
 }
 
 .content-wrapper img {
   width: 100%;
   height: auto;
-  margin-top: 100px;
+  margin-top: clamp(75px, 6vw, 100px);
   border-radius: 15px;
 }
 
@@ -211,7 +297,7 @@ body {
   width: 70%;
   aspect-ratio: 16/9;
   margin: auto;
-  margin-top: 100px;
+  margin-top: clamp(75px, 6vw, 100px);
   display: block;
   border-radius: 15px;
 }
@@ -243,6 +329,56 @@ body {
   padding-bottom: 50px;
   background-color: #17171A;
   height: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    font-size: 16.667px;
+  }
+
+  .intro-text-wrapper {
+    margin-top: 75px;
+  }
+
+  .purpose-text-group {
+    padding-top: 300px;
+  }
+
+  .text-animation-wrapper-two {
+    max-width: clamp(900px, 85%, 1920px);
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    grid-column-gap: 100px;
+  }
+
+  .role-text-group {
+    padding-top: 50px;
+  }
+
+  .content-wrapper img {
+    margin-top: 50px;
+  }
+
+  .online-video-adjust {
+    margin-top: 50px;
+  }
+
+  .pump-pod-wrapper {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .caption {
+    font-size: 15px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  .caption {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=pump-styles.css.map */
