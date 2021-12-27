@@ -380,5 +380,10 @@ body {
     font-size: 10px;
   }
 }
+@media screen and (max-device-width: 425px) {
+  .intro-text-wrapper {
+    margin-top: 0px;
+  }
+}
 
 /*# sourceMappingURL=pump-styles.css.map */
