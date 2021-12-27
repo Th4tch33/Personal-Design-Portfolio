@@ -1,0 +1,184 @@
+/*Variables*/
+@font-face {
+  font-family: "atkinson";
+  src: url(assets/Fonts/Atkinson-Hyperlegible-Regular-102a.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "atkinson";
+  src: url(assets/Fonts/Atkinson-Hyperlegible-Italic-102a.woff2);
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "atkinson";
+  src: url(assets/Fonts/Atkinson-Hyperlegible-Bold-102a.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "atkinson";
+  src: url(assets/Fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2);
+  font-weight: bold;
+  font-style: italic;
+}
+body {
+  margin: 0;
+  background-color: #FFFDF4;
+  font-family: "atkinson", sans-serif;
+  color: #17171A;
+}
+
+.content-wrapper {
+  max-width: clamp(900px, 90%, 1920px);
+  margin: auto;
+  margin-top: clamp(25px, 2.75vw, 50px);
+}
+
+/*Multi Use Styles*/
+.head {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 80px;
+}
+@media screen and (max-width: 1200px) {
+  .head {
+    font-size: 50px;
+  }
+}
+
+.subhead {
+  font-size: 26.667px;
+  font-weight: 500;
+}
+@media screen and (max-width: 1200px) {
+  .subhead {
+    font-size: 16.667px;
+  }
+}
+
+/*Navbar Styles*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+}
+.nav .home {
+  font-weight: 700;
+}
+.nav .home a {
+  text-decoration: none;
+  color: #17171A;
+}
+.nav .pages {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .pages a {
+  text-decoration: none;
+  color: #17171A;
+  margin-left: clamp(50px, 6vw, 100px);
+  border-bottom: 1px solid transparent;
+  border-bottom-width: 0px;
+  transition: border-bottom 0.25s;
+}
+.nav .pages a:hover {
+  border-bottom: 1px solid #17171A;
+  border-bottom-width: 3px;
+}
+
+.intro-image-wrapper {
+  margin-top: 100px;
+}
+
+.intro-image {
+  background-color: #17171A;
+  width: 100%;
+  height: 500px;
+}
+
+.intro-head {
+  font-size: 75px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.text-wrapper1 {
+  width: 50%;
+}
+
+.clothing-pics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+.image1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+  height: 500px;
+  background-color: #17171A;
+}
+
+.image1 img {
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.image2 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 100%;
+  height: 500px;
+  background-color: #17171A;
+}
+
+.image3 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 100%;
+  height: 500px;
+  background-color: #17171A;
+}
+
+.image4 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 100%;
+  height: 500px;
+  background-color: #17171A;
+}
+
+.image5 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 100%;
+  height: 500px;
+  background-color: #17171A;
+}
+
+.text-wrapper2 {
+  margin-left: auto;
+  text-align: end;
+  width: 50%;
+}
+
+.footer {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  background-color: #17171A;
+  height: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    font-size: 16.667px;
+  }
+}
+
+/*# sourceMappingURL=hoodie-styles.css.map */
