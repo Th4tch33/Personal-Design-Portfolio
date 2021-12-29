@@ -25,7 +25,7 @@
 }
 body {
   margin: 0;
-  background-color: #FFFDF4;
+  background-color: white;
   font-family: "atkinson", sans-serif;
   color: #17171A;
 }
@@ -38,7 +38,6 @@ body {
 
 /*Multi Use Styles*/
 .head {
-  margin-top: 50px;
   font-weight: 700;
   font-size: 80px;
 }
@@ -90,23 +89,29 @@ body {
 }
 
 .intro-image-wrapper {
-  margin-top: 100px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.intro-image {
-  background-color: #17171A;
+.intro-image-wrapper img {
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 
 .intro-head {
+  margin-top: 50px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
   font-size: 75px;
   font-weight: bold;
   color: red;
-  text-align: center;
 }
 
 .text-wrapper1 {
+  margin-top: 150px;
+  margin-bottom: 150px;
   width: 50%;
 }
 
@@ -163,9 +168,11 @@ body {
 }
 
 .text-wrapper2 {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  width: 50%;
   margin-left: auto;
   text-align: end;
-  width: 50%;
 }
 
 .footer {
