@@ -145,54 +145,18 @@ body {
 
 .clothing-pics-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 25px;
-}
-
-.image1 {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  width: 100%;
-  height: 500px;
-  background-color: #000000;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
 }
 
 .image1 img {
-  object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 
-.image2 {
-  grid-column-start: 3;
-  grid-column-end: 4;
+.image2 img {
   width: 100%;
-  height: 500px;
-  background-color: #000000;
-}
-
-.image3 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 100%;
-  height: 500px;
-  background-color: #000000;
-}
-
-.image4 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  width: 100%;
-  height: 500px;
-  background-color: #000000;
-}
-
-.image5 {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  width: 100%;
-  height: 500px;
-  background-color: #000000;
+  height: auto;
 }
 
 .text-wrapper2 {
@@ -203,21 +167,25 @@ body {
   text-align: end;
 }
 
-.designs {
-  text-align: center;
+.patch-designs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
   margin-bottom: 50px;
 }
 
-.designs img {
+.patch-designs img {
   border: 4px solid black;
-  width: 30%;
+  width: 100%;
   height: auto;
+  margin: auto;
   margin-bottom: 50px;
 }
 
 .row {
   display: grid;
   grid-template-columns: 1fr 3.25fr 1fr;
+  margin-bottom: 50px;
 }
 
 .row img {
