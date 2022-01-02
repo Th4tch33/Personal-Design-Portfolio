@@ -205,7 +205,7 @@ body {
 
 .text-wrapper1 {
   margin-top: 150px;
-  width: 50%;
+  width: 75%;
 }
 @media screen and (max-width: 1200px) {
   .text-wrapper1 {
@@ -223,6 +223,17 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
+  margin-top: 50px;
+}
+@media screen and (max-width: 1200px) {
+  .clothing-pics-grid {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .clothing-pics-grid {
+    margin-top: 50px;
+  }
 }
 
 .clothing-pics-grid img {
@@ -232,9 +243,8 @@ body {
 
 .text-wrapper2 {
   margin-top: 150px;
-  width: 50%;
-  margin-left: auto;
-  text-align: end;
+  width: 75%;
+  margin-top: 50px;
 }
 @media screen and (max-width: 1200px) {
   .text-wrapper2 {
@@ -247,11 +257,32 @@ body {
     width: 100%;
   }
 }
+@media screen and (max-width: 1200px) {
+  .text-wrapper2 {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .text-wrapper2 {
+    margin-top: 50px;
+  }
+}
 
 .patch-designs {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 50px;
+}
+@media screen and (max-width: 1200px) {
+  .patch-designs {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .patch-designs {
+    margin-top: 50px;
+  }
 }
 
 .patch-designs img {
