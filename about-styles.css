@@ -206,8 +206,8 @@ body {
 
   .capabilities-grid {
     margin-top: 50px;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 25px;
+    grid-template-columns: 1fr;
+    grid-row-gap: 50px;
   }
 }
 @media screen and (max-device-width: 481px) and (max-width: 1200px) {
@@ -223,11 +223,12 @@ body {
 @media screen and (max-device-width: 481px) {
   .software-wrapper img {
     margin-right: 25px;
+    width: 150px;
   }
 }
 @media screen and (max-device-width: 481px) {
   .software-name {
-    font-size: 35px;
+    font-size: 40px;
   }
 }
 @media screen and (max-device-width: 481px) {
