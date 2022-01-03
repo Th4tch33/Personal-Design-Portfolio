@@ -446,6 +446,14 @@ body {
     margin-bottom: 15px;
   }
 
+  .socials {
+    display: inline;
+  }
+
+  .animated-logo a video {
+    width: 400px !important;
+  }
+
   .footer-container {
     padding-top: 50px;
     padding-bottom: 50px;
