@@ -183,6 +183,14 @@ body {
     font-size: 16.667px;
   }
 
+  .software-wrapper img {
+    margin-right: 15px;
+  }
+
+  .software-name {
+    font-size: 20px;
+  }
+
   .footer-container {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -196,6 +204,33 @@ body {
     margin-left: 30px;
   }
 
+  .capabilities-grid {
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) and (max-width: 1200px) {
+  .capabilities-grid {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) and (max-device-width: 481px) {
+  .capabilities-grid {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .software-wrapper img {
+    margin-right: 25px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .software-name {
+    font-size: 35px;
+  }
+}
+@media screen and (max-device-width: 481px) {
   .footer-container {
     padding-top: 50px;
     padding-bottom: 50px;
