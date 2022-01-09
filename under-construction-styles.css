@@ -7,7 +7,7 @@ body {
 }
 
 .content-wrapper {
-  max-width: clamp(900px, 90%, 1920px);
+  max-width: clamp(900px, 85%, 1920px);
   margin: auto;
   margin-top: clamp(25px, 2.75vw, 50px);
 }
@@ -70,6 +70,20 @@ body {
   position: absolute;
   padding-top: 300px;
   padding-left: 850px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    font-size: 16.667px;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .nav {
+    font-size: 25px;
+  }
+  .nav .pages a {
+    margin-left: 30px;
+  }
 }
 
 /*# sourceMappingURL=under-construction-styles.css.map */
