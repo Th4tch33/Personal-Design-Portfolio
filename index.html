@@ -1,126 +1,30 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
-        <meta charset = "utf-8"/>
-        <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-        <title>Caden Chan | Design Guy</title>
-        <link rel="stylesheet" href="index-styles.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <title>Caden Chan</title>
     </head>
-
-    <div class="content-wrapper">
-        <div class="nav">
-            <div class="home">
-                <a href="https://www.cadenchan.design">cadenchan.design</a>
-            </div>
     
-            <div class="pages">
-                <a href="work.html">WORK</a>
-                <a href="about.html">ABOUT</a>
-                <a href="under-construction.html">CONTACT</a>
-                <a href="assets/2022-Resume-Caden-Chan.pdf">RESUME</a>
-            </div>
-        </div>
-        
-        <div class="intro-head">Hey, I'm Caden.</div>
-        <div class="intro-subhead">What can I say? They call me the design guy.</div>
-    </div>
-
-    <div class="reel-container">
-        <div class="reel-wrapper">
-            <div class="reel-video">
-                <iframe class="reel-video-adjust" src="https://www.youtube-nocookie.com/embed/I2NGzw_BQxA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="reel-text-wrapper">
-                <div class="reel-text-content">
-                    <div class="reel-head">2021 Showreel</div>
-                    <div class="reel-subhead">Here's everything I've done in 2020 wrapped up all snug in a one minute montage.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="content-wrapper">
-        <div class="head">Spiciest Work</div>
-        
-        <div class="work-grid">
-            <div class="work-piece">
-                <a href="brown-justin-bieber.html">
-                    <img src="assets/brown-justin-bieber.jpg"></img>
-                    <div class="work-fadein-subtitle">Brown Justin Beiber (Fanmade Lyric Video)</div>                 
-                </a>
-            </div>
-            <div class="work-piece">
-                <a href="opphub.html">
-                    <img src="assets/opp-hub.jpg"></img>
-                    <div class="work-fadein-subtitle">OppHub.com</div>           
-                </a>
-            </div>
-            <div class="work-piece">
-                <a href="pump.html">
-                    <img src="assets/pump.png"></img>
-                    <div class="work-fadein-subtitle">Prospective Medical Professionals</div>                 
-                </a>
-            </div>
+    <body>
+        <div class="loadingScreen">
+            <img src="images/loading-icon.gif" alt="loading...">
         </div>
 
-        <div class="need-help-wrapper">
-            <div class="need-help-text">
-                <div class="head">Let's Get in Contact</div>
-                <div class="subhead">Ask Reggie here to send an email to me. Don't worry, he's the best in the business.</div>
-            </div>
-            <div class="reggie-wrapper">
-                <img src="assets/reggie-asleep.png"></img>
-                <a href="mailto:caden.perry.chan@gmail.com">
-                    <div class="reggie-overlay">
-                        <img src="assets/reggie_awake.png"></img>
-                    </div>
-                </a>
-            </div>
-            <div class="email-link">
-                <a href="mailto:caden.perry.chan@gmail.com">caden.perry.chan@gmail.com</a>
-            </div>
+        <div id="content">
+            <h1>Hey My Name’s Caden Chan</h1>
+            <h2>Certified Design Guy</h2>
+            <div id="hoursJSContainer"><p>Been in the game since</p> <div id="hours"></div></div>
         </div>
-        
-        <div class="other-stuff-head head">My Other Stuff</div>
-        
-        <div class="socials">
-            <div class="animated-logo">
-                <a href="https://www.instagram.com/cadenchan.design/">
-                    <video src="assets/ig-logo.mp4" autoplay loop preload muted id="ig"></video>
-                </a>
-            </div>
-            <div class="animated-logo">
-                <a href="https://www.linkedin.com/in/caden-chan-b2254a1b6/">
-                    <video src="assets/linkedin-logo.mp4" autoplay loop preload muted id="linkedin"></video>
-                </a>
-            </div>
-            <div class="animated-logo">
-                <a href="https://www.behance.net/cadenchan">
-                    <video src="assets/behance-logo.mp4" autoplay loop preload muted id="behance"></video>
-                </a>
-            </div>
-        </div>
-    </div>
+
+        <div id="iconGroup"></div>
+
+        <a href="https://www.youtube.com/watch?v=-4QhdQXqTwI"><div id="bouncingBomb"></div></a>
     
-    <div class="footer-container">
-        <div class="footer-wrapper">
-            <div class="footer-link">
-                <a href="https://www.cadenchan.design">HOME</a>
-            </div>
-            <div class="footer-link">
-                <a href="work.html">WORK</a>
-            </div>
-            <div class="footer-link">
-                <a href="about.html">ABOUT</a>
-            </div>
-            <div class="footer-link">
-                <a href="under-construction.html">CONTACT</a>
-            </div>
-            <div class="footer-link">
-                <a href="assets/2022-Resume-Caden-Chan.pdf">RESUME</a>
-            </div>
-        </div>
-    </div>
+        <script src="app.js"></script>
+    </body>
 </html>
