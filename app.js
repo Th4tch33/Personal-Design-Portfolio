@@ -105,7 +105,7 @@ window.onload = function()
 
     for(let i = 0; i < numOfIcons; i++) {
         createWarningImage(getRandomInt(9), i);
-        icons[i] = new iconBuilder(getRandomInt(1800),getRandomBool(), getRandomInt(5), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
+        icons[i] = new iconBuilder(getRandomInt(windowWidth),getRandomBool(), getRandomInt(5), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
     }
 
     setInterval(function()
@@ -133,11 +133,11 @@ window.onload = function()
             if(icons[i].y > iconFloor){
                 if(i < numOfIconsJump) {
                     icons[i].vY = getRandomInt(jumpHeightMax);
-                    icons[i].x = getRandomInt(1800);
+                    icons[i].x = getRandomInt(windowWidth);
                 }
                 else {
                     icons[i].vY = getRandomInt(jumpHeight);
-                    icons[i].x = getRandomInt(1800);
+                    icons[i].x = getRandomInt(windowWidth);
                 }
                 
             }
