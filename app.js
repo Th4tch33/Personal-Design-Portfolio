@@ -8,8 +8,8 @@ let iconFloor = 0;
 
 let bombX = 1;
 let bombY = 1;
-let bombXSpeed = 3;
-let bombYSpeed = 2;
+let bombXSpeed = 2;
+let bombYSpeed = 1.5;
 
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
@@ -31,6 +31,10 @@ class iconBuilder {
         this.r = r;
         this.vR = vR;
     }
+}
+
+function click() {
+    console.log("click");
 }
 
 function variableInitialization() {
@@ -97,6 +101,8 @@ function hoursFunction() {
 
 window.onload = function()
 {
+    document.getElementById("bouncingBomb").addEventListener("click", click);
+
     document.querySelector(".loadingScreen").classList.add("fadeOut");
 
     alignContent();
