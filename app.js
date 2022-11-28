@@ -14,6 +14,8 @@ let bombYSpeed = 1.5;
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
+let fakeoutActive = true;
+
 let bomb = document.getElementById("bouncingBomb");
 let style = window.getComputedStyle(bomb);
 let bombWidth = style.getPropertyValue("width");
@@ -34,7 +36,14 @@ class iconBuilder {
 }
 
 function click() {
-    console.log("click");
+    document.getElementById("fakeoutContent").remove();
+    document.getElementById("bouncingBomb").remove();
+    document.getElementById("iconGroup").remove();
+    document.getElementById("loadingScreen").remove();
+    document.getElementById("fakeoutScreen").remove();
+
+    fakeoutActive = false;
+    console.log('fakeout off');
 }
 
 function variableInitialization() {
@@ -47,7 +56,7 @@ function variableInitialization() {
 }
 
 function alignContent() {
-    let contentDiv = document.getElementById("content");
+    let contentDiv = document.getElementById("fakeoutContent");
     let contentDivHeight = contentDiv.offsetHeight;
 
     let contentShift = windowHeight / 2 - contentDivHeight / 2;
@@ -86,7 +95,7 @@ function createWarningImage(color, order) {
 }
 
 function hoursFunction() {
-    let launchDate = new Date("2021-03-14 20:00:00");
+    let launchDate = new Date("2003-09-02 20:00:00");
     let currentDate = new Date();
 
     let yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
@@ -103,7 +112,7 @@ window.onload = function()
 {
     document.getElementById("bouncingBomb").addEventListener("click", click);
 
-    document.querySelector(".loadingScreen").classList.add("fadeOut");
+    document.getElementById("loadingScreen").classList.add("fadeOut");
 
     alignContent();
     hoursFunction();
@@ -116,67 +125,68 @@ window.onload = function()
 
     setInterval(function()
     {
-        for(let i = 0; i < numOfIcons; i++) {
-            let focusDiv = document.getElementById("div" + i);
-
-            icons[i].y -= icons[i].vY - gravity;
-            icons[i].vY -= gravity;
-
-            if(icons[i].direction == true) {
-                icons[i].x += icons[i].vX;
-                icons[i].r += icons[i].vR; 
-            }
-
-            else {
-                icons[i].x -= icons[i].vX;
-                icons[i].r -= icons[i].vR; 
-            }
-            
-            focusDiv.style.left = icons[i].x + 'px';
-            focusDiv.style.top = icons[i].y + 'px';
-            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
-
-            if(icons[i].y > iconFloor){
-                if(i < numOfIconsJump) {
-                    icons[i].vY = getRandomInt(jumpHeightMax);
-                    icons[i].x = getRandomInt(windowWidth);
+        if(fakeoutActive == true) {
+            for(let i = 0; i < numOfIcons; i++) {
+                let focusDiv = document.getElementById("div" + i);
+    
+                icons[i].y -= icons[i].vY - gravity;
+                icons[i].vY -= gravity;
+    
+                if(icons[i].direction == true) {
+                    icons[i].x += icons[i].vX;
+                    icons[i].r += icons[i].vR; 
                 }
+    
                 else {
-                    icons[i].vY = getRandomInt(jumpHeight);
-                    icons[i].x = getRandomInt(windowWidth);
+                    icons[i].x -= icons[i].vX;
+                    icons[i].r -= icons[i].vR; 
                 }
                 
+                focusDiv.style.left = icons[i].x + 'px';
+                focusDiv.style.top = icons[i].y + 'px';
+                focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
+    
+                if(icons[i].y > iconFloor){
+                    if(i < numOfIconsJump) {
+                        icons[i].vY = getRandomInt(jumpHeightMax);
+                        icons[i].x = getRandomInt(windowWidth);
+                    }
+                    else {
+                        icons[i].vY = getRandomInt(jumpHeight);
+                        icons[i].x = getRandomInt(windowWidth);
+                    }
+                    
+                }
+            }
+            
+            if(window.scrollY > 250) {
+                window.scrollBy(0, -25);
+            }
+    
+            bombX += bombXSpeed;
+            bombY += bombYSpeed;
+            
+            bomb.style.left = bombX + scrollX + "px";
+            bomb.style.top = bombY + scrollY + "px";
+    
+            if(bombX <= 0) {
+                bombXSpeed *= -1;
+                console.log("x switch min");
+            }
+    
+            if(bombX + bombWidth >= windowWidth) {
+                bombXSpeed *= -1;
+    
+                console.log("x switch max");
+            }
+    
+            if(bombY <= 0) {
+                bombYSpeed *= -1;
+            }
+    
+            if(bombY + bombHeight >= windowHeight) {
+                bombYSpeed *= -1;
             }
         }
-        
-        if(window.scrollY > 250) {
-            window.scrollBy(0, -25);
-        }
-
-        bombX += bombXSpeed;
-        bombY += bombYSpeed;
-        
-        bomb.style.left = bombX + scrollX + "px";
-        bomb.style.top = bombY + scrollY + "px";
-
-        if(bombX <= 0) {
-            bombXSpeed *= -1;
-            console.log("x switch min");
-        }
-
-        if(bombX + bombWidth >= windowWidth) {
-            bombXSpeed *= -1;
-
-            console.log("x switch max");
-        }
-
-        if(bombY <= 0) {
-            bombYSpeed *= -1;
-        }
-
-        if(bombY + bombHeight >= windowHeight) {
-            bombYSpeed *= -1;
-        }
-
     }, 10);
 }
