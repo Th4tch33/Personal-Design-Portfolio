@@ -1,25 +1,37 @@
 let gravity = 0.5;
-let numOfIcons = 200;
-let numOfIconsJump = 5;
+let numOfIcons = 150;
+let numOfIconsJump = 7;
 let jumpHeight = 15;
 let jumpHeightMax = 30;
 let rotationSpeed = 3;
 let iconFloor = 0;
 
-let bombX = 1;
-let bombY = 1;
+let bombX;
+let bombY;
 let bombXSpeed = 2;
-let bombYSpeed = 1.5;
+let bombYSpeed = 2;
+let bombWindowBounds;
 
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
+let hoursDots = "";
+let timeSinceLaunch = null;
+
+let hoverState = false;
+let mouseX = 0;
+let mouseY = 0;
+let hoverName = null;
+let hoverDesc = null;
+
 let fakeoutActive = true;
 
+let prev;
+let current;
+
 let bomb = document.getElementById("bouncingBomb");
-let style = window.getComputedStyle(bomb);
-let bombWidth = style.getPropertyValue("width");
-let bombHeight = style.getPropertyValue("height");
+let bombWidth;
+let bombHeight;
 
 const icons = [];
 
@@ -35,26 +47,36 @@ class iconBuilder {
     }
 }
 
-function click() {
-    document.getElementById("fakeoutContent").remove();
-    document.getElementById("bouncingBomb").remove();
-    document.getElementById("iconGroup").remove();
-    document.getElementById("loadingScreen").remove();
-    document.getElementById("fakeoutScreen").remove();
-
-    fakeoutActive = false;
-    console.log('fakeout off');
-}
-
 function variableInitialization() {
-    iconFloor = windowHeight + jumpHeight * 15;
-    bombWidth = parseInt(bombWidth.replace('px', ''));
-    bombHeight = parseInt(bombHeight.replace('px', ''));
+    iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top - 10;
+    bombWidth = bomb.getBoundingClientRect().width;
+    bombHeight = bomb.getBoundingClientRect().height;
 
     console.log(bombWidth);
     console.log(bombHeight);
+
+    bombWindowBounds = document.getElementById("showreelContainer").getBoundingClientRect();
+    bombX = 1;
+    bombY = bombWindowBounds.top;
 }
 
+function hover(name, work) {
+    hoverState = true;
+    hoverName = name;
+    hoverDesc = work;
+}
+
+function hoverOff() {
+    hoverState = false;
+
+    document.getElementById('cursorIconH3').style.opacity = 0;
+
+    document.getElementById('cursorIconP').style.opacity = 0;
+
+    document.getElementById('cursorIcon').style.maxWidth = 0;
+}
+
+/*
 function alignContent() {
     let contentDiv = document.getElementById("fakeoutContent");
     let contentDivHeight = contentDiv.offsetHeight;
@@ -67,6 +89,7 @@ function alignContent() {
     console.log(contentDivHeight);
     console.log(contentShift);
 }
+*/
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
@@ -80,7 +103,7 @@ function createWarningImage(color, order) {
     let loader = document.getElementById("iconGroup");
     let div = document.createElement('div');
     let img = document.createElement("IMG");
-    img.setAttribute("src", "images/triangleWarning" + getRandomInt(9) + ".svg");
+    img.setAttribute("src", "images/warning" + getRandomInt(8) + ".svg");
     img.setAttribute("alt", "warning");
     
     div.setAttribute("id", "div" + order);
@@ -89,6 +112,7 @@ function createWarningImage(color, order) {
     div.style.left = "0px";
     div.style.top = "0px";
     div.style.transform = "rotate(0deg)";
+    div.style.pointerEvents = "hidden";
     loader.appendChild(div);
 
     document.body.appendChild(loader);
@@ -103,18 +127,60 @@ function hoursFunction() {
     let dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
     let hours = currentDate.getHours()-launchDate.getHours();
 
-    let timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
-    
-    document.getElementById("hours").innerHTML = timeSinceLaunch + " hours...";
+    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
 }
 
 window.onload = function()
 {
-    document.getElementById("bouncingBomb").addEventListener("click", click);
+    document.addEventListener('mousemove', (event) => {  
+        mouseX = event.clientX;
+        mouseY = event.clientY + window.pageYOffset
+
+        if (hoverState == true) {
+            document.getElementById('cursorIconH3').innerHTML = hoverName;
+            document.getElementById('cursorIconH3').style.opacity = "100%";
+
+            document.getElementById('cursorIconP').innerHTML = hoverDesc;
+            document.getElementById('cursorIconP').style.opacity = "100%";
+
+            document.getElementById('cursorIcon').style.maxWidth = "100vw";
+        }
+
+        document.getElementById('cursorIcon').style.left = mouseX + "px"
+        document.getElementById('cursorIcon').style.top = mouseY + 20 +"px"
+    });
+
+    document.addEventListener('scroll', (event) => {
+        current = window.pageYOffset;
+
+        if((current - prev) % 2 > 0) {
+            document.getElementById('nav').style.top = "-15vw";
+        }
+        else if ((current - prev) % 2 < 0) {
+            document.getElementById('nav').style.top = "0";
+        }
+
+        mouseY += current - prev;
+
+        prev = current;
+
+        if (hoverState == true) {
+            document.getElementById('cursorIconH3').innerHTML = hoverName;
+            document.getElementById('cursorIconH3').style.opacity = "100%";
+
+            document.getElementById('cursorIconP').innerHTML = hoverDesc;
+            document.getElementById('cursorIconP').style.opacity = "100%";
+
+            document.getElementById('cursorIcon').style.maxWidth = "100vw";
+        }
+
+        document.getElementById('cursorIcon').style.left = mouseX + "px";
+        document.getElementById('cursorIcon').style.top = mouseY + 20 +"px";
+    } )
 
     document.getElementById("loadingScreen").classList.add("fadeOut");
 
-    alignContent();
+    //alignContent();
     hoursFunction();
     variableInitialization();
 
@@ -158,35 +224,52 @@ window.onload = function()
                     
                 }
             }
+
+            //Bomb Bouncing Code
             
-            if(window.scrollY > 250) {
-                window.scrollBy(0, -25);
-            }
-    
             bombX += bombXSpeed;
             bombY += bombYSpeed;
             
-            bomb.style.left = bombX + scrollX + "px";
-            bomb.style.top = bombY + scrollY + "px";
+            console.log(bombX);
+            console.log(bombWidth);
+            console.log('-----------------');
+            
+            bomb.style.left = bombX + "px";
+            bomb.style.top = bombY + "px";
     
             if(bombX <= 0) {
                 bombXSpeed *= -1;
-                console.log("x switch min");
             }
     
             if(bombX + bombWidth >= windowWidth) {
                 bombXSpeed *= -1;
-    
-                console.log("x switch max");
             }
     
-            if(bombY <= 0) {
+            if(bombY <= bombWindowBounds.top) {
                 bombYSpeed *= -1;
             }
     
-            if(bombY + bombHeight >= windowHeight) {
+            if(bombY + bombHeight >= bombWindowBounds.bottom) {
                 bombYSpeed *= -1;
-            }
+            }            
         }
     }, 10);
+
+    setInterval(function()
+    {
+        if(hoursDots.length == 0) {
+            hoursDots = ".";
+        }
+        else if (hoursDots.length == 1){
+            hoursDots = "..";
+        }
+        else if (hoursDots.length == 2){
+            hoursDots = "...";
+        }
+        else {
+            hoursDots = "";
+        }
+
+        document.getElementById("hours").innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
+    }, 750);
 }
