@@ -90,7 +90,6 @@ window.onload = function()
 
     setInterval(function()
     {
-        console.log(iconFloor);
         windowHeight = window.innerHeight;
         windowWidth = window.innerWidth;
         iconFloor = document.documentElement.scrollHeight;

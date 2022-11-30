@@ -52,9 +52,6 @@ function variableInitialization() {
     bombWidth = bomb.getBoundingClientRect().width;
     bombHeight = bomb.getBoundingClientRect().height;
 
-    console.log(bombWidth);
-    console.log(bombHeight);
-
     bombWindowBounds = document.getElementById("showreelContainer").getBoundingClientRect();
     bombX = 1;
     bombY = bombWindowBounds.top;
