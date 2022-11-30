@@ -6,7 +6,7 @@
 }
 
 body {
-  font-size: 25px;
+  font-size: 20px;
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -169,7 +169,7 @@ li a:hover {
 #heroSectionWrapper {
   margin: 25vh 5vw 30vh 5vw;
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 65% 35%;
   justify-content: space-between;
 }
 
@@ -206,7 +206,7 @@ li a:hover {
   padding-top: 50px;
 }
 
-#spotlightCardWrapper img {
+.spotlightCardWrapper img {
   width: 100%;
   aspect-ratio: 3/2;
   -o-object-fit: cover;
@@ -234,11 +234,6 @@ li a:hover {
   vertical-align: bottom;
 }
 
-@media screen and (max-width: 1920px) {
-  body {
-    font-size: 20px;
-  }
-}
 #cursorIcon {
   max-width: 0;
   height: auto;
@@ -263,4 +258,67 @@ li a:hover {
   padding: 1vh;
   white-space: nowrap;
   transition: all 1s;
+}
+
+/*About Me Styles*/
+#aboutMeWrapper {
+  width: 60vw;
+  padding: 10vh 0;
+}
+#aboutMeWrapper h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#aboutMeWrapper p {
+  width: auto;
+}
+
+table {
+  margin: 5vh 0;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 1vw;
+  border: 3px solid #000000;
+  background-color: white;
+  white-space: nowrap;
+}
+
+.tdimg {
+  width: 10vw;
+  height: auto;
+}
+
+@media screen and (max-width: 1919px) {
+  body {
+    font-size: 20px;
+  }
+  #heroSectionWrapper {
+    grid-template-columns: 70% 30%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  body {
+    font-size: 15px;
+  }
+  #heroSectionWrapper {
+    grid-template-columns: 65% 35%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  #heroSectionWrapper {
+    margin: 25vh 5vw 30vh 5vw;
+    display: block;
+  }
 }/*# sourceMappingURL=styles.css.map */

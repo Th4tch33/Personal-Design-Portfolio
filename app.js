@@ -230,10 +230,6 @@ window.onload = function()
             bombX += bombXSpeed;
             bombY += bombYSpeed;
             
-            console.log(bombX);
-            console.log(bombWidth);
-            console.log('-----------------');
-            
             bomb.style.left = bombX + "px";
             bomb.style.top = bombY + "px";
     
