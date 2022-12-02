@@ -83,10 +83,24 @@ window.onload = function()
 
     document.getElementById("loadingScreen").classList.add("fadeOut");
 
+    document.addEventListener('scroll', () => {
+        current = window.pageYOffset;
+
+        if((current - prev) % 2 > 0) {
+            document.getElementById('nav').style.top = "-15vw";
+        }
+        else if ((current - prev) % 2 < 0) {
+            document.getElementById('nav').style.top = "0";
+        }
+        
+        prev = current;
+    } )
+
     for(let i = 0; i < numOfIcons; i++) {
         createWarningImage(getRandomInt(9), i);
         icons[i] = new iconBuilder(getRandomIntRange(windowWidth - iconRange, windowWidth), getRandomInt(iconFloor), -getRandomInt(iconSpeedOffset), getRandomInt(360), getRandomInt(rotationSpeed));
     }
+    
 
     setInterval(function()
     {
