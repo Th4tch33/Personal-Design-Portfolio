@@ -1,51 +1,62 @@
+//Moving Icon Variables
 let gravity = 0.5;
-let numOfIcons = 150;
-let numOfIconsJump = 7;
-let jumpHeight = 15;
-let jumpHeightMax = 30;
-let rotationSpeed = 3;
-let iconFloor = 0;
+let rotationSpeed = 2;
 
+let numIconsFront = 2;
+let numIconsMid = 10;
+let numIconsBack = 60;
+let numOfIcons = numIconsFront + numIconsMid + numIconsBack;
+
+let initialFallMax = 5;
+let initialFallMin = 2;
+
+let iconFloor = 0;
+let iconCeiling = -250;
+
+let iconFrontSize = 5;
+let iconMidSize = 2;
+let iconBackSize = 1;
+let iconSmallestSize = 50;
+
+const icons = [];
+
+class iconBuilder {
+    constructor(x, y, direction, vY, r , vR, s) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+        this.vY = vY;
+        this.r = r;
+        this.vR = vR;
+        this.s = s
+    }
+}
+
+//Bouncing Showcase Title Variables
 let bombX;
 let bombY;
 let bombXSpeed = 2;
 let bombYSpeed = 2;
+
+let bomb = document.getElementById("bouncingBomb");
 let bombWindowBounds;
+let bombWidth;
+let bombHeight;
 
-let windowHeight = window.innerHeight;
-let windowWidth = window.innerWidth;
-
+//Hour Calculator Variables
 let hoursDots = "";
 let timeSinceLaunch = null;
 
+//Showcase Hover Title Variables
 let hoverState = false;
 let mouseX = 0;
 let mouseY = 0;
 let hoverName = null;
 let hoverDesc = null;
 
-let fakeoutActive = true;
-
-let prev;
-let current;
-
-let bomb = document.getElementById("bouncingBomb");
-let bombWidth;
-let bombHeight;
-
-const icons = [];
-
-class iconBuilder {
-    constructor(x, direction, vX, vY, r ,vR) {
-        this.x = x;
-        this.y = iconFloor;
-        this.direction = direction;
-        this.vX = vX;
-        this.vY = vY;
-        this.r = r;
-        this.vR = vR;
-    }
-}
+//Window Dimension Variables
+let windowHeight = window.innerHeight;
+let windowWidth = window.innerWidth;
 
 function variableInitialization() {
     iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top - 10;
@@ -56,6 +67,20 @@ function variableInitialization() {
     bombX = 1;
     bombY = bombWindowBounds.top;
 }
+
+//calculates hours between today and birthday
+function hoursFunction() {
+    let launchDate = new Date("2003-09-02 20:00:00");
+    let currentDate = new Date();
+
+    let yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
+    let monthToHours = (currentDate.getMonth()-launchDate.getMonth())*730;
+    let dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
+    let hours = currentDate.getHours()-launchDate.getHours();
+
+    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
+}
+
 
 function hover(name, work) {
     hoverState = true;
@@ -73,62 +98,51 @@ function hoverOff() {
     document.getElementById('cursorIcon').style.maxWidth = 0;
 }
 
-/*
-function alignContent() {
-    let contentDiv = document.getElementById("fakeoutContent");
-    let contentDivHeight = contentDiv.offsetHeight;
-
-    let contentShift = windowHeight / 2 - contentDivHeight / 2;
-
-    contentDiv.style.marginTop =  contentShift+ "px";
-
-    console.log(windowHeight);
-    console.log(contentDivHeight);
-    console.log(contentShift);
-}
-*/
-
+//random value generators
 function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
+}
+
+function getRandomIntRange(max, min) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomBool() {
     return Math.random() < 0.5;
 }
 
-function createWarningImage(color, order) {    
-    let loader = document.getElementById("iconGroup");
-    let div = document.createElement('div');
+//creates <img> elements using DOM methods
+function createWarningImage(color, order, size, x) { 
+    let loaderFront = document.getElementById("frontIconGroup");
+    let loaderBack = document.getElementById("backIconGroup");
     let img = document.createElement("IMG");
+    
     img.setAttribute("src", "images/warning" + getRandomInt(8) + ".svg");
     img.setAttribute("alt", "warning");
     
-    div.setAttribute("id", "div" + order);
-    div.appendChild(img);
-    div.style.position = "absolute";
-    div.style.left = "0px";
-    div.style.top = "0px";
-    div.style.transform = "rotate(0deg)";
-    div.style.pointerEvents = "hidden";
-    loader.appendChild(div);
-
-    document.body.appendChild(loader);
-}
-
-function hoursFunction() {
-    let launchDate = new Date("2003-09-02 20:00:00");
-    let currentDate = new Date();
-
-    let yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
-    let monthToHours = (currentDate.getMonth()-launchDate.getMonth())*730;
-    let dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
-    let hours = currentDate.getHours()-launchDate.getHours();
-
-    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
+    img.setAttribute("id", "icon" + order);
+    img.style.position = "absolute";
+    img.style.width = iconSmallestSize * size + getRandomIntRange(10, -10) + "px";
+    img.style.left = x + "px";
+    img.style.top = "0px";
+    img.style.transform = "rotate(0deg)";
+    img.style.filter = "blur(" + size + "px)";
+    img.style.zIndex = size;
+    img.style.pointerEvents = "hidden";
+    
+    if (size == 1) {
+        loaderBack.appendChild(img);
+        document.body.appendChild(loaderBack);
+    }
+    else {
+        loaderFront.appendChild(img);
+        document.body.appendChild(loaderFront);
+    }   
 }
 
 window.onload = function()
 {
+    //mechanism that detects hover over showcase work
     document.addEventListener('mousemove', (event) => {  
         mouseX = event.clientX;
         mouseY = event.clientY + window.pageYOffset
@@ -182,69 +196,75 @@ window.onload = function()
     variableInitialization();
 
     for(let i = 0; i < numOfIcons; i++) {
-        createWarningImage(getRandomInt(9), i);
-        icons[i] = new iconBuilder(getRandomInt(windowWidth),getRandomBool(), getRandomInt(5), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
+        if (i < numIconsBack){
+            //x, y, direction, vY, r, vR, s
+            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+            
+            createWarningImage(getRandomInt(9), i, iconBackSize, icons[i].x);
+        }
+
+        else if (i < numIconsMid + numIconsBack){
+            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+            
+            createWarningImage(getRandomInt(9), i, iconMidSize, icons[i].x);
+        }
+
+        else {
+            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconFrontSize, getRandomInt(360), getRandomInt(rotationSpeed), iconFrontSize);
+        
+            createWarningImage(getRandomInt(9), i, iconFrontSize, icons[i].x);
+        }
     }
 
     setInterval(function()
     {
-        if(fakeoutActive == true) {
-            for(let i = 0; i < numOfIcons; i++) {
-                let focusDiv = document.getElementById("div" + i);
-    
-                icons[i].y -= icons[i].vY - gravity;
-                icons[i].vY -= gravity;
-    
-                if(icons[i].direction == true) {
-                    icons[i].x += icons[i].vX;
-                    icons[i].r += icons[i].vR; 
-                }
-    
-                else {
-                    icons[i].x -= icons[i].vX;
-                    icons[i].r -= icons[i].vR; 
-                }
-                
-                focusDiv.style.left = icons[i].x + 'px';
-                focusDiv.style.top = icons[i].y + 'px';
-                focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
-    
-                if(icons[i].y > iconFloor){
-                    if(i < numOfIconsJump) {
-                        icons[i].vY = getRandomInt(jumpHeightMax);
-                        icons[i].x = getRandomInt(windowWidth);
-                    }
-                    else {
-                        icons[i].vY = getRandomInt(jumpHeight);
-                        icons[i].x = getRandomInt(windowWidth);
-                    }
-                    
-                }
+        for(let i = 0; i < numOfIcons; i++) {
+            let focusDiv = document.getElementById("icon" + i);
+
+            icons[i].y += icons[i].vY - gravity;
+
+            if(icons[i].direction == true) {
+                icons[i].r += icons[i].vR; 
             }
 
-            //Bomb Bouncing Code
-            
-            bombX += bombXSpeed;
-            bombY += bombYSpeed;
-            
-            bomb.style.left = bombX + "px";
-            bomb.style.top = bombY + "px";
-    
-            if(bombX <= 0) {
-                bombXSpeed *= -1;
+            else {
+                icons[i].r -= icons[i].vR; 
             }
-    
-            if(bombX + bombWidth >= windowWidth) {
-                bombXSpeed *= -1;
+
+            focusDiv.style.top = icons[i].y + 'px';
+            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
+
+            if(icons[i].y > iconFloor){
+                icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
+                icons[i].y = iconCeiling;
+                icons[i].x = getRandomInt(windowWidth);
+                
+                focusDiv.style.left = icons[i].x + 'px';
             }
-    
-            if(bombY <= bombWindowBounds.top) {
-                bombYSpeed *= -1;
-            }
-    
-            if(bombY + bombHeight >= bombWindowBounds.bottom) {
-                bombYSpeed *= -1;
-            }            
+        }
+
+        //Bomb Bouncing Code
+        
+        bombX += bombXSpeed;
+        bombY += bombYSpeed;
+        
+        bomb.style.left = bombX + "px";
+        bomb.style.top = bombY + "px";
+
+        if(bombX <= 0) {
+            bombXSpeed *= -1;
+        }
+
+        if(bombX + bombWidth >= windowWidth) {
+            bombXSpeed *= -1;
+        }
+
+        if(bombY <= bombWindowBounds.top) {
+            bombYSpeed *= -1;
+        }
+
+        if(bombY + bombHeight >= bombWindowBounds.bottom) {
+            bombYSpeed *= -1;
         }
     }, 10);
 
