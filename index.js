@@ -1,3 +1,10 @@
+/*
+Implementations:
+
+Bugs:
+
+*/
+
 //Moving Icon Variables
 let rotationSpeed = 2;
 
@@ -70,7 +77,11 @@ let navPrev;
 let navCurrent;
 
 function variableInitialization() {
-    iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top - 10;
+    iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top + scrollY - 10;
+
+    console.log(iconFloor);
+    console.log(scrollY);
+
     prevMouseX = mouseX;
 
     bombWidth = bomb.getBoundingClientRect().width;
@@ -274,31 +285,33 @@ window.onload = function()
         heroMouseInfluence();
 
         //updates positions of all icons
-        for(let i = 0; i < numOfIcons; i++) {
-            let focusDiv = document.getElementById("icon" + i);
-
-            //updates falling speed
-            icons[i].y += icons[i].vY;
-
-            //controls rotation
-            if(icons[i].direction == true) {
-                icons[i].r += icons[i].vR; 
-            }
-
-            else {
-                icons[i].r -= icons[i].vR; 
-            }
-
-            //applies changes to html element
-            focusDiv.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
-            focusDiv.style.top = icons[i].y + 'px';
-            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)";
-
-            //resets icons once they hit the ground
-            if(icons[i].y > iconFloor){
-                icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
-                icons[i].y = iconCeiling;
-                icons[i].x = getRandomIntRange(windowWidth + 200, -200);
+        if (scrollY <= iconFloor) {
+            for(let i = 0; i < numOfIcons; i++) {
+                let focusDiv = document.getElementById("icon" + i);
+    
+                //updates falling speed
+                icons[i].y += icons[i].vY;
+    
+                //controls rotation
+                if(icons[i].direction == true) {
+                    icons[i].r += icons[i].vR; 
+                }
+    
+                else {
+                    icons[i].r -= icons[i].vR; 
+                }
+    
+                //applies changes to html element
+                focusDiv.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
+                focusDiv.style.top = icons[i].y + 'px';
+                focusDiv.style.transform = "rotate(" + icons[i].r + "deg)";
+    
+                //resets icons once they hit the ground
+                if(icons[i].y > iconFloor){
+                    icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
+                    icons[i].y = iconCeiling;
+                    icons[i].x = getRandomIntRange(windowWidth + 200, -200);
+                }
             }
         }
 
