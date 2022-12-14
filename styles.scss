@@ -179,12 +179,13 @@ li a:hover {
 #heroSectionWrapper {
     text-align: center;
     height: 100vh;
+    z-index: 100;
 }
 
 #heroTextContainer {
     position: relative;
     padding-top: 33vh;
-    z-index: 2;
+    
 }
 
 #showreelContainer {

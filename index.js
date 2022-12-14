@@ -1,11 +1,11 @@
 //Moving Icon Variables
-let gravity = 0.5;
 let rotationSpeed = 2;
 
 let numIconsFront = 2;
-let numIconsMid = 10;
-let numIconsBack = 60;
-let numOfIcons = numIconsFront + numIconsMid + numIconsBack;
+let numIconsMid = 5;
+let numIconsBack = 15;
+let numIconsFarBack = 45;
+let numOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
 
 let initialFallMax = 5;
 let initialFallMin = 2;
@@ -13,10 +13,17 @@ let initialFallMin = 2;
 let iconFloor = 0;
 let iconCeiling = -250;
 
-let iconFrontSize = 5;
-let iconMidSize = 2;
-let iconBackSize = 1;
+let iconFrontSize = 6;
+let iconMidSize = 3;
+let iconBackSize = 1.75;
+let iconFarBackSize = 1;
 let iconSmallestSize = 50;
+
+let mouseXIconInfluence = 0;
+let prevMouseX;
+let influenceAnchor = 0;
+let influenceMax = 0;
+let influenceRedux = 0;
 
 const icons = [];
 
@@ -58,8 +65,14 @@ let hoverDesc = null;
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
+//Nav Bar Variables
+let navPrev;
+let navCurrent;
+
 function variableInitialization() {
     iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top - 10;
+    prevMouseX = mouseX;
+
     bombWidth = bomb.getBoundingClientRect().width;
     bombHeight = bomb.getBoundingClientRect().height;
 
@@ -122,22 +135,48 @@ function createWarningImage(color, order, size, x) {
     
     img.setAttribute("id", "icon" + order);
     img.style.position = "absolute";
-    img.style.width = iconSmallestSize * size + getRandomIntRange(10, -10) + "px";
+    img.style.width = iconSmallestSize * size + "px";
     img.style.left = x + "px";
     img.style.top = "0px";
     img.style.transform = "rotate(0deg)";
     img.style.filter = "blur(" + size + "px)";
-    img.style.zIndex = size;
+    img.style.zIndex = Math.round(size);
     img.style.pointerEvents = "hidden";
     
-    if (size == 1) {
+    if (size <= iconBackSize) {
         loaderBack.appendChild(img);
         document.body.appendChild(loaderBack);
     }
+
     else {
         loaderFront.appendChild(img);
         document.body.appendChild(loaderFront);
     }   
+}
+
+//calculates distance to move icons based on horizontal mouse movement
+function heroMouseInfluence(i) {
+    let currentMouseX = mouseX;
+
+    /*console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    console.log(currentMouseX);
+    console.log(prevMouseX);
+    console.log(currentMouseX - prevMouseX);
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');*/
+
+    mouseXIconInfluence = (currentMouseX - prevMouseX) / 10;
+
+    influenceAnchor += mouseXIconInfluence;
+
+    if (influenceAnchor > 0) {
+        influenceAnchor *= 0.98;
+    }
+    
+    else if (influenceAnchor < 0) {
+        influenceAnchor *= 0.98;
+    }
+
+    prevMouseX = currentMouseX;
 }
 
 window.onload = function()
@@ -162,19 +201,19 @@ window.onload = function()
     });
 
     document.addEventListener('scroll', (event) => {
-        current = window.pageYOffset;
+        //moves nav bar of screen when scrolling down
+        navCurrent = window.pageYOffset;
 
-        if((current - prev) % 2 > 0) {
+        if((navCurrent - navPrev) % 2 > 0) {
             document.getElementById('nav').style.top = "-15vw";
         }
-        else if ((current - prev) % 2 < 0) {
+        else if ((navCurrent - navPrev) % 2 < 0) {
             document.getElementById('nav').style.top = "0";
         }
 
-        mouseY += current - prev;
+        navPrev = navCurrent;
 
-        prev = current;
-
+        //activates hover title if mouse goes over showcase item using scroll
         if (hoverState == true) {
             document.getElementById('cursorIconH3').innerHTML = hoverName;
             document.getElementById('cursorIconH3').style.opacity = "100%";
@@ -189,40 +228,59 @@ window.onload = function()
         document.getElementById('cursorIcon').style.top = mouseY + 20 +"px";
     } )
 
-    document.getElementById("loadingScreen").classList.add("fadeOut");
-
-    //alignContent();
     hoursFunction();
     variableInitialization();
 
+    //removes loading screen
+    document.getElementById("loadingScreen").classList.add("fadeOut");
+
+    //DOMs in all icons and initializes parameters
     for(let i = 0; i < numOfIcons; i++) {
-        if (i < numIconsBack){
+        
+        //DOMs in large icons
+        if (i < numIconsFront){
             //x, y, direction, vY, r, vR, s
-            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
-            
-            createWarningImage(getRandomInt(9), i, iconBackSize, icons[i].x);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconFrontSize, getRandomInt(360), getRandomInt(rotationSpeed), iconFrontSize);
+        
+            //color, order, size, x
+            createWarningImage(getRandomInt(9), i, iconFrontSize, icons[i].x);
         }
 
-        else if (i < numIconsMid + numIconsBack){
-            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+        //DOMs in medium icons
+        else if (i < numIconsMid + numIconsFront){
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
             
             createWarningImage(getRandomInt(9), i, iconMidSize, icons[i].x);
         }
 
+        //DOMs in small icons
+        else if (i < numIconsBack + numIconsMid + numIconsFront){
+            
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+            
+            createWarningImage(getRandomInt(9), i, iconBackSize, icons[i].x);
+        }
+
+        //DOMs in extra small icons
         else {
-            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconFrontSize, getRandomInt(360), getRandomInt(rotationSpeed), iconFrontSize);
-        
-            createWarningImage(getRandomInt(9), i, iconFrontSize, icons[i].x);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
+            
+            createWarningImage(getRandomInt(9), i, iconFarBackSize, icons[i].x);
         }
     }
 
     setInterval(function()
     {
+        heroMouseInfluence();
+
+        //updates positions of all icons
         for(let i = 0; i < numOfIcons; i++) {
             let focusDiv = document.getElementById("icon" + i);
 
-            icons[i].y += icons[i].vY - gravity;
+            //updates falling speed
+            icons[i].y += icons[i].vY;
 
+            //controls rotation
             if(icons[i].direction == true) {
                 icons[i].r += icons[i].vR; 
             }
@@ -231,15 +289,16 @@ window.onload = function()
                 icons[i].r -= icons[i].vR; 
             }
 
+            //applies changes to html element
+            focusDiv.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
             focusDiv.style.top = icons[i].y + 'px';
-            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
+            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)";
 
+            //resets icons once they hit the ground
             if(icons[i].y > iconFloor){
                 icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
                 icons[i].y = iconCeiling;
-                icons[i].x = getRandomInt(windowWidth);
-                
-                focusDiv.style.left = icons[i].x + 'px';
+                icons[i].x = getRandomIntRange(windowWidth + 200, -200);
             }
         }
 
@@ -268,6 +327,7 @@ window.onload = function()
         }
     }, 10);
 
+    //animates dots at end of JS hours component
     setInterval(function()
     {
         if(hoursDots.length == 0) {
