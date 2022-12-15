@@ -1,5 +1,7 @@
 /*
 Implementations:
+- Swup + DNA Capital Menu
+- From loadscreen, the user falls into the hero section with portfolio work flying past
 
 Bugs:
 
@@ -54,6 +56,8 @@ let bombYSpeed = 2;
 
 let bomb = document.getElementById("bouncingBomb");
 let bombWindowBounds;
+let bombWindowTop;
+let bombWindowBottom;
 let bombWidth;
 let bombHeight;
 
@@ -76,11 +80,12 @@ let windowWidth = window.innerWidth;
 let navPrev;
 let navCurrent;
 
+function log(message) {
+    console.log(message);
+}
+
 function variableInitialization() {
     iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top + scrollY - 10;
-
-    console.log(iconFloor);
-    console.log(scrollY);
 
     prevMouseX = mouseX;
 
@@ -89,7 +94,9 @@ function variableInitialization() {
 
     bombWindowBounds = document.getElementById("showreelContainer").getBoundingClientRect();
     bombX = 1;
-    bombY = bombWindowBounds.top;
+    bombY = bombWindowBounds.top + scrollY + 10;
+    bombWindowTop = bombWindowBounds.top + scrollY;
+    bombWindowBottom = bombWindowBounds.bottom + scrollY;
 }
 
 //calculates hours between today and birthday
@@ -214,6 +221,7 @@ window.onload = function()
     document.addEventListener('scroll', (event) => {
         //moves nav bar of screen when scrolling down
         navCurrent = window.pageYOffset;
+        mouseY += navCurrent - navPrev;
 
         if((navCurrent - navPrev) % 2 > 0) {
             document.getElementById('nav').style.top = "-15vw";
@@ -316,7 +324,6 @@ window.onload = function()
         }
 
         //Bomb Bouncing Code
-        
         bombX += bombXSpeed;
         bombY += bombYSpeed;
         
@@ -331,12 +338,15 @@ window.onload = function()
             bombXSpeed *= -1;
         }
 
-        if(bombY <= bombWindowBounds.top) {
+        if(bombY <= bombWindowTop) {
             bombYSpeed *= -1;
+
+            console.log("top");
         }
 
-        if(bombY + bombHeight >= bombWindowBounds.bottom) {
+        if(bombY + bombHeight >= bombWindowBottom) {
             bombYSpeed *= -1;
+            console.log("bottom");
         }
     }, 10);
 

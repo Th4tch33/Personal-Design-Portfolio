@@ -64,8 +64,8 @@ p {
   background-color: black;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 1000;
 }
 
@@ -150,7 +150,7 @@ p {
   width: auto;
   height: auto;
   background-color: black;
-  z-index: 2;
+  z-index: 200;
   white-space: nowrap;
   color: white;
 }
@@ -165,7 +165,7 @@ p {
   transition: top 0.3s;
   background-color: black;
   padding: 3vh 5vw 3vh 5vw;
-  z-index: 100;
+  z-index: 900;
 }
 
 li {
@@ -203,14 +203,14 @@ li a:hover {
 #heroTextContainer {
   position: relative;
   padding-top: 33vh;
-  z-index: 2;
+  z-index: 3;
 }
 
 #showreelContainer {
   position: relative;
   background-color: black;
   padding: 15vh 5vw;
-  z-index: 1000;
+  z-index: 100;
 }
 
 #showreelContainer iframe {
@@ -232,7 +232,7 @@ li a:hover {
 
 .spotlightCardWrapper img {
   width: 100%;
-  aspect-ratio: 3/2;
+  aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -345,4 +345,35 @@ th, td {
     margin: 25vh 5vw 30vh 5vw;
     display: block;
   }
+}
+/*Under Construction*/
+#construction-text {
+  font-size: 6em;
+  font-weight: 700;
+  color: #17171A;
+}
+
+#belt {
+  position: absolute;
+  top: 450px;
+}
+
+#belt img {
+  width: 75px;
+  height: auto;
+}
+
+/*Display*/
+#gif {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#construction-container {
+  padding: 0;
+  margin: 15vh 5vw;
 }/*# sourceMappingURL=styles.css.map */

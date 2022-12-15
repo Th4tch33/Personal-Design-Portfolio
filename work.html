@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <title>Caden Chan</title>
+    </head>
+
+    <div id="loadingScreen">
+        <div id="loadingContentWrapper">
+            <h3 class="white">Loading...</h3>
+            <img class="loadingIcon" src="images/loadingIcon.png" alt="loading...">
+        </div>
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="under-construction.html">Contact</a></li>
+            <li><a href="2022-Resume-Caden-Chan.pdf">Resume</a></li>
+        </ul>
+    </div>
+    
+    <div id="websiteSectionContainer">
+        <h1>Portfolio Work</h1>
+        <h3>I've done a lot of different work in a lot of different ways. Feel free to check it all out!</h3>
+
+        <div id="spotlightWrapper">
+            <div class="spotlightCardWrapper" onmouseover="hover('Brown Justin Beiber', 'Motion Design')" onmouseout="hoverOff()">
+                <a href="brown-justin-bieber.html"><img class="showcaseIMG" src="images/brown-justin-bieber.png" alt="Brown Justin Beiber"></a>
+            </div>
+                
+            <div class="spotlightCardWrapper" onmouseover="hover('OppHub', 'UI/UX Design')" onmouseout="hoverOff()">
+                <img class="showcaseIMG" src="images/opp-hub.png" alt="OppHub">
+            </div>
+
+            <div class="spotlightCardWrapper" onmouseover="hover('The Little Things in Life', 'Short Film')" onmouseout="hoverOff()">
+                <img class="showcaseIMG" src="images/gbdaEmotion.jpg" alt="Film Project">
+            </div>
+
+            <div class="spotlightCardWrapper" onmouseover="hover('Garnier Mining Co.', 'Sound Design')" onmouseout="hoverOff()">
+                <img src="images/gbdaSound.jpg" alt="Sound Proejct">
+            </div>
+        </div>
+    </div>
+
+    <div id="cursorIcon">
+        <h3 id="cursorIconH3"></h3>
+        <p id="cursorIconP"></p>
+    </div>
+
+    <div id="footerContainer">
+        <h1 class="center white">Stay Awesome</h1>
+        <div id="idWrapper">
+            <div>
+                <a href="https://www.instagram.com/cadenchan.design/"><img width="50px" height="50px" src="images/instagram.svg" alt="Instagram Icon"></a>
+            </div>
+            
+            <div>
+                <a href="https://www.linkedin.com/in/caden-chan/"><img width="50px" height="50px" src="images/linkedin-in.svg" alt="LinkedIn Icon"></a>
+            </div>
+            <!--
+            <div>
+                <img width="50px" height="50px" src="images/behance.svg" alt="Behance Icon">
+            </div>
+
+            <div>
+                <img width="50px" height="50px" src="images/dribbble.svg" alt="Dribbble Icon">
+            </div>
+            -->
+        </div>
+
+        <div id="captionWrapper">
+            <p class="caption white">© Caden Chan. All Rights Reserved. All Lefts Up For Grabs.</caption>
+            <p class="caption white">A website made with love by yours truely <b><i>xoxo</i></b></caption>
+        </div>
+    </div>
+
+    <body>
+        
+        <script type="text/javascript" src="work.js"></script>
+    </body>
+</html>
