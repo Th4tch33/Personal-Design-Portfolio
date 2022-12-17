@@ -4,6 +4,9 @@ let windowWidth = window.innerWidth;
 let prev;
 let current;
 
+function backToTop() {
+    document.body.scrollIntoView({behavior: "smooth",});
+}
 
 window.onload = function()
 {
@@ -13,10 +16,10 @@ window.onload = function()
         current = window.pageYOffset;
 
         if((current - prev) % 2 > 0) {
-            document.getElementById('nav').style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((current - prev) % 2 < 0) {
-            document.getElementById('nav').style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
         
         prev = current;

@@ -1,13 +1,3 @@
-/*
-Implementations:
-- Swup + DNA Capital Menu
-- From loadscreen, the user falls into the hero section with portfolio work flying past
-
-Bugs:
-
-*/
-
-//Moving Icon Variables
 let rotationSpeed = 2;
 
 let numIconsFront = 2;
@@ -129,6 +119,10 @@ function hoverOff() {
     document.getElementById('cursorIcon').style.maxWidth = 0;
 }
 
+function backToTop() {
+    document.body.scrollIntoView({behavior: "smooth",});
+}
+
 //random value generators
 function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
@@ -224,10 +218,10 @@ window.onload = function()
         mouseY += navCurrent - navPrev;
 
         if((navCurrent - navPrev) % 2 > 0) {
-            document.getElementById('nav').style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((navCurrent - navPrev) % 2 < 0) {
-            document.getElementById('nav').style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
 
         navPrev = navCurrent;

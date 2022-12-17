@@ -27,6 +27,10 @@ function hoverOff() {
     document.getElementById('cursorIcon').style.maxWidth = 0;
 }
 
+function backToTop() {
+    document.body.scrollIntoView({behavior: "smooth",});
+}
+
 window.onload = function()
 {
     document.getElementById("loadingScreen").classList.add("fadeOut");
@@ -36,10 +40,10 @@ window.onload = function()
         mouseY += current - prev;
 
         if((current - prev) % 2 > 0) {
-            document.getElementById('nav').style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((current - prev) % 2 < 0) {
-            document.getElementById('nav').style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
         
         prev = current;

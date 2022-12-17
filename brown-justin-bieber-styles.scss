@@ -4,6 +4,103 @@ $dark: #17171A;
 $green: #438806;
 $orange: #E28413; //#F0A202
 $red: #CE1126;
+$horzMarginSize: 5vw;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", sans-serif;
+}
+
+body {
+    font-size: 25px;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 6em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+p {
+    font-weight: 300;
+}
+
+.caption {
+    font-size: 0.6em;
+    font-weight: 300;
+}
+
+.white {
+    color: white;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+/*Loading Screen Styles*/
+
+#loadingScreen {
+    position: fixed;
+    text-align: center;
+    background-color: black;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+#loadingContentWrapper {
+    margin: 40vh;
+}
+
+.loadingIcon {
+    animation: loadingIcon 20s;
+    padding: 5vh;
+}
+
+@keyframes loadingIcon {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(2000deg);}
+}
+
+.fadeOut {
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeOut {
+    from {opacity: 100%;}
+    to {opacity: 0%; pointer-events: none; overflow-y: scroll;}
+}
 
 /*Multi Use Styles*/
 @mixin head {
@@ -66,44 +163,44 @@ body {
 }
 
 /*Navbar Styles*/
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 50px;
+#nav {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
 
-    font-size: 20px;
+    transition: top 0.3s;
+
+    background-color: black;
+
+    padding: 3vh $horzMarginSize 3vh $horzMarginSize;
+    z-index: 900;
+}
+
+li {
+    display: inline;
+    vertical-align: top;
+
+    margin-right: 7.5vw;
     font-weight: 500;
-    
-    .home {
-        border-bottom: 1px solid transparent;
-        border-bottom-width: 0px;
-        font-weight: 700;
-    }
+}
 
-    .home a {
-        text-decoration: none;
-        color: $red;
-    }
+#rightNav{
+    margin: 0px;
+    float: right;
+}
 
-    .pages {
-        display: flex;
-        justify-content: space-between;
-    }
+li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
 
-    .pages a {
-        margin-left: clamp(50px, 6vw, 100px);
-        text-decoration: none;
-        color: $green;
-        
-        border-bottom: 1px solid transparent;
-        border-bottom-width: 0px;
-        transition: border-bottom 0.5s;
-    
-        &:hover {
-            border-bottom: 1px solid $orange;
-            border-bottom-width: 4px;
-        }
-    }
+    transition: all 0.25s;
+}
+
+li a:hover {
+    font-size: 1em;
 }
 
 /*Content Styles*/
@@ -115,7 +212,7 @@ body {
 }
 
 .title-gif {
-    margin-top: 75px;
+    padding-top: 200px;
 }
 
 .title-gif img {
@@ -229,34 +326,50 @@ body {
 }
 
 /*Footer*/
-.footer-container {
-    @include top-margin;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    
-    background-color: $light;
+#footerContainer {
+    padding: 50px $horzMarginSize 50px $horzMarginSize;
+    background-color: $dark;
 }
 
-.footer-wrapper {
-    max-width: clamp(0px, 85% , 1920px);
+#backToTop {    
+    width: 6vw;
+    height: auto;
+    aspect-ratio: 1/1;
     margin: auto;
+    padding: auto;
     text-align: center;
+    line-height: 6vw;
+    
+    cursor: pointer;
+    background-color: $dark;
+    color: $light;
+    font-size: 4vw;
+    border-radius: 100%;
+    border: 3px solid $light;
+
+    transition: 0.25s;
 }
 
-.footer-link a{
-    @include head;
-    text-decoration: none;
+#backToTop:hover {
+    background-color: $light;
     color: $dark;
+    border: 3px solid $dark;
+}
 
-    border-bottom: 1px solid transparent;
-    border-bottom-width: 0px;
+#idWrapper{
+    display: flex;
+    width: 750px;
+    margin: 25px auto 100px auto;
+}
 
-    transition: border-bottom 0.25s;
-    
-    &:hover {
-        border-bottom: 1px solid $dark;
-        border-bottom-width: 3px;
-    }
+#idWrapper div{
+    margin: auto;
+}
+
+#captionWrapper {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: bottom;
 }
 
 @media screen and (max-width: 1200px) {

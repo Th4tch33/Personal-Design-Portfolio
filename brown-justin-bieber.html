@@ -12,20 +12,27 @@
     </head>
 
     <body>
-        <div class="content-wrapper light-wrapper">
-            <div class="nav">
-                <div class="home">
-                    <a href="https://www.cadenchan.design">cadenchan.design</a>
-                </div>
-        
-                <div class="pages">
-                    <a href="work.html">WORK</a>
-                    <a href="about.html">ABOUT</a>
-                    <a href="under-construction.html">CONTACT</a>
-                    <a href="2022-Resume-Caden-Chan.pdf">RESUME</a>
+        <div id="loadingScreen">
+            <div id="loadingContentWrapper">
+                <h3 class="white">Loading...</h3>
+                <img class="loadingIcon" src="images/loadingIcon.png" alt="loading...">
+            </div>
+        </div>
+
+        <div id="navContainer">
+            <div id="navWrapper">
+                <a href="https://www.cadenchan.design">cadenchan.design</a>
+    
+                <div id="rightNav">
+                    <a href="work.html">Work</a>
+                    <a href="about.html">About</a>
+                    <a href="under-construction.html">Contact</a>
+                    <a href="2022-Resume-Caden-Chan.pdf">Resume</a>
                 </div>
             </div>
+        </div>
 
+        <div class="content-wrapper light-wrapper">
             <div class="title-gif">
                 <img src="images/Brown-Justin-Bieber/Brown-Justin-Beiber-Title.gif">
             </div>
@@ -133,6 +140,35 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="nav-only.js"></script>
+        <div id="footerContainer">
+            <div id="backToTop" onmouseup="backToTop()">⬆</div>  
+            
+            <h1 class="center white">Stay Awesome</h1>
+
+            <div id="idWrapper">
+                <div>
+                    <a href="https://www.instagram.com/cadenchan.design/"><img width="50px" height="50px" src="images/instagram.svg" alt="Instagram Icon"></a>
+                </div>
+                
+                <div>
+                    <a href="https://www.linkedin.com/in/caden-chan/"><img width="50px" height="50px" src="images/linkedin-in.svg" alt="LinkedIn Icon"></a>
+                </div>
+                <!--
+                <div>
+                    <img width="50px" height="50px" src="images/behance.svg" alt="Behance Icon">
+                </div>
+
+                <div>
+                    <img width="50px" height="50px" src="images/dribbble.svg" alt="Dribbble Icon">
+                </div>
+                -->
+            </div>
+            <div id="captionWrapper">
+                <p class="caption white">© Caden Chan. All Rights Reserved. All Lefts Up For Grabs.</caption>
+                <p class="caption white">A website made with love by yours truely <b><i>xoxo</i></b></caption>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="basic.js"></script>
     </body>
 </html>

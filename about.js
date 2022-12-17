@@ -43,7 +43,7 @@ function getRandomBool() {
 }
 
 function createWarningImage(color, order) {    
-    let loader = document.getElementById("iconGroup");
+    let loader = document.getElementById("aboutIconGroup");
     let div = document.createElement('div');
     let img = document.createElement("IMG");
     img.setAttribute("src", "images/warning" + getRandomInt(8) + ".svg");
@@ -77,6 +77,10 @@ function hoverOff() {
     document.getElementById('cursorIcon').style.maxWidth = 0;
 }
 
+function backToTop() {
+    document.body.scrollIntoView({behavior: "smooth",});
+}
+
 window.onload = function()
 {
     iconFloor = document.documentElement.scrollHeight
@@ -87,10 +91,10 @@ window.onload = function()
         current = window.pageYOffset;
 
         if((current - prev) % 2 > 0) {
-            document.getElementById('nav').style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((current - prev) % 2 < 0) {
-            document.getElementById('nav').style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
         
         prev = current;

@@ -1,0 +1,377 @@
+/*Variables*/
+$light: #FFFDF4;
+$dark: #17171A;
+$yellow: #FEC63D;
+$navy: #0D1D3F;
+$orange: #FF9C01;
+$peri: #465678;
+$perilight: #8E9EC2;
+$blue: #53B7F2;
+$aqua: #24D0B5; 
+
+$curve: 15px;
+
+body {
+    margin: 0;
+    background-color: $navy;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Multi Use Styles*/
+@mixin content-wrapper ($p-top, $p-bottom, $m-top, $m-bottom){
+    max-width: clamp(0px, 85% , 1920px);
+    margin: auto;
+    padding-top: $p-top;
+    padding-bottom: $p-bottom;
+    margin-top: $m-top;
+    margin-bottom: $m-bottom;
+}
+
+@mixin head ($color) {
+    font-weight: 700;
+    font-size: 80px;
+    color: $color;
+
+    @media screen and (max-width: 1440px) {
+        font-size: 60px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        font-size: 50px;
+    }
+
+    @media screen and (max-device-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        font-size: 80px;
+    }
+}
+
+@mixin subhead ($color){
+    font-size: 26.667px;
+    font-weight: 500;
+    color: $color;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        font-size: 35px;
+    }
+}
+
+@mixin top-margin {
+    margin-top: 50px;
+
+    @media screen and (max-width: 1200px) {
+        margin-top: 25px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        margin-top: 75px;
+    }
+}
+
+.caption {
+    text-align: center;
+    padding-top: 10px;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: $navy;
+}
+
+/*First Section*/
+.top-section-container {
+    background-image: linear-gradient(to bottom right, white, grey);
+}
+
+.top-section-wrapper {
+    @include content-wrapper(50px, 0px, 0px, clamp(-500px, -25vw, -275px));
+}
+
+/*Navbar Styles*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+    
+    .home {
+        font-weight: 700;
+    }
+
+    .home a {
+        text-decoration: none;
+        color: $dark;
+    }
+
+    .pages {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pages a {
+        text-decoration: none;
+        color: $dark;
+        
+        margin-left: clamp(50px, 6vw, 100px);        
+        border-bottom: 1px solid transparent;
+        border-bottom-width: 0px;
+
+        transition: border-bottom 0.25s;
+        &:hover {
+            border-bottom: 1px solid $dark;
+            border-bottom-width: 3px;
+        }
+    }
+}
+
+/*Intro Graphic and Text*/
+.intro-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    margin-top: 100px;
+}
+
+.intro-wrapper img{
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+}
+
+.intro-text-wrapper {
+    margin-top: clamp(50px, 5vw, 100px);
+    margin-bottom: auto;
+
+    color: $navy;
+}
+
+.intro-head {
+    @include head ($navy);
+}
+
+.intro-subhead {
+    @include subhead ($peri);
+}
+
+.text-animation-wrapper-three {
+    @include content-wrapper (0px, 0px, 25px, 0px);
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+}
+
+.video-adjust {
+    width: 100%;
+    height: auto;
+
+    margin-top: calc(var(--order) * 100px);
+    border-radius: $curve;
+}
+
+/*Second Section*/
+.content-container {
+    background-color: $light;
+}
+
+.content-wrapper {
+    @include content-wrapper (50px, 50px, 0, 0);
+}
+
+.purpose-text-group {
+    padding-top: 500px;
+    padding-bottom: 50px;
+    width: 70%;
+    margin: auto;
+}
+
+.purpose-head {
+    margin-bottom: 25px;
+    @include head ($navy);
+}
+
+.purpose-subhead {
+    @include subhead ($peri);
+}
+
+.text-animation-wrapper-two {
+    @include content-wrapper (100px, 0px, 0px, 25px);
+    
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 150px;
+}
+
+.role-text-group {
+    padding-top: 100px;
+    width: 70%;
+    margin: auto;
+}
+
+.role-head {
+    margin-bottom: 25px;
+    @include head ($navy);
+}
+
+.role-subhead {
+    @include subhead ($peri);
+}
+
+.content-wrapper img{
+    width: 100%;
+    height: auto;
+
+    margin-top: clamp(75px, 6vw, 100px);
+    border-radius: $curve;
+}
+
+.ig-post-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+}
+
+.online-video-adjust {    
+    width: 70%;
+    aspect-ratio: 16/9;
+    margin: auto;
+    margin-top: clamp(75px, 6vw, 100px);
+    display: block;
+
+    border-radius: $curve;
+}
+
+.pump-digest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+}
+
+.pump-pod-wrapper {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+
+    background-color: $navy;
+    border-radius: $curve;
+}
+
+.pump-pod-logo{
+    width: 70%;
+    margin: auto;
+}
+
+/*Footer*/
+.footer-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    background-color: $dark;
+}
+
+.footer-wrapper {
+    max-width: clamp(0px, 85% , 1920px);
+    margin: auto;
+    text-align: center;
+}
+
+.footer-link a{
+    @include head ($light);
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 0px;
+
+    transition: border-bottom 0.25s;
+    
+    &:hover {
+        border-bottom: 1px solid $light;
+        border-bottom-width: 3px;
+    }
+}
+
+@media screen and(max-width: 1200px) {
+    .nav {
+        font-size: 16.667px;
+    }
+
+    .intro-text-wrapper {
+        margin-top: 75px;
+    }
+
+    .purpose-text-group {
+        padding-top: 300px;
+    }
+
+    .text-animation-wrapper-two {
+        @include content-wrapper (50px, 0px, 0px, 0px);
+        grid-column-gap: 100px;
+    }
+    
+    .role-text-group {
+        padding-top: 50px;
+    }
+
+    .content-wrapper img{
+        @include top-margin;
+    }
+
+    .online-video-adjust {
+        @include top-margin;
+    }
+
+    .pump-pod-wrapper {
+        @include top-margin;
+        padding-bottom: 50px;
+    }
+
+    .caption {
+        font-size: 15px;
+    }
+
+    .footer-container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (max-device-width: 481px) {
+    .purpose-text-group {
+        width: 75%;
+    }
+    
+    .nav {
+        font-size: 25px;
+        .pages a {
+            margin-left: 30px;        
+        }
+    }
+    
+    .intro-text-wrapper {
+        margin-top: 0px;
+    }
+
+    .text-animation-wrapper-three {
+        grid-column-gap: 25px;
+    }
+    
+    .text-animation-wrapper-two {
+        grid-column-gap: 75px;
+    }
+
+    .footer-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

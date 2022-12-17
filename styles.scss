@@ -13,7 +13,7 @@ body {
     font-size: 25px;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: $light;
 
     overflow-x: hidden;
 }
@@ -43,7 +43,7 @@ p {
 }
 
 .white {
-    color: white;
+    color: $light;
 }
 
 .bold {
@@ -66,7 +66,7 @@ p {
 #loadingScreen {
     position: fixed;
     text-align: center;
-    background-color: black;
+    background-color: $dark;
 
     top: 0;
     left: 0;
@@ -101,7 +101,7 @@ p {
 
 /*JS Components Styles*/
 
-#iconGroup {
+#aboutIconGroup {
     position: absolute;
     z-index: -1000;
     left: 0px;
@@ -125,56 +125,56 @@ p {
     left: 0;
     width: auto;
     height: auto;
-    background-color: black;
+    background-color: $dark;
     z-index: 200;
     white-space: nowrap;
 
-    color: white;
+    color: $light;
 }
 
-/*Real Webpage Styles*/
-#nav {
-    list-style-type: none;
+/*Navbar Styles*/
+#navContainer {
     overflow: hidden;
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 900;
+
+    background-color: $dark;
 
     transition: top 0.3s;
+}
 
-    background-color: black;
-
+#navWrapper{
+    display: flex;
     padding: 3vh $horzMarginSize 3vh $horzMarginSize;
-    z-index: 900;
 }
 
-li {
-    display: inline;
-    vertical-align: top;
-
-    margin-right: 7.5vw;
-    font-weight: 500;
-}
-
-#rightNav{
-    margin: 0px;
-    float: right;
-}
-
-li a {
-    color: white;
+a {
+    margin: 0;
+    padding: 0;
+    color: $light;
     text-decoration: none;
     font-size: 0.8em;
 
     transition: all 0.25s;
 }
 
-li a:hover {
+#rightNav{
+    display: flex;
+    margin-left: auto;
+    width: 40vw;
+    justify-content: space-between;
+}
+
+
+a:hover {
     font-size: 1em;
 }
 
+/*Webpage Styles*/
 #websiteSectionContainer {
-    margin: 15vh $horzMarginSize;
+    padding: 15vh $horzMarginSize;
 }
 
 #heroSectionWrapper {
@@ -190,7 +190,7 @@ li a:hover {
 
 #showreelContainer {
     position: relative;
-    background-color: black;
+    background-color: $dark;
     padding: 15vh $horzMarginSize;
     z-index: 100;
 }
@@ -220,7 +220,32 @@ li a:hover {
 
 #footerContainer {
     padding: 50px $horzMarginSize 50px $horzMarginSize;
-    background-color: black;
+    background-color: $dark;
+}
+
+#backToTop {    
+    width: 6vw;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    line-height: 6vw;
+    
+    cursor: pointer;
+    background-color: $dark;
+    color: $light;
+    font-size: 4vw;
+    border-radius: 100%;
+    border: 3px solid $light;
+
+    transition: 0.25s;
+}
+
+#backToTop:hover {
+    background-color: $light;
+    color: $dark;
+    border: 3px solid $dark;
 }
 
 #idWrapper{
@@ -242,7 +267,7 @@ li a:hover {
 #cursorIcon {
     max-width: 0;
     height: auto;
-    background-color: black;
+    background-color: $dark;
     position: absolute;
     transition: max-width 2s;
 }
@@ -250,7 +275,7 @@ li a:hover {
 #cursorIconH3 {
     opacity: 0%;
     margin: auto 0;
-    color: white;
+    color: $light;
     padding: 1vh 1vh 0 1vh;
     white-space: nowrap;
     transition: all 1s;
@@ -259,13 +284,17 @@ li a:hover {
 #cursorIconP {
     opacity: 0%;
     margin: auto 0;
-    color: white;
+    color: $light;
     padding: 1vh;
     white-space: nowrap;
     transition: all 1s;
 }
 
-/*About Me Styles*/
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+About Me Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
 
 #aboutMeWrapper {
     width: 60vw;
@@ -288,8 +317,8 @@ table {
 th, td{
     text-align: left;
     padding: 1vw;
-    border: 3px solid #000000;
-    background-color: white;
+    border: 3px solid $dark;
+    background-color: $light;
     white-space: nowrap;
 }
 
@@ -334,7 +363,12 @@ th, td{
     }
 }
 
-/*Under Construction*/
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Under Construction Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
 #construction-text {
     font-size: 6em;
     font-weight: 700;
@@ -367,4 +401,239 @@ th, td{
 #construction-container {
     padding: 0;
     margin: 15vh $horzMarginSize;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PuMP Showcase Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+/*Variables*/
+$light: #FFFDF4;
+$dark: #17171A;
+$yellow: #FEC63D;
+$navy: #0D1D3F;
+$orange: #FF9C01;
+$peri: #465678;
+$perilight: #8E9EC2;
+$blue: #53B7F2;
+$aqua: #24D0B5; 
+
+$curve: 15px;
+
+/*Multi Use Styles*/
+@mixin content-wrapper ($p-top, $p-bottom, $m-top, $m-bottom){
+    max-width: clamp(0px, 85% , 1920px);
+    margin: auto;
+    padding-top: $p-top;
+    padding-bottom: $p-bottom;
+    margin-top: $m-top;
+    margin-bottom: $m-bottom;
+}
+
+@mixin head ($color) {
+    font-weight: 700;
+    font-size: 80px;
+    color: $color;
+
+    @media screen and (max-width: 1440px) {
+        font-size: 60px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        font-size: 50px;
+    }
+
+    @media screen and (max-device-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        font-size: 80px;
+    }
+}
+
+@mixin subhead ($color){
+    font-size: 26.667px;
+    font-weight: 500;
+    color: $color;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        font-size: 35px;
+    }
+}
+
+@mixin top-margin {
+    margin-top: 50px;
+
+    @media screen and (max-width: 1200px) {
+        margin-top: 25px;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        margin-top: 75px;
+    }
+}
+
+.caption {
+    text-align: center;
+    padding-top: 10px;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: $navy;
+}
+
+.top-section-container {
+    background-image: linear-gradient(to bottom right, white, grey);
+}
+
+.top-section-wrapper {
+    @include content-wrapper(50px, 0px, 0px, clamp(-500px, -25vw, -275px));
+}
+
+/*Intro Graphic and Text*/
+.intro-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    margin-top: 100px;
+}
+
+.intro-wrapper img{
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+}
+
+.intro-text-wrapper {
+    margin-top: clamp(50px, 5vw, 100px);
+    margin-bottom: auto;
+
+    color: $navy;
+}
+
+.intro-head {
+    @include head ($navy);
+}
+
+.intro-subhead {
+    @include subhead ($peri);
+}
+
+.text-animation-wrapper-three {
+    @include content-wrapper (0px, 0px, 25px, 0px);
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+}
+
+.video-adjust {
+    width: 100%;
+    height: auto;
+
+    margin-top: calc(var(--order) * 100px);
+    border-radius: $curve;
+}
+
+/*Second Section*/
+.content-container {
+    background-color: $light;
+}
+
+.content-wrapper {
+    @include content-wrapper (50px, 50px, 0, 0);
+}
+
+.purpose-text-group {
+    padding-top: 500px;
+    padding-bottom: 50px;
+    width: 70%;
+    margin: auto;
+}
+
+.purpose-head {
+    margin-bottom: 25px;
+    @include head ($navy);
+}
+
+.purpose-subhead {
+    @include subhead ($peri);
+}
+
+.text-animation-wrapper-two {
+    @include content-wrapper (100px, 0px, 0px, 25px);
+    
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 150px;
+}
+
+.role-text-group {
+    padding-top: 100px;
+    width: 70%;
+    margin: auto;
+}
+
+.role-head {
+    margin-bottom: 25px;
+    @include head ($navy);
+}
+
+.role-subhead {
+    @include subhead ($peri);
+}
+
+.content-wrapper img{
+    width: 100%;
+    height: auto;
+
+    margin-top: clamp(75px, 6vw, 100px);
+    border-radius: $curve;
+}
+
+.ig-post-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+}
+
+.online-video-adjust {    
+    width: 70%;
+    aspect-ratio: 16/9;
+    margin: auto;
+    margin-top: clamp(75px, 6vw, 100px);
+    display: block;
+
+    border-radius: $curve;
+}
+
+.pump-digest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+}
+
+.pump-pod-wrapper {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+
+    background-color: $navy;
+    border-radius: $curve;
+}
+
+.pump-pod-logo{
+    width: 70%;
+    margin: auto;
 }
