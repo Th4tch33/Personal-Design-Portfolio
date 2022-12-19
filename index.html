@@ -47,8 +47,18 @@
             <div id="backIconGroup"></div>
         </div>
 
-        <div id="showreelContainer">
-            <iframe src="https://www.youtube.com/embed/I2NGzw_BQxA?modestbranding=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="showreelContainer" onmouseover="showReelHoverOn()" onmouseout="showReelHoverOff()">
+            <div id="showreelThumbnail" onmousedown="showreelStart()">
+                <img src="images/caught-red-handed.jpg">
+            </div>
+            
+            <div id="showreelVideo" onmousedown="showreelEnd()">
+                <iframe src="https://www.youtube.com/embed/I2NGzw_BQxA?modestbranding=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+                <div id="exitButton" onmousedown="showreelEnd()">
+                    <img src="images/cross.svg">
+                </div>
+            </div> 
         </div>
 
         <div id="websiteSectionContainer">
@@ -59,15 +69,15 @@
                     <a href="brown-justin-bieber.html"><img class="showcaseIMG" src="images/Thumbnails/brown-justin-bieber-thumb.png" alt="Brown Justin Beiber"></a>
                 </div>
                     
-                <div class="spotlightCardWrapper" onmouseover="hover('Home to Stay', 'Branding Material')" onmouseout="hoverOff()">
+                <div class="spotlightCardWrapper" onmouseover="hover('Home to Stay', 'Branding Material 🛠️')" onmouseout="hoverOff()">
                     <img class="showcaseIMG" src="images/Thumbnails/home-to-stay-thumb.jpg" alt="OppHub">
                 </div>
 
-                <div class="spotlightCardWrapper" onmouseover="hover('The Little Things in Life', 'Short Film')" onmouseout="hoverOff()">
+                <div class="spotlightCardWrapper" onmouseover="hover('The Little Things in Life', 'Short Film 🛠️')" onmouseout="hoverOff()">
                     <img class="showcaseIMG" src="images/Thumbnails/the-little-things-thumb.jpg" alt="Film Project">
                 </div>
 
-                <div class="spotlightCardWrapper" onmouseover="hover('Garnier Mining Co.', 'Sound Design')" onmouseout="hoverOff()">
+                <div class="spotlightCardWrapper" onmouseover="hover('Garnier Mining Co.', 'Sound Design 🛠️')" onmouseout="hoverOff()">
                     <img src="images/Thumbnails/garnier-mining-thumb.jpg" alt="Sound Proejct">
                 </div>
             </div>
@@ -103,6 +113,12 @@
         </div>
 
         <div id="cursorIcon">
+            <h3 id="cursorIconH3"></h3>
+            <p id="cursorIconP"></p>
+        </div>
+
+        <div id="cursorIcon2">
+            <img src="images/playButton.svg">
             <h3 id="cursorIconH3"></h3>
             <p id="cursorIconP"></p>
         </div>

@@ -41,6 +41,10 @@ p {
   color: #FFFDF4;
 }
 
+.black {
+  color: #17171A;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -99,8 +103,7 @@ p {
 .fadeOut {
   -webkit-animation: fadeOut 1s forwards;
           animation: fadeOut 1s forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  pointer-events: none;
 }
 
 @-webkit-keyframes fadeOut {
@@ -109,7 +112,6 @@ p {
   }
   to {
     opacity: 0%;
-    pointer-events: none;
     overflow-y: scroll;
   }
 }
@@ -120,7 +122,6 @@ p {
   }
   to {
     opacity: 0%;
-    pointer-events: none;
     overflow-y: scroll;
   }
 }
@@ -210,16 +211,61 @@ a:hover {
 #showreelContainer {
   position: relative;
   background-color: #17171A;
-  padding: 15vh 5vw;
   z-index: 100;
+  height: 110vh;
 }
 
-#showreelContainer iframe {
+#showreelThumbnail {
+  position: absolute;
+  z-index: 1;
+}
+#showreelThumbnail img {
+  width: 100vw;
+  height: 110vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#showreelVideo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16/9;
+  width: 100vw;
+  height: 110vh;
+  top: 0;
+  z-index: 0;
+}
+#showreelVideo iframe {
   display: block;
   border-style: none;
-  padding-bottom: 25px;
-  width: 100%;
+  width: 70vw;
   aspect-ratio: 16/9;
+}
+
+#exitButton {
+  align-items: baseline;
+  cursor: pointer;
+  padding-left: 3vw;
+}
+#exitButton img {
+  width: 3vw;
+  height: auto;
+}
+
+#cursorIcon2 {
+  position: absolute;
+  display: flex;
+  transition: 0.1s;
+  transition: opacity 0.25s;
+  opacity: 0%;
+  pointer-events: none;
+  z-index: 900;
+}
+#cursorIcon2 img {
+  width: 10vw;
+  height: auto;
 }
 
 #spotlightWrapper {

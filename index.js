@@ -69,6 +69,7 @@ let windowWidth = window.innerWidth;
 //Nav Bar Variables
 let navPrev;
 let navCurrent;
+let showreelActive = false;
 
 function log(message) {
     console.log(message);
@@ -102,7 +103,6 @@ function hoursFunction() {
     timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
 }
 
-
 function hover(name, work) {
     hoverState = true;
     hoverName = name;
@@ -119,8 +119,35 @@ function hoverOff() {
     document.getElementById('cursorIcon').style.maxWidth = 0;
 }
 
+function showReelHoverOn () {
+    if (showreelActive == false) {
+        document.getElementById('cursorIcon2').style.opacity = "100%";
+    }   
+}
+
+function showReelHoverOff () {
+    document.getElementById('cursorIcon2').style.opacity = "0%";
+}
+
 function backToTop() {
     document.body.scrollIntoView({behavior: "smooth",});
+}
+
+function showreelStart() {
+    showreelActive = true;
+
+    document.getElementById("showreelThumbnail").classList.add("fadeOut");
+
+    document.getElementById('navContainer').style.top = "-15vw";
+    document.getElementById('showreelVideo').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+    document.body.style.overflowY = "hidden";
+}
+
+function showreelEnd() {
+    showreelActive = false;
+
+    document.getElementById("showreelThumbnail").classList.remove("fadeOut");
+    document.body.style.overflowY = "scroll";
 }
 
 //random value generators
@@ -210,6 +237,9 @@ window.onload = function()
 
         document.getElementById('cursorIcon').style.left = mouseX + "px"
         document.getElementById('cursorIcon').style.top = mouseY + 20 +"px"
+
+        document.getElementById('cursorIcon2').style.left = mouseX + "px"
+        document.getElementById('cursorIcon2').style.top = mouseY  + "px"
     });
 
     document.addEventListener('scroll', (event) => {
@@ -220,7 +250,7 @@ window.onload = function()
         if((navCurrent - navPrev) % 2 > 0) {
             document.getElementById('navContainer').style.top = "-15vw";
         }
-        else if ((navCurrent - navPrev) % 2 < 0) {
+        else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
             document.getElementById('navContainer').style.top = "0";
         }
 
@@ -239,6 +269,9 @@ window.onload = function()
 
         document.getElementById('cursorIcon').style.left = mouseX + "px";
         document.getElementById('cursorIcon').style.top = mouseY + 20 +"px";
+
+        document.getElementById('cursorIcon2').style.left = mouseX + "px"
+        document.getElementById('cursorIcon2').style.top = mouseY  + "px"
     } )
 
     hoursFunction();
