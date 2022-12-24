@@ -1,4 +1,9 @@
-/*Unviersal Styles*/
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unviersal Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
 $light: #FFFDF4;
 $dark: #17171A;
 $horzMarginSize: 5vw;
@@ -80,7 +85,7 @@ p {
 }
 
 #loadingContentWrapper {
-    margin: 40vh;
+    margin-top: 40vh;
 }
 
 .loadingIcon {
@@ -103,13 +108,115 @@ p {
     to {opacity: 0%; overflow-y: scroll;}
 }
 
-/*JS Components Styles*/
+/*Navbar Styles*/
+#navContainer {
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 900;
 
-#aboutIconGroup {
-    position: absolute;
-    z-index: -1000;
-    left: 0px;
-    top: 0px;
+    background-color: $dark;
+
+    transition: top 0.3s;
+}
+
+#navWrapper{
+    display: flex;
+    padding: 3vh $horzMarginSize 3vh $horzMarginSize;
+
+    a {
+        margin: 0;
+        padding: 0;
+        color: $light;
+        text-decoration: none;
+        font-size: 0.8em;
+    
+        transition: all 0.25s;
+    }
+
+    a:hover {
+        font-size: 1em;
+    }
+}
+
+#rightNav{
+    display: flex;
+    margin-left: auto;
+    width: 40vw;
+    justify-content: space-between;
+}
+
+/*Footer*/
+
+#footerContainer {
+    padding: 5vh $horzMarginSize;
+    background-color: $dark;
+}
+
+#backToTop {
+    margin: auto;
+    margin-bottom: 2vh;
+    padding: auto;
+    text-align: center;
+
+    width: clamp(75px, 6vw, 100vw);
+    height: auto;
+    aspect-ratio: 1/1;
+    line-height: clamp(75px, 6vw, 100vw);
+      
+    background-color: $dark;
+    color: $light;
+    font-size: clamp(45px, 4vw, 100vw);
+    border-radius: 100%;
+    border: 3px solid $light;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#backToTop:hover {
+    background-color: $light;
+    color: $dark;
+    border: 3px solid $dark;
+}
+
+#idWrapper{
+    display: flex;
+    width: clamp(0px, 60vw, 750px);
+    margin: 3vh auto 15vh auto;
+}
+
+#idWrapper div{
+    margin: auto;
+}
+
+#captionWrapper {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: bottom;
+}
+
+/*Website Section*/
+#websiteSectionContainer {
+    padding: 15vh $horzMarginSize;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!Home Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+#heroSectionWrapper {
+    text-align: center;
+    height: 100vh;
+}
+
+#heroTextContainer {
+    position: relative;
+    padding-top: 33vh;
+    z-index: 3;
 }
 
 #hoursJSContainer {
@@ -136,62 +243,6 @@ p {
     color: $light;
 }
 
-/*Navbar Styles*/
-#navContainer {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 900;
-
-    background-color: $dark;
-
-    transition: top 0.3s;
-}
-
-#navWrapper{
-    display: flex;
-    padding: 3vh $horzMarginSize 3vh $horzMarginSize;
-}
-
-a {
-    margin: 0;
-    padding: 0;
-    color: $light;
-    text-decoration: none;
-    font-size: 0.8em;
-
-    transition: all 0.25s;
-}
-
-#rightNav{
-    display: flex;
-    margin-left: auto;
-    width: 40vw;
-    justify-content: space-between;
-}
-
-
-a:hover {
-    font-size: 1em;
-}
-
-/*Webpage Styles*/
-#websiteSectionContainer {
-    padding: 15vh $horzMarginSize;
-}
-
-#heroSectionWrapper {
-    text-align: center;
-    height: 100vh;
-}
-
-#heroTextContainer {
-    position: relative;
-    padding-top: 33vh;
-    z-index: 3;
-}
-
 #showreelContainer {
     position: relative;
     background-color: $dark;
@@ -203,12 +254,30 @@ a:hover {
     position: absolute;
     z-index: 1;
     
+    cursor: none;
+    
     img {
         width: 100vw;
         height: 110vh;
         object-fit: cover;
     }
 } 
+
+#playButton {
+    position: absolute;
+    display: flex;
+    transition: 0.15s;
+    transition: opacity 0.25s;
+    opacity: 0%;
+    pointer-events: none;
+
+    z-index: 900;
+
+    img {
+        width: 10vw;
+        height: auto;
+    }
+}
 
 #showreelVideo {
     position: absolute;
@@ -242,27 +311,11 @@ a:hover {
     }
 }
 
-#cursorIcon2 {
-    position: absolute;
-    display: flex;
-    transition: 0.1s;
-    transition: opacity 0.25s;
-    opacity: 0%;
-    pointer-events: none;
-
-    z-index: 900;
-
-    img {
-        width: 10vw;
-        height: auto;
-    }
-}
-
 #spotlightWrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     column-gap: 1vw;
-    row-gap: 1vh;
+    row-gap: 10vh;
 
     padding-top: 50px;
 }
@@ -273,81 +326,51 @@ a:hover {
     object-fit: cover;
 }
 
-#footerContainer {
-    padding: 50px $horzMarginSize 50px $horzMarginSize;
-    background-color: $dark;
-}
-
-#backToTop {    
-    width: 6vw;
-    height: auto;
-    aspect-ratio: 1/1;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-    line-height: 6vw;
-    
-    cursor: pointer;
-    background-color: $dark;
-    color: $light;
-    font-size: 4vw;
-    border-radius: 100%;
-    border: 3px solid $light;
-
-    transition: 0.25s;
-}
-
-#backToTop:hover {
-    background-color: $light;
-    color: $dark;
-    border: 3px solid $dark;
-}
-
-#idWrapper{
-    display: flex;
-    width: 750px;
-    margin: 25px auto 100px auto;
-}
-
-#idWrapper div{
-    margin: auto;
-}
-
-#captionWrapper {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: bottom;
-}
-
-#cursorIcon {
+#hoverInfo {
+    position: absolute;
     max-width: 0;
     height: auto;
+    
     background-color: $dark;
-    position: absolute;
+    
     transition: max-width 2s;
 }
 
-#cursorIconH3 {
-    opacity: 0%;
+#hoverInfoH3, #hoverInfoP {
     margin: auto 0;
-    color: $light;
     padding: 1vh 1vh 0 1vh;
-    white-space: nowrap;
-    transition: all 1s;
-}
-
-#cursorIconP {
-    opacity: 0%;
-    margin: auto 0;
+    
     color: $light;
-    padding: 1vh;
+    opacity: 0%;
+    
     white-space: nowrap;
     transition: all 1s;
 }
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-About Me Page
+!Work Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+#workWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1vw;
+    row-gap: 1vh;
+
+    padding-top: 50px;
+}
+
+.workCardWrapper img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!About Me Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
@@ -362,6 +385,13 @@ About Me Page
     p {
         width: auto;
     }
+}
+
+#aboutIconGroup {
+    position: absolute;
+    z-index: -1000;
+    left: 0px;
+    top: 0px;
 }
 
 table {
@@ -412,15 +442,22 @@ th, td{
     body {
         font-size: 20px;
     }
+    
     #heroSectionWrapper {
         margin: 25vh $horzMarginSize 30vh $horzMarginSize;
         display: block;
+    }
+
+    #workWrapper {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 0;
     }
 }
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Under Construction Page
+!Under Construction Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
@@ -460,7 +497,202 @@ Under Construction Page
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PuMP Showcase Page
+!Brown Justin Bieber Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+/*Variables*/
+$green: #438806;
+$orange: #E28413; //#F0A202
+$red: #CE1126;
+
+/*Multi Use Styles*/
+@mixin top-margin {
+    margin-top: 20vh;
+
+    @media screen and (max-width: 1200px) {
+        margin-top: 5vh;
+    }
+
+    @media screen and (max-device-width: 481px) {
+        margin-top: 5vh;
+    }
+}
+
+.bjb-content-wrapper {
+    //max-width: clamp(0px, 85%, 1920px);
+    padding: 15vh $horzMarginSize;
+
+    background-color: $dark;
+}
+
+/*Content Styles*/
+.light-wrapper{
+    background-color: $light;
+}
+
+.title-gif img {
+    object-fit: cover;
+    width: 100%;
+    height: clamp(275px, 30vw, 500px);
+}
+
+.title-subheading {
+    color: $green;
+    font-size: 3em;
+    font-weight: 700;
+
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.project-details {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    color: $green;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+#bjb-video-wrapper {
+    @include top-margin;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1vw;
+
+    h2 {
+        font-weight: 700;
+    }
+
+    iframe {       
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}
+
+#bjbVideoDescirption {
+    color: $orange;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+.full-size-image {
+    @include top-margin;
+    text-align: center;
+}
+
+.full-size-image img {
+    width: auto;
+    height: 90vh;
+}
+
+.collage-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    @include top-margin;
+
+    .left-image {   
+        grid-column: 1/2;
+    }
+    
+    .right-image {
+        
+        grid-column: 2/3;
+    }
+    
+    .collage-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.gif-line {
+    display: flex;
+    justify-content: space-between;
+
+    @include top-margin;
+}
+
+.gif-line img {
+    width: auto;
+    height: clamp(150px, 22vw, 400px);
+}
+
+.cheeto img {
+    width: auto;
+    height: clamp(125px, 22vw, 300px);
+}
+
+.lime-cross-section {
+    padding-top: 25px;
+}
+
+.lime-cross-section img {
+    width: auto;
+    height: clamp(100px, 19vw, 250px);
+}
+
+.lime img {
+    width: auto;
+    height: clamp(125px, 22vw, 300px);
+}
+
+@media screen and (max-width: 1200px) {
+    .nav {
+        font-size: 16.667px;
+    }
+    
+    .title-gif {
+        margin-top: 50px;
+    }
+
+    .title-gif img {
+        height: clamp(200px, 26vw, 300px);
+    }
+
+    .title-subheading {
+        font-size: 60px;
+    }
+    
+    .project-details {
+        font-size: 30px;
+        padding-bottom: 50px;
+    }
+
+    .paragraph {
+        font-size: 25px;    
+    }
+
+    .collage-wrapper {
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-device-width: 481px) {
+    .nav {
+        font-size: 25px;
+        .pages a {
+            margin-left: 30px;        
+        }
+    }
+
+    .footer-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!PuMP Showcase Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 

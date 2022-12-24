@@ -20,11 +20,11 @@ function hover(name, work) {
 function hoverOff() {
     hoverState = false;
 
-    document.getElementById('cursorIconH3').style.opacity = 0;
+    document.getElementById('hoverInfoH3').style.opacity = 0;
 
-    document.getElementById('cursorIconP').style.opacity = 0;
+    document.getElementById('hoverInfoP').style.opacity = 0;
 
-    document.getElementById('cursorIcon').style.maxWidth = 0;
+    document.getElementById('hoverInfo').style.maxWidth = 0;
 }
 
 function backToTop() {
@@ -50,17 +50,17 @@ window.onload = function()
 
         //activates hover title if mouse goes over showcase item using scroll
         if (hoverState == true) {
-            document.getElementById('cursorIconH3').innerHTML = hoverName;
-            document.getElementById('cursorIconH3').style.opacity = "100%";
+            document.getElementById('hoverInfoH3').innerHTML = hoverName;
+            document.getElementById('hoverInfoH3').style.opacity = "100%";
 
-            document.getElementById('cursorIconP').innerHTML = hoverDesc;
-            document.getElementById('cursorIconP').style.opacity = "100%";
+            document.getElementById('hoverInfoP').innerHTML = hoverDesc;
+            document.getElementById('hoverInfoP').style.opacity = "100%";
 
-            document.getElementById('cursorIcon').style.maxWidth = "100vw";
+            document.getElementById('hoverInfo').style.maxWidth = "100vw";
         }
 
-        document.getElementById('cursorIcon').style.left = mouseX + "px";
-        document.getElementById('cursorIcon').style.top = mouseY + 20 +"px";
+        document.getElementById('hoverInfo').style.left = mouseX + "px";
+        document.getElementById('hoverInfo').style.top = mouseY + 20 +"px";
     } )
 
     //mechanism that detects hover over showcase work
@@ -69,16 +69,16 @@ window.onload = function()
         mouseY = event.clientY + window.pageYOffset
 
         if (hoverState == true) {
-            document.getElementById('cursorIconH3').innerHTML = hoverName;
-            document.getElementById('cursorIconH3').style.opacity = "100%";
+            document.getElementById('hoverInfoH3').innerHTML = hoverName;
+            document.getElementById('hoverInfoH3').style.opacity = "100%";
 
-            document.getElementById('cursorIconP').innerHTML = hoverDesc;
-            document.getElementById('cursorIconP').style.opacity = "100%";
+            document.getElementById('hoverInfoP').innerHTML = hoverDesc;
+            document.getElementById('hoverInfoP').style.opacity = "100%";
 
-            document.getElementById('cursorIcon').style.maxWidth = "100vw";
+            document.getElementById('hoverInfo').style.maxWidth = "100vw";
         }
 
-        document.getElementById('cursorIcon').style.left = mouseX + "px"
-        document.getElementById('cursorIcon').style.top = mouseY + 20 +"px"
+        document.getElementById('hoverInfo').style.left = mouseX + "px"
+        document.getElementById('hoverInfo').style.top = mouseY + 20 +"px"
     });
 }
