@@ -1,23 +1,26 @@
-let gravity = 2;
-let iconSpeedOffset = 5;
-let numOfIcons = 100;
+let gravity = 0.5;
+let numOfIconsJump = 7;
+let jumpHeight = 15;
+let jumpHeightMax = 50;
+
+let numOfIcons = 75;
 let rotationSpeed = 3;
 let iconFloor = 0;
-let iconRange = 600;
 
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
-hoverState = false;
 let prev;
 let current;
 
 const icons = [];
 
 class iconBuilder {
-    constructor(x, y, vY, r ,vR) {
+    constructor(x, direction, vX, vY, r ,vR) {
         this.x = x;
-        this.y = y;
+        this.y = iconFloor;
+        this.direction = direction;
+        this.vX = vX;
         this.vY = vY;
         this.r = r;
         this.vR = vR;
@@ -26,16 +29,6 @@ class iconBuilder {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
-}
-
-function getRandomIntRange(min, max) {
-    let rand = Math.floor(Math.random() * max);
-
-    while (rand < min) {
-        rand = Math.floor(Math.random() * max);
-    }
-    
-    return rand;
 }
 
 function getRandomBool() {
@@ -61,21 +54,6 @@ function createWarningImage(color, order) {
     document.body.appendChild(loader);
 }
 
-function hover(name, work) {
-    hoverState = true;
-    hoverName = name;
-    hoverDesc = work;
-}
-
-function hoverOff() {
-    hoverState = false;
-
-    document.getElementById('cursorIconH3').style.opacity = 0;
-
-    document.getElementById('cursorIconP').style.opacity = 0;
-
-    document.getElementById('cursorIcon').style.maxWidth = 0;
-}
 
 function backToTop() {
     document.body.scrollIntoView({behavior: "smooth",});
@@ -83,7 +61,7 @@ function backToTop() {
 
 window.onload = function()
 {
-    iconFloor = document.documentElement.scrollHeight
+    iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
 
     document.getElementById("loadingScreen").classList.add("fadeOut");
 
@@ -102,7 +80,7 @@ window.onload = function()
 
     for(let i = 0; i < numOfIcons; i++) {
         createWarningImage(getRandomInt(9), i);
-        icons[i] = new iconBuilder(getRandomIntRange(windowWidth - iconRange, windowWidth), getRandomInt(iconFloor), -getRandomInt(iconSpeedOffset), getRandomInt(360), getRandomInt(rotationSpeed));
+        icons[i] = new iconBuilder(getRandomInt(windowWidth),getRandomBool(), getRandomInt(5), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
     }
     
 
@@ -110,21 +88,38 @@ window.onload = function()
     {
         windowHeight = window.innerHeight;
         windowWidth = window.innerWidth;
-        iconFloor = document.documentElement.scrollHeight;
+        iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
 
         for(let i = 0; i < numOfIcons; i++) {
             let focusDiv = document.getElementById("div" + i);
 
             icons[i].y -= icons[i].vY - gravity;
-            icons[i].r += icons[i].vR; 
+            icons[i].vY -= gravity;
+
+            if(icons[i].direction == true) {
+                icons[i].x += icons[i].vX;
+                icons[i].r += icons[i].vR; 
+            }
+
+            else {
+                icons[i].x -= icons[i].vX;
+                icons[i].r -= icons[i].vR; 
+            }
             
             focusDiv.style.left = icons[i].x + 'px';
             focusDiv.style.top = icons[i].y + 'px';
             focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
 
-            if(icons[i].y > iconFloor - 100){
-                icons[i].y = 0;
-                icons[i].x = getRandomIntRange(windowWidth - iconRange, windowWidth);
+            if(icons[i].y > iconFloor){
+                if(i < numOfIconsJump) {
+                    icons[i].vY = getRandomInt(jumpHeightMax);
+                    icons[i].x = getRandomInt(windowWidth);
+                }
+                else {
+                    icons[i].vY = getRandomInt(jumpHeight);
+                    icons[i].x = getRandomInt(windowWidth);
+                }
+                
             }
         }       
     }, 10);

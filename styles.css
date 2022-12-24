@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 400;
 }
 
@@ -34,6 +34,10 @@ h3 {
 
 p {
   font-weight: 300;
+}
+
+a {
+  text-decoration: none;
 }
 
 .caption {
@@ -63,6 +67,22 @@ p {
 
 .right {
   text-align: right;
+}
+
+.button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1vh;
+  background-color: #17171A;
+  color: #FFFDF4;
+  border: 3px solid #17171A;
+  transition: 0.25s;
+}
+
+.button:hover {
+  background-color: #FFFDF4;
+  color: #17171A;
 }
 
 /*Loading Screen Styles*/
@@ -159,7 +179,7 @@ p {
 #rightNav {
   display: flex;
   margin-left: auto;
-  width: 40vw;
+  width: 25vw;
   justify-content: space-between;
 }
 
@@ -228,6 +248,9 @@ p {
   position: relative;
   padding-top: 33vh;
   z-index: 3;
+}
+#heroTextContainer h2 {
+  font-size: 2em;
 }
 
 #hoursJSContainer {
@@ -374,16 +397,50 @@ p {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 #aboutMeWrapper {
-  width: 60vw;
-  padding: 10vh 0;
+  width: 70vw;
+  margin: auto;
+  margin-bottom: 20vh;
+  text-align: center;
 }
 #aboutMeWrapper h1 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  line-height: 1em;
+}
+#aboutMeWrapper img {
+  width: auto;
+  height: 60vh;
+  padding-bottom: 5vh;
 }
 #aboutMeWrapper p {
   width: auto;
+}
+
+#aboutMeText {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 2vw;
+       column-gap: 2vw;
+  padding-top: 5vh;
+  text-align: left;
+}
+
+#aboutMeExperience {
+  padding-top: 30vh;
+  text-align: left;
+}
+#aboutMeExperience h1 {
+  padding-bottom: 5vh;
+}
+
+#experienceList {
+  display: grid;
+  justify-content: right;
+}
+
+.experienceListItem {
+  padding: 5vh 0;
+}
+.experienceListItem h3 {
+  padding-bottom: 2.5vh;
 }
 
 #aboutIconGroup {
