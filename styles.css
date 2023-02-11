@@ -70,7 +70,6 @@ a {
 }
 
 .button {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 1vh;
@@ -102,18 +101,8 @@ a {
 }
 
 .loadingIcon {
-  -webkit-animation: loadingIcon 20s;
-          animation: loadingIcon 20s;
+  animation: loadingIcon 20s;
   padding: 5vh;
-}
-
-@-webkit-keyframes loadingIcon {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(2000deg);
-  }
 }
 
 @keyframes loadingIcon {
@@ -125,19 +114,8 @@ a {
   }
 }
 .fadeOut {
-  -webkit-animation: fadeOut 1s forwards;
-          animation: fadeOut 1s forwards;
+  animation: fadeOut 1s forwards;
   pointer-events: none;
-}
-
-@-webkit-keyframes fadeOut {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-    overflow-y: scroll;
-  }
 }
 
 @keyframes fadeOut {
@@ -1014,3 +992,48 @@ th, td {
   width: 70%;
   margin: auto;
 }/*# sourceMappingURL=styles.css.map */
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!Contact Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+#contactHead {
+  font-size: 6em;
+  font-weight: 700;
+  text-align: center;
+}
+
+#contactSubHead {
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+}
+
+#socialAnimIconContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+#animIconWrapper {
+  text-align: center;
+}
+
+#animIconWrapper video{
+  width: 15vw;
+}
+
+#contactMail {
+  font-weight: 700;
+  text-align: center;
+}
+
+#contactMail a{
+  text-decoration: none;
+  color: #17171A;
+  font-weight: 500;
+}

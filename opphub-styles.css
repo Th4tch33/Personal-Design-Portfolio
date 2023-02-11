@@ -143,8 +143,7 @@ body {
 
 .large-bg-text {
   margin: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   font-weight: 700;
   font-size: 23vw;
 }
