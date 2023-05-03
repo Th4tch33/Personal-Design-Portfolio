@@ -154,10 +154,56 @@ a {
   height: auto;
 }
 
+.threeGridImage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 3vh;
+  grid-column-gap: 3vh;
+  padding-top: 3vh;
+}
+
+.threeGridImage img {
+  width: 100%;
+  height: auto;
+}
+
+.fourGridImage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 3vh;
+  grid-column-gap: 3vh;
+  padding-top: 3vh;
+}
+
+.fourGridImage img {
+  width: 100%;
+  height: auto;
+}
+
 .sectionHead {
   font-size: 6em;
   font-weight: 700;
   margin-top: 15vh;
+}
+
+.sectionSubHead {
+  font-size: 3em;
+  font-weight: 700;
+  margin-top: 15vh;
+}
+
+.imageAndParagraph {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3vh;
+  margin-top: 15vh;
+}
+
+.imageAndParagraph img {
+  width: 100%;
+  height: auto;
 }
 
 #websiteSectionContainer {
@@ -165,6 +211,7 @@ a {
 }
 
 #loadingScreen {
+  font-family: "Sora", sans-serif;
   position: fixed;
   text-align: center;
   background-color: #17171A;
@@ -207,6 +254,7 @@ a {
   }
 }
 #navContainer {
+  font-family: "Sora", sans-serif;
   overflow: hidden;
   position: fixed;
   width: 100vw;
@@ -240,6 +288,7 @@ a {
 }
 
 #footerContainer {
+  font-family: "Sora", sans-serif;
   padding: 5vh 5vw;
   background-color: #17171A;
 }
@@ -1121,39 +1170,6 @@ a {
   font-style: normal;
 }
 
-/*Navbar Styles*/
-.nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  font-weight: 500;
-}
-.nav .home {
-  border-bottom: 1px solid transparent;
-  border-bottom-width: 0px;
-  font-weight: 700;
-}
-.nav .home a {
-  text-decoration: none;
-  color: #17171A;
-}
-.nav .pages {
-  display: flex;
-  justify-content: space-between;
-}
-.nav .pages a {
-  margin-left: clamp(50px, 6vw, 100px);
-  text-decoration: none;
-  color: #17171A;
-  border-bottom: 1px solid transparent;
-  border-bottom-width: 0px;
-  transition: border-bottom 0.5s;
-}
-.nav .pages a:hover {
-  border-bottom: 1px solid #17171A;
-  border-bottom-width: 4px;
-}
-
 /*Starting Section*/
 .opphub-initial-design {
   text-align: center;
@@ -1303,4 +1319,48 @@ a {
     grid-column: 1/2;
     text-align: center;
   }
+}
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!Fundmentals First Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+#funFirst {
+  font-family: "Work Sans", sans-serif;
+  background-color: #ffffff;
+}
+
+#funFirstIntroGraphic img {
+  width: 100%;
+  height: auto;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!Start Your Day With Sun
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+#startWithSunIntroGraphic {
+  width: 100%;
+  height: auto;
+}
+
+#startWithSunTitle {
+  font-size: 6em;
+  font-weight: 700;
+}
+
+#startWithSunInfoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10vw 5vw;
+  width: 90vw;
+  height: 90vw;
+}
+
+.startWithSunIntroInfoContainer {
+  position: absolute;
+  bottom: 20vw;
+  width: 90vw;
 }/*# sourceMappingURL=styles.css.map */
