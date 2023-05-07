@@ -5,6 +5,7 @@ let numIconsMid = 5;
 let numIconsBack = 15;
 let numIconsFarBack = 45;
 let numOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
+let iconXSpawnOverflow = 200;
 
 let initialFallMax = 5;
 let initialFallMin = 2;
@@ -286,7 +287,7 @@ window.onload = function()
         //DOMs in large icons
         if (i < numIconsFront){
             //x, y, direction, vY, r, vR, s
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconFrontSize, getRandomInt(360), getRandomInt(rotationSpeed), iconFrontSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconFrontSize, getRandomInt(360), getRandomInt(rotationSpeed), iconFrontSize);
         
             //color, order, size, x
             createWarningImage(getRandomInt(9), i, iconFrontSize, icons[i].x);
@@ -294,7 +295,7 @@ window.onload = function()
 
         //DOMs in medium icons
         else if (i < numIconsMid + numIconsFront){
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomInt(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
             
             createWarningImage(getRandomInt(9), i, iconMidSize, icons[i].x);
         }
@@ -302,14 +303,14 @@ window.onload = function()
         //DOMs in small icons
         else if (i < numIconsBack + numIconsMid + numIconsFront){
             
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
             
             createWarningImage(getRandomInt(9), i, iconBackSize, icons[i].x);
         }
 
         //DOMs in extra small icons
         else {
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + 200, -200), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
             
             createWarningImage(getRandomInt(9), i, iconFarBackSize, icons[i].x);
         }
@@ -345,7 +346,7 @@ window.onload = function()
                 if(icons[i].y > iconFloor){
                     icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
                     icons[i].y = iconCeiling;
-                    icons[i].x = getRandomIntRange(windowWidth + 200, -200);
+                    icons[i].x = getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow);
                 }
             }
         }

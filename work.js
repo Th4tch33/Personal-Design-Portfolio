@@ -11,6 +11,9 @@ let hoverDesc = null;
 let prev;
 let current;
 
+let mobileOffset = 0;
+let mobileThumbnailHighlight = 1;
+
 function hover(name, work) {
     hoverState = true;
     hoverName = name;
@@ -48,6 +51,9 @@ window.onload = function()
         
         prev = current;
 
+        //used to track scroll offset for mobile
+        mobileOffset += current - prev;
+
         //activates hover title if mouse goes over showcase item using scroll
         if (hoverState == true) {
             document.getElementById('hoverInfoH3').innerHTML = hoverName;
@@ -59,14 +65,44 @@ window.onload = function()
             document.getElementById('hoverInfo').style.maxWidth = "100vw";
         }
 
-        document.getElementById('hoverInfo').style.left = mouseX + "px";
-        document.getElementById('hoverInfo').style.top = mouseY + 20 +"px";
+        //Prevents mouse related events from effecting element on mobile
+        if (screen.width > 768) {
+            document.getElementById('hoverInfo').style.left = mouseX + "px"
+            document.getElementById('hoverInfo').style.top = mouseY + 20 +"px"
+        }
+
+        //changes the thumbnail that will receive a caption based on screen location
+        if (mobileThumbnailHighlight + 1 < 12 && document.getElementById(mobileThumbnailHighlight + 1).getBoundingClientRect().top <= screen.height / 2) {
+            mobileThumbnailHighlight++;
+        }
+
+        if (mobileThumbnailHighlight - 1 > 0 && document.getElementById(mobileThumbnailHighlight - 1).getBoundingClientRect().top >= screen.height / 3) {
+            mobileThumbnailHighlight--;
+        }
+
+        //mechanism that replaces hover when mobile is active
+        if (screen.width <= 768) {
+            const mouseoverEvent = new Event('mouseover');
+
+            document.getElementById(mobileThumbnailHighlight).dispatchEvent(mouseoverEvent);
+            
+            document.getElementById('hoverInfo').style.left = "5vw";
+            document.getElementById('hoverInfo').style.top = mobileOffset + document.getElementById(mobileThumbnailHighlight).offsetTop + "px";
+
+            document.getElementById('hoverInfoH3').innerHTML = hoverName;
+            document.getElementById('hoverInfoH3').style.opacity = "100%";
+
+            document.getElementById('hoverInfoP').innerHTML = hoverDesc;
+            document.getElementById('hoverInfoP').style.opacity = "100%";
+
+            document.getElementById('hoverInfo').style.maxWidth = "100vw";
+        }
     } )
 
     //mechanism that detects hover over showcase work
     document.addEventListener('mousemove', (event) => {  
         mouseX = event.clientX;
-        mouseY = event.clientY + window.pageYOffset
+        mouseY = event.clientY + window.pageYOffset;
 
         if (hoverState == true) {
             document.getElementById('hoverInfoH3').innerHTML = hoverName;
@@ -78,7 +114,9 @@ window.onload = function()
             document.getElementById('hoverInfo').style.maxWidth = "100vw";
         }
 
-        document.getElementById('hoverInfo').style.left = mouseX + "px"
-        document.getElementById('hoverInfo').style.top = mouseY + 20 +"px"
+        if (screen.width > 768) {
+            document.getElementById('hoverInfo').style.left = mouseX + "px"
+            document.getElementById('hoverInfo').style.top = mouseY + 20 +"px"
+        }
     });
 }

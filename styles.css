@@ -106,7 +106,10 @@ a {
 }
 @media screen and (max-device-width: 481px) {
   h1 {
-    font-size: 5em;
+    font-size: 4em;
+  }
+  h3 {
+    font-size: 1.5em;
   }
 }
 /*
@@ -320,7 +323,7 @@ a {
 #idWrapper {
   display: flex;
   width: clamp(0px, 60vw, 750px);
-  margin: 3vh auto 15vh auto;
+  margin: 5vh auto;
 }
 #idWrapper div {
   margin: auto;
@@ -330,6 +333,8 @@ a {
   display: flex;
   justify-content: space-between;
   vertical-align: bottom;
+  -moz-column-gap: 10vw;
+       column-gap: 10vw;
 }
 
 @media screen and (max-device-width: 768px) {
@@ -344,7 +349,15 @@ a {
 }
 @media screen and (max-device-width: 481px) {
   #websiteSectionContainer {
-    padding: 5vh 5vw;
+    padding: 10vh 5vw;
+  }
+  #idWrapper {
+    width: 100%;
+  }
+  #captionWrapper {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: bottom;
   }
 }
 /*
@@ -469,13 +482,13 @@ a {
   position: absolute;
   max-width: 0;
   height: auto;
+  padding: 1vh;
   background-color: #17171A;
   transition: max-width 2s;
 }
 
 #hoverInfoH3, #hoverInfoP {
   margin: auto 0;
-  padding: 1vh 1vh 0 1vh;
   color: #FFFDF4;
   opacity: 0%;
   white-space: nowrap;
@@ -523,7 +536,7 @@ a {
   -moz-column-gap: 1vw;
        column-gap: 1vw;
   row-gap: 1vh;
-  padding-top: 50px;
+  padding-top: 5vh;
 }
 
 .workCardWrapper img {
@@ -538,7 +551,7 @@ a {
     grid-template-columns: 1fr;
     -moz-column-gap: 0;
          column-gap: 0;
-    row-gap: 0;
+    row-gap: 2vh;
   }
 }
 /*

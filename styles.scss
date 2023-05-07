@@ -116,7 +116,11 @@ a {
 
 @media screen and (max-device-width: 481px) {
     h1 {
-        font-size: 5em;
+        font-size: 4em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
     }
 }
 
@@ -365,7 +369,7 @@ a {
 #idWrapper{
     display: flex;
     width: clamp(0px, 60vw, 750px);
-    margin: 3vh auto 15vh auto;
+    margin: 5vh auto;
 
     div{
         margin: auto;
@@ -376,6 +380,8 @@ a {
     display: flex;
     justify-content: space-between;
     vertical-align: bottom;
+
+    column-gap: 10vw;
 }
 
 @media screen and (max-device-width: 768px) {
@@ -392,7 +398,17 @@ a {
 
 @media screen and (max-device-width: 481px) {
     #websiteSectionContainer {
-        padding: 5vh $horzMarginSize;
+        padding: 10vh $horzMarginSize;
+    }
+
+    #idWrapper{
+        width: 100%;
+    }
+
+    #captionWrapper {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: bottom;
     }
 }
 
@@ -528,6 +544,7 @@ a {
     position: absolute;
     max-width: 0;
     height: auto;
+    padding: 1vh;
     
     background-color: $dark;
     
@@ -536,7 +553,6 @@ a {
 
 #hoverInfoH3, #hoverInfoP {
     margin: auto 0;
-    padding: 1vh 1vh 0 1vh;
     
     color: $light;
     opacity: 0%;
@@ -594,7 +610,7 @@ a {
     column-gap: 1vw;
     row-gap: 1vh;
 
-    padding-top: 50px;
+    padding-top: 5vh;
 }
 
 .workCardWrapper img {
@@ -607,7 +623,7 @@ a {
     #workWrapper {
         grid-template-columns: 1fr;
         column-gap: 0;
-        row-gap: 0;
+        row-gap: 2vh;
     }
 }
 
