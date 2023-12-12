@@ -5,6 +5,7 @@ import Contact from "./pages/Contact.tsx";
 import Footer from "./components/Footer.tsx";
 
 import "./ts/home.ts";
+import "./ts/test.ts";
 
 import "./css/styles.css";
 
