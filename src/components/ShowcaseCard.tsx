@@ -14,8 +14,10 @@ function ShowcaseCard({ title, subTitle, para, link, img, alt }: Props) {
         <h3>{title}</h3>
         <p>
           <i>{subTitle}</i>
+          <br />
+          <br />
+          {para}
         </p>
-        <p>{para}</p>
       </div>
 
       <div className="spotlightCardWrapper">

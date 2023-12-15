@@ -1,9 +1,8 @@
-import "../ts/about.ts";
-
 function About() {
   return (
     <>
-      <div id="aboutIconGroup"></div>
+      <div id="frontIconGroup"></div>
+      <div id="backIconGroup"></div>
 
       <div id="websiteSectionContainer">
         <div id="aboutMeWrapper">

@@ -1,5 +1,3 @@
-import "../ts/basic.ts";
-
 function Contact() {
   return (
     <>

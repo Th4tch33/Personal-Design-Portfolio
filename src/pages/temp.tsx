@@ -1,14 +1,21 @@
-import LoadingScreen from "../components/LoadingScreen.tsx";
 import ShowcaseCard from "../components/ShowcaseCard.tsx";
+import LoadingScreen from "../components/LoadingScreen.tsx";
 
-import { showReelHoverOn } from "../ts/Home.ts";
-import { showReelHoverOff } from "../ts/Home.ts";
-import { showreelStart } from "../ts/Home.ts";
-import { showreelEnd } from "../ts/Home.ts";
+import { showreelStart } from "../ts/temp.ts";
+import { showreelEnd } from "../ts/temp.ts";
+import { showReelHoverOn } from "../ts/temp.ts";
+import { showReelHoverOff } from "../ts/temp.ts";
 
-function Gnome() {
+function Home() {
   return (
     <>
+      <LoadingScreen />
+
+      <div id="bouncingBomb">
+        <h3>Showreel 2023</h3>
+        <p>Here's what I'm all about</p>
+      </div>
+
       <div id="heroSectionWrapper">
         <div id="frontIconGroup"></div>
         <div id="heroTextContainer">
@@ -22,11 +29,6 @@ function Gnome() {
           </div>
         </div>
         <div id="backIconGroup"></div>
-      </div>
-
-      <div id="bouncingBomb">
-        <h3>Showreel 2023</h3>
-        <p>Here's what I'm all about</p>
       </div>
 
       <div
@@ -102,4 +104,4 @@ function Gnome() {
   );
 }
 
-export default Gnome;
+export default Home;

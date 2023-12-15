@@ -1,15 +1,6 @@
 //0=home, 1=about, 2=contact
 let activePage: number;
 
-//NavBar Variables
-let navPrev: number;
-let navCurrent: number;
-let showreelActive = false;
-
-//Hour Calculator Variables
-let hoursDots = "";
-let timeSinceLaunch: number;
-
 //Icon Home Screen Variables
 const numIconsFront = 2;
 const numIconsMid = 4;
@@ -27,9 +18,9 @@ let prevMouseX: number;
 let influenceAnchor = 0;
 
 const homeNumOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
-const homeRotationSpeed = 1.5;
+const homeRotationSpeed = 2;
 
-//Icon About Screen Variables
+/*//Icon About Screen Variables
 let prev: number;
 let current;
 
@@ -39,7 +30,7 @@ const jumpHeight = 15;
 const jumpHeightMax = 50 ;
 
 const aboutNumOfIcons = 25;
-const aboutRotationSpeed = 3;
+const aboutRotationSpeed = 3;*/
 
 //Shared Icon Variables
 let rotationSpeed: number;
@@ -60,7 +51,7 @@ class iconBuilder {
     vR: number;
     s: number;
 
-    constructor(x: number, y: number, direction: boolean, vX: number, vY: number , r: number , vR: number, s: number) {
+    constructor(x: number, y: number, direction: boolean, vY: number, vX: number, r: number , vR: number, s: number) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -71,13 +62,6 @@ class iconBuilder {
         this.s = s
     }
 }
-
-//Showcase Hover Title Variables
-let mouseX = 0;
-let mouseY = 0;
-
-//Window Dimension Variables
-const windowWidth = window.innerWidth;
 
 //Bouncing Showcase Title Variables
 let bombX: number;
@@ -92,10 +76,28 @@ let bombWindowBottom: number;
 let bombWidth: number;
 let bombHeight: number;
 
+//Hour Calculator Variables
+let hoursDots = "";
+let timeSinceLaunch: number;
+
+//Showcase Hover Title Variables
+let mouseX = 0;
+let mouseY = 0;
+
+//Window Dimension Variables
+const windowWidth = window.innerWidth;
+
+//NavBar Variables
+let navPrev: number;
+let navCurrent: number;
+let showreelActive = false;
+
+function log(message: string) {
+    console.log(message);
+}
+
 function activePageCheck(n: number) {
     activePage = n;
-
-    console.log("hambone page #" + activePage);
 }
 
 export { activePageCheck };
@@ -118,6 +120,7 @@ function variableInitialization() {
     bombWindowBottom = bombWindowBounds.bottom + scrollY;
 }
 
+
 //calculates hours between today and birthday
 function hoursFunction() {
     const launchDate = new Date("2003-09-02 20:00:00");
@@ -130,6 +133,7 @@ function hoursFunction() {
 
     timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
 }
+
 
 function showReelHoverOn () {
     if (showreelActive == false) {
@@ -146,6 +150,8 @@ function showReelHoverOff () {
 export { showReelHoverOff };
 
 function showreelStart() {
+    log("initialization");
+
     showreelActive = true;
 
     document.getElementById("showreelThumbnail")!.classList.add("fadeOut");
@@ -165,6 +171,19 @@ function showreelEnd() {
 }
 
 export { showreelEnd };
+
+//random value generators
+function getRandomInt(max:number) {
+    return Math.floor(Math.random() * max + 1);
+}
+
+function getRandomIntRange(max:number, min:number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomBool() {
+    return Math.random() < 0.5;
+}
 
 //creates <img> elements using DOM methods
 function createWarningImage(type: number, order:number, size:number, x:number) { 
@@ -223,84 +242,12 @@ function heroMouseInfluence() {
     prevMouseX = currentMouseX;
 }
 
-//random value generators
-function getRandomInt(max:number) {
-    return Math.floor(Math.random() * max + 1);
-}
-
-function getRandomIntRange(max:number, min:number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function getRandomBool() {
-    return Math.random() < 0.5;
-}
-
-function buildIcons () {
-    
-    if (activePage == 0) {
-        numOfIcons = homeNumOfIcons;
-        rotationSpeed = homeRotationSpeed;
-    }
-    else if (activePage == 1) {
-        numOfIcons = aboutNumOfIcons;
-        rotationSpeed = aboutRotationSpeed;
-    }
-    
-    //DOMs in all icons and initializes parameters
-    for(let i = 0; i < numOfIcons; i++) {
-            
-        //DOMs in large icons
-        if (i < numIconsFront){
-            //x, y, direction, vX, vY, r, vR, s
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
-
-            //color, order, size, x
-            createWarningImage(getRandomInt(2), i, iconFrontSize, icons[i].x);
-        }
-
-        //DOMs in medium icons
-        else if (i < numIconsMid + numIconsFront){
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
-            
-            createWarningImage(getRandomInt(2), i, iconMidSize, icons[i].x);
-        }
-
-        //DOMs in small icons
-        else if (i < numIconsBack + numIconsMid + numIconsFront){
-            
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
-            
-            createWarningImage(getRandomInt(2), i, iconBackSize, icons[i].x);
-        }
-
-        //DOMs in extra small icons
-        else {
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
-            
-            createWarningImage(getRandomInt(2), i, iconFarBackSize, icons[i].x);
-        }
-    }
-}
-
-export { buildIcons };
-
-//Deletes all icons
-function deleteActiveIcons () {
-    for(let i = 0; i < numOfIcons; i++) {
-        document.getElementById("icon" + i)?.remove();
-    }
-}
-
-export { deleteActiveIcons };
-
 window.onload = function()
 {
-    console.log("hambone .ts");
+    log("initialization");
 
-    //moves nav bar of screen when scrolling down
     document.addEventListener('scroll', () => {
-        
+        //moves nav bar of screen when scrolling down
         navCurrent = window.pageYOffset;
 
         if((navCurrent - navPrev) % 2 > 0) {
@@ -312,7 +259,7 @@ window.onload = function()
 
         navPrev = navCurrent; 
     } );
-
+    
     //mechanism that detects hover over showcase work
     document.addEventListener('mousemove', (event) => {  
 
@@ -324,24 +271,64 @@ window.onload = function()
         
     });
 
+    
     document.addEventListener('scroll', () => {      
  
         document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
         document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
         
-    } ) 
-
+    } )
+    
     hoursFunction();
     variableInitialization();
 
     //removes loading screen
     document.getElementById("loadingScreen")!.classList.add("fadeOut");
 
-
     if (activePage == 0) {
+
+        numOfIcons = homeNumOfIcons;
+        rotationSpeed = homeRotationSpeed;
+
+
+        //DOMs in all icons and initializes parameters
+        for(let i = 0; i < numOfIcons; i++) {
+            
+            //DOMs in large icons
+            if (i < numIconsFront){
+                //x, y, direction, vX, vY, r, vR, s
+                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+
+                //color, order, size, x
+                createWarningImage(getRandomInt(2), i, iconFrontSize, icons[i].x);
+            }
+
+            //DOMs in medium icons
+            else if (i < numIconsMid + numIconsFront){
+                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+                
+                createWarningImage(getRandomInt(2), i, iconMidSize, icons[i].x);
+            }
+
+            //DOMs in small icons
+            else if (i < numIconsBack + numIconsMid + numIconsFront){
+                
+                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+                
+                createWarningImage(getRandomInt(2), i, iconBackSize, icons[i].x);
+            }
+
+            //DOMs in extra small icons
+            else {
+                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
+                
+                createWarningImage(getRandomInt(2), i, iconFarBackSize, icons[i].x);
+            }
+        }
+
         setInterval(function()
         {
-
+    
             heroMouseInfluence();
 
             //updates positions of all icons
@@ -364,7 +351,6 @@ window.onload = function()
                     //applies changes to html element
                     focusDiv!.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
                     focusDiv!.style.top = icons[i].y + 'px';
-
                     focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)";
         
                     //resets icons once they hit the ground
@@ -375,6 +361,7 @@ window.onload = function()
                     }
                 }
             }
+
             
             //Bomb Bouncing Code
             bombX += bombXSpeed;
@@ -404,6 +391,7 @@ window.onload = function()
         //animates dots at end of JS hours component
         setInterval(function()
         {
+    
             if(hoursDots.length == 0) {
                 hoursDots = ".";
             }
@@ -421,3 +409,77 @@ window.onload = function()
         }, 750);
     }
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*
+window.onload = function()
+{
+    iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+
+    document.getElementById("loadingScreen")!.classList.add("fadeOut");
+
+    document.addEventListener('scroll', () => {
+        current = window.pageYOffset;
+
+        if((current - prev) % 2 > 0) {
+            document.getElementById('navContainer')!.style.top = "-15vw";
+        }
+        else if ((current - prev) % 2 < 0) {
+            document.getElementById('navContainer')!.style.top = "0";
+        }
+        
+        prev = current;
+    } )
+
+    for(let i = 0; i < numOfIcons; i++) {
+        createWarningImage(getRandomInt(9), i);
+        icons[i] = new iconBuilder(getRandomInt(windowWidth),getRandomBool(), getRandomInt(5), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
+    }
+    
+
+    setInterval(function()
+    {
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+        iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+
+        for(let i = 0; i < numOfIcons; i++) {
+            const focusDiv = document.getElementById("div" + i);
+
+            icons[i].y -= icons[i].vY - gravity;
+            icons[i].vY -= gravity;
+
+            if(icons[i].direction == true) {
+                icons[i].x += icons[i].vX;
+                icons[i].r += icons[i].vR; 
+            }
+
+            else {
+                icons[i].x -= icons[i].vX;
+                icons[i].r -= icons[i].vR; 
+            }
+            
+            focusDiv!.style.left = icons[i].x + 'px';
+            focusDiv!.style.top = icons[i].y + 'px';
+            focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)"
+
+            if(icons[i].y > iconFloor){
+                if(i < numOfIconsJump) {
+                    icons[i].vY = getRandomInt(jumpHeightMax);
+                    icons[i].x = getRandomInt(windowWidth);
+                }
+                else {
+                    icons[i].vY = getRandomInt(jumpHeight);
+                    icons[i].x = getRandomInt(windowWidth);
+                }
+                
+            }
+        }       
+    }, 10);
+}
+*/

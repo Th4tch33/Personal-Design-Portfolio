@@ -2,11 +2,10 @@ import NavBar from "./components/NavBar.tsx";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+
 import Footer from "./components/Footer.tsx";
 
-import "./ts/home.ts";
-import "./ts/test.ts";
-
+import "./ts/Home.ts";
 import "./css/styles.css";
 
 import { Route, Routes } from "react-router-dom";
