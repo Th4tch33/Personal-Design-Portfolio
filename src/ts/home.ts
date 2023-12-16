@@ -1,5 +1,8 @@
 //0=home, 1=about, 2=contact
-let activePage: number;
+let activePage = 0;
+
+let runHomeBehavior: any;
+let runjsHourUpdater: any;
 
 //NavBar Variables
 let navPrev: number;
@@ -92,31 +95,94 @@ let bombWindowBottom: number;
 let bombWidth: number;
 let bombHeight: number;
 
-function activePageCheck(n: number) {
-    activePage = n;
-
-    console.log("hambone page #" + activePage);
+function l(n) {
+    console.log(n)
 }
 
-export { activePageCheck };
+function activePageCheck(n: string) {
+    deleteActiveIcons();
 
-function variableInitialization() {
+    if(n == "/") {
+        activePage = 0;
+        numOfIcons = homeNumOfIcons;
+        rotationSpeed = homeRotationSpeed;
+
+        iconFloor = document.getElementById("showreelContainer")!.getBoundingClientRect().top + scrollY - 10;
+        bomb = document.getElementById("bouncingBomb");
+
+        bombWidth = bomb!.getBoundingClientRect().width;
+        bombHeight = bomb!.getBoundingClientRect().height;
+
+        bombWindowBounds = document.getElementById("showreelContainer")!.getBoundingClientRect();
+        bombX = 1;
+        bombY = bombWindowBounds.top + scrollY + 10;
+        bombWindowTop = bombWindowBounds.top + scrollY;
+        bombWindowBottom = bombWindowBounds.bottom + scrollY;
+    }
+    else if(n == "/about") {
+        activePage = 1;
+        numOfIcons = 0;
+        rotationSpeed = aboutRotationSpeed;
     
-    iconFloor = document.getElementById("showreelContainer")!.getBoundingClientRect().top + scrollY - 10;
+        document.removeEventListener('mousemove', mouseMoveEngine);
+        document.removeEventListener('scroll', mouseScrollEngine);
+
+        clearInterval(runHomeBehavior);
+        clearInterval(runjsHourUpdater);
+
+        iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+    }
+    else {
+        activePage = 2;
+        numOfIcons = 0;
+        rotationSpeed = 0;
+
+        document.removeEventListener('mousemove', mouseMoveEngine);
+        document.removeEventListener('scroll', mouseScrollEngine);
+
+        clearInterval(runHomeBehavior);
+        clearInterval(runjsHourUpdater);
+    }
+
+    buildIcons();
 
     prevMouseX = mouseX;
 
-    bomb = document.getElementById("bouncingBomb");
+    //moves nav bar of screen when scrolling down
+    document.addEventListener('scroll', () => {
+        
+        navCurrent = window.pageYOffset;
 
-    bombWidth = bomb!.getBoundingClientRect().width;
-    bombHeight = bomb!.getBoundingClientRect().height;
+        if((navCurrent - navPrev) % 2 > 0) {
+            document.getElementById('navContainer')!.style.top = "-15vw";
+        }
+        else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
+            document.getElementById('navContainer')!.style.top = "0";
+        }
 
-    bombWindowBounds = document.getElementById("showreelContainer")!.getBoundingClientRect();
-    bombX = 1;
-    bombY = bombWindowBounds.top + scrollY + 10;
-    bombWindowTop = bombWindowBounds.top + scrollY;
-    bombWindowBottom = bombWindowBounds.bottom + scrollY;
+        navPrev = navCurrent; 
+    });
+
+    hoursFunction();
+
+    //removes loading screen
+    //document.getElementById("loadingScreen")!.classList.add("fadeOut");
+
+    if (activePage == 0) {
+        console.log("icon engine went off! activePage: " + activePage);
+        //mechanism that detects hover over showcase work
+        document.addEventListener('mousemove', mouseMoveEngine);
+        document.addEventListener('scroll', mouseScrollEngine);
+
+        //runs the behaivors on the home screen
+        runHomeBehavior = setInterval(homeBehaviors, 10);
+
+        //animates dots at end of JS hours component
+        runjsHourUpdater = setInterval(jsHourUpdater, 750);
+    }
 }
+
+export { activePageCheck };
 
 //calculates hours between today and birthday
 function hoursFunction() {
@@ -131,19 +197,16 @@ function hoursFunction() {
     timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
 }
 
+//External Showreel Behaviors
 function showReelHoverOn () {
     if (showreelActive == false) {
         document.getElementById('playButton')!.style.opacity = "100%";
     }
 }
 
-export { showReelHoverOn };
-
 function showReelHoverOff () {
     document.getElementById('playButton')!.style.opacity = "0%";
 }
-
-export { showReelHoverOff };
 
 function showreelStart() {
     showreelActive = true;
@@ -155,8 +218,6 @@ function showreelStart() {
     document.body.style.overflowY = "hidden";
 }
 
-export { showreelStart };
-
 function showreelEnd() {
     showreelActive = false;
 
@@ -164,7 +225,7 @@ function showreelEnd() {
     document.body.style.overflowY = "scroll";
 }
 
-export { showreelEnd };
+export { showReelHoverOn, showReelHoverOff, showreelStart, showreelEnd};
 
 //creates <img> elements using DOM methods
 function createWarningImage(type: number, order:number, size:number, x:number) { 
@@ -200,14 +261,6 @@ function createWarningImage(type: number, order:number, size:number, x:number) {
 function heroMouseInfluence() {
     const currentMouseX = mouseX;
 
-    /*
-    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    console.log(currentMouseX);
-    console.log(prevMouseX);
-    console.log(currentMouseX - prevMouseX);
-    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    */
-
     mouseXIconInfluence = (currentMouseX - prevMouseX) / 10;
 
     influenceAnchor += mouseXIconInfluence;
@@ -237,15 +290,9 @@ function getRandomBool() {
 }
 
 function buildIcons () {
-    
-    if (activePage == 0) {
-        numOfIcons = homeNumOfIcons;
-        rotationSpeed = homeRotationSpeed;
-    }
-    else if (activePage == 1) {
-        numOfIcons = aboutNumOfIcons;
-        rotationSpeed = aboutRotationSpeed;
-    }
+    console.log("buildIcons() is running");
+
+    console.log("numOfIcons: " + numOfIcons);
     
     //DOMs in all icons and initializes parameters
     for(let i = 0; i < numOfIcons; i++) {
@@ -283,141 +330,109 @@ function buildIcons () {
     }
 }
 
-export { buildIcons };
-
 //Deletes all icons
 function deleteActiveIcons () {
+    console.log("deleteActiveIcons() is running");
+
+    console.log("numOfIcons: " + numOfIcons);
     for(let i = 0; i < numOfIcons; i++) {
-        document.getElementById("icon" + i)?.remove();
+        document.getElementById("icon" + i)!.remove();
     }
 }
 
-export { deleteActiveIcons };
+export { buildIcons, deleteActiveIcons };
+
+function jsHourUpdater() {
+
+    if(hoursDots.length == 0) {
+        hoursDots = ".";
+    }
+    else if (hoursDots.length == 1){
+        hoursDots = "..";
+    }
+    else if (hoursDots.length == 2){
+        hoursDots = "...";
+    }
+    else {
+        hoursDots = "";
+    }
+
+    document.getElementById("hours")!.innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
+}
+
+function homeBehaviors() {
+    heroMouseInfluence();
+
+    //updates positions of all icons
+    if (scrollY <= iconFloor) {
+        for(let i = 0; i < numOfIcons; i++) {
+            const focusDiv = document.getElementById("icon" + i);
+
+            //updates falling speed
+            icons[i].y += icons[i].vY;
+
+            //controls rotation
+            if(icons[i].direction == true) {
+                icons[i].r += icons[i].vR; 
+            }
+
+            else {
+                icons[i].r -= icons[i].vR; 
+            }
+
+            //applies changes to html element
+            focusDiv!.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
+            focusDiv!.style.top = icons[i].y + 'px';
+
+            focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)";
+
+            //resets icons once they hit the ground
+            if(icons[i].y > iconFloor){
+                icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
+                icons[i].y = iconCeiling;
+                icons[i].x = getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow);
+            }
+        }
+    }
+    
+    //Bomb Bouncing Code
+    bombX += bombXSpeed;
+    bombY += bombYSpeed;
+    
+    bomb!.style.left = bombX + "px";
+    bomb!.style.top = bombY + "px";
+
+    if(bombX <= 0) {
+        bombXSpeed *= -1;
+    }
+
+    if(bombX + bombWidth >= windowWidth) {
+        bombXSpeed *= -1;
+    }
+
+    if(bombY <= bombWindowTop) {
+        bombYSpeed *= -1;
+    }
+
+    if(bombY + bombHeight >= bombWindowBottom) {
+        bombYSpeed *= -1;
+    }
+}
+
+const mouseMoveEngine = (event: MouseEvent) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY + window.pageYOffset
+
+    document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+}
+
+const mouseScrollEngine = () => {
+    document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+}
 
 window.onload = function()
 {
-    console.log("hambone .ts");
 
-    //moves nav bar of screen when scrolling down
-    document.addEventListener('scroll', () => {
-        
-        navCurrent = window.pageYOffset;
-
-        if((navCurrent - navPrev) % 2 > 0) {
-            document.getElementById('navContainer')!.style.top = "-15vw";
-        }
-        else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
-            document.getElementById('navContainer')!.style.top = "0";
-        }
-
-        navPrev = navCurrent; 
-    } );
-
-    //mechanism that detects hover over showcase work
-    document.addEventListener('mousemove', (event) => {  
-
-        mouseX = event.clientX;
-        mouseY = event.clientY + window.pageYOffset
-
-        document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-        document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-        
-    });
-
-    document.addEventListener('scroll', () => {      
- 
-        document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-        document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-        
-    } ) 
-
-    hoursFunction();
-    variableInitialization();
-
-    //removes loading screen
-    document.getElementById("loadingScreen")!.classList.add("fadeOut");
-
-
-    if (activePage == 0) {
-        setInterval(function()
-        {
-
-            heroMouseInfluence();
-
-            //updates positions of all icons
-            if (scrollY <= iconFloor) {
-                for(let i = 0; i < numOfIcons; i++) {
-                    const focusDiv = document.getElementById("icon" + i);
-        
-                    //updates falling speed
-                    icons[i].y += icons[i].vY;
-        
-                    //controls rotation
-                    if(icons[i].direction == true) {
-                        icons[i].r += icons[i].vR; 
-                    }
-        
-                    else {
-                        icons[i].r -= icons[i].vR; 
-                    }
-        
-                    //applies changes to html element
-                    focusDiv!.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
-                    focusDiv!.style.top = icons[i].y + 'px';
-
-                    focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)";
-        
-                    //resets icons once they hit the ground
-                    if(icons[i].y > iconFloor){
-                        icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
-                        icons[i].y = iconCeiling;
-                        icons[i].x = getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow);
-                    }
-                }
-            }
-            
-            //Bomb Bouncing Code
-            bombX += bombXSpeed;
-            bombY += bombYSpeed;
-            
-            bomb!.style.left = bombX + "px";
-            bomb!.style.top = bombY + "px";
-
-            if(bombX <= 0) {
-                bombXSpeed *= -1;
-            }
-
-            if(bombX + bombWidth >= windowWidth) {
-                bombXSpeed *= -1;
-            }
-
-            if(bombY <= bombWindowTop) {
-                bombYSpeed *= -1;
-            }
-
-            if(bombY + bombHeight >= bombWindowBottom) {
-                bombYSpeed *= -1;
-            }
-            
-        }, 10);
-
-        //animates dots at end of JS hours component
-        setInterval(function()
-        {
-            if(hoursDots.length == 0) {
-                hoursDots = ".";
-            }
-            else if (hoursDots.length == 1){
-                hoursDots = "..";
-            }
-            else if (hoursDots.length == 2){
-                hoursDots = "...";
-            }
-            else {
-                hoursDots = "";
-            }
-
-            document.getElementById("hours")!.innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
-        }, 750);
-    }
 }

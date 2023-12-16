@@ -1,4 +1,3 @@
-import LoadingScreen from "../components/LoadingScreen.tsx";
 import ShowcaseCard from "../components/ShowcaseCard.tsx";
 
 import { showReelHoverOn } from "../ts/Home.ts";
@@ -6,7 +5,7 @@ import { showReelHoverOff } from "../ts/Home.ts";
 import { showreelStart } from "../ts/Home.ts";
 import { showreelEnd } from "../ts/Home.ts";
 
-function Gnome() {
+function Home() {
   return (
     <>
       <div id="heroSectionWrapper">
@@ -102,4 +101,4 @@ function Gnome() {
   );
 }
 
-export default Gnome;
+export default Home;

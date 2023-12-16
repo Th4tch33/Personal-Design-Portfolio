@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-
-import { activePageCheck, buildIcons, deleteActiveIcons } from "../ts/Home.ts";
 
 interface CustomLinkProps {
   to: string;
@@ -9,30 +6,16 @@ interface CustomLinkProps {
 }
 
 export default function NavBar() {
-  const [activePage, setActivePage] = useState(0);
-
-  useEffect(() => {
-    activePageCheck(activePage);
-    deleteActiveIcons();
-    buildIcons();
-  }, [activePage]);
-
   return (
     <>
       <nav id="navContainer">
-        <Link to="/" onClick={() => setActivePage(0)}>
-          cadenchan.design
-        </Link>
+        <Link to="/">cadenchan.design</Link>
         <ul>
           <li>
-            <CustomLink to="/about" onClick={() => setActivePage(1)}>
-              About
-            </CustomLink>
+            <CustomLink to="/about">About</CustomLink>
           </li>
           <li>
-            <CustomLink to="/contact" onClick={() => setActivePage(2)}>
-              Contact
-            </CustomLink>
+            <CustomLink to="/contact">Contact</CustomLink>
           </li>
         </ul>
       </nav>
