@@ -31,7 +31,7 @@ let influenceAnchor = 0;
 
 const homeNumOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
 const homeRotationSpeed = 1.5;
-
+/*
 //Icon About Screen Variables
 let prev: number;
 let current;
@@ -41,7 +41,7 @@ const numOfIconsJump = 7;
 const jumpHeight = 15;
 const jumpHeightMax = 50 ;
 
-const aboutNumOfIcons = 25;
+const aboutNumOfIcons = 25;*/
 const aboutRotationSpeed = 3;
 
 //Shared Icon Variables
@@ -95,7 +95,7 @@ let bombWindowBottom: number;
 let bombWidth: number;
 let bombHeight: number;
 
-function l(n) {
+function l(n: any) {
     console.log(n)
 }
 
