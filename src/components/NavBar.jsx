@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-interface CustomLinkProps {
-  to: string;
-  children: React.ReactNode;
+CustomLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+function CustomLink({ to, children, ...props }) {
+  const path = window.location.pathname;
+
+  return (
+    <li className={path === to ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  );
 }
 
 export default function NavBar() {
@@ -20,17 +33,5 @@ export default function NavBar() {
         </ul>
       </nav>
     </>
-  );
-}
-
-function CustomLink({ to, children, ...props }: CustomLinkProps) {
-  const path = window.location.pathname;
-
-  return (
-    <li className={path === to ? "active" : ""}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </li>
   );
 }

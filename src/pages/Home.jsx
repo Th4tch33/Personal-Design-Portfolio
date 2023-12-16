@@ -1,9 +1,9 @@
-import ShowcaseCard from "../components/ShowcaseCard.tsx";
+import ShowcaseCard from "../components/ShowcaseCard.jsx";
 
-import { showReelHoverOn } from "../ts/Home.ts";
-import { showReelHoverOff } from "../ts/Home.ts";
-import { showreelStart } from "../ts/Home.ts";
-import { showreelEnd } from "../ts/Home.ts";
+import { showReelHoverOn } from "../js/Main.js";
+import { showReelHoverOff } from "../js/Main.js";
+import { showreelStart } from "../js/Main.js";
+import { showreelEnd } from "../js/Main.js";
 
 function Home() {
   return (

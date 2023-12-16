@@ -1,13 +1,15 @@
-interface Props {
-  title: string;
-  subTitle: string;
-  para: string;
-  link: string;
-  img: string;
-  alt: string;
-}
+import PropTypes from "prop-types";
 
-function ShowcaseCard({ title, subTitle, para, link, img, alt }: Props) {
+ShowcaseCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired,
+  para: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};
+
+function ShowcaseCard({ title, subTitle, para, link, img, alt}) {
   return (
     <>
       <div className="spotlightInfo">

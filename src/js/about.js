@@ -10,21 +10,13 @@ let iconFloor = 0;
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
-let prev: number;
+let prev;
 let current;
 
-const icons: any = [];
+const icons = [];
 
 class iconBuilder {
-    x: number;
-    y: number;
-    direction: boolean;
-    vX: number;
-    vY: number;
-    r: number;
-    vR: number;
-
-    constructor(x: number, direction: boolean, vX: number, vY: number, r: number,vR: number) {
+    constructor(x, direction, vX, vY, r,vR) {
         this.x = x;
         this.y = iconFloor;
         this.direction = direction;
@@ -35,7 +27,7 @@ class iconBuilder {
     }
 }
 
-function getRandomInt(max: number) {
+function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
 }
 
@@ -43,7 +35,7 @@ function getRandomBool() {
     return Math.random() < 0.5;
 }
 
-function createWarningImage(color: number, order: number) {    
+function createWarningImage(color, order) {    
     const loader = document.getElementById("aboutIconGroup");
 
     console.log(document.getElementById("aboutIconGroup"));
@@ -60,25 +52,25 @@ function createWarningImage(color: number, order: number) {
     div.style.top = "0px";
     div.style.transform = "rotate(0deg)";
     div.style.pointerEvents = "hidden";
-    loader!.appendChild(div);
+    loader.appendChild(div);
 
-    document.body.appendChild(loader!);
+    document.body.appendChild(loader);
 }
 
 window.onload = function()
 {
-    iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+    iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
 
-    document.getElementById("loadingScreen")!.classList.add("fadeOut");
+    document.getElementById("loadingScreen").classList.add("fadeOut");
 
     document.addEventListener('scroll', () => {
         current = window.pageYOffset;
 
         if((current - prev) % 2 > 0) {
-            document.getElementById('navContainer')!.style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((current - prev) % 2 < 0) {
-            document.getElementById('navContainer')!.style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
         
         prev = current;
@@ -94,7 +86,7 @@ window.onload = function()
     {
         windowHeight = window.innerHeight;
         windowWidth = window.innerWidth;
-        iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+        iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
 
         for(let i = 0; i < numOfIcons; i++) {
             const focusDiv = document.getElementById("div" + i);
@@ -112,9 +104,9 @@ window.onload = function()
                 icons[i].r -= icons[i].vR; 
             }
             
-            focusDiv!.style.left = icons[i].x + 'px';
-            focusDiv!.style.top = icons[i].y + 'px';
-            focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)"
+            focusDiv.style.left = icons[i].x + 'px';
+            focusDiv.style.top = icons[i].y + 'px';
+            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
 
             if(icons[i].y > iconFloor){
                 if(i < numOfIconsJump) {

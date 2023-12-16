@@ -1,4 +1,4 @@
-import { backToTop } from "../ts/footer.js";
+import { backToTop } from "../js/footer.js";
 
 function Footer() {
   return (

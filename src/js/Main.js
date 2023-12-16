@@ -1,17 +1,17 @@
 //0=home, 1=about, 2=contact
 let activePage = 0;
 
-let runHomeBehavior: any;
-let runjsHourUpdater: any;
+let runHomeBehavior;
+let runjsHourUpdater;
 
 //NavBar Variables
-let navPrev: number;
-let navCurrent: number;
+let navPrev;
+let navCurrent;
 let showreelActive = false;
 
 //Hour Calculator Variables
 let hoursDots = "";
-let timeSinceLaunch: number;
+let timeSinceLaunch;
 
 //Icon Home Screen Variables
 const numIconsFront = 2;
@@ -23,17 +23,17 @@ const iconMidSize = 3;
 const iconBackSize = 1.75;
 const iconFarBackSize = 1;
 const iconSmallestSize = 50;
-const initialFallMin = 1;
-const initialFallMax = 1.25;
+const initialFallMin = 0.6;
+const initialFallMax = 0.8;
 let mouseXIconInfluence = 0;
-let prevMouseX: number;
+let prevMouseX;
 let influenceAnchor = 0;
 
 const homeNumOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
-const homeRotationSpeed = 1.5;
-/*
+const homeRotationSpeed = 0.20;
+
 //Icon About Screen Variables
-let prev: number;
+let prev;
 let current;
 
 const gravity = 0.5;
@@ -41,29 +41,20 @@ const numOfIconsJump = 7;
 const jumpHeight = 15;
 const jumpHeightMax = 50 ;
 
-const aboutNumOfIcons = 25;*/
+const aboutNumOfIcons = 25;
 const aboutRotationSpeed = 3;
 
 //Shared Icon Variables
-let rotationSpeed: number;
-let numOfIcons: number;
+let rotationSpeed;
+let numOfIcons;
 const iconXSpawnOverflow = 200;
 let iconFloor = 0;
 const iconCeiling = -250;
 
-const icons: any = [];
+const icons = [];
 
 class iconBuilder {
-    x: number;
-    y: number;
-    direction: boolean;
-    vX: number;
-    vY: number;
-    r: number;
-    vR: number;
-    s: number;
-
-    constructor(x: number, y: number, direction: boolean, vX: number, vY: number , r: number , vR: number, s: number) {
+    constructor(x, y, direction, vX, vY , r , vR, s) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -83,23 +74,23 @@ let mouseY = 0;
 const windowWidth = window.innerWidth;
 
 //Bouncing Showcase Title Variables
-let bombX: number;
-let bombY: number;
+let bombX;
+let bombY;
 let bombXSpeed = 2;
 let bombYSpeed = 2;
 
-let bomb: HTMLElement | null;
-let bombWindowBounds: DOMRect;
-let bombWindowTop: number;
-let bombWindowBottom: number;
-let bombWidth: number;
-let bombHeight: number;
+let bomb;
+let bombWindowBounds;
+let bombWindowTop;
+let bombWindowBottom;
+let bombWidth;
+let bombHeight;
 
-function l(n: any) {
+/*function l(n) {
     console.log(n)
-}
+}*/
 
-function activePageCheck(n: string) {
+function activePageCheck(n) {
     deleteActiveIcons();
 
     if(n == "/") {
@@ -107,13 +98,13 @@ function activePageCheck(n: string) {
         numOfIcons = homeNumOfIcons;
         rotationSpeed = homeRotationSpeed;
 
-        iconFloor = document.getElementById("showreelContainer")!.getBoundingClientRect().top + scrollY - 10;
+        iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top + scrollY - 10;
         bomb = document.getElementById("bouncingBomb");
 
-        bombWidth = bomb!.getBoundingClientRect().width;
-        bombHeight = bomb!.getBoundingClientRect().height;
+        bombWidth = bomb.getBoundingClientRect().width;
+        bombHeight = bomb.getBoundingClientRect().height;
 
-        bombWindowBounds = document.getElementById("showreelContainer")!.getBoundingClientRect();
+        bombWindowBounds = document.getElementById("showreelContainer").getBoundingClientRect();
         bombX = 1;
         bombY = bombWindowBounds.top + scrollY + 10;
         bombWindowTop = bombWindowBounds.top + scrollY;
@@ -130,7 +121,7 @@ function activePageCheck(n: string) {
         clearInterval(runHomeBehavior);
         clearInterval(runjsHourUpdater);
 
-        iconFloor = document.getElementById("footerContainer")!.getBoundingClientRect().top + scrollY - 10;
+        iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
     }
     else {
         activePage = 2;
@@ -154,10 +145,10 @@ function activePageCheck(n: string) {
         navCurrent = window.pageYOffset;
 
         if((navCurrent - navPrev) % 2 > 0) {
-            document.getElementById('navContainer')!.style.top = "-15vw";
+            document.getElementById('navContainer').style.top = "-15vw";
         }
         else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
-            document.getElementById('navContainer')!.style.top = "0";
+            document.getElementById('navContainer').style.top = "0";
         }
 
         navPrev = navCurrent; 
@@ -166,10 +157,10 @@ function activePageCheck(n: string) {
     hoursFunction();
 
     //removes loading screen
-    //document.getElementById("loadingScreen")!.classList.add("fadeOut");
+    //document.getElementById("loadingScreen").classList.add("fadeOut");
 
     if (activePage == 0) {
-        console.log("icon engine went off! activePage: " + activePage);
+        console.log("icon engine went off activePage: " + activePage);
         //mechanism that detects hover over showcase work
         document.addEventListener('mousemove', mouseMoveEngine);
         document.addEventListener('scroll', mouseScrollEngine);
@@ -200,35 +191,35 @@ function hoursFunction() {
 //External Showreel Behaviors
 function showReelHoverOn () {
     if (showreelActive == false) {
-        document.getElementById('playButton')!.style.opacity = "100%";
+        document.getElementById('playButton').style.opacity = "100%";
     }
 }
 
 function showReelHoverOff () {
-    document.getElementById('playButton')!.style.opacity = "0%";
+    document.getElementById('playButton').style.opacity = "0%";
 }
 
 function showreelStart() {
     showreelActive = true;
 
-    document.getElementById("showreelThumbnail")!.classList.add("fadeOut");
+    document.getElementById("showreelThumbnail").classList.add("fadeOut");
 
-    document.getElementById('navContainer')!.style.top = "-15vw";
-    document.getElementById('showreelVideo')!.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+    document.getElementById('navContainer').style.top = "-15vw";
+    document.getElementById('showreelVideo').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
     document.body.style.overflowY = "hidden";
 }
 
 function showreelEnd() {
     showreelActive = false;
 
-    document.getElementById("showreelThumbnail")!.classList.remove("fadeOut");
+    document.getElementById("showreelThumbnail").classList.remove("fadeOut");
     document.body.style.overflowY = "scroll";
 }
 
 export { showReelHoverOn, showReelHoverOff, showreelStart, showreelEnd};
 
 //creates <img> elements using DOM methods
-function createWarningImage(type: number, order:number, size:number, x:number) { 
+function createWarningImage(type, order, size, x) { 
     const loaderFront = document.getElementById("frontIconGroup");
     const loaderBack = document.getElementById("backIconGroup");
     const img = document.createElement("IMG");
@@ -247,13 +238,13 @@ function createWarningImage(type: number, order:number, size:number, x:number) {
     img.style.pointerEvents = "hidden";
     
     if (size <= iconBackSize) {
-        loaderBack!.appendChild(img);
-        document.body.appendChild(loaderBack!);
+        loaderBack.appendChild(img);
+        document.body.appendChild(loaderBack);
     }
 
     else {
-        loaderFront!.appendChild(img);
-        document.body.appendChild(loaderFront!);
+        loaderFront.appendChild(img);
+        document.body.appendChild(loaderFront);
     }   
 }
 
@@ -277,11 +268,11 @@ function heroMouseInfluence() {
 }
 
 //random value generators
-function getRandomInt(max:number) {
+function getRandomInt(max) {
     return Math.floor(Math.random() * max + 1);
 }
 
-function getRandomIntRange(max:number, min:number) {
+function getRandomIntRange(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -336,7 +327,7 @@ function deleteActiveIcons () {
 
     console.log("numOfIcons: " + numOfIcons);
     for(let i = 0; i < numOfIcons; i++) {
-        document.getElementById("icon" + i)!.remove();
+        document.getElementById("icon" + i).remove();
     }
 }
 
@@ -357,7 +348,7 @@ function jsHourUpdater() {
         hoursDots = "";
     }
 
-    document.getElementById("hours")!.innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
+    document.getElementById("hours").innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
 }
 
 function homeBehaviors() {
@@ -381,10 +372,10 @@ function homeBehaviors() {
             }
 
             //applies changes to html element
-            focusDiv!.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
-            focusDiv!.style.top = icons[i].y + 'px';
+            focusDiv.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
+            focusDiv.style.top = icons[i].y + 'px';
 
-            focusDiv!.style.transform = "rotate(" + icons[i].r + "deg)";
+            focusDiv.style.transform = "rotate(" + icons[i].r + "deg)";
 
             //resets icons once they hit the ground
             if(icons[i].y > iconFloor){
@@ -399,8 +390,8 @@ function homeBehaviors() {
     bombX += bombXSpeed;
     bombY += bombYSpeed;
     
-    bomb!.style.left = bombX + "px";
-    bomb!.style.top = bombY + "px";
+    bomb.style.left = bombX + "px";
+    bomb.style.top = bombY + "px";
 
     if(bombX <= 0) {
         bombXSpeed *= -1;
@@ -419,17 +410,17 @@ function homeBehaviors() {
     }
 }
 
-const mouseMoveEngine = (event: MouseEvent) => {
+const mouseMoveEngine = (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY + window.pageYOffset
 
-    document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-    document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton').style.left = mouseX - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton').style.top = mouseY - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
 }
 
 const mouseScrollEngine = () => {
-    document.getElementById('playButton')!.style.left = mouseX - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
-    document.getElementById('playButton')!.style.top = mouseY - (document.getElementById('playButton')!.getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton').style.left = mouseX - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
+    document.getElementById('playButton').style.top = mouseY - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
 }
 
 window.onload = function()

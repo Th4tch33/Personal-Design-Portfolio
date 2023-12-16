@@ -1,15 +1,15 @@
-import NavBar from "./components/NavBar.tsx";
-import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
-import Contact from "./pages/Contact.tsx";
-import Footer from "./components/Footer.tsx";
+import NavBar from "./components/NavBar.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
-import "./ts/Home.ts";
+import "./js/Main.js";
 import "./css/styles.css";
 
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { activePageCheck } from "./ts/Home.ts";
+import { activePageCheck } from "./js/Main.js";
 
 function App() {
   const location = useLocation().pathname;
