@@ -4,8 +4,6 @@ let activePage = 0;
 let runHomeBehavior;
 let runjsHourUpdater;
 
-let runAboutBehavior;
-
 //NavBar Variables
 let navPrev;
 let navCurrent;
@@ -38,11 +36,10 @@ const homeRotationSpeed = 0.20;
 let prev;
 let current;
 
-const gravity = 0.05;
-const horzV = 1.1;
+const gravity = 0.5;
 const numOfIconsJump = 7;
-const jumpHeight = 7.5;
-const jumpHeightMax = 25;
+const jumpHeight = 15;
+const jumpHeightMax = 50 ;
 
 const aboutNumOfIcons = 25;
 const aboutRotationSpeed = 3;
@@ -74,8 +71,7 @@ let mouseX = 0;
 let mouseY = 0;
 
 //Window Dimension Variables
-let windowHeight = window.innerHeight;
-let windowWidth = window.innerWidth;
+const windowWidth = window.innerWidth;
 
 //Bouncing Showcase Title Variables
 let bombX;
@@ -90,19 +86,13 @@ let bombWindowBottom;
 let bombWidth;
 let bombHeight;
 
-function log(n) {
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+/*function l(n) {
     console.log(n)
-}
+}*/
 
 function activePageCheck(n) {
-
-    log("activePageCheck() has started...");
-
     deleteActiveIcons();
 
-    log("beginning variable initialization...");
-    //Active Page Variable Initialization
     if(n == "/") {
         activePage = 0;
         numOfIcons = homeNumOfIcons;
@@ -119,12 +109,10 @@ function activePageCheck(n) {
         bombY = bombWindowBounds.top + scrollY + 10;
         bombWindowTop = bombWindowBounds.top + scrollY;
         bombWindowBottom = bombWindowBounds.bottom + scrollY;
-
-        clearInterval(runAboutBehavior);
     }
     else if(n == "/about") {
         activePage = 1;
-        numOfIcons = aboutNumOfIcons;
+        numOfIcons = 0;
         rotationSpeed = aboutRotationSpeed;
     
         document.removeEventListener('mousemove', mouseMoveEngine);
@@ -145,12 +133,7 @@ function activePageCheck(n) {
 
         clearInterval(runHomeBehavior);
         clearInterval(runjsHourUpdater);
-        
-
-        clearInterval(runAboutBehavior);
     }
-
-    log("Current Page: " + activePage);
 
     buildIcons();
 
@@ -177,8 +160,7 @@ function activePageCheck(n) {
     //document.getElementById("loadingScreen").classList.add("fadeOut");
 
     if (activePage == 0) {
-        log("icon engine started activePage: " + activePage);
-
+        console.log("icon engine went off activePage: " + activePage);
         //mechanism that detects hover over showcase work
         document.addEventListener('mousemove', mouseMoveEngine);
         document.addEventListener('scroll', mouseScrollEngine);
@@ -189,76 +171,164 @@ function activePageCheck(n) {
         //animates dots at end of JS hours component
         runjsHourUpdater = setInterval(jsHourUpdater, 750);
     }
-    else if (activePage == 1) {
-        runAboutBehavior = setInterval(aboutBehaviors, 10);
-    }
 }
 
 export { activePageCheck };
 
-function buildIcons () {
-    log("buildIcons() is running...");
+//calculates hours between today and birthday
+function hoursFunction() {
+    const launchDate = new Date("2003-09-02 20:00:00");
+    const currentDate = new Date();
 
-    log("numOfIcons: " + numOfIcons);
-    
-    if(activePage == 0) {
-        log("building home page icons...");
-        //DOMs in all icons and initializes parameters
-        for(let i = 0; i < numOfIcons; i++) {     
-            //DOMs in large icons
-            if (i < numIconsFront){
-                //x, y, direction, vX, vY, r, vR, s
-                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+    const yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
+    const monthToHours = (currentDate.getMonth()-launchDate.getMonth())*730;
+    const dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
+    const hours = currentDate.getHours()-launchDate.getHours();
 
-                //color, order, size, x
-                createHomeWarningImage(getRandomInt(2), i, iconFrontSize, icons[i].x);
-            }
+    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
+}
 
-            //DOMs in medium icons
-            else if (i < numIconsMid + numIconsFront){
-                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
-                
-                createHomeWarningImage(getRandomInt(2), i, iconMidSize, icons[i].x);
-            }
-
-            //DOMs in small icons
-            else if (i < numIconsBack + numIconsMid + numIconsFront){
-                
-                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
-                
-                createHomeWarningImage(getRandomInt(2), i, iconBackSize, icons[i].x);
-            }
-
-            //DOMs in extra small icons
-            else {
-                icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
-                
-                createHomeWarningImage(getRandomInt(2), i, iconFarBackSize, icons[i].x);
-            }
-        }
+//External Showreel Behaviors
+function showReelHoverOn () {
+    if (showreelActive == false) {
+        document.getElementById('playButton').style.opacity = "100%";
     }
-    else if(activePage == 1) {
-        log("building about page icons...");
-        for(let i = 0; i < numOfIcons; i++) {
-            //x, direction, vX, vY, r, vR
-            icons[i] = new iconBuilder(getRandomInt(windowWidth), getRandomBool(), getRandomInt(horzV), getRandomInt(jumpHeight), getRandomInt(360), getRandomInt(rotationSpeed));
-        
-            createAboutWarningImage(getRandomInt(2), i);
+}
+
+function showReelHoverOff () {
+    document.getElementById('playButton').style.opacity = "0%";
+}
+
+function showreelStart() {
+    showreelActive = true;
+
+    document.getElementById("showreelThumbnail").classList.add("fadeOut");
+
+    document.getElementById('navContainer').style.top = "-15vw";
+    document.getElementById('showreelVideo').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+    document.body.style.overflowY = "hidden";
+}
+
+function showreelEnd() {
+    showreelActive = false;
+
+    document.getElementById("showreelThumbnail").classList.remove("fadeOut");
+    document.body.style.overflowY = "scroll";
+}
+
+export { showReelHoverOn, showReelHoverOff, showreelStart, showreelEnd};
+
+//creates <img> elements using DOM methods
+function createWarningImage(type, order, size, x) { 
+    const loaderFront = document.getElementById("frontIconGroup");
+    const loaderBack = document.getElementById("backIconGroup");
+    const img = document.createElement("IMG");
+    
+    img.setAttribute("src", "/Icons/logo" + type + ".svg");
+    img.setAttribute("alt", "warning");
+    
+    img.setAttribute("id", "icon" + order);
+    img.style.position = "absolute";
+    img.style.width = iconSmallestSize * size + "px";
+    img.style.left = x + "px";
+    img.style.top = "0px";
+    img.style.transform = "rotate(0deg)";
+    //img.style.filter = "blur(" + size + "px)";
+    img.style.zIndex = "" + Math.round(size);
+    img.style.pointerEvents = "hidden";
+    
+    if (size <= iconBackSize) {
+        loaderBack.appendChild(img);
+        document.body.appendChild(loaderBack);
+    }
+
+    else {
+        loaderFront.appendChild(img);
+        document.body.appendChild(loaderFront);
+    }   
+}
+
+//calculates distance to move icons based on horizontal mouse movement
+function heroMouseInfluence() {
+    const currentMouseX = mouseX;
+
+    mouseXIconInfluence = (currentMouseX - prevMouseX) / 10;
+
+    influenceAnchor += mouseXIconInfluence;
+
+    if (influenceAnchor > 0) {
+        influenceAnchor *= 0.98;
+    }
+    
+    else if (influenceAnchor < 0) {
+        influenceAnchor *= 0.98;
+    }
+
+    prevMouseX = currentMouseX;
+}
+
+//random value generators
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max + 1);
+}
+
+function getRandomIntRange(max, min) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomBool() {
+    return Math.random() < 0.5;
+}
+
+function buildIcons () {
+    console.log("buildIcons() is running");
+
+    console.log("numOfIcons: " + numOfIcons);
+    
+    //DOMs in all icons and initializes parameters
+    for(let i = 0; i < numOfIcons; i++) {
+            
+        //DOMs in large icons
+        if (i < numIconsFront){
+            //x, y, direction, vX, vY, r, vR, s
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+
+            //color, order, size, x
+            createWarningImage(getRandomInt(2), i, iconFrontSize, icons[i].x);
+        }
+
+        //DOMs in medium icons
+        else if (i < numIconsMid + numIconsFront){
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+            
+            createWarningImage(getRandomInt(2), i, iconMidSize, icons[i].x);
+        }
+
+        //DOMs in small icons
+        else if (i < numIconsBack + numIconsMid + numIconsFront){
+            
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+            
+            createWarningImage(getRandomInt(2), i, iconBackSize, icons[i].x);
+        }
+
+        //DOMs in extra small icons
+        else {
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
+            
+            createWarningImage(getRandomInt(2), i, iconFarBackSize, icons[i].x);
         }
     }
 }
 
 //Deletes all icons
 function deleteActiveIcons () {
-    log("deleteActiveIcons() is running...");
+    console.log("deleteActiveIcons() is running");
 
-    log("numOfIcons: " + numOfIcons);
+    console.log("numOfIcons: " + numOfIcons);
     for(let i = 0; i < numOfIcons; i++) {
         document.getElementById("icon" + i).remove();
     }
-
-    log("icons deleted");
-
 }
 
 export { buildIcons, deleteActiveIcons };
@@ -340,126 +410,6 @@ function homeBehaviors() {
     }
 }
 
-function aboutBehaviors () {
-    windowHeight = window.innerHeight;
-    windowWidth = window.innerWidth;
-    iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
-
-    for(let i = 0; i < numOfIcons; i++) {
-        const focusDiv = document.getElementById("icon" + i);
-
-        icons[i].y -= icons[i].vY - gravity;
-        icons[i].vY -= gravity;
-
-        if(icons[i].direction == true) {
-            icons[i].x += icons[i].vX;
-            icons[i].r += icons[i].vR; 
-        }
-
-        else {
-            icons[i].x -= icons[i].vX;
-            icons[i].r -= icons[i].vR; 
-        }
-        
-        focusDiv.style.left = icons[i].x + 'px';
-        focusDiv.style.top = icons[i].y + 'px';
-        focusDiv.style.transform = "rotate(" + icons[i].r + "deg)"
-
-        if(icons[i].y > iconFloor){
-            if(i < numOfIconsJump) {
-                icons[i].vY = getRandomInt(jumpHeightMax);
-                icons[i].x = getRandomInt(windowWidth);
-            }
-            else {
-                icons[i].vY = getRandomInt(jumpHeight);
-                icons[i].x = getRandomInt(windowWidth);
-            }
-            
-        }
-    }
-}
-
-//creates <img> elements using DOM methods
-function createHomeWarningImage(type, order, size, x) { 
-    const loaderFront = document.getElementById("frontIconGroup");
-    const loaderBack = document.getElementById("backIconGroup");
-    const img = document.createElement("IMG");
-    
-    img.setAttribute("src", "/Icons/logo" + type + ".svg");
-    img.setAttribute("alt", "warning");
-    
-    img.setAttribute("id", "icon" + order);
-    img.style.position = "absolute";
-    img.style.width = iconSmallestSize * size + "px";
-    img.style.left = x + "px";
-    img.style.top = "0px";
-    img.style.transform = "rotate(0deg)";
-    //img.style.filter = "blur(" + size + "px)";
-    img.style.zIndex = "" + Math.round(size);
-    img.style.pointerEvents = "hidden";
-    
-    if (size <= iconBackSize) {
-        loaderBack.appendChild(img);
-        document.body.appendChild(loaderBack);
-    }
-
-    else {
-        loaderFront.appendChild(img);
-        document.body.appendChild(loaderFront);
-    }   
-}
-
-function createAboutWarningImage(color, order) {    
-    const loader = document.getElementById("aboutIconGroup");
-    const img = document.createElement("IMG");
-
-    img.setAttribute("src", "/Icons/logo" + color + ".svg");
-    img.setAttribute("alt", "warning");
-    
-    img.setAttribute("id", "icon" + order);
-    img.style.position = "absolute";
-    img.style.width = "150px";
-    img.style.left = "0px";
-    img.style.top = "0px";
-    img.style.transform = "rotate(0deg)";
-    img.style.pointerEvents = "hidden";
-    loader.appendChild(img);
-
-    document.body.appendChild(loader);
-}
-
-//calculates distance to move icons based on horizontal mouse movement
-function heroMouseInfluence() {
-    const currentMouseX = mouseX;
-
-    mouseXIconInfluence = (currentMouseX - prevMouseX) / 10;
-
-    influenceAnchor += mouseXIconInfluence;
-
-    if (influenceAnchor > 0) {
-        influenceAnchor *= 0.98;
-    }
-    
-    else if (influenceAnchor < 0) {
-        influenceAnchor *= 0.98;
-    }
-
-    prevMouseX = currentMouseX;
-}
-
-//random value generators
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max + 1);
-}
-
-function getRandomIntRange(max, min) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function getRandomBool() {
-    return Math.random() < 0.5;
-}
-
 const mouseMoveEngine = (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY + window.pageYOffset
@@ -473,45 +423,7 @@ const mouseScrollEngine = () => {
     document.getElementById('playButton').style.top = mouseY - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
 }
 
-//calculates hours between today and birthday
-function hoursFunction() {
-    const launchDate = new Date("2003-09-02 20:00:00");
-    const currentDate = new Date();
+window.onload = function()
+{
 
-    const yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
-    const monthToHours = (currentDate.getMonth()-launchDate.getMonth())*730;
-    const dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
-    const hours = currentDate.getHours()-launchDate.getHours();
-
-    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
 }
-
-//External Showreel Behaviors
-function showReelHoverOn () {
-    if (showreelActive == false) {
-        document.getElementById('playButton').style.opacity = "100%";
-    }
-}
-
-function showReelHoverOff () {
-    document.getElementById('playButton').style.opacity = "0%";
-}
-
-function showreelStart() {
-    showreelActive = true;
-
-    document.getElementById("showreelThumbnail").classList.add("fadeOut");
-
-    document.getElementById('navContainer').style.top = "-15vw";
-    document.getElementById('showreelVideo').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
-    document.body.style.overflowY = "hidden";
-}
-
-function showreelEnd() {
-    showreelActive = false;
-
-    document.getElementById("showreelThumbnail").classList.remove("fadeOut");
-    document.body.style.overflowY = "scroll";
-}
-
-export { showReelHoverOn, showReelHoverOff, showreelStart, showreelEnd};
