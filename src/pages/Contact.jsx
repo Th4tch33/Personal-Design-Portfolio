@@ -52,7 +52,7 @@ function Contact() {
         </div>
 
         <div id="contactMail">
-          Mail To: <a href="mailto:caden.perry.chan@gmail.com" />
+          Mail To: <a href="mailto:caden.perry.chan@gmail.com" rel="noreferrer" target="_blank" />
           caden.perry.chan@gmail.com
         </div>
       </div>
