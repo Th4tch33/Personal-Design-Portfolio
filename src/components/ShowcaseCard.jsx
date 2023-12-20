@@ -23,7 +23,7 @@ function ShowcaseCard({ title, subTitle, para, link, img, alt}) {
       </div>
 
       <div className="spotlightCardWrapper">
-        <a href={link}>
+        <a href={link} rel="noreferrer" target="_blank">
           <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
         </a>
       </div>
