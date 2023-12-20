@@ -1,8 +1,7 @@
 function About() {
   return (
     <>
-      <div id="frontIconGroup"></div>
-      <div id="backIconGroup"></div>
+      <div id="aboutIconGroup"></div>
 
       <div id="websiteSectionContainer">
         <div id="aboutMeWrapper">
@@ -38,7 +37,7 @@ function About() {
               </div>
               <div className="experienceListItem">
                 <h3>Full Resume 📄</h3>
-                <a href="2023_Resume_Caden_Chan.pdf" target="_blank">
+                <a href="/Caden_Chan_Resume_2024.pdf" rel="noreferrer" target="_blank">
                   <div className="button">Click to View</div>
                 </a>
               </div>
