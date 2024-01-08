@@ -24,8 +24,8 @@ function Home() {
       </div>
 
       <div id="bouncingBomb">
-        <h3>Showreel 2023</h3>
-        <p>Here's what I'm all about</p>
+        <h3>Showreel 2024</h3>
+        <p>A once in a life time experience</p>
       </div>
 
       <div
@@ -39,7 +39,7 @@ function Home() {
 
         <div id="showreelVideo" onClick={showreelEnd}>
           <iframe
-            src="https://www.youtube.com/embed/I2NGzw_BQxA?modestbranding=1&showinfo=0"
+            src="https://youtu.be/vR6UzOTT4pQ?si=UoEgcm0ltG3SNmJg"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -60,9 +60,18 @@ function Home() {
             title="Clocking Out"
             subTitle="Mini Documentary"
             para="A story about Chinese-Canadian immigrants that comments on the interconnected relationship between work and family told through my father's perspective."
-            link="https://youtu.be/phUrAwCt-ko"
+            link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
             img="clocking-out-thumb-large.jpg"
             alt="Film Project"
+          />
+
+          <ShowcaseCard
+            title="Ancient Idols"
+            subTitle="A Production Journal"
+            para="This is documentation of a hands-on class taken at the Queensland University of Technologoy (QUT) to create real-time environments using industry practices. This 12-week course took us from planning to final render using Maya, Mudbox, and Unreal Engine."
+            link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+            img="ancient-idol-thumb-large.jpg"
+            alt="Real-Time Environments"
           />
 
           <ShowcaseCard
@@ -75,9 +84,18 @@ function Home() {
           />
 
           <ShowcaseCard
+            title="3D Character Animation"
+            subTitle="Assignment Showcase"
+            para="A blog dedicated to showcasing fundamental principles in animation I learned across a 12-week course at the Queensland University of Technology (QUT). All animations were created in Maya"
+            link="https://new.express.adobe.com/webpage/uCGIoX4RiwBev"
+            img="character-anim-thumb-large.jpg"
+            alt="Character Animation"
+          />
+
+          <ShowcaseCard
             title="Emergency Preperation: How To Deal With a Fire"
             subTitle="Live Action Safety Awareness Video"
-            para="Uh oh"
+            para="A one minute PSA focused teaching the user about what to do if there's a fire emergency without using narration."
             link="https://youtu.be/-BMOM1qkzDo"
             img="fire-emergency-thumb-large.jpg"
             alt="School Porject"
