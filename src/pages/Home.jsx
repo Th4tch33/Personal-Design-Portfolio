@@ -39,7 +39,7 @@ function Home() {
 
         <div id="showreelVideo" onClick={showreelEnd}>
           <iframe
-            src="https://youtu.be/vR6UzOTT4pQ?si=UoEgcm0ltG3SNmJg"
+            src="https://www.youtube.com/embed/vR6UzOTT4pQ?si=5a3tXRb-kUHPMGTD"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
