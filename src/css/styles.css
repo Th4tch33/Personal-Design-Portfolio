@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #f4fcff;
+  background-color: #ffffff;
   width: 100vw;
   height: 100vh;
   color: #17171A;
@@ -68,7 +68,7 @@ a {
 }
 
 .white {
-  color: #f4fcff;
+  color: #ffffff;
 }
 
 .black {
@@ -96,13 +96,13 @@ a {
   width: fit-content;
   padding: 1vh;
   background-color: #17171A;
-  color: #f4fcff;
+  color: #ffffff;
   border: 3px solid #17171A;
   transition: 0.25s;
 }
 
 .button:hover {
-  background-color: #f4fcff;
+  background-color: #ffffff;
   color: #17171A;
 }
 
@@ -271,7 +271,7 @@ a {
 }
 #navContainer {
   background-color: #17171A;
-  color: #f4fcff;
+  color: #ffffff;
   position: fixed;
   width: 100vw;
   top: 0;
@@ -321,16 +321,16 @@ a {
   aspect-ratio: 1/1;
   line-height: clamp(75px, 6vw, 100vw);
   background-color: #17171A;
-  color: #f4fcff;
+  color: #ffffff;
   font-size: clamp(45px, 4vw, 100vw);
   border-radius: 100%;
-  border: 3px solid #f4fcff;
+  border: 3px solid #ffffff;
   cursor: pointer;
   transition: 0.25s;
 }
 
 #backToTop:hover {
-  background-color: #f4fcff;
+  background-color: #ffffff;
   color: #17171A;
   border: 3px solid #17171A;
 }
@@ -427,7 +427,7 @@ a {
   background-color: #17171A;
   z-index: 200;
   white-space: nowrap;
-  color: #f4fcff;
+  color: #ffffff;
 }
 
 #showreelContainer {
@@ -519,7 +519,7 @@ a {
 
 #hoverInfoH3, #hoverInfoP {
   margin: auto 0;
-  color: #f4fcff;
+  color: #ffffff;
   opacity: 0%;
   white-space: nowrap;
   transition: all 1s;
@@ -715,15 +715,19 @@ a {
 
 @media screen and (max-device-width: 768px) {
   #contactHead {
-    font-size: 8em;
     text-align: left;
   }
   #contactSubHead {
-    font-size: 2em;
     text-align: left;
   }
 }
 @media screen and (max-device-width: 625px) {
+  #contactHead {
+    font-size: 4em;
+  }
+  #contactSubHead {
+    font-size: 1em;
+  }
   #socialAnimIconContainer {
     grid-template-columns: 1fr;
   }
@@ -796,7 +800,7 @@ a {
 
 /*Content Styles*/
 .light-wrapper {
-  background-color: #f4fcff;
+  background-color: #ffffff;
 }
 
 .title-gif img {

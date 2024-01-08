@@ -6,7 +6,8 @@ Unviersal Styles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-$light: #f4fcff;
+$light: #ffffff;
+//#f4fcff
 //#0462b5
 $dark: #17171A;
 
@@ -804,17 +805,22 @@ height: auto;
 
 @media screen and (max-device-width: 768px) {
     #contactHead {
-        font-size: 8em;
         text-align: left;
     }
     
     #contactSubHead {
-        font-size: 2em;
         text-align: left;
     }
 }
 
 @media screen and (max-device-width: 625px) {
+    #contactHead {
+        font-size: 4em;
+    }
+    #contactSubHead {
+        font-size: 1em;
+    }
+
     #socialAnimIconContainer {
         grid-template-columns: 1fr;
     }
