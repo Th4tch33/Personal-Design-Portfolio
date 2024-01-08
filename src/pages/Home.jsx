@@ -77,7 +77,7 @@ function Home() {
           <ShowcaseCard
             title="UWaterloo Concert Band Club Winter Performance 2023"
             subTitle="Recorded Concert Performance"
-            para="A stylized lyric video aimed at representing the identity and personality of the artist Suigeneris in his track about Hot Cheetos and the hip-hop lifestyle."
+            para="A live recording of the University of Waterloo Concert Band Club as they perform their end of term concert."
             link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
             img="uw-concert-thumb-large.jpg"
             alt="Film Project"
