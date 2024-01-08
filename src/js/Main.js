@@ -1,3 +1,7 @@
+import Bowser from 'bowser';
+
+const parser = Bowser.getParser(navigator.userAgent);
+
 //0=home, 1=about, 2=contact
 let activePage = 0;
 
@@ -14,22 +18,24 @@ let hoursDots = "";
 let timeSinceLaunch;
 
 //Icon Home Screen Variables
-const numIconsFront = 2;
-const numIconsMid = 4;
-const numIconsBack = 10;
-const numIconsFarBack = 10;
-const iconFrontSize = 6;
-const iconMidSize = 3;
-const iconBackSize = 1.75;
-const iconFarBackSize = 1;
-const iconSmallestSize = 50;
+let numIconsFront = 2;
+let numIconsMid = 4;
+let numIconsBack = 10;
+let numIconsFarBack = 10;
+
+let iconFrontSize = 6;
+let iconMidSize = 3;
+let iconBackSize = 1.75;
+let iconFarBackSize = 1;
+let iconSmallestSize = 50;
+
 const initialFallMin = 0.6;
 const initialFallMax = 0.8;
 let mouseXIconInfluence = 0;
 let prevMouseX;
 let influenceAnchor = 0;
 
-const homeNumOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
+let homeNumOfIcons;
 const homeRotationSpeed = 0.20;
 
 //Icon About Screen Variables
@@ -47,7 +53,7 @@ const aboutRotationSpeed = 3;
 //Shared Icon Variables
 let rotationSpeed;
 let numOfIcons;
-const iconXSpawnOverflow = 200;
+let iconXSpawnOverflow = 200;
 let iconFloor = 0;
 const iconCeiling = -250;
 
@@ -86,16 +92,15 @@ let bombWindowBottom;
 let bombWidth;
 let bombHeight;
 
-/*function l(n) {
+function l(n) {
     console.log(n)
-}*/
+}
 
 function activePageCheck(n) {
     deleteActiveIcons();
 
     if(n == "/") {
         activePage = 0;
-        numOfIcons = homeNumOfIcons;
         rotationSpeed = homeRotationSpeed;
 
         iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top + scrollY - 10;
@@ -109,6 +114,30 @@ function activePageCheck(n) {
         bombY = bombWindowBounds.top + scrollY + 10;
         bombWindowTop = bombWindowBounds.top + scrollY;
         bombWindowBottom = bombWindowBounds.bottom + scrollY;
+
+        if (parser.getPlatformType() === 'mobile') {
+            console.log("Mobile device detected");
+
+            numIconsFront = 1;
+            numIconsMid = 2;
+            numIconsBack = 3;
+            numIconsFarBack = 3;
+
+            iconFrontSize = 5;
+            iconMidSize = 2.5;
+            iconBackSize = 1.5;
+            iconFarBackSize = 1;
+            iconSmallestSize = 50;
+
+            iconXSpawnOverflow = 25;
+        }
+        else {
+            console.log("Desktop device detected");
+        }
+
+        homeNumOfIcons = numIconsFront + numIconsMid + numIconsBack + numIconsFarBack;
+
+        numOfIcons = homeNumOfIcons;
     }
     else if(n == "/about") {
         activePage = 1;
