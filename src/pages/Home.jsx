@@ -75,6 +75,15 @@ function Home() {
           />
 
           <ShowcaseCard
+            title="Start Your Day With Sun"
+            subTitle="A Public Service Announcement"
+            para="A school project with the goal to create a 30-second PSA to bring social change using motion graphics in a vertical video format. Whether big or small, communicate a call to action to the viewer persuasively and engagingly. I wanted to bring more awareness to the simple practice of getting morning sunlight after waking up to improve your day. Additionally, this was an opportunity to deliver the message using 3D animation to challenge my skills within the medium."
+            link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
+            img="stat-with-sun-thumb-large.jpg"
+            alt="Real-Time Environments"
+          />
+
+          <ShowcaseCard
             title="UWaterloo Concert Band Club Winter Performance 2023"
             subTitle="Recorded Concert Performance"
             para="A live recording of the University of Waterloo Concert Band Club as they perform their end of term concert."
