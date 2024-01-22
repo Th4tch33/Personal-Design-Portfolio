@@ -56,6 +56,16 @@ function Home() {
         <h1>Best Work</h1>
 
         <div id="spotlightWrapper">
+
+        <ShowcaseCard
+            title="Bumpin Sports X Matt Jen Volleyball Tournament"
+            subTitle="Sports Videography"
+            para="A roaring two-day tournmanet with 56 teams clashing to be the champions. I was brought in to take photos, videos, and edit content for the organizer's social media of the event."
+            link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+            img="bumpin-matt-vball-thumb-large.jpg"
+            alt="Photography and Videography"
+          />
+
           <ShowcaseCard
             title="Clocking Out"
             subTitle="Mini Documentary"
