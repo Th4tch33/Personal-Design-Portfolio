@@ -640,15 +640,54 @@ height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1vw;
-    row-gap: 1vh;
+    row-gap: 1vw;
 
     padding-top: 5vh;
 }
 
-.workCardWrapper img {
+#workCardWrapper 
+{
+    position: relative;
+
+    padding: 0;
+    margin: 0;
+
+    a {
+        color: #fff;
+    }
+
+    video {
+        display: flex;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+}
+
+.workCardText {
+    position: absolute;
     width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+    bottom: 0;
+    left: 0;   
+
+    padding: 1vw;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .7));
+}
+
+.workCardTags {
+    display: flex;
+
+    padding-top: 0.25vw;
+
+    p {
+        border: 2px solid #fff;
+        padding: 0.25vw;
+        border-radius: 0.25vw;
+
+        margin-right: 0.5vw;
+    }
 }
 
 @media screen and (max-device-width: 768px) {

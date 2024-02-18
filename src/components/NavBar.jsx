@@ -24,6 +24,9 @@ export default function NavBar() {
       <nav id="navContainer">
         <Link to="/">cadenchan.design</Link>
         <ul>
+        <li>
+            <CustomLink to="/work">Work</CustomLink>
+          </li>
           <li>
             <CustomLink to="/about">About</CustomLink>
           </li>
