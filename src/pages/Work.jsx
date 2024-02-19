@@ -36,14 +36,33 @@ function Work() {
                   alt="test"
                 />
 
-                {/*
-                <div id="2" class="workCardWrapper" onmouseover="hover('Start Your Day With Sun', '3D Animation')" onmouseout="hoverOff()">
-                    <a href="start-with-sun.html"><img src="images/Thumbnails/stat-with-sun-thumb.jpg" alt="Interview"></a>
-                </div>
+                <WorkCard
+                  title="Ancient Idol"
+                  tag1="3D Asset Creation"
+                  tag2="Environment Design"
+                  link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+                  vid="ancient_idol_preview.mp4"
+                  alt="test"
+                />
 
-                <div id="3" class="workCardWrapper" onmouseover="hover('Brown Justin Beiber', 'Motion Design')" onmouseout="hoverOff()">
-                    <a href="brown-justin-bieber.html"><img class="showcaseIMG" src="images/Thumbnails/brown-justin-bieber-thumb.png" alt="Brown Justin Beiber"></a>
-                </div>
+                <WorkCard
+                  title="Start Your Day With Sun"
+                  tag1="3D Animation"
+                  link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+                  img="start-with-sun-thumb-large.jpg"
+                  alt="test"
+                />
+
+                <WorkCard
+                  title="Brown Justin Beiber"
+                  tag1="Lyric Video"
+                  tag2="Motion Graphics"
+                  link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+                  vid="brown_justin_bieber_preview.mp4"
+                  alt="test"
+                />
+
+                {/*
 
                 <div id="4" class="workCardWrapper" onmouseover="hover('OppHub', 'UI + UX Design')" onmouseout="hoverOff()">
                     <a href="opphub.html"><img class="showcaseIMG" src="images/Thumbnails/opphub-splash-design.png" alt="Brown Justin Beiber"></a>

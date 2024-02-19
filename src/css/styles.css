@@ -577,7 +577,7 @@ a {
 #workCardWrapper a {
   color: #fff;
 }
-#workCardWrapper video {
+#workCardWrapper video, #workCardWrapper img {
   display: flex;
   width: 100%;
   height: auto;

@@ -7,17 +7,24 @@ WorkCard.propTypes = {
   tag3: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   vid: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
 
-function WorkCard({ title, tag1, tag2, tag3, link, vid, alt}) {
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt}) {
   return (
     <>
       
       <div id="workCardWrapper">
         <a href={link} rel="noreferrer" target="_blank">
-        
-          <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt}/>
+
+          {img && (
+            <img src={"/Thumbnails/" + img} />
+          )}
+
+          {vid && (
+            <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt}/>
+          )}
 
           <div className="workCardText">
             <h3>{title}</h3>
