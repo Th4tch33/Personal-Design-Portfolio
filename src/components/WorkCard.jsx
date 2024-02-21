@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 
+import {WorkCardHoverOn} from "../js/WorkCardJS.js";
+import {WorkCardHoverOff} from "../js/WorkCardJS.js";
+
 WorkCard.propTypes = {
   title: PropTypes.string.isRequired,
   tag1: PropTypes.string.isRequired,
@@ -9,13 +12,13 @@ WorkCard.propTypes = {
   vid: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt}) {
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id}) {
   return (
     <>
-      
-      <div id="workCardWrapper">
+      <div id={id} className="workCardWrapper" onMouseOver={() => WorkCardHoverOn({id})} onMouseOut={() =>WorkCardHoverOff({id})}>
         <a href={link} rel="noreferrer" target="_blank">
 
           {img && (

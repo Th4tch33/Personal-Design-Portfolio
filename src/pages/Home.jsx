@@ -62,7 +62,7 @@ function Home() {
             subTitle="Sports Videography"
             para="A roaring two-day tournament with 56 teams clashing to be champions. I was hired as the event photographer and videographer to capture the best moments from the event. Additionally, I edited all the content taken from the day and delivered it as a photo package, multiple videos edited for social media, and a 1-minute video montage of everything that happened."
             link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
-            img="bumpin-matt-vball-thumb-large.jpg"
+            img="bumpin-matt-thumb-large.jpg"
             alt="Photography and Videography"
           />
 
@@ -89,7 +89,7 @@ function Home() {
             subTitle="A Public Service Announcement"
             para="A school project with the goal to create a 30-second PSA to bring social change using motion graphics in a vertical video format. Whether big or small, communicate a call to action to the viewer persuasively and engagingly. I wanted to bring more awareness to the simple practice of getting morning sunlight after waking up to improve your day. Additionally, this was an opportunity to deliver the message using 3D animation to challenge my skills within the medium."
             link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
-            img="stat-with-sun-thumb-large.jpg"
+            img="start-with-sun-thumb-large.jpg"
             alt="Real-Time Environments"
           />
 

@@ -14,9 +14,10 @@ function Work() {
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"
-                  link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+                  link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
                   vid="clocking_out_preview.mp4"
                   alt="test"
+                  id="1"
                 />
 
                 <WorkCard
@@ -26,14 +27,16 @@ function Work() {
                   link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
                   vid="bumpin_matt_preview.mp4"
                   alt="test"
+                  id="2"
                 />
 
                 <WorkCard
                   title="The Little Things in Life"
                   tag1="Cinematography"
-                  link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+                  link="https://youtu.be/p0GQrReJH3Q?si=OFn57UmQg_egTeMy"
                   vid="little_things_preview.mp4"
                   alt="test"
+                  id="3"
                 />
 
                 <WorkCard
@@ -43,58 +46,111 @@ function Work() {
                   link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
                   vid="ancient_idol_preview.mp4"
                   alt="test"
+                  id="4"
                 />
 
                 <WorkCard
                   title="Start Your Day With Sun"
                   tag1="3D Animation"
-                  link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+                  link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
                   img="start-with-sun-thumb-large.jpg"
                   alt="test"
+                  id="5"
                 />
 
                 <WorkCard
                   title="Brown Justin Beiber"
                   tag1="Lyric Video"
                   tag2="Motion Graphics"
-                  link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
+                  link="https://vimeo.com/516726385?share=copy"
                   vid="brown_justin_bieber_preview.mp4"
                   alt="test"
+                  id="6"
                 />
 
-                {/*
+                <WorkCard
+                  title="OppHub.com"
+                  tag1="UI/UX"
+                  tag2="Product Design"
+                  link="https://www.opp-hub.com/"
+                  img="opphub-thumb-large.png"
+                  alt="test"
+                  id="7"
+                />
 
-                <div id="4" class="workCardWrapper" onmouseover="hover('OppHub', 'UI + UX Design')" onmouseout="hoverOff()">
-                    <a href="opphub.html"><img class="showcaseIMG" src="images/Thumbnails/opphub-splash-design.png" alt="Brown Justin Beiber"></a>
-                </div>
+                <WorkCard
+                  title="Prospective Medical Professionals 🛠️"
+                  tag1="Marketing"
+                  tag2="Graphic Design"
+                  link=""
+                  img="pump-thumb-large.png"
+                  alt="test"
+                  id="8"
+                />
 
-                <div id="5" class="workCardWrapper" onmouseover="hover('Prospective Medical Professionals', 'Co-Head of Design')" onmouseout="hoverOff()">
-                    <a href="pump.html"><img class="showcaseIMG" src="images/Thumbnails/pump-thumb.png" alt="Brown Justin Beiber"></a>
-                </div>
-                    
-                <div id="6" class="workCardWrapper" onmouseover="hover('Home to Stay 🛠️', 'Branding Material')" onmouseout="hoverOff()">
-                    <a href="under-construction.html"><img class="showcaseIMG" src="images/Thumbnails/home-to-stay-thumb.jpg" alt="OppHub"></a>
-                </div>
+                <WorkCard
+                  title="UWaterloo Concert Band"
+                  tag1="Videography"
+                  link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
+                  vid="uw_band_preview.mp4"
+                  alt="test"
+                  id="9"
+                />
 
-                <div id="7" class="workCardWrapper" onmouseover="hover('The Little Things in Life 🛠️', 'Short Film')" onmouseout="hoverOff()">
-                    <a href="under-construction.html"><img class="showcaseIMG" src="images/Thumbnails/the-little-things-thumb.jpg" alt="Film Project"></a>
-                </div>
+                <WorkCard
+                  title="3D Character Animation"
+                  tag1="Character Animation"
+                  link="https://new.express.adobe.com/webpage/uCGIoX4RiwBev"
+                  vid="character_animation_preview.mp4"
+                  alt="test"
+                  id="10"
+                />
 
-                <div id="8" class="workCardWrapper" onmouseover="hover('Tips to Prepare for a Fire Emergency 🛠️', 'Short Film')" onmouseout="hoverOff()">
-                    <a href="under-construction.html"><img class="showcaseIMG" src="images/Thumbnails/fire-emergency-thumb.jpg" alt="Film Project"></a>
-                </div>
+                <WorkCard
+                  title="Home to Stay 🛠️"
+                  tag1="Brand Design"
+                  link=""
+                  img="home-to-stay-thumb-large.jpg"
+                  alt="test"
+                  id="11"
+                />
 
-                <div id="9" class="workCardWrapper" onmouseover="hover('Garnier Mining Co. 🛠️', 'Sound Design')" onmouseout="hoverOff()">
-                    <a href="under-construction.html"><img src="images/Thumbnails/garnier-mining-thumb.jpg" alt="Sound Project"></a>
-                </div>
+                <WorkCard
+                  title="Tips to Prepare for a Fire Emergency"
+                  tag1="Motion Graphics"
+                  link="https://youtu.be/-BMOM1qkzDo"
+                  img="fire-emergency-thumb-large.jpg"
+                  alt="test"
+                  id="12"
+                />
 
-                <div id="10" class="workCardWrapper" onmouseover="hover('Fundamentals First 🛠️', 'UI/UX Design + Logo Design')" onmouseout="hoverOff()">
-                    <a href="fun-first.html"><img src="images/Thumbnails/fundamentals-first-thumb.png" alt="Website Design"></a>
-                </div>
+                <WorkCard
+                  title="Garnier Mining Co."
+                  tag1="Sound Design"
+                  link="https://www.youtube.com/watch?v=l_QdNEp2DVs"
+                  vid="garnier_preview.mp4"
+                  alt="test"
+                  id="13"
+                />
 
-                <div id="11" class="workCardWrapper" onmouseover="hover('Kaylas 🛠️', 'Logo Design')" onmouseout="hoverOff()">
-                    <a href="under-construction.html"><img src="images/Thumbnails/kaylas-logo-thumb.jpg" alt="Logo Design"></a>
-                </div> */}
+                <WorkCard
+                  title="Fundamentals First"
+                  tag1="UI/UX"
+                  tag2="Website Design"
+                  link="https://funfirst.blog/"
+                  img="fun-first-thumb-large.png"
+                  alt="test"
+                  id="14"
+                />
+
+                <WorkCard
+                  title="Kaylas 🛠️"
+                  tag1="Logo Design"
+                  link=""
+                  img="kaylas-logo-thumb-large.jpg"
+                  alt="test"
+                  id="15"
+                />
           </div>
 
         </div>

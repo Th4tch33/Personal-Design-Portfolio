@@ -569,30 +569,46 @@ a {
   padding-top: 5vh;
 }
 
-#workCardWrapper {
+.workCardWrapper {
   position: relative;
   padding: 0;
   margin: 0;
 }
-#workCardWrapper a {
+.workCardWrapper a {
   color: #fff;
 }
-#workCardWrapper video, #workCardWrapper img {
+.workCardWrapper video, .workCardWrapper img {
   display: flex;
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0vw;
+  border: 0vw solid black;
+  transition: all 0.25s;
+}
+.workCardWrapper video:hover, .workCardWrapper img:hover {
+  border-radius: 1.5vw;
+  border: 0.3vw solid black;
 }
 
 .workCardText {
+  pointer-events: none;
   position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;
   padding: 1vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  opacity: 40%;
+  border-radius: 0vw;
+  transition: border-radius 0.25s, opacity 0.25s;
+}
+
+.workCardTextHover {
+  opacity: 100%;
+  border-radius: 0 0 1.5vw 1.5vw;
 }
 
 .workCardTags {
