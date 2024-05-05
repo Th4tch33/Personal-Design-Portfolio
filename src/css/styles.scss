@@ -1730,3 +1730,9 @@ $green: #06B475;
 
     width: 90vw;
   }
+
+  #cursorGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+  }

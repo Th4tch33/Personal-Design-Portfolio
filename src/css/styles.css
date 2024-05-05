@@ -1558,4 +1558,10 @@ a {
   position: absolute;
   bottom: 20vw;
   width: 90vw;
+}
+
+#cursorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
 }/*# sourceMappingURL=styles.css.map */

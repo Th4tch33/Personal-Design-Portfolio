@@ -8,19 +8,24 @@ import Footer from "./components/Footer.jsx";
 import "./js/Main.js";
 import "./css/styles.css";
 
+import CursorAnim from "./pages/cursorAnimTest.jsx";
+
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { activePageCheck } from "./js/Main.js";
 
 function App() {
-  const location = useLocation().pathname;
+  {/*const location = useLocation().pathname;
 
   useEffect(() => {
     activePageCheck(location);
-  }, [location]);
+  }, [location]);*/}
 
   return (
     <>
+      <CursorAnim />
+
+      {/*
       <NavBar />
       <div className="container">
         <Routes>
@@ -31,6 +36,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      */}
     </>
   );
 }
