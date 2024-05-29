@@ -83,8 +83,6 @@ export { gridCreation };
 window.onload = function()
   {
     log("D")
-
-    document.body.style.overflow = "hidden";
   }
 
 function createCursor(num) { 

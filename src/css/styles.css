@@ -276,7 +276,6 @@ a {
   width: 100vw;
   top: 0;
   z-index: 900;
-  overflow: hidden;
   display: flex;
   padding: 3vh 5vw 3vh 5vw;
   justify-content: space-between;
