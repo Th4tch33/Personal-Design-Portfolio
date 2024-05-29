@@ -15,17 +15,16 @@ import { useEffect } from "react";
 import { activePageCheck } from "./js/Main.js";
 
 function App() {
-  {/*const location = useLocation().pathname;
+  const location = useLocation().pathname;
 
   useEffect(() => {
     activePageCheck(location);
-  }, [location]);*/}
+  }, [location]);
 
   return (
     <>
-      <CursorAnim />
+      {/*<CursorAnim />*/}
 
-      {/*
       <NavBar />
       <div className="container">
         <Routes>
@@ -36,7 +35,6 @@ function App() {
         </Routes>
       </div>
       <Footer />
-      */}
     </>
   );
 }
