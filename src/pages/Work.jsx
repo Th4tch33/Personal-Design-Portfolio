@@ -79,16 +79,6 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Prospective Medical Professionals 🛠️"
-                  tag1="Marketing"
-                  tag2="Graphic Design"
-                  link=""
-                  img="pump-thumb-large.png"
-                  alt="test"
-                  id="8"
-                />
-
-                <WorkCard
                   title="UWaterloo Concert Band"
                   tag1="Videography"
                   link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
@@ -116,24 +106,6 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Tips to Prepare for a Fire Emergency"
-                  tag1="Motion Graphics"
-                  link="https://youtu.be/-BMOM1qkzDo"
-                  img="fire-emergency-thumb-large.jpg"
-                  alt="test"
-                  id="12"
-                />
-
-                <WorkCard
-                  title="Garnier Mining Co."
-                  tag1="Sound Design"
-                  link="https://www.youtube.com/watch?v=l_QdNEp2DVs"
-                  vid="garnier_preview.mp4"
-                  alt="test"
-                  id="13"
-                />
-
-                <WorkCard
                   title="Fundamentals First"
                   tag1="UI/UX"
                   tag2="Website Design"
@@ -141,15 +113,6 @@ function Work() {
                   img="fun-first-thumb-large.png"
                   alt="test"
                   id="14"
-                />
-
-                <WorkCard
-                  title="Kaylas 🛠️"
-                  tag1="Logo Design"
-                  link=""
-                  img="kaylas-logo-thumb-large.jpg"
-                  alt="test"
-                  id="15"
                 />
           </div>
 

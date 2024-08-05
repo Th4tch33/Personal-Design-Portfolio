@@ -112,15 +112,6 @@ function Home() {
           />
 
           <ShowcaseCard
-            title="Emergency Preperation: How To Deal With a Fire"
-            subTitle="Live Action Safety Awareness Video"
-            para="A one minute PSA focused teaching the user about what to do if there's a fire emergency without using narration."
-            link="https://youtu.be/-BMOM1qkzDo"
-            img="fire-emergency-thumb-large.jpg"
-            alt="School Porject"
-          />
-
-          <ShowcaseCard
             title="Brown Justin Beiber"
             subTitle="Animated Lyric Video"
             para="A stylized lyric video aimed at representing the identity and personality of the artist Suigeneris in his track about Hot Cheetos and the hip-hop lifestyle."
