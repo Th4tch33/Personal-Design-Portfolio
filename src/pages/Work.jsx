@@ -79,26 +79,6 @@ function Work() {
                 />
 
                 <WorkCard
-<<<<<<< HEAD
-                  title="Prospective Medical Professionals 🛠️"
-                  tag1="Marketing"
-                  tag2="Graphic Design"
-                  link=""
-                  img="pump-thumb-large.png"
-                  alt="test"
-                  id="8"
-=======
-                  title="OppHub.com"
-                  tag1="UI/UX"
-                  tag2="Product Design"
-                  link="https://www.opp-hub.com/"
-                  img="opphub-thumb-large.png"
-                  alt="test"
-                  id="7"
->>>>>>> dc144eaf90692844cc0dc189e9b45eff1e27bfb8
-                />
-
-                <WorkCard
                   title="UWaterloo Concert Band"
                   tag1="Videography"
                   link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
