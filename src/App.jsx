@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar.jsx";
 import Home from "./pages/Home.jsx";
 import Work from "./pages/Work.jsx";
 import About from "./pages/About.jsx";
+import WorkBBB from "./pages/Work_BBB.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/workBBB" element={<WorkBBB />} />
         </Routes>
       </div>
       <Footer />

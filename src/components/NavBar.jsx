@@ -23,8 +23,15 @@ export default function NavBar() {
     <>
       <nav id="navContainer">
         <Link to="/">cadenchan.design</Link>
-        <ul>
-        <li>
+
+        <ul className="navCenter">
+          <img className="navStarGroup" src="/Icons/star_group_left.svg" />
+          <img className="navSigil" src="/Icons/sigil.svg" />
+          <img className="navStarGroup" src="/Icons/star_group_right.svg" />
+        </ul>
+
+        <ul className="navRight">
+          <li>
             <CustomLink to="/work">Work</CustomLink>
           </li>
           <li>

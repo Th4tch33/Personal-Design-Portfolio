@@ -5,7 +5,7 @@ function About() {
 
       <div id="websiteSectionContainer">
         <div id="aboutMeWrapper">
-          <img src="/Images/caught_red_handed.jpg" />
+          <img src="/Images/Hella_Gear_Facing_Cam_Straight.jpg" />
           <h1>A Little About Me</h1>
 
           <div id="aboutMeText">

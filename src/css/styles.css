@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap");
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Unviersal Styles
@@ -126,6 +127,9 @@ a {
 */
 .introInfoContainer {
   padding-bottom: 10vh;
+}
+.introInfoContainer video {
+  width: 100%;
 }
 
 .introInfoPara {
@@ -270,14 +274,16 @@ a {
   }
 }
 #navContainer {
-  background-color: #17171A;
+  background-color: #1D50D0;
   color: #ffffff;
   position: fixed;
   width: 100vw;
   top: 0;
   z-index: 900;
-  display: flex;
-  padding: 3vh 5vw 3vh 5vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-column-gap: 3vw;
+  padding: 1vh 5vw 1vh 5vw;
   justify-content: space-between;
   align-items: center;
   transition: top 0.3s;
@@ -287,12 +293,12 @@ a {
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 8rem;
 }
 #navContainer a {
   color: inherit;
   text-decoration: none;
   font-size: 0.8em;
+  font-weight: 500;
   transition: all 0.25s;
 }
 #navContainer a.active {
@@ -301,13 +307,35 @@ a {
 #navContainer a:hover {
   font-size: 1em;
   font-weight: 700;
-  color: #0d97e1;
+  color: #FFC43D;
+}
+
+.navCenter {
+  justify-content: center;
+}
+
+.navRight {
+  justify-content: space-between;
+}
+
+.navSigil {
+  width: auto;
+  height: 4vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.navStarGroup {
+  width: auto;
+  height: 2vw;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #footerContainer {
   font-family: "Sora", sans-serif;
   padding: 5vh 5vw;
-  background-color: #17171A;
+  background-color: #1D50D0;
 }
 
 #backToTop {
@@ -319,19 +347,19 @@ a {
   height: auto;
   aspect-ratio: 1/1;
   line-height: clamp(75px, 6vw, 100vw);
-  background-color: #17171A;
-  color: #ffffff;
+  background-color: #1D50D0;
+  color: #FFC43D;
   font-size: clamp(45px, 4vw, 100vw);
   border-radius: 100%;
-  border: 3px solid #ffffff;
+  border: 3px solid #FFC43D;
   cursor: pointer;
   transition: 0.25s;
 }
 
 #backToTop:hover {
-  background-color: #ffffff;
-  color: #17171A;
-  border: 3px solid #17171A;
+  background-color: #FFC43D;
+  color: #ffffff;
+  border: 3px solid #ffffff;
 }
 
 #idWrapper {
@@ -574,7 +602,7 @@ a {
   margin: 0;
 }
 .workCardWrapper a {
-  color: #fff;
+  color: #ffffff;
 }
 .workCardWrapper video, .workCardWrapper img {
   display: flex;
@@ -584,12 +612,12 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0vw;
-  border: 0vw solid black;
+  border: 0vw solid #1D50D0;
   transition: all 0.25s;
 }
 .workCardWrapper video:hover, .workCardWrapper img:hover {
   border-radius: 1.5vw;
-  border: 0.3vw solid black;
+  border: 0.3vw solid #1D50D0;
 }
 
 .workCardText {
@@ -599,8 +627,8 @@ a {
   bottom: 0;
   left: 0;
   padding: 1vw;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-  opacity: 40%;
+  background-image: linear-gradient(rgba(29, 80, 208, 0), rgb(29, 80, 208));
+  opacity: 25%;
   border-radius: 0vw;
   transition: border-radius 0.25s, opacity 0.25s;
 }
@@ -615,7 +643,7 @@ a {
   padding-top: 0.25vw;
 }
 .workCardTags p {
-  border: 2px solid #fff;
+  border: 2px solid #FFC43D;
   padding: 0.25vw;
   border-radius: 0.25vw;
   margin-right: 0.5vw;
@@ -644,8 +672,7 @@ a {
   line-height: 1em;
 }
 #aboutMeWrapper img {
-  width: auto;
-  height: 60vh;
+  width: 100%;
   padding-bottom: 5vh;
 }
 #aboutMeWrapper p {

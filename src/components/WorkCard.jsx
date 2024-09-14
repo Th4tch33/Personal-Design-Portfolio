@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-import {WorkCardHoverOn} from "../js/WorkCardJS.js";
-import {WorkCardHoverOff} from "../js/WorkCardJS.js";
+import { WorkCardHoverOn } from "../js/WorkCardJS.js";
+import { WorkCardHoverOff } from "../js/WorkCardJS.js";
 
 WorkCard.propTypes = {
   title: PropTypes.string.isRequired,
@@ -15,12 +16,28 @@ WorkCard.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id}) {
+WorkLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+function WorkLink({ to, children, ...props }) {
+  const path = window.location.pathname;
+
+  return (
+    <li className={path === to ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id }) {
   return (
     <>
       <div id={id} className="workCardWrapper" onMouseOver={() => WorkCardHoverOn({id})} onMouseOut={() =>WorkCardHoverOff({id})}>
-        <a href={link} rel="noreferrer" target="_blank">
-
+        <Link to={link}>
           {img && (
             <img src={"/Thumbnails/" + img} />
           )}
@@ -55,7 +72,7 @@ function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id}) {
             </div>
 
           </div>
-        </a>
+        </Link>
       </div>
     </>
   );

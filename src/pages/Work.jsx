@@ -11,6 +11,16 @@ function Work() {
 
             <div id="workWrapper">
                 <WorkCard
+                  title="BBB x MSM"
+                  tag1="Internship"
+                  tag2="Content Creation"
+                  link="/workBBB"
+                  img="MSMxJJK.png"
+                  alt="test"
+                  id="0"
+                />
+
+                <WorkCard
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"
@@ -69,6 +79,15 @@ function Work() {
                 />
 
                 <WorkCard
+<<<<<<< HEAD
+                  title="Prospective Medical Professionals 🛠️"
+                  tag1="Marketing"
+                  tag2="Graphic Design"
+                  link=""
+                  img="pump-thumb-large.png"
+                  alt="test"
+                  id="8"
+=======
                   title="OppHub.com"
                   tag1="UI/UX"
                   tag2="Product Design"
@@ -76,6 +95,7 @@ function Work() {
                   img="opphub-thumb-large.png"
                   alt="test"
                   id="7"
+>>>>>>> dc144eaf90692844cc0dc189e9b45eff1e27bfb8
                 />
 
                 <WorkCard
