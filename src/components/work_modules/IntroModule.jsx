@@ -3,36 +3,28 @@ function introModule() {
         <>
             <div className="introInfoContainer">
                 
-                <video autoPlay loop muted src="/Videos/bumpin_matt_preview.mp4" type="video/mp4" />
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yZbp-z0kPOw?si=eNKUkrGkeQYfrxuL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 
-                <div className="introInfoDetailWrapper">
-                    <div className="introInfoAssignment">
-                        <b>Assignment</b>
-                        <br/><br/>
-                        Help guide the brand identity of OppHub spanning their website, social media, and marketing campaigns
-                    </div>
-
-                    <div className="introInfoGoal">
-                        <b>Goal</b>
-                        <br/><br/>
-                        Portray the classic "By Students for Students" motto by keeping our image on par with modern design language paired with practicality.
-                    </div>
-                    
-                    <div className="introInfoRole">
-                        <b>My Role</b>
-                        <br/><br/>
-                        Brand Identity Designer <br/>
-                        Front End Dev <br/>
-                        Graphic Design <br/>
-                        UI/UX Design <br/>
-                    </div>
-                    
-                    <div className="introInfoYear">
-                        <b>Year</b>
-                        <br/><br/>
-                        Nov 2020 - July 2021
-                    </div>
+                <div className="introTitle">
+                    My Singing Monsters
                 </div>
+
+                <div className="introSubTitle">
+                    <div>Marketing Specialist  //  Big Blue Bubble</div>
+                    <div>May 2024  -&gt;  Aug 2024</div>
+                </div>
+
+                <div className="introInfoPara">
+                    <div className="introTitle">Hey!</div>
+                    <p>
+                        I worked at a mobile games company during a 4 month as a marketing specialist for their flagship title My Singing Monsters! My job was to continually create captivating digital content to be posted across their social media platform to engage their unique audience.
+                        <br></br><br></br>
+                        My work would be posted to multiple 100k+ follower social media accounts that I would also help manage including Instagram, Twitter, TikTok, and YouTube.
+                        <br></br><br></br>
+                        My work is multi-disciplinary spanning many mediums like graphic design, illustration, product photography, 3D modeling, and filming. Below is what I was able to get done during my internship, hop you enjoy the view!
+                    </p>
+                </div>
+
             </div>
         </>
     );
