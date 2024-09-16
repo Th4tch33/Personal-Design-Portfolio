@@ -11,11 +11,11 @@ function Work() {
 
             <div id="workWrapper">
                 <WorkCard
-                  title="BBB x MSM"
+                  title="My Singing Monsters"
                   tag1="Internship"
                   tag2="Content Creation"
                   link="/workBBB"
-                  img="MSMxJJK.png"
+                  vid="msm_preview.mp4"
                   alt="test"
                   id="0"
                 />

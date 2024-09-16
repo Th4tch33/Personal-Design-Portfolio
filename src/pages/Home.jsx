@@ -58,6 +58,15 @@ function Home() {
         <div id="spotlightWrapper">
 
         <ShowcaseCard
+            title="My Singing Monsters"
+            subTitle="Marketing Specialist"
+            para="A roaring two-day tournament with 56 teams clashing to be champions. I was hired as the event photographer and videographer to capture the best moments from the event. Additionally, I edited all the content taken from the day and delivered it as a photo package, multiple videos edited for social media, and a 1-minute video montage of everything that happened."
+            link="/workBBB"
+            img="msm-thumb-large.jpg"
+            alt="Photography and Videography"
+        />
+
+        <ShowcaseCard
             title="Bumpin Sports X Matt Jen Volleyball Tournament"
             subTitle="Sports Videography"
             para="A roaring two-day tournament with 56 teams clashing to be champions. I was hired as the event photographer and videographer to capture the best moments from the event. Additionally, I edited all the content taken from the day and delivered it as a photo package, multiple videos edited for social media, and a 1-minute video montage of everything that happened."
