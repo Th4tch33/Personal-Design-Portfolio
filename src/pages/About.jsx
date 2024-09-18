@@ -36,6 +36,10 @@ function About() {
                 <p>2022 Summer</p>
               </div>
               <div className="experienceListItem">
+                <h3>Marketing Specialist Intern @ Big Blue Bubble &<br></br> My Singing Monsters</h3>
+                <p>2024 Summer</p>
+              </div>
+              <div className="experienceListItem">
                 <h3>Full Resume 📄</h3>
                 <a href="/Caden_Chan_Resume_2024_3D.pdf" rel="noreferrer" target="_blank">
                   <div className="button">Click to View</div>

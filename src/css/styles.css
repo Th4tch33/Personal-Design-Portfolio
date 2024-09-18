@@ -641,12 +641,12 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0vw;
-  border: 0vw solid #1D50D0;
+  border: 0vw solid #17171A;
   transition: all 0.25s;
 }
 .workCardWrapper video:hover, .workCardWrapper img:hover {
   border-radius: 1.5vw;
-  border: 0.3vw solid #1D50D0;
+  border: 0.3vw solid #17171A;
 }
 
 .workCardText {
@@ -656,7 +656,7 @@ a {
   bottom: 0;
   left: 0;
   padding: 1vw;
-  background-image: linear-gradient(rgba(29, 80, 208, 0), rgb(29, 80, 208));
+  background-image: linear-gradient(rgba(29, 80, 208, 0), rgba(0, 0, 0, 0.8));
   opacity: 25%;
   border-radius: 0vw;
   transition: border-radius 0.25s, opacity 0.25s;

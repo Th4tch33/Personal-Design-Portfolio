@@ -728,13 +728,13 @@ a {
         object-fit: cover;
 
         border-radius: 0vw;
-        border: 0vw solid $blue;
+        border: 0vw solid $dark;
         transition: all 0.25s;
     }
 
     video:hover, img:hover {
         border-radius: 1.5vw;
-        border: 0.30vw solid $blue;
+        border: 0.30vw solid $dark;
     }
 }
 
@@ -747,7 +747,7 @@ a {
     left: 0;   
     padding: 1vw;
 
-    background-image: linear-gradient(rgba(29, 80, 208, 0), rgba(29, 80, 208, 1));
+    background-image: linear-gradient(rgba(29, 80, 208, 0), rgba(0, 0, 0, 0.8));
 
     opacity: 25%;
     border-radius: 0vw;

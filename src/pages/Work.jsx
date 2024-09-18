@@ -31,6 +31,16 @@ function Work() {
                 />
 
                 <WorkCard
+                  title="Warriors vs Gee-Gees"
+                  tag1="Sport Videography"
+                  tag2="Video Editing"
+                  link="https://youtu.be/0w7El6HVczI?si=lCGv1NNWAWujwQRu"
+                  vid="UWvOGG_preview.mp4"
+                  alt="test"
+                  id="3"
+                />
+
+                <WorkCard
                   title="Bumpin x MattJen Volleyball"
                   tag1="Sport Videography"
                   tag2="Motion Graphics"
@@ -46,7 +56,7 @@ function Work() {
                   link="https://youtu.be/p0GQrReJH3Q?si=OFn57UmQg_egTeMy"
                   vid="little_things_preview.mp4"
                   alt="test"
-                  id="3"
+                  id="4"
                 />
 
                 <WorkCard
@@ -56,7 +66,7 @@ function Work() {
                   link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
                   vid="ancient_idol_preview.mp4"
                   alt="test"
-                  id="4"
+                  id="5"
                 />
 
                 <WorkCard
@@ -65,7 +75,7 @@ function Work() {
                   link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
                   img="start-with-sun-thumb-large.jpg"
                   alt="test"
-                  id="5"
+                  id="6"
                 />
 
                 <WorkCard
@@ -75,7 +85,7 @@ function Work() {
                   link="https://vimeo.com/516726385?share=copy"
                   vid="brown_justin_bieber_preview.mp4"
                   alt="test"
-                  id="6"
+                  id="7"
                 />
 
                 <WorkCard
@@ -84,7 +94,7 @@ function Work() {
                   link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
                   vid="uw_band_preview.mp4"
                   alt="test"
-                  id="9"
+                  id="8"
                 />
 
                 <WorkCard
@@ -93,7 +103,7 @@ function Work() {
                   link="https://new.express.adobe.com/webpage/uCGIoX4RiwBev"
                   vid="character_animation_preview.mp4"
                   alt="test"
-                  id="10"
+                  id="9"
                 />
 
                 <WorkCard
@@ -102,7 +112,7 @@ function Work() {
                   link=""
                   img="home-to-stay-thumb-large.jpg"
                   alt="test"
-                  id="11"
+                  id="10"
                 />
 
                 <WorkCard
@@ -112,7 +122,7 @@ function Work() {
                   link="https://funfirst.blog/"
                   img="fun-first-thumb-large.png"
                   alt="test"
-                  id="14"
+                  id="11"
                 />
           </div>
 
