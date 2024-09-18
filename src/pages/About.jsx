@@ -28,23 +28,27 @@ function About() {
             <h1>Experience</h1>
             <div id="experienceList">
               <div className="experienceListItem">
+                <h3>Marketing Specialist Intern @ Big Blue Bubble &<br></br> My Singing Monsters</h3>
+                <p>2024 Summer</p>
+              </div>
+
+              <div className="experienceListItem">
                 <h3>Motion Design Freelancer @ SJC</h3>
                 <p>2022 Winter</p>
               </div>
+
               <div className="experienceListItem">
                 <h3>Motion Design Intern @ SJC</h3>
                 <p>2022 Summer</p>
               </div>
-              <div className="experienceListItem">
-                <h3>Marketing Specialist Intern @ Big Blue Bubble &<br></br> My Singing Monsters</h3>
-                <p>2024 Summer</p>
-              </div>
+
               <div className="experienceListItem">
                 <h3>Full Resume 📄</h3>
                 <a href="/Caden_Chan_Resume_2024.pdf" rel="noreferrer" target="_blank">
                   <div className="button">Click to View</div>
                 </a>
               </div>
+
             </div>
           </div>
         </div>
