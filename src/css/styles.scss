@@ -425,7 +425,7 @@ a {
     text-align: center;
 
     width: clamp(75px, 6vw, 100vw);
-    height: auto;
+    height: clamp(75px, 6vw, 100vw);
     aspect-ratio: 1/1;
     line-height: clamp(75px, 6vw, 100vw);
       
