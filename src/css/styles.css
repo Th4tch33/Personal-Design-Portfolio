@@ -43,6 +43,8 @@ body {
   }
 }
 h1 {
+  font-family: "Lora", serif;
+  font-style: italic;
   font-size: 6em;
   font-weight: 700;
 }
@@ -456,11 +458,26 @@ a {
 
 #heroTextContainer {
   position: relative;
-  padding-top: 33vh;
+  padding-top: 28vh;
   z-index: 3;
+}
+#heroTextContainer h1 {
+  font-family: "Red Hat Mono", monospace;
+  font-style: normal;
+  font-size: 12em;
 }
 #heroTextContainer h2 {
   font-size: 2em;
+}
+
+#nameContainer {
+  justify-content: center;
+  display: flex;
+}
+#nameContainer img {
+  margin: auto 2em;
+  height: auto;
+  width: 10vw;
 }
 
 #hoursJSContainer {
@@ -661,6 +678,14 @@ a {
   border-radius: 0vw;
   transition: border-radius 0.25s, opacity 0.25s;
 }
+.workCardText h3 {
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+.workCardText p {
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+}
 
 .workCardTextHover {
   opacity: 100%;
@@ -718,7 +743,7 @@ a {
 }
 
 #aboutMeExperience {
-  padding-top: 30vh;
+  padding-top: 15vh;
   text-align: left;
 }
 #aboutMeExperience h1 {
@@ -805,12 +830,15 @@ a {
 }
 
 #contactMail {
-  font-weight: 700;
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+  font-size: 2em;
   text-align: center;
+  color: #1D50D0;
 }
 #contactMail a {
   text-decoration: none;
-  color: #17171A;
+  color: #1D50D0;
   font-weight: 500;
 }
 

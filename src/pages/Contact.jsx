@@ -2,11 +2,11 @@ function Contact() {
   return (
     <>
       <div id="websiteSectionContainer">
-        <div id="contactHead">OPEN TO CHAT</div>
+        <h1 id="contactHead">Open To Chat</h1>
 
         <div id="contactSubHead">
           Hit me up if you like what I’m about!
-          <br />
+          <br/>
           I’m currently seeking work and internship opportunities.
         </div>
 
@@ -52,8 +52,7 @@ function Contact() {
         </div>
 
         <div id="contactMail">
-          Mail To: <a href="mailto:caden.perry.chan@gmail.com" rel="noreferrer" target="_blank" />
-          caden.perry.chan@gmail.com
+          <a href="mailto:caden.perry.chan@gmail.com" rel="noreferrer" target="_blank">Mail To: caden.perry.chan@gmail.com</a>
         </div>
       </div>
     </>

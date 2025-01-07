@@ -11,7 +11,12 @@ function Home() {
       <div id="heroSectionWrapper">
         <div id="frontIconGroup"></div>
         <div id="heroTextContainer">
-          <h1>CADEN CHAN</h1>
+          <div id="nameContainer">
+            <h1>CADEN</h1>
+            <img src="/Icons/sigil_blue.svg" />
+            <h1>CHAN</h1>
+          </div>
+          
           <div id="hoursJSContainer">
             <h2>
               Working to become the next global threat to

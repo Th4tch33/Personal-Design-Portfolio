@@ -4,7 +4,7 @@ function Work() {
   return (
     <>
       <div id="websiteSectionContainer">
-            <h1>PORTFOLIO WORK</h1>
+            <h1>Portfolio Work</h1>
             <h3>A lot of different work done in a lot of different ways.</h3>
             
             <p><br/>🛠️ - Webpage Currently Under Construction</p>
