@@ -4,10 +4,8 @@ function Work() {
   return (
     <>
       <div id="websiteSectionContainer">
-            <h1>Portfolio Work</h1>
-            <h3>A lot of different work done in a lot of different ways.</h3>
-            
-            <p><br/>🛠️ - Webpage Currently Under Construction</p>
+            <h1>Portfolio Work</h1>      
+            <p>A lot of different work done in a lot of different ways.</p>
 
             <div id="workWrapper">
                 <WorkCard
@@ -106,6 +104,8 @@ function Work() {
                   id="9"
                 />
 
+                {/*
+
                 <WorkCard
                   title="Home to Stay 🛠️"
                   tag1="Brand Design"
@@ -123,7 +123,7 @@ function Work() {
                   img="fun-first-thumb-large.png"
                   alt="test"
                   id="11"
-                />
+                /> */}
           </div>
 
         </div>

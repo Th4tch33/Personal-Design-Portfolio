@@ -160,8 +160,6 @@ a {
     font-family: "Lora", serif;
     font-weight: 700;
     font-style: italic;
-
-    padding-top: 0.5em;
 }
 
 .introSubTitle {
@@ -178,7 +176,7 @@ a {
 .introInfoPara {
     display: flex;
     margin: auto;
-    padding-top: 10vh;
+    padding: 10vh 0;
     grid-column-gap: 2em;
 
     width: 75%;
@@ -200,6 +198,29 @@ a {
     padding-top: 4vh;
 
     font-size: 1em;
+}
+
+@media screen and (max-device-width: 768px) {
+    .introTitle {
+        font-size: 5em;
+    }
+    
+    .introSubTitle {
+        display: block;
+        
+        font-size: 2em;
+        font-weight: 500;
+    
+        padding: 0.5em 0;
+    }
+    
+    .introInfoPara {
+        display: grid;
+        padding: 10vh 0;
+        grid-row-gap: 2em;
+    
+        width: 100%;
+    }
 }
 
 //Fullscreen Image
@@ -290,11 +311,30 @@ a {
     height: auto;
 }
 
-@media screen and (max-device-width: 428px) {
+@media screen and (max-device-width: 768px) {
     .sectionHead {
         font-size: 4em;
     
-        margin-top: 10vh;
+        margin: 15vh 0;
+    }
+
+    .threeGridImage {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-row-gap: 5vh;
+        grid-column-gap: 0vh;
+
+        padding-top: 5vh;
+    }
+    
+    .splitScreenImage {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5vh;
+    
+        padding-top: 5vh;
     }
 }
 
@@ -352,12 +392,15 @@ a {
     top: 0;
     z-index: 900;
 
+
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-column-gap: 3vw;
     padding: 1vh $horzMarginSize 1vh $horzMarginSize;
     justify-content: space-between;
     align-items: center;
+
+    transition: top 0.3s;
 
     ul {
         padding: 0;
@@ -386,11 +429,14 @@ a {
         color: $yellow;
     }
 
-    transition: top 0.3s;
-}
+    nav {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 3vw;
 
-.navButton {
-	display: none;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .navCenter {
@@ -402,6 +448,8 @@ a {
 
 .navRight {
     justify-content: space-between;
+    align-items: center;
+    grid-column-gap: 3vw;
 }
 
 .navSigil {
@@ -422,13 +470,30 @@ a {
 .navButton {
     position: relative;
     z-index: 901;
+
+    all: unset;
+    display: none;
+
+    img {
+        width: auto;
+        height: 4vh;
+    }
+}
+
+#mobileHomeButton {
+    display: none;
 }
 
 @media screen and (max-device-width: 768px) {
     
     #navContainer {
-
-        grid-template-columns: 1fr 1fr;
+        height: 10vh;
+        
+        display: flex;
+        background-color: transparent;
+        //border-bottom: 2px solid $blue;
+        
+        color: $blue;
 
         nav {
             position: absolute;
@@ -438,9 +503,12 @@ a {
             height: 100vh;
             width: 100vw;
 
-            background-color: $blue;
-            padding: 5vw;
+            background-color: transparentize($blue, 0.15);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
 
+            padding: 5vw;
+            align-items: normal;
             z-index: 10000;
             transition: 1s; 
         }
@@ -449,6 +517,10 @@ a {
             gap: 1vw;
 
             display: block;
+        }
+
+        a {
+            font-weight: 700;
         }
     }
     
@@ -462,6 +534,7 @@ a {
         text-align: center;
 
         bottom: 5vw;
+        left: 5vw;
     }
 
     .navSigil {
@@ -480,6 +553,7 @@ a {
 		max-width: 90vw;
 
         li a {
+            color: $light !important;
             font-size: 4em !important;
             font-weight: 700 !important;
         }
@@ -493,6 +567,15 @@ a {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
+
+        img {
+            height: 6vh;
+            width: auto;
+        }
+    }
+
+    #mobileHomeButton {
+        display: block;
     }
 }
 
@@ -557,10 +640,6 @@ a {
 
     #websiteSectionContainer {
         padding: 10vh $horzMarginSize;
-    }
-
-    .introInfoContainer {
-        padding-bottom: 10vh;
     }
     
     .introInfoPara {
@@ -683,8 +762,17 @@ a {
         margin: 5vh $horzMarginSize 5vh $horzMarginSize;
     }
 
-    #personalLogoContainer{
+    #personalLogoContainer{    
+        img{
+            max-width: 90vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+        }
+    }
 
+    #personalLogoSubheadWrapper {
+        font-size: 5vw;
     }
 
     .spotlightInfo {
@@ -800,6 +888,33 @@ a {
         grid-template-columns: 1fr;
         column-gap: 0;
         row-gap: 2vh;
+    }
+
+    .workCardWrapper{
+        
+        video, img{
+            border-radius: 3vw;
+        }
+    }
+
+    .workCardText {
+        opacity: 100%;
+        padding: 2vw;
+    }
+
+    .workCardTags {
+        padding-top: 1vw;
+    
+        p {
+            font-size: 1em;
+            font-weight: 100;
+
+            border: 2px solid $yellow;
+            padding: 1vw;
+            border-radius: 1vw;
+    
+            margin-right: 2vw;
+        }
     }
 }
 

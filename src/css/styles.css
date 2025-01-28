@@ -138,7 +138,6 @@ a {
   font-family: "Lora", serif;
   font-weight: 700;
   font-style: italic;
-  padding-top: 0.5em;
 }
 
 .introSubTitle {
@@ -153,7 +152,7 @@ a {
 .introInfoPara {
   display: flex;
   margin: auto;
-  padding-top: 10vh;
+  padding: 10vh 0;
   grid-column-gap: 2em;
   width: 75%;
 }
@@ -173,6 +172,23 @@ a {
   font-size: 1em;
 }
 
+@media screen and (max-device-width: 768px) {
+  .introTitle {
+    font-size: 5em;
+  }
+  .introSubTitle {
+    display: block;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 0.5em 0;
+  }
+  .introInfoPara {
+    display: grid;
+    padding: 10vh 0;
+    grid-row-gap: 2em;
+    width: 100%;
+  }
+}
 .fullScreenImage {
   text-align: center;
   margin-top: 3vh;
@@ -251,10 +267,25 @@ a {
   height: auto;
 }
 
-@media screen and (max-device-width: 428px) {
+@media screen and (max-device-width: 768px) {
   .sectionHead {
     font-size: 4em;
-    margin-top: 10vh;
+    margin: 15vh 0;
+  }
+  .threeGridImage {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5vh;
+    grid-column-gap: 0vh;
+    padding-top: 5vh;
+  }
+  .splitScreenImage {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5vh;
+    padding-top: 5vh;
   }
 }
 #websiteSectionContainer {
@@ -313,7 +344,7 @@ a {
   top: 0;
   z-index: 900;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-column-gap: 3vw;
   padding: 1vh 5vw 1vh 5vw;
   justify-content: space-between;
@@ -341,9 +372,12 @@ a {
   font-weight: 700;
   color: #FFC43D;
 }
-
-.navButton {
-  display: none;
+#navContainer nav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 3vw;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navCenter {
@@ -355,6 +389,8 @@ a {
 
 .navRight {
   justify-content: space-between;
+  align-items: center;
+  grid-column-gap: 3vw;
 }
 
 .navSigil {
@@ -375,11 +411,24 @@ a {
 .navButton {
   position: relative;
   z-index: 901;
+  all: unset;
+  display: none;
+}
+.navButton img {
+  width: auto;
+  height: 4vh;
+}
+
+#mobileHomeButton {
+  display: none;
 }
 
 @media screen and (max-device-width: 768px) {
   #navContainer {
-    grid-template-columns: 1fr 1fr;
+    height: 10vh;
+    display: flex;
+    background-color: transparent;
+    color: #1D50D0;
   }
   #navContainer nav {
     position: absolute;
@@ -387,14 +436,20 @@ a {
     left: 100vw;
     height: 100vh;
     width: 100vw;
-    background-color: #1D50D0;
+    background-color: rgba(29, 80, 208, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     padding: 5vw;
+    align-items: normal;
     z-index: 10000;
     transition: 1s;
   }
   #navContainer ul {
     gap: 1vw;
     display: block;
+  }
+  #navContainer a {
+    font-weight: 700;
   }
   .navButton {
     display: block;
@@ -404,6 +459,7 @@ a {
     justify-content: center;
     text-align: center;
     bottom: 5vw;
+    left: 5vw;
   }
   .navSigil {
     max-height: 15vh;
@@ -420,6 +476,7 @@ a {
     max-width: 90vw;
   }
   .navRight li a {
+    color: #ffffff !important;
     font-size: 4em !important;
     font-weight: 700 !important;
   }
@@ -430,6 +487,13 @@ a {
     position: absolute;
     top: 2rem;
     right: 2rem;
+  }
+  .navButtonClose img {
+    height: 6vh;
+    width: auto;
+  }
+  #mobileHomeButton {
+    display: block;
   }
 }
 #footerContainer {
@@ -487,9 +551,6 @@ a {
   }
   #websiteSectionContainer {
     padding: 10vh 5vw;
-  }
-  .introInfoContainer {
-    padding-bottom: 10vh;
   }
   .introInfoPara {
     font-size: 1.2em;
@@ -595,6 +656,15 @@ a {
   #heroSectionWrapper {
     margin: 5vh 5vw 5vh 5vw;
   }
+  #personalLogoContainer img {
+    max-width: 90vw;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
+  }
+  #personalLogoSubheadWrapper {
+    font-size: 5vw;
+  }
   .spotlightInfo {
     padding-top: 10vh;
   }
@@ -690,6 +760,24 @@ a {
     -moz-column-gap: 0;
          column-gap: 0;
     row-gap: 2vh;
+  }
+  .workCardWrapper video, .workCardWrapper img {
+    border-radius: 3vw;
+  }
+  .workCardText {
+    opacity: 100%;
+    padding: 2vw;
+  }
+  .workCardTags {
+    padding-top: 1vw;
+  }
+  .workCardTags p {
+    font-size: 1em;
+    font-weight: 100;
+    border: 2px solid #FFC43D;
+    padding: 1vw;
+    border-radius: 1vw;
+    margin-right: 2vw;
   }
 }
 /*

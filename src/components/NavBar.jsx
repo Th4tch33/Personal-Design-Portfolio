@@ -42,6 +42,10 @@ export default function NavBar() {
 
         <ul className="navRight">
           <li>
+            <CustomLink id="mobileHomeButton" to="/" onClick={showNavbar}>HOME</CustomLink>
+          </li>
+          
+          <li>
             <CustomLink to="/work" onClick={showNavbar}>WORK</CustomLink>
           </li>
           <li>
@@ -55,11 +59,11 @@ export default function NavBar() {
         <button
             className="navButton navButtonClose"
             onClick={showNavbar}>
-              Close
+              <img src="/assets/x-icon.svg"></img>
 				</button>
       </nav>
 
-      <button className="navButton" onClick={showNavbar}>Open</button>
+      <button className="navButton" onClick={showNavbar}><img src="/assets/menu-icon.svg"></img></button>
 
     </header>
   );
