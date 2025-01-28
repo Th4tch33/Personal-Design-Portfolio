@@ -118,7 +118,6 @@ function activePageCheck(n) {
         rotationSpeed = aboutRotationSpeed;
     
         document.removeEventListener('mousemove', mouseMoveEngine);
-        document.removeEventListener('scroll', mouseScrollEngine);
 
         clearInterval(runHomeBehavior);
 
@@ -130,7 +129,6 @@ function activePageCheck(n) {
         rotationSpeed = 0;
 
         document.removeEventListener('mousemove', mouseMoveEngine);
-        document.removeEventListener('scroll', mouseScrollEngine);
 
         clearInterval(runHomeBehavior);
     }
@@ -139,29 +137,29 @@ function activePageCheck(n) {
 
     prevMouseX = mouseX;
 
-    //moves nav bar of screen when scrolling down
-    document.addEventListener('scroll', () => {
-        
-        navCurrent = window.pageYOffset;
+    if(parser.getPlatformType() === "desktop") {
+        //moves nav bar of screen when scrolling down
+        document.addEventListener('scroll', () => {
+            
+            navCurrent = window.pageYOffset;
 
-        if((navCurrent - navPrev) % 2 > 0) {
-            document.getElementById('navContainer').style.top = "-15vw";
-        }
-        else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
-            document.getElementById('navContainer').style.top = "0";
-        }
+            if((navCurrent - navPrev) % 2 > 0) {
+                document.getElementById('navContainer').style.top = "-15vw";
+            }
+            else if ((navCurrent - navPrev) % 2 < 0 && showreelActive == false) {
+                document.getElementById('navContainer').style.top = "0";
+            }
 
-        navPrev = navCurrent; 
-    });
+            navPrev = navCurrent; 
+        });
+    }
 
     //removes loading screen
     //document.getElementById("loadingScreen").classList.add("fadeOut");
 
     if (activePage == 0) {
-        console.log("icon engine went off activePage: " + activePage);
         //mechanism that detects hover over showcase work
         document.addEventListener('mousemove', mouseMoveEngine);
-        document.addEventListener('scroll', mouseScrollEngine);
 
         //runs the behaivors on the home screen
         runHomeBehavior = setInterval(homeBehaviors, 10);
@@ -176,8 +174,6 @@ function createWarningImage(type, order, size, x) {
     const loaderBack = document.getElementById("backIconGroup");
     const img = document.createElement("IMG");
 
-    console.log(type)
-    
     img.setAttribute("src", "/falling-objects/object" + type + ".svg");
     img.setAttribute("alt", "cool icon");
     
@@ -234,11 +230,7 @@ function getRandomBool() {
     return Math.random() < 0.5;
 }
 
-function buildIcons () {
-    console.log("buildIcons() is running");
-
-    console.log("numOfIcons: " + numOfIcons);
-    
+function buildIcons () {    
     //DOMs in all icons and initializes parameters
     for(let i = 0; i < numOfIcons; i++) {
             
@@ -277,9 +269,6 @@ function buildIcons () {
 
 //Deletes all icons
 function deleteActiveIcons () {
-    console.log("deleteActiveIcons() is running");
-
-    console.log("numOfIcons: " + numOfIcons);
     for(let i = 0; i < numOfIcons; i++) {
         document.getElementById("icon" + i).remove();
     }
@@ -326,14 +315,6 @@ function homeBehaviors() {
 const mouseMoveEngine = (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY + window.pageYOffset
-
-    document.getElementById('playButton').style.left = mouseX - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
-    document.getElementById('playButton').style.top = mouseY - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
-}
-
-const mouseScrollEngine = () => {
-    document.getElementById('playButton').style.left = mouseX - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
-    document.getElementById('playButton').style.top = mouseY - (document.getElementById('playButton').getBoundingClientRect().height) / 2 + "px";
 }
 
 window.onload = function()

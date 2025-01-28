@@ -342,6 +342,10 @@ a {
   color: #FFC43D;
 }
 
+.navButton {
+  display: none;
+}
+
 .navCenter {
   display: flex;
   align-items: center; /* Center items vertically */
@@ -368,43 +372,64 @@ a {
   margin-bottom: auto;
 }
 
+.navButton {
+  position: relative;
+  z-index: 901;
+}
+
 @media screen and (max-device-width: 768px) {
   #navContainer {
-    background-color: #1D50D0;
-    color: #ffffff;
-    position: fixed;
-    width: 100vw;
-    height: 8vh;
+    grid-template-columns: 1fr 1fr;
+  }
+  #navContainer nav {
+    position: absolute;
     top: 0;
-    z-index: 900;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-column-gap: 3vw;
-    padding: 1vh 5vw 1vh 5vw;
-    justify-content: space-between;
-    align-items: center;
-    transition: top 0.3s;
+    left: 100vw;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1D50D0;
+    padding: 5vw;
+    z-index: 10000;
+    transition: 1s;
   }
   #navContainer ul {
-    padding: 0;
+    gap: 1vw;
+    display: block;
+  }
+  .navButton {
+    display: block;
+  }
+  .navCenter {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    bottom: 5vw;
+  }
+  .navSigil {
+    max-height: 15vh;
+    width: auto;
+    -o-object-fit: contain;
+       object-fit: contain; /* Ensure proper scaling */
     margin: 0;
-    list-style: none;
-    display: flex;
   }
-  #navContainer a {
-    color: inherit;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: 400;
-    transition: all 0.25s;
+  .navStarGroup {
+    display: none;
   }
-  #navContainer a.active {
-    text-decoration: underline;
+  .navRight {
+    display: block;
+    max-width: 90vw;
   }
-  #navContainer a:hover {
-    font-size: 1em;
-    font-weight: 700;
-    color: #FFC43D;
+  .navRight li a {
+    font-size: 4em !important;
+    font-weight: 700 !important;
+  }
+  .popOut {
+    transform: translateX(-100vw);
+  }
+  .navButtonClose {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
   }
 }
 #footerContainer {
@@ -504,13 +529,13 @@ a {
 
 #personalLogoContainer {
   margin: auto;
-  padding-top: 6vh;
   text-align: center;
   z-index: 5;
 }
 #personalLogoContainer img {
-  width: 75vw; /* Set desired width */
-  max-height: 60vh;
+  max-width: 75vw; /* Set maximum width */
+  max-height: 60vh; /* Set maximum height */
+  width: auto; /* Maintain aspect ratio */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -569,16 +594,6 @@ a {
 @media screen and (max-device-width: 768px) {
   #heroSectionWrapper {
     margin: 5vh 5vw 5vh 5vw;
-  }
-  #personalLogoContainer {
-    margin: auto;
-    padding-top: 6vh;
-    text-align: center;
-    z-index: 5;
-  }
-  #personalLogoContainer img {
-    width: 100%; /* Set desired width */
-    height: auto; /* Maintain aspect ratio */
   }
   .spotlightInfo {
     padding-top: 10vh;
@@ -1026,9 +1041,6 @@ a {
   }
 }
 @media screen and (max-device-width: 768px) {
-  #navContainer ul {
-    gap: 4rem;
-  }
   .bjb-content-wrapper {
     padding: 5vh 5vw;
     background-color: #17171A;

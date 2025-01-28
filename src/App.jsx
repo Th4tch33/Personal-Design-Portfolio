@@ -24,8 +24,6 @@ function App() {
 
   return (
     <>
-      {/*<CursorAnim />*/}
-
       <NavBar />
       <div className="container">
         <Routes>

@@ -351,7 +351,6 @@ a {
     height: 8vh;
     top: 0;
     z-index: 900;
-    //overflow: hidden;
 
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -390,6 +389,10 @@ a {
     transition: top 0.3s;
 }
 
+.navButton {
+	display: none;
+}
+
 .navCenter {
     display: flex;
     align-items: center; /* Center items vertically */
@@ -400,7 +403,6 @@ a {
 .navRight {
     justify-content: space-between;
 }
-
 
 .navSigil {
     max-height: 6vh; /* Constrain to navbar height */
@@ -417,54 +419,81 @@ a {
     margin-bottom: auto;
 }
 
-@media screen and (max-device-width: 768px) {
-    #navContainer {
-    background-color: $blue;
-    color: $light;
-    
-    position: fixed;
-    width: 100vw;
-    height: 8vh;
-    top: 0;
-    z-index: 900;
-    //overflow: hidden;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-column-gap: 3vw;
-    padding: 1vh $horzMarginSize 1vh $horzMarginSize;
-    justify-content: space-between;
-    align-items: center;
-
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: flex;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-        font-size: 1em;
-        font-weight: 400;
-    
-        transition: all 0.25s;
-    }
-
-    a.active {
-        text-decoration: underline;
-    }
-
-    a:hover {
-        font-size: 1em;
-        font-weight: 700;
-        color: $yellow;
-    }
-
-    transition: top 0.3s;
+.navButton {
+    position: relative;
+    z-index: 901;
 }
+
+@media screen and (max-device-width: 768px) {
+    
+    #navContainer {
+
+        grid-template-columns: 1fr 1fr;
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 100vw;
+
+            height: 100vh;
+            width: 100vw;
+
+            background-color: $blue;
+            padding: 5vw;
+
+            z-index: 10000;
+            transition: 1s; 
+        }
+
+        ul {
+            gap: 1vw;
+
+            display: block;
+        }
+    }
+    
+    .navButton {
+        display: block;
+    }
+
+    .navCenter {
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+
+        bottom: 5vw;
+    }
+
+    .navSigil {
+        max-height: 15vh;
+        width: auto;
+        object-fit: contain; /* Ensure proper scaling */
+        margin: 0;
+    }
+    
+    .navStarGroup {
+        display: none;
+    }
+
+    .navRight {
+        display: block;
+		max-width: 90vw;
+
+        li a {
+            font-size: 4em !important;
+            font-weight: 700 !important;
+        }
+    }
+
+    .popOut {
+        transform: translateX(-100vw);
+    }
+
+    .navButtonClose {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+    }
 }
 
 //Footer
@@ -579,17 +608,16 @@ a {
 
 #personalLogoContainer{
     margin: auto;
-    padding-top: 6vh;
-
     text-align: center;
 
+    z-index: 5;
+
     img{
-        width: 75vw; /* Set desired width */
-        max-height: 60vh;
+        max-width: 75vw; /* Set maximum width */
+        max-height: 60vh; /* Set maximum height */
+        width: auto; /* Maintain aspect ratio */
         height: auto; /* Maintain aspect ratio */
     }
-    
-    z-index: 5;
 }
 
 #personalLogoSubheadWrapper {
@@ -656,17 +684,7 @@ a {
     }
 
     #personalLogoContainer{
-        margin: auto;
-        padding-top: 6vh;
-    
-        text-align: center;
-    
-        img{
-            width: 100%; /* Set desired width */
-            height: auto; /* Maintain aspect ratio */
-        }
-        
-        z-index: 5;
+
     }
 
     .spotlightInfo {
@@ -1164,14 +1182,7 @@ $red: #CE1126;
     }
 }
 
-@media screen and (max-device-width: 768px) {
-    #navContainer {
-        ul {
-            gap: 4rem;
-        }
-    }
-    
-    
+@media screen and (max-device-width: 768px) {    
     .bjb-content-wrapper {
         padding: 5vh $horzMarginSize;
     
