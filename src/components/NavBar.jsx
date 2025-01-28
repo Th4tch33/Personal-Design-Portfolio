@@ -32,13 +32,13 @@ export default function NavBar() {
 
         <ul className="navRight">
           <li>
-            <CustomLink to="/work">Work</CustomLink>
+            <CustomLink to="/work">WORK</CustomLink>
           </li>
           <li>
-            <CustomLink to="/about">About</CustomLink>
+            <CustomLink to="/about">ABOUT</CustomLink>
           </li>
           <li>
-            <CustomLink to="/contact">Contact</CustomLink>
+            <CustomLink to="/contact">CONTACT</CustomLink>
           </li>
         </ul>
       </nav>

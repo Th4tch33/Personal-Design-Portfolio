@@ -1,0 +1,5 @@
+Yo I will be removing 3 potential features for ease of use right now
+
+1. The bouncing tagline feature for the showreel sayign SHOWREEL 2024
+2. The mouse overlay to play the showreel video when hovering over img
+3. The custom built video player

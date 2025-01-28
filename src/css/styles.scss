@@ -348,6 +348,7 @@ a {
     
     position: fixed;
     width: 100vw;
+    height: 8vh;
     top: 0;
     z-index: 900;
     //overflow: hidden;
@@ -370,8 +371,8 @@ a {
     a {
         color: inherit;
         text-decoration: none;
-        font-size: 0.8em;
-        font-weight: 500;
+        font-size: 1em;
+        font-weight: 400;
     
         transition: all 0.25s;
     }
@@ -390,25 +391,80 @@ a {
 }
 
 .navCenter {
-    justify-content: center;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 1vw; /* Add spacing between items */
 }
 
 .navRight {
     justify-content: space-between;
 }
 
+
 .navSigil {
-    width: auto;
-    height: 4vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    max-height: 6vh; /* Constrain to navbar height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure proper scaling */
+    margin: 0 1vw; /* Add horizontal spacing */
 }
+
 
 .navStarGroup {
     width: auto;
-    height: 2vw;
+    height: 1.5vw;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+@media screen and (max-device-width: 768px) {
+    #navContainer {
+    background-color: $blue;
+    color: $light;
+    
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+    top: 0;
+    z-index: 900;
+    //overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column-gap: 3vw;
+    padding: 1vh $horzMarginSize 1vh $horzMarginSize;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: flex;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 400;
+    
+        transition: all 0.25s;
+    }
+
+    a.active {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        font-size: 1em;
+        font-weight: 700;
+        color: $yellow;
+    }
+
+    transition: top 0.3s;
+}
 }
 
 //Footer
@@ -515,137 +571,53 @@ a {
 */
 
 #heroSectionWrapper {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;
     height: 100vh;
 }
 
-#heroTextContainer {
-    position: relative;
-    padding-top: 28vh;
-    z-index: 3;
-
-    h1 {
-        font-family: "Red Hat Mono", monospace;
-        font-style: normal;
-
-        font-size: 12em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-}
-
-#nameContainer {
-    justify-content: center;
-    display: flex;
-
-    img {
-        margin: auto 2em;
-        height: auto;
-        width: 10vw;
-    }
-}
-
-#hoursJSContainer {
+#personalLogoContainer{
     margin: auto;
-    width: 60%;
+    padding-top: 6vh;
+
+    text-align: center;
+
+    img{
+        width: 75vw; /* Set desired width */
+        max-height: 60vh;
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    z-index: 5;
 }
 
-#hours {
-    font-weight: 700;
-    display: inline;
+#personalLogoSubheadWrapper {
+    width: fit-content;
+    background-color: $blue;
+    color: $yellow;
+
+    font-size: 2em;
+
+    margin: 2vh auto;
+    padding: 1vh 3vw;
+
+    border-radius: 100vw;
 }
 
-#bouncingBomb {
-    position: absolute;
-    padding: 1vh;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    background-color: $dark;
-    z-index: 200;
-    white-space: nowrap;
-
-    color: $light;
-}
-
-#showreelContainer {
+.showreelSection {
     position: relative;
-    background-color: $dark;
-    z-index: 100;
-    height: 110vh;
-
-    display: flex;
-}
-
-#showreelThumbnail{
-    position: absolute;
-    z-index: 1;
-    
-    cursor: none;
-    
-    img {
-        width: 100vw;
-        height: 110vh;
-        object-fit: cover;
-    }
-} 
-
-#playButton {
-    position: absolute;
-    display: flex;
-    transition: 0.15s;
-    transition: opacity 0.25s;
-    opacity: 0%;
-    pointer-events: none;
-
-    z-index: 900;
-
-    img {
-        width: 10vw;
-        height: auto;
-    }
+    z-index: 10;
 }
 
 #showreelVideo {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-
-    aspect-ratio: 16/9;
-    width: 100vw;
-    height: 110vh;
-    top: 0;
-    
-    z-index: 0;
-
-    iframe{
-        display: block;
-        border-style: none;
-        width: 70vw;
-        aspect-ratio: 16/9;
-    }
-}
-
-#exitButton {
-    align-items: baseline;
-    cursor: pointer;
-    padding-left: 3vw;
-
-    img {
-        width: 3vw;
-        height: auto;
-    }
+    margin-top: 5vh;
 }
 
 #spotlightWrapper {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    column-gap: 1vw;
+    column-gap: 3vw;
     row-gap: 10vh;
 
     padding-top: 50px;
@@ -678,23 +650,23 @@ a {
     transition: all 1s;
 }
 
-@media screen and (max-width: 1920px) {
-    #heroSectionWrapper {
-        grid-template-columns: 70% 30%;
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    #heroSectionWrapper {
-        grid-template-columns: 65% 35%;
-    }
-}
-
 @media screen and (max-device-width: 768px) {
     #heroSectionWrapper {
         margin: 5vh $horzMarginSize 5vh $horzMarginSize;
-        text-align: left;
-        display: block;
+    }
+
+    #personalLogoContainer{
+        margin: auto;
+        padding-top: 6vh;
+    
+        text-align: center;
+    
+        img{
+            width: 100%; /* Set desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+        z-index: 5;
     }
 
     .spotlightInfo {
@@ -820,7 +792,7 @@ a {
 */
 
 #aboutMeWrapper {
-    width: 70vw;
+    width: 90vw;
     margin: auto;
     margin-bottom: 20vh;
     text-align: center;

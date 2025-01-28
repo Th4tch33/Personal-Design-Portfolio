@@ -6,28 +6,24 @@ const parser = Bowser.getParser(navigator.userAgent);
 let activePage = 0;
 
 let runHomeBehavior;
-let runjsHourUpdater;
 
 //NavBar Variables
 let navPrev;
 let navCurrent;
 let showreelActive = false;
 
-//Hour Calculator Variables
-let hoursDots = "";
-let timeSinceLaunch;
 
 //Icon Home Screen Variables
-let numIconsFront = 2;
-let numIconsMid = 4;
-let numIconsBack = 10;
-let numIconsFarBack = 10;
+let numIconsFront = 3;
+let numIconsMid = 6;
+let numIconsBack = 20;
+let numIconsFarBack = 35;
 
-let iconFrontSize = 6;
-let iconMidSize = 3;
-let iconBackSize = 1.75;
+let iconFrontSize = 7;
+let iconMidSize = 3.5;
+let iconBackSize = 2;
 let iconFarBackSize = 1;
-let iconSmallestSize = 50;
+let iconSmallestSize = 40;
 
 const initialFallMin = 0.6;
 const initialFallMax = 0.8;
@@ -79,19 +75,6 @@ let mouseY = 0;
 //Window Dimension Variables
 const windowWidth = window.innerWidth;
 
-//Bouncing Showcase Title Variables
-let bombX;
-let bombY;
-let bombXSpeed = 2;
-let bombYSpeed = 2;
-
-let bomb;
-let bombWindowBounds;
-let bombWindowTop;
-let bombWindowBottom;
-let bombWidth;
-let bombHeight;
-
 function l(n) {
     console.log(n)
 }
@@ -103,31 +86,21 @@ function activePageCheck(n) {
         activePage = 0;
         rotationSpeed = homeRotationSpeed;
 
-        iconFloor = document.getElementById("showreelContainer").getBoundingClientRect().top + scrollY - 10;
-        bomb = document.getElementById("bouncingBomb");
-
-        bombWidth = bomb.getBoundingClientRect().width;
-        bombHeight = bomb.getBoundingClientRect().height;
-
-        bombWindowBounds = document.getElementById("showreelContainer").getBoundingClientRect();
-        bombX = 1;
-        bombY = bombWindowBounds.top + scrollY + 10;
-        bombWindowTop = bombWindowBounds.top + scrollY;
-        bombWindowBottom = bombWindowBounds.bottom + scrollY;
+        iconFloor = document.getElementById("heroSectionWrapper").getBoundingClientRect().bottom + scrollY + 300;
 
         if (parser.getPlatformType() === 'mobile') {
             console.log("Mobile device detected");
 
-            numIconsFront = 1;
-            numIconsMid = 2;
-            numIconsBack = 3;
-            numIconsFarBack = 3;
+            numIconsFront = 2;
+            numIconsMid = 4;
+            numIconsBack = 8;
+            numIconsFarBack = 12;
 
-            iconFrontSize = 5;
-            iconMidSize = 2.5;
-            iconBackSize = 1.5;
+            iconFrontSize = 7;
+            iconMidSize = 3;
+            iconBackSize = 1.75;
             iconFarBackSize = 1;
-            iconSmallestSize = 50;
+            iconSmallestSize = 40;
 
             iconXSpawnOverflow = 25;
         }
@@ -148,7 +121,6 @@ function activePageCheck(n) {
         document.removeEventListener('scroll', mouseScrollEngine);
 
         clearInterval(runHomeBehavior);
-        clearInterval(runjsHourUpdater);
 
         iconFloor = document.getElementById("footerContainer").getBoundingClientRect().top + scrollY - 10;
     }
@@ -161,7 +133,6 @@ function activePageCheck(n) {
         document.removeEventListener('scroll', mouseScrollEngine);
 
         clearInterval(runHomeBehavior);
-        clearInterval(runjsHourUpdater);
     }
 
     buildIcons();
@@ -183,8 +154,6 @@ function activePageCheck(n) {
         navPrev = navCurrent; 
     });
 
-    hoursFunction();
-
     //removes loading screen
     //document.getElementById("loadingScreen").classList.add("fadeOut");
 
@@ -196,65 +165,21 @@ function activePageCheck(n) {
 
         //runs the behaivors on the home screen
         runHomeBehavior = setInterval(homeBehaviors, 10);
-
-        //animates dots at end of JS hours component
-        runjsHourUpdater = setInterval(jsHourUpdater, 750);
     }
 }
 
 export { activePageCheck };
-
-//calculates hours between today and birthday
-function hoursFunction() {
-    const launchDate = new Date("2003-09-02 20:00:00");
-    const currentDate = new Date();
-
-    const yearToHours = (currentDate.getFullYear()-launchDate.getFullYear())*8760;
-    const monthToHours = (currentDate.getMonth()-launchDate.getMonth())*730;
-    const dayToHours = (currentDate.getDate()-launchDate.getDate())*24;
-    const hours = currentDate.getHours()-launchDate.getHours();
-
-    timeSinceLaunch = yearToHours+monthToHours+dayToHours+hours;
-}
-
-//External Showreel Behaviors
-function showReelHoverOn () {
-    if (showreelActive == false) {
-        document.getElementById('playButton').style.opacity = "100%";
-    }
-}
-
-function showReelHoverOff () {
-    document.getElementById('playButton').style.opacity = "0%";
-}
-
-function showreelStart() {
-    showreelActive = true;
-
-    document.getElementById("showreelThumbnail").classList.add("fadeOut");
-
-    document.getElementById('navContainer').style.top = "-15vw";
-    document.getElementById('showreelVideo').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
-    document.body.style.overflowY = "hidden";
-}
-
-function showreelEnd() {
-    showreelActive = false;
-
-    document.getElementById("showreelThumbnail").classList.remove("fadeOut");
-    document.body.style.overflowY = "scroll";
-}
-
-export { showReelHoverOn, showReelHoverOff, showreelStart, showreelEnd};
 
 //creates <img> elements using DOM methods
 function createWarningImage(type, order, size, x) { 
     const loaderFront = document.getElementById("frontIconGroup");
     const loaderBack = document.getElementById("backIconGroup");
     const img = document.createElement("IMG");
+
+    console.log(type)
     
-    img.setAttribute("src", "/Icons/logo" + type + ".svg");
-    img.setAttribute("alt", "warning");
+    img.setAttribute("src", "/falling-objects/object" + type + ".svg");
+    img.setAttribute("alt", "cool icon");
     
     img.setAttribute("id", "icon" + order);
     img.style.position = "absolute";
@@ -323,14 +248,14 @@ function buildIcons () {
             icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
 
             //color, order, size, x
-            createWarningImage(getRandomInt(2), i, iconFrontSize, icons[i].x);
+            createWarningImage(getRandomInt(11), i, iconFrontSize, icons[i].x);
         }
 
         //DOMs in medium icons
         else if (i < numIconsMid + numIconsFront){
             icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
             
-            createWarningImage(getRandomInt(2), i, iconMidSize, icons[i].x);
+            createWarningImage(getRandomInt(11), i, iconMidSize, icons[i].x);
         }
 
         //DOMs in small icons
@@ -338,14 +263,14 @@ function buildIcons () {
             
             icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
             
-            createWarningImage(getRandomInt(2), i, iconBackSize, icons[i].x);
+            createWarningImage(getRandomInt(11), i, iconBackSize, icons[i].x);
         }
 
         //DOMs in extra small icons
         else {
             icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
             
-            createWarningImage(getRandomInt(2), i, iconFarBackSize, icons[i].x);
+            createWarningImage(getRandomInt(11), i, iconFarBackSize, icons[i].x);
         }
     }
 }
@@ -361,24 +286,6 @@ function deleteActiveIcons () {
 }
 
 export { buildIcons, deleteActiveIcons };
-
-function jsHourUpdater() {
-
-    if(hoursDots.length == 0) {
-        hoursDots = ".";
-    }
-    else if (hoursDots.length == 1){
-        hoursDots = "..";
-    }
-    else if (hoursDots.length == 2){
-        hoursDots = "...";
-    }
-    else {
-        hoursDots = "";
-    }
-
-    document.getElementById("hours").innerHTML = timeSinceLaunch + " hours ago" + hoursDots;
-}
 
 function homeBehaviors() {
     heroMouseInfluence();
@@ -413,29 +320,6 @@ function homeBehaviors() {
                 icons[i].x = getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow);
             }
         }
-    }
-    
-    //Bomb Bouncing Code
-    bombX += bombXSpeed;
-    bombY += bombYSpeed;
-    
-    bomb.style.left = bombX + "px";
-    bomb.style.top = bombY + "px";
-
-    if(bombX <= 0) {
-        bombXSpeed *= -1;
-    }
-
-    if(bombX + bombWidth >= windowWidth) {
-        bombXSpeed *= -1;
-    }
-
-    if(bombY <= bombWindowTop) {
-        bombYSpeed *= -1;
-    }
-
-    if(bombY + bombHeight >= bombWindowBottom) {
-        bombYSpeed *= -1;
     }
 }
 
