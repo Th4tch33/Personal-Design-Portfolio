@@ -19,13 +19,13 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Clocking Out"
-                  tag1="Cinematography"
-                  tag2="Mini Documentary"
-                  link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
-                  vid="clocking_out_preview.mp4"
+                  title="Action Sports Filmmaking"
+                  tag1="Camerawork"
+                  tag2="Motion Graphics"
+                  link="/WorkVBall"
+                  vid="bumpin_matt_preview.mp4"
                   alt="test"
-                  id="1"
+                  id="2"
                 />
 
                 <WorkCard
@@ -39,13 +39,13 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Action Sports Filmmaking"
-                  tag1="Camerawork"
-                  tag2="Motion Graphics"
-                  link="/WorkVBall"
-                  vid="bumpin_matt_preview.mp4"
+                  title="Clocking Out"
+                  tag1="Cinematography"
+                  tag2="Mini Documentary"
+                  link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
+                  vid="clocking_out_preview.mp4"
                   alt="test"
-                  id="2"
+                  id="1"
                 />
 
                 <WorkCard
