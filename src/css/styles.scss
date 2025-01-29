@@ -258,11 +258,11 @@ a {
     grid-column-gap: 3vh;
 
     padding-top: 3vh;
-}
 
-.threeGridImage img {
-    width: 100%;
-    height: auto;
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 //4 Grid Image
@@ -1635,6 +1635,10 @@ $aqua: #24D0B5;
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+}
+
+.vertVideo {
+    aspect-ratio: 9 / 16 !important;
 }
 
 @media screen and (max-width: 1920px) {

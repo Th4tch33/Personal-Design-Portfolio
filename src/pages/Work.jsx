@@ -39,10 +39,10 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Bumpin x MattJen Volleyball"
-                  tag1="Sport Videography"
+                  title="Action Sports Filmmaking"
+                  tag1="Camerawork"
                   tag2="Motion Graphics"
-                  link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+                  link="/WorkVBall"
                   vid="bumpin_matt_preview.mp4"
                   alt="test"
                   id="2"

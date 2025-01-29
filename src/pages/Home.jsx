@@ -33,10 +33,10 @@ function Home() {
         />
 
         <ShowcaseCard
-          title="Bumpin Sports X Matt Jen Volleyball Tournament"
+          title="Action Sports Filmmaking"
           subTitle="Sports Videography"
-          para="A roaring two-day tournament with 56 teams clashing to be champions. I was hired as the event photographer and videographer to capture the best moments from the event. Additionally, I edited all the content taken from the day and delivered it as a photo package, multiple videos edited for social media, and a 1-minute video montage of everything that happened."
-          link="https://www.instagram.com/reel/C2TiRFkgWhW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+          para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
+          link="/WorkVBall"
           img="bumpin-matt-thumb-large.jpg"
           alt="Photography and Videography"
         />
