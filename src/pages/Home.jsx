@@ -12,7 +12,7 @@ function Home() {
 
             <Lottie 
               animationData={animationData} 
-              className="lottieAnim"
+              id="lottieAnim"
               loop={true} // Play once
               autoplay={true} // Start automatically
             />

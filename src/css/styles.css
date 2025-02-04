@@ -593,7 +593,7 @@ a {
   z-index: 5;
 }
 
-#lottieAnim {
+#lottieAnim svg {
   max-width: 75vw; /* Set maximum width */
   max-height: 60vh; /* Set maximum height */
   width: auto; /* Maintain aspect ratio */
