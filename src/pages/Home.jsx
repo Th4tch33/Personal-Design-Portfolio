@@ -1,4 +1,7 @@
 import ShowcaseCard from "../components/ShowcaseCard.jsx";
+import Lottie from "lottie-react";
+
+import animationData from "../assets/personalLogoIdleAnim.json"; // Adjust path as needed
 
 function Home() {
   return (
@@ -6,7 +9,14 @@ function Home() {
       <div id="heroSectionWrapper">
         <div id="frontIconGroup"></div>
           <div id="personalLogoContainer">
-            <img src="assets/personal-logo-blue.svg"></img>
+
+            <Lottie 
+              animationData={animationData} 
+              className="lottieAnim"
+              loop={true} // Play once
+              autoplay={true} // Start automatically
+            />
+
             <h3 id="personalLogoSubheadWrapper">ALL THINGS DESIGN</h3>
           </div>
         <div id="backIconGroup"></div>

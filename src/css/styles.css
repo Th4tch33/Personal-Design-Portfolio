@@ -592,7 +592,8 @@ a {
   text-align: center;
   z-index: 5;
 }
-#personalLogoContainer img {
+
+#lottieAnim {
   max-width: 75vw; /* Set maximum width */
   max-height: 60vh; /* Set maximum height */
   width: auto; /* Maintain aspect ratio */

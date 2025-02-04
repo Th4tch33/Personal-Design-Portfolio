@@ -690,13 +690,13 @@ a {
     text-align: center;
 
     z-index: 5;
+}
 
-    img{
-        max-width: 75vw; /* Set maximum width */
-        max-height: 60vh; /* Set maximum height */
-        width: auto; /* Maintain aspect ratio */
-        height: auto; /* Maintain aspect ratio */
-    }
+#lottieAnim{
+    max-width: 75vw; /* Set maximum width */
+    max-height: 60vh; /* Set maximum height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #personalLogoSubheadWrapper {
