@@ -621,18 +621,66 @@ a {
 }
 
 #spotlightWrapper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  -moz-column-gap: 3vw;
-       column-gap: 3vw;
-  row-gap: 10vh;
   padding-top: 50px;
 }
-#spotlightWrapper img {
+
+.ShowcaseCardContainer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 3fr;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
+  row-gap: 10vh;
+  margin: 10vh 0;
+}
+
+.spotlightInfo h3 {
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+  font-size: 3em;
+  color: #1D50D0;
+  line-height: 1;
+}
+
+.spotlightCardTags {
+  display: flex;
+  padding: 2vh 0;
+}
+.spotlightCardTags h4 {
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+  font-size: 1.25em;
+  color: #1D50D0;
+  border: 3px solid #FFC43D;
+  padding: 0.3vw;
+  border-radius: 0.35vw;
+  margin-right: 0.5vw;
+}
+
+.arrowWrapper {
+  display: flex;
+  margin-top: 1vh;
   width: 100%;
-  aspect-ratio: 16/9;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 4vh;
+  transition: all 0.25s;
+  transform: scale(1);
+}
+.arrowWrapper p {
+  display: flex;
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+  font-size: 1.25em;
+  color: #1D50D0;
+  margin-left: 1vw;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Make the container take up the full viewport height */
+}
+
+.arrowWrapper:hover {
+  transform: scale(1.1);
 }
 
 #hoverInfo {
@@ -650,6 +698,26 @@ a {
   opacity: 0%;
   white-space: nowrap;
   transition: all 1s;
+}
+
+.spotlightIMGContainer {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.spotlightIMGWrapper img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0vw solid #1D50D0;
+  transition: all 0.25s;
+  transform: scale(1);
+}
+.spotlightIMGWrapper img:hover {
+  border: 0.5vw solid #1D50D0;
+  transform: scale(1.1);
 }
 
 @media screen and (max-device-width: 768px) {
@@ -671,12 +739,24 @@ a {
   #hoursJSContainer {
     width: 100%;
   }
-  #spotlightWrapper {
+  .ShowcaseCardContainer {
     display: block;
     padding-top: 0vh;
   }
-  #spotlightWrapper img {
+  .ShowcaseCardContainer img {
     margin-top: 5vh;
+  }
+  .spotlightCardTags {
+    padding: 1vh 0;
+  }
+  .spotlightCardTags h4 {
+    border: 3px solid #FFC43D;
+    padding: 0.75vw;
+    border-radius: 1vw;
+    margin-right: 2vw;
+  }
+  .arrowWrapper p {
+    margin-left: 3vw;
   }
 }
 /*

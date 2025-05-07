@@ -1,32 +1,77 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+import { ShowcaseIMGHoverOn } from "../js/ShowcaseCardJS.js";
+import { ShowcaseIMGHoverOff } from "../js/ShowcaseCardJS.js";
 
 ShowcaseCard.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
+  tag1: PropTypes.string.isRequired,
+  tag2: PropTypes.string.isRequired,
+  tag3: PropTypes.string.isRequired,
   para: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-function ShowcaseCard({ title, subTitle, para, link, img, alt}) {
+ShowcaseLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+function ShowcaseLink({ to, children, ...props }) {
+  const path = window.location.pathname;
+
+  return (
+    <li className={path === to ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id}) {
   return (
     <>
-      <div className="spotlightInfo">
-        <h3>{title}</h3>
-        <p>
-          <i>{subTitle}</i>
-          <br />
-          <br />
-          {para}
-        </p>
+      <div className="ShowcaseCardContainer">
+        <div className="spotlightInfo">
+          <h3>{title}</h3>
+          
+          <div className="spotlightCardTags">
+            {tag1 && (<h4>{tag1}</h4>)}
+            {tag2 && (<h4>{tag2}</h4>)}
+            {tag3 && (<h4>{tag3}</h4>)}
+          </div>
+
+          <p> {para} </p>
+          
+          <Link to={link}>
+            <div className="arrowWrapper">
+              <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
+                <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <p>Check It Out!</p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="spotlightIMGContainer" id={id} onMouseOver={() => ShowcaseIMGHoverOn({id})} onMouseOut={() =>ShowcaseIMGHoverOff({id})}>
+          <Link to={link}>
+            <div className="spotlightIMGWrapper">
+              <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
+            </div>
+          </Link>
+        </div>
       </div>
 
-      <div className="spotlightCardWrapper">
-        <a href={link} rel="noreferrer" target="_blank">
-          <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
-        </a>
-      </div>
     </>
   );
 }

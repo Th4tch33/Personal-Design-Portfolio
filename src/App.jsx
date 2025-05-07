@@ -6,13 +6,14 @@ import WorkBBB from "./pages/Work_BBB.jsx";
 import WorkVBall from "./pages/Work_VBall.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 import "./js/Main.js";
 import "./css/styles.css";
 
 import CursorAnim from "./pages/cursorAnimTest.jsx";
 
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Router, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { activePageCheck } from "./js/Main.js";
 
@@ -27,14 +28,16 @@ function App() {
     <>
       <NavBar />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/workBBB" element={<WorkBBB />} />
-          <Route path="/WorkVBall" element={<WorkVBall />} />
-        </Routes>
+          <ScrollToTop />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/workBBB" element={<WorkBBB />} />
+            <Route path="/WorkVBall" element={<WorkVBall />} />
+          </Routes>
       </div>
       <Footer />
     </>

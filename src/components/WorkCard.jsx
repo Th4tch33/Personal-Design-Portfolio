@@ -23,7 +23,7 @@ WorkLink.propTypes = {
 
 function WorkLink({ to, children, ...props }) {
   const path = window.location.pathname;
-o
+
   return (
     <li className={path === to ? "active" : ""}>
       <Link to={to} {...props}>
