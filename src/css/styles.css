@@ -191,20 +191,20 @@ a {
 }
 .fullScreenImage {
   text-align: center;
-  margin-top: 3vh;
+  margin-top: 5vw;
 }
 
 .fullScreenImage img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-height: 85vh;
 }
 
 .splitScreenImage {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3vh;
-  padding-top: 3vh;
+  grid-column-gap: 10vh;
+  padding-top: 5vw;
 }
 
 .splitScreenImage img {
@@ -216,9 +216,9 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 3vh;
-  grid-column-gap: 3vh;
-  padding-top: 3vh;
+  grid-row-gap: 10vh;
+  grid-column-gap: 10vh;
+  padding-top: 5vw;
 }
 .threeGridImage img {
   width: 100%;
@@ -229,9 +229,9 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 3vh;
-  grid-column-gap: 3vh;
-  padding-top: 3vh;
+  grid-row-gap: 5vw;
+  grid-column-gap: 5vw;
+  padding-top: 5vw;
 }
 
 .fourGridImage img {
@@ -240,12 +240,27 @@ a {
 }
 
 .sectionHead {
+  display: flex;
   font-size: 6em;
   font-family: "Staatliches", system-ui;
   font-weight: 500;
   color: #1D50D0;
   text-align: center;
-  margin: 15vh 0;
+  justify-content: center;
+  margin: 15vw auto;
+  white-space: nowrap;
+}
+
+.sectionHeadDesigns {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+}
+.sectionHeadDesigns img {
+  height: 100%;
+  width: auto;
+  margin: auto;
 }
 
 .sectionSubHead {
@@ -270,6 +285,7 @@ a {
   .sectionHead {
     font-size: 4em;
     margin: 15vh 0;
+    display: block;
   }
   .threeGridImage {
     width: 100%;
@@ -590,13 +606,19 @@ a {
   opacity: 0%;
 }
 
-.mediaPlayerVideo {
+.mediaPlayerVideoHorz {
   display: block;
   margin: auto;
   border: none;
   aspect-ratio: 16/9;
   width: 60vw;
   height: auto;
+}
+
+.mediaPlayerVideoVert {
+  aspect-ratio: 9/16;
+  height: 75vh;
+  width: auto;
 }
 
 #exitCursor {
@@ -826,7 +848,7 @@ a {
 .workCardWrapper {
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: auto;
 }
 .workCardWrapper a {
   color: #ffffff;
@@ -835,7 +857,6 @@ a {
   display: flex;
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0vw;
@@ -845,6 +866,34 @@ a {
 .workCardWrapper video:hover, .workCardWrapper img:hover {
   border-radius: 1.5vw;
   border: 0.3vw solid #1D50D0;
+}
+
+.workCardHorz {
+  max-width: 75vw;
+}
+.workCardHorz video, .workCardHorz img {
+  display: flex;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.workCardVert {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content; /* or a fixed width */
+}
+.workCardVert video, .workCardVert img {
+  display: flex;
+  max-height: 85vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.workCardVert a {
+  position: relative;
+  display: inline-block;
+  max-height: 85vh;
 }
 
 .workCardText {

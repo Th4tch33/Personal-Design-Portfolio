@@ -2,6 +2,7 @@ import ShowcaseCard from "../components/ShowcaseCard.jsx";
 import Lottie from "lottie-react";
 
 import animationData from "../assets/personalLogoIdleAnim.json"; // Adjust path as needed
+import WorkCardHorz from "../components/WorkCardHorz.jsx";
 
 function Home() {
   return (
@@ -23,8 +24,16 @@ function Home() {
       </div>
       
       <div id="websiteSectionContainer" className="showreelSection">
-        <h1>Showreel 2024</h1>
-        <iframe id="showreelVideo" src="https://www.youtube.com/embed/vR6UzOTT4pQ?si=I7oWSh-v05VGoKec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <WorkCardHorz 
+          title="Showreel 2024"
+          tag1="Video"
+          tag2="Motion Graphics"
+          tag3="3D"
+          ytLink="https://www.youtube.com/embed/vR6UzOTT4pQ?si=I7oWSh-v05VGoKec"
+          vid="showreel_preview.mp4"
+          alt="test"
+          id="0"
+        />
       </div>
 
       <div id="websiteSectionContainer">

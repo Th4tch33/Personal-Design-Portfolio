@@ -3,30 +3,93 @@ import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
 
+import WorkCardHorz from "../components/WorkCardHorz.jsx";
+import WorkCardVert from "../components/WorkCardVert.jsx";
+
 function workVBall() {
     return (
         <>
             <div id="websiteSectionContainer">
                 <VBallIntroModule />
 
-                <div className="sectionHead">Videos</div>
-
-                <blockquote className="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEjE6sftMec/" data-instgrm-version="14"></blockquote>
-                <script async src="https://www.instagram.com/embed.js"></script>
-                
-                <div className="threeGridImage">
-                    <iframe className="vertVideo" src="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Volleyball Highlight Reel || Bumpin Sports || 12/21/2024"></iframe>
-                    <iframe className="vertVideo" src="https://player.vimeo.com/video/1067479261?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Volleyball Highlight Reel || Bumpin Sports || 12/21/2024"></iframe>
-                    <iframe className="vertVideo" src="https://player.vimeo.com/video/1067482314?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Volleyball Highlight Reel || Bumpin Sports || 12/21/2024"></iframe>
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
+                    </div>
+                    Videos
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object2.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
+                    </div>
                 </div>
                 
                 <div className="threeGridImage">
-                    <iframe className="vertVideo" src="https://www.instagram.com/reel/DDsDRJrS-Bz/embed" frameborder="0" scrolling="no"></iframe>
-                    <iframe className="vertVideo" src="https://www.instagram.com/reel/C4inZJfAohn/embed" frameborder="0" scrolling="no"></iframe>
-                    <iframe className="vertVideo" src="https://www.instagram.com/reel/DEtNErnMxne/embed" frameborder="0" scrolling="no"></iframe>
+                    <WorkCardVert
+                        title="Bumpin Sports Holiday Tournament Highlights"
+                        tag1="Sports"
+                        tag2="After Effects"
+                        vimeoLink="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        vid="bumpin_tourney_preview.mp4"
+                        alt="test"
+                        id="0"
+                    />
+                    <WorkCardVert
+                        title="UWaterloo Volleyball Varsity Team Highlights"
+                        tag1="Sports"
+                        tag2="After Effects"
+                        vimeoLink="https://player.vimeo.com/video/1067479261?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        vid="uw_varsity_preview.mp4"
+                        alt="test"
+                        id="1"
+                    />
+                    <WorkCardVert
+                        title="Bumpin Sports League Highlights"
+                        tag1="Sports"
+                        tag2="After Effects"
+                        vimeoLink="https://player.vimeo.com/video/1067482314?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        vid="bumpin_league_preview.mp4"
+                        alt="test"
+                        id="2"
+                    />
                 </div>
 
-                <div className="sectionHead">Photography</div>
+                <div className="threeGridImage">
+                    <WorkCardVert
+                        title="Bumpin Sports One Shot Clip"
+                        tag1="Sports"
+                        ytLink="https://www.youtube-nocookie.com/embed/qsqpqxkn2Gw?si=1PXzurIGCJ25We4e"
+                        vid="bumpin_tourney_clip_preview.mp4"
+                        alt="test"
+                        id="3"
+                    />
+                    <WorkCardVert
+                        title="UWaterloo Volleyball Club Highlights"
+                        tag1="Sports"
+                        ytLink="https://www.youtube-nocookie.com/embed/bWi7J2Vljo4?si=HrSi1YqduPTPREjO"
+                        vid="stank_tournament_preview.mp4"
+                        alt="test"
+                        id="4"
+                    />
+                    <WorkCardVert
+                        title="Bumpin Sports Jan 27th Tournament Highlights"
+                        tag1="Sports"
+                        ytLink="https://www.youtube-nocookie.com/embed/xtqNKx1-vrY?si=cHhs4bOBJwIHqhcJ"
+                        vid="bumpin_tourney_second_preview.mp4"
+                        alt="test"
+                        id="5"
+                    />
+                </div>
+
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object7.svg" alt="" loading="lazy"  />
+                    </div>
+                    Photography
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object8.svg" alt="" loading="lazy"  />
+                    </div>
+                </div>
         
                 <div className="threeGridImage">        
                     <img src="/Images/Sports/commentator-portrait01.jpg" alt="" loading="lazy" />

@@ -1,3 +1,5 @@
+import WorkCardHorz from "../WorkCardHorz.jsx";
+
 function introModule() {
     return (
         <>
@@ -23,7 +25,16 @@ function introModule() {
                     </p>
                 </div>
 
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yZbp-z0kPOw?si=eNKUkrGkeQYfrxuL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <WorkCardHorz
+                    title="MSM 10th Anniversary Livestream Intro"
+                    tag1="Commercial Shoot"
+                    tag2="After Effects"
+                    tag3="Premiere Pro"
+                    ytLink="https://www.youtube-nocookie.com/embed/yZbp-z0kPOw?si=eNKUkrGkeQYfrxuL"
+                    vid="msm_preview.mp4"
+                    alt="test"
+                    id="0"
+                />
 
             </div>
         </>

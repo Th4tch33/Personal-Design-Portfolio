@@ -10,8 +10,9 @@ function WorkCardHoverOff(thisID) {
     document.getElementById(thisID.id).querySelector("a").children[1].classList.remove("workCardTextHover");
 }
 
-function WorkCardClicked(ytLink) {
-    if(ytLink) {
+function WorkCardClicked(videoLink, videoOrientation) {
+
+    if(videoLink) {
         exitCursorActive = true;
         document.body.style.overflowY = "hidden";
 
@@ -28,15 +29,36 @@ function WorkCardClicked(ytLink) {
         mediaPlayer.addEventListener('mousemove', () => {WorkCardExitCusor()});
 
         const iframe = document.createElement('iframe');
-        iframe.className = "mediaPlayerVideo";
-        iframe.src = ytLink;
-        iframe.title = "YouTube video player";
         iframe.frameBorder = "0";
-        iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        iframe.allowFullscreen = true;
 
-        document.getElementById("mediaPlayer").appendChild(iframe); // or append to a specific container
+        if(videoOrientation == "H") {
+            iframe.className = "mediaPlayerVideoHorz";
+        }
+        else if (videoOrientation == "V") {
+            iframe.className = "mediaPlayerVideoVert";
+        }        
+
+        if (videoLink.includes("youtube")) {
+            iframe.src = videoLink;
+            iframe.title = "YouTube video player";
+            
+            iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            iframe.referrerPolicy = "strict-origin-when-cross-origin";
+            iframe.allowFullscreen = true;
+
+            document.getElementById("mediaPlayer").appendChild(iframe); // or append to a specific container
+        }
+        else if (videoLink.includes("vimeo")) {
+            iframe.src = videoLink;
+            iframe.allow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media";
+            iframe.title = "Volleyball Highlight Reel || Bumpin Sports || 12/21/2024";
+
+            // Append the iframe to the desired parent element
+            document.getElementById("mediaPlayer").appendChild(iframe); // You can append it to a specific parent element
+        }
+        else {
+            console.log("failed to generate video using link: " + videoLink);
+        }
 
         iframe.addEventListener('mouseenter', () => {ExitCursorHoverOff()});
         iframe.addEventListener('mouseleave', () => {ExitCursorHoverOn()});
@@ -45,7 +67,6 @@ function WorkCardClicked(ytLink) {
             mediaPlayer.style.opacity = "1";             // Fade in to full opacity
         }, 10);
     }
-    
 }
 
 function WorkCardClose() {
@@ -63,12 +84,14 @@ function WorkCardClose() {
 export { WorkCardHoverOn, WorkCardHoverOff, WorkCardClicked, WorkCardClose};
 
 function WorkCardExitCusor() {
-   
     const exitCursor = document.getElementById("exitCursor");
     //mechanism that detects hover over showcase work 
         
     mouseX = event.clientX;
-    mouseY = event.clientY + window.pageYOffset
+    mouseY = event.clientY;
+
+    console.log(mouseX);
+    console.log(mouseY);
 
     exitCursor.style.left = mouseX - (exitCursor.getBoundingClientRect().width) / 2 + "px";
     exitCursor.style.top = mouseY - (exitCursor.getBoundingClientRect().height) / 2 + "px";

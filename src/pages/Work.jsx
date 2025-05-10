@@ -1,4 +1,4 @@
-import WorkCard from "../components/WorkCard.jsx";
+import WorkCardHorz from "../components/WorkCardHorz.jsx";
 
 function Work() {
   return (
@@ -9,7 +9,7 @@ function Work() {
 
             <div id="workWrapper">
 
-                <WorkCard
+                <WorkCardHorz
                   title="My Singing Monsters"
                   tag1="Internship"
                   tag2="Content Creation"
@@ -19,7 +19,7 @@ function Work() {
                   id="0"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Action Sports Filmmaking"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
@@ -29,7 +29,7 @@ function Work() {
                   id="2"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Warriors vs Gee-Gees"
                   tag1="Sport Videography"
                   tag2="Video Editing"
@@ -39,7 +39,7 @@ function Work() {
                   id="3"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"
@@ -49,7 +49,7 @@ function Work() {
                   id="1"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="The Little Things in Life"
                   tag1="Cinematography"
                   ytLink="https://www.youtube.com/embed/p0GQrReJH3Q?si=GzBISJVqJSop3Fq7"
@@ -58,7 +58,7 @@ function Work() {
                   id="4"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Ancient Idol"
                   tag1="3D Asset Creation"
                   tag2="Environment Design"
@@ -68,7 +68,7 @@ function Work() {
                   id="5"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Start Your Day With Sun"
                   tag1="3D Animation"
                   ytLink="https://www.youtube.com/embed/o3pfyFR_2LA"
@@ -77,7 +77,7 @@ function Work() {
                   id="6"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Brown Justin Beiber"
                   tag1="Lyric Video"
                   tag2="Motion Graphics"
@@ -87,7 +87,7 @@ function Work() {
                   id="7"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="UWaterloo Concert Band"
                   tag1="Videography"
                   ytLink="https://www.youtube.com/embed/exuu0m0dbzk?si=p31uockfLcfo_hYD"
@@ -96,7 +96,7 @@ function Work() {
                   id="8"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="3D Character Animation"
                   tag1="Character Animation"
                   link="https://new.express.adobe.com/webpage/uCGIoX4RiwBev"
@@ -107,7 +107,7 @@ function Work() {
 
                 {/*
 
-                <WorkCard
+                <WorkCardHorz
                   title="Home to Stay 🛠️"
                   tag1="Brand Design"
                   link=""
@@ -116,7 +116,7 @@ function Work() {
                   id="10"
                 />
 
-                <WorkCard
+                <WorkCardHorz
                   title="Fundamentals First"
                   tag1="UI/UX"
                   tag2="Website Design"

@@ -226,12 +226,12 @@ a {
 //Fullscreen Image
 .fullScreenImage {
     text-align: center;
-    margin-top: 3vh;
+    margin-top: 5vw;
 }
 
 .fullScreenImage img{
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 85vh;
 }
 
 //Split Screen Image
@@ -239,9 +239,9 @@ a {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 3vh;
+    grid-column-gap: 10vh;
 
-    padding-top: 3vh;
+    padding-top: 5vw;
 }
 
 .splitScreenImage img {
@@ -254,10 +254,10 @@ a {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 3vh;
-    grid-column-gap: 3vh;
+    grid-row-gap: 10vh;
+    grid-column-gap: 10vh;
 
-    padding-top: 3vh;
+    padding-top: 5vw;
 
     img {
         width: 100%;
@@ -270,10 +270,10 @@ a {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 3vh;
-    grid-column-gap: 3vh;
+    grid-row-gap: 5vw;
+    grid-column-gap: 5vw;
 
-    padding-top: 3vh;
+    padding-top: 5vw;
 }
 
 .fourGridImage img {
@@ -283,13 +283,29 @@ a {
 
 //Section Header
 .sectionHead {
+    display: flex;
     font-size: 6em;
     font-family: "Staatliches", system-ui;
     font-weight: 500;
     color: $blue;
     text-align: center;
+    justify-content: center;
 
-    margin: 15vh 0;
+    margin: 15vw auto;
+    white-space: nowrap;
+}
+
+.sectionHeadDesigns {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+
+    img {
+        height: 100%;
+        width: auto;
+        margin: auto;
+    }
 }
 
 .sectionSubHead {
@@ -316,6 +332,8 @@ a {
         font-size: 4em;
     
         margin: 15vh 0;
+
+        display: block;
     }
 
     .threeGridImage {
@@ -692,7 +710,7 @@ a {
     opacity: 0%;
 }
 
-.mediaPlayerVideo {
+.mediaPlayerVideoHorz {
     display: block;
     margin: auto;
     border: none;
@@ -700,6 +718,12 @@ a {
     aspect-ratio: 16/9;
     width: 60vw;
     height: auto;
+}
+
+.mediaPlayerVideoVert {
+    aspect-ratio: 9/16;
+    height: 75vh;
+    width: auto;
 }
 
 #exitCursor {
@@ -971,7 +995,7 @@ a {
     position: relative;
 
     padding: 0;
-    margin: 0;
+    margin: auto;
 
     a {
         color: $light;
@@ -981,7 +1005,6 @@ a {
         display: flex;
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9;
         object-fit: cover;
 
         border-radius: 0vw;
@@ -992,6 +1015,35 @@ a {
     video:hover, img:hover {
         border-radius: 1.5vw;
         border: 0.30vw solid $blue;
+    }
+}
+
+.workCardHorz {
+
+    max-width: 75vw;
+
+    video, img {
+        display: flex;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.workCardVert {
+    display: block;
+    width: fit-content; /* or a fixed width */
+
+    video, img {
+        display: flex;
+        max-height: 85vh;
+        object-fit: cover;
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        max-height: 85vh;
     }
 }
 
