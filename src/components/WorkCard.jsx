@@ -1,17 +1,21 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import { WorkCardHoverOn } from "../js/WorkCardJS.js";
 import { WorkCardHoverOff } from "../js/WorkCardJS.js";
+import { WorkCardClicked } from "../js/WorkCardJS.js";
+import { WorkCardClose } from "../js/WorkCardJS.js";
 
 WorkCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  tag1: PropTypes.string.isRequired,
-  tag2: PropTypes.string.isRequired,
-  tag3: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  vid: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  tag1: PropTypes.string,
+  tag2: PropTypes.string,
+  tag3: PropTypes.string,
+  link: PropTypes.string,
+  ytLink: PropTypes.string,
+  vid: PropTypes.string,
+  img: PropTypes.string,
   alt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
@@ -33,10 +37,11 @@ function WorkLink({ to, children, ...props }) {
   );
 }
 
-function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id }) {
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink }) {
+
   return (
     <>
-      <div id={id} className="workCardWrapper" onMouseOver={() => WorkCardHoverOn({id})} onMouseOut={() =>WorkCardHoverOff({id})}>
+      <div id={id} className="workCardWrapper" onMouseOver={() => WorkCardHoverOn({id})} onMouseOut={() =>WorkCardHoverOff({id})} onClick={() => WorkCardClicked(ytLink)}>
         <Link to={link}>
           {img && (
             <img src={"/Thumbnails/" + img} />
@@ -47,7 +52,7 @@ function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id }) {
           )}
 
           <div className="workCardText">
-            <h3>{title}</h3>
+            {title && (<h3>{title}</h3>)}
 
             <div className="workCardTags">
 

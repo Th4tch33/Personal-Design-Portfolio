@@ -316,8 +316,3 @@ const mouseMoveEngine = (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY + window.pageYOffset
 }
-
-window.onload = function()
-{
-
-}

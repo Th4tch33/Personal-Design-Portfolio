@@ -24,7 +24,6 @@ function Home() {
       
       <div id="websiteSectionContainer" className="showreelSection">
         <h1>Showreel 2024</h1>
-        <p>Want to know what I've been up to? It's as easy as watching this!</p>
         <iframe id="showreelVideo" src="https://www.youtube.com/embed/vR6UzOTT4pQ?si=I7oWSh-v05VGoKec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 

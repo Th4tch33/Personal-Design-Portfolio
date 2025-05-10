@@ -8,6 +8,7 @@ function Work() {
             <p>A lot of different work done in a lot of different ways.</p>
 
             <div id="workWrapper">
+
                 <WorkCard
                   title="My Singing Monsters"
                   tag1="Internship"
@@ -32,7 +33,7 @@ function Work() {
                   title="Warriors vs Gee-Gees"
                   tag1="Sport Videography"
                   tag2="Video Editing"
-                  link="https://youtu.be/0w7El6HVczI?si=lCGv1NNWAWujwQRu"
+                  ytLink="https://www.youtube.com/embed/0w7El6HVczI?si=GoPvgkRJo3uaw6EH"
                   vid="UWvOGG_preview.mp4"
                   alt="test"
                   id="3"
@@ -42,7 +43,7 @@ function Work() {
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"
-                  link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
+                  ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=zwIwbzsn5UlaZWvU"
                   vid="clocking_out_preview.mp4"
                   alt="test"
                   id="1"
@@ -51,7 +52,7 @@ function Work() {
                 <WorkCard
                   title="The Little Things in Life"
                   tag1="Cinematography"
-                  link="https://youtu.be/p0GQrReJH3Q?si=OFn57UmQg_egTeMy"
+                  ytLink="https://www.youtube.com/embed/p0GQrReJH3Q?si=GzBISJVqJSop3Fq7"
                   vid="little_things_preview.mp4"
                   alt="test"
                   id="4"
@@ -70,7 +71,7 @@ function Work() {
                 <WorkCard
                   title="Start Your Day With Sun"
                   tag1="3D Animation"
-                  link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
+                  ytLink="https://www.youtube.com/embed/o3pfyFR_2LA"
                   img="start-with-sun-thumb-large.jpg"
                   alt="test"
                   id="6"
@@ -89,7 +90,7 @@ function Work() {
                 <WorkCard
                   title="UWaterloo Concert Band"
                   tag1="Videography"
-                  link="https://youtu.be/exuu0m0dbzk?si=GWwixm4FSBo7z7qb"
+                  ytLink="https://www.youtube.com/embed/exuu0m0dbzk?si=p31uockfLcfo_hYD"
                   vid="uw_band_preview.mp4"
                   alt="test"
                   id="8"

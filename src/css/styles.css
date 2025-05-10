@@ -575,6 +575,56 @@ a {
     vertical-align: bottom;
   }
 }
+#mediaPlayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  background-color: #17171A;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;
+  transition: 0.5s;
+  opacity: 0%;
+}
+
+.mediaPlayerVideo {
+  display: block;
+  margin: auto;
+  border: none;
+  aspect-ratio: 16/9;
+  width: 60vw;
+  height: auto;
+}
+
+#exitCursor {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  font-family: "Staatliches", system-ui;
+  font-weight: 500;
+  font-size: 3em;
+  color: #ffffff;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column; /* Stacks text vertically */
+  justify-content: center; /* Vertically centers text */
+  align-items: center; /* Horizontally centers text */
+  text-align: center; /* Centers text horizontally */
+  transition: opacity 0.25s;
+  opacity: 0%;
+}
+#exitCursor h1 {
+  display: inline;
+  line-height: 1;
+  font-weight: 100;
+  font-size: 4em;
+  color: #FFC43D;
+}
+
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !Home Page
@@ -789,12 +839,12 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0vw;
-  border: 0vw solid #17171A;
+  border: 0vw solid #1D50D0;
   transition: all 0.25s;
 }
 .workCardWrapper video:hover, .workCardWrapper img:hover {
   border-radius: 1.5vw;
-  border: 0.3vw solid #17171A;
+  border: 0.3vw solid #1D50D0;
 }
 
 .workCardText {
@@ -803,7 +853,7 @@ a {
   width: 100%;
   bottom: 0;
   left: 0;
-  padding: 1vw;
+  padding: 3vw 1vw 1vw 1vw;
   background-image: linear-gradient(rgba(29, 80, 208, 0), rgba(0, 0, 0, 0.8));
   opacity: 25%;
   border-radius: 0vw;
