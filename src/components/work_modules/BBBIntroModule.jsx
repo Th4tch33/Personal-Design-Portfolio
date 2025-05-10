@@ -1,4 +1,4 @@
-import WorkCardHorz from "../WorkCardHorz.jsx";
+import WorkCard from "../WorkCard.jsx";
 
 function introModule() {
     return (
@@ -25,12 +25,13 @@ function introModule() {
                     </p>
                 </div>
 
-                <WorkCardHorz
+                <WorkCard
                     title="MSM 10th Anniversary Livestream Intro"
                     tag1="Commercial Shoot"
                     tag2="After Effects"
                     tag3="Premiere Pro"
                     ytLink="https://www.youtube-nocookie.com/embed/yZbp-z0kPOw?si=eNKUkrGkeQYfrxuL"
+                    videoOrientation="H"
                     vid="msm_preview.mp4"
                     alt="test"
                     id="0"

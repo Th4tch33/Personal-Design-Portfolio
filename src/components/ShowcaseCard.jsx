@@ -1,16 +1,19 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import { ShowcaseIMGHoverOn } from "../js/ShowcaseCardJS.js";
-import { ShowcaseIMGHoverOff } from "../js/ShowcaseCardJS.js";
+import { WorkCardClicked } from "../js/WorkCardJS.js";
+import { WorkCardClose } from "../js/WorkCardJS.js";
 
 ShowcaseCard.propTypes = {
   title: PropTypes.string.isRequired,
-  tag1: PropTypes.string.isRequired,
-  tag2: PropTypes.string.isRequired,
-  tag3: PropTypes.string.isRequired,
-  para: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  tag1: PropTypes.string,
+  tag2: PropTypes.string,
+  tag3: PropTypes.string,
+  para: PropTypes.string,
+  link: PropTypes.string,
+  ytLink: PropTypes.string,
+  vimeoLink: PropTypes.string,
+  videoOrientation: PropTypes.string,
   img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
@@ -33,7 +36,7 @@ function ShowcaseLink({ to, children, ...props }) {
   );
 }
 
-function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id}) {
+function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLink, vimeoLink, videoOrientation}) {
   return (
     <>
       <div className="ShowcaseCardContainer">
@@ -48,27 +51,67 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id}) {
 
           <p> {para} </p>
           
-          <Link to={link}>
-            <div className="arrowWrapper">
-              <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-              </svg>
-              <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
-                <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-              </svg>
-              <p>Check It Out!</p>
+            <div className="arrowWrapper"
+              onClick={() => {
+                if (ytLink) {
+                  WorkCardClicked(ytLink, videoOrientation);
+                } else if (vimeoLink) {
+                  WorkCardClicked(vimeoLink, videoOrientation);
+                }
+              }}>
+
+              {link ? (
+              <Link to={link}>
+                <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                  <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
+                  <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                  <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                  <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <p>Check It Out!</p>
+              </Link>
+              ) : (
+                <a>
+                    <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                    <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                  </svg>
+                  <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
+                    <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                  </svg>
+                  <p>Check It Out!</p>
+                </a>
+              )}
             </div>
-          </Link>
         </div>
 
-        <div className="spotlightIMGContainer" id={id} onMouseOver={() => ShowcaseIMGHoverOn({id})} onMouseOut={() =>ShowcaseIMGHoverOff({id})}>
-          <Link to={link}>
-            <div className="spotlightIMGWrapper">
-              <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
-            </div>
-          </Link>
+        <div className="spotlightIMGContainer"
+          id={id}
+          onClick={() => {
+            if (ytLink) {
+              WorkCardClicked(ytLink, videoOrientation);
+            } else if (vimeoLink) {
+              WorkCardClicked(vimeoLink, videoOrientation);
+            }
+          }}>
+
+            {link ? (
+              <Link to={link}>
+                <div className="spotlightIMGWrapper">
+                  <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
+                </div>
+              </Link>
+            ) : (
+              <a>
+                <div className="spotlightIMGWrapper">
+                  <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
+                </div>
+              </a>
+            )}
+            
         </div>
       </div>
 
@@ -77,3 +120,31 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id}) {
 }
 
 export default ShowcaseCard;
+/*
+{link ? (
+          <Link to={link}>
+            {img && <img src={"/Thumbnails/" + img} />}
+            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+            <div className="workCardText">
+              {title && <h3>{title}</h3>}
+              <div className="workCardTags">
+                {tag1 && <p>{tag1}</p>}
+                {tag2 && <p>{tag2}</p>}
+                {tag3 && <p>{tag3}</p>}
+              </div>
+            </div>
+          </Link>
+        ) : (
+          <a>
+            {img && <img src={"/Thumbnails/" + img} />}
+            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+            <div className="workCardText">
+              {title && <h3>{title}</h3>}
+              <div className="workCardTags">
+                {tag1 && <p>{tag1}</p>}
+                {tag2 && <p>{tag2}</p>}
+                {tag3 && <p>{tag3}</p>}
+              </div>
+            </div>
+          </a>
+        )}*/

@@ -15,6 +15,7 @@ WorkCard.propTypes = {
   link: PropTypes.string,
   ytLink: PropTypes.string,
   vimeoLink: PropTypes.string,
+  videoOrientation: PropTypes.string,
   vid: PropTypes.string,
   img: PropTypes.string,
   alt: PropTypes.string.isRequired,
@@ -38,22 +39,30 @@ function WorkLink({ to, children, ...props }) {
   );
 }
 
-function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink, vimeoLink }) {
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink, vimeoLink, videoOrientation }) {
+
   return (
     <>
       <div
-        id={id}
-        className="workCardWrapper workCardVert"
-        onMouseOver={() => WorkCardHoverOn({ id })}
-        onMouseOut={() => WorkCardHoverOff({ id })}
+        id={id} 
+        className={
+          videoOrientation === "H"
+          ? "workCardWrapper workCardHorz"
+          : videoOrientation === "V"
+          ? "workCardWrapper workCardVert"
+          : "workCardWrapper workCardHorz"
+        }
+        onMouseOver={() => WorkCardHoverOn({id})}
+        onMouseOut={() =>WorkCardHoverOff({id})} 
         onClick={() => {
           if (ytLink) {
-            WorkCardClicked(ytLink, "V");
-          } else if (vimeoLink) {
-            WorkCardClicked(vimeoLink, "V");
+            WorkCardClicked(ytLink, videoOrientation);
           }
-        }}
-      >
+          else if (vimeoLink) {
+            WorkCardClicked(vimeoLink, videoOrientation);
+          }
+        }}>
+
         {link ? (
           <Link to={link}>
             {img && <img src={"/Thumbnails/" + img} />}

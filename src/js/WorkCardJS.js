@@ -11,7 +11,6 @@ function WorkCardHoverOff(thisID) {
 }
 
 function WorkCardClicked(videoLink, videoOrientation) {
-
     if(videoLink) {
         exitCursorActive = true;
         document.body.style.overflowY = "hidden";

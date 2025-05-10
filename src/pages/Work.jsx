@@ -1,4 +1,4 @@
-import WorkCardHorz from "../components/WorkCardHorz.jsx";
+import WorkCard from "../components/WorkCard.jsx";
 
 function Work() {
   return (
@@ -9,7 +9,7 @@ function Work() {
 
             <div id="workWrapper">
 
-                <WorkCardHorz
+                <WorkCard
                   title="My Singing Monsters"
                   tag1="Internship"
                   tag2="Content Creation"
@@ -19,7 +19,7 @@ function Work() {
                   id="0"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Action Sports Filmmaking"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
@@ -29,36 +29,39 @@ function Work() {
                   id="2"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Warriors vs Gee-Gees"
                   tag1="Sport Videography"
                   tag2="Video Editing"
                   ytLink="https://www.youtube.com/embed/0w7El6HVczI?si=GoPvgkRJo3uaw6EH"
+                  videoOrientation="H"
                   vid="UWvOGG_preview.mp4"
                   alt="test"
                   id="3"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"
                   ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=zwIwbzsn5UlaZWvU"
+                  videoOrientation="H"
                   vid="clocking_out_preview.mp4"
                   alt="test"
                   id="1"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="The Little Things in Life"
                   tag1="Cinematography"
                   ytLink="https://www.youtube.com/embed/p0GQrReJH3Q?si=GzBISJVqJSop3Fq7"
+                  videoOrientation="H"
                   vid="little_things_preview.mp4"
                   alt="test"
                   id="4"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Ancient Idol"
                   tag1="3D Asset Creation"
                   tag2="Environment Design"
@@ -68,35 +71,38 @@ function Work() {
                   id="5"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Start Your Day With Sun"
                   tag1="3D Animation"
                   ytLink="https://www.youtube.com/embed/o3pfyFR_2LA"
+                  videoOrientation="H"
                   img="start-with-sun-thumb-large.jpg"
                   alt="test"
                   id="6"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Brown Justin Beiber"
                   tag1="Lyric Video"
                   tag2="Motion Graphics"
-                  link="https://vimeo.com/516726385?share=copy"
+                  vimeoLink="https://player.vimeo.com/video/516726385?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                  videoOrientation="H"
                   vid="brown_justin_bieber_preview.mp4"
                   alt="test"
                   id="7"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="UWaterloo Concert Band"
                   tag1="Videography"
                   ytLink="https://www.youtube.com/embed/exuu0m0dbzk?si=p31uockfLcfo_hYD"
+                  videoOrientation="H"
                   vid="uw_band_preview.mp4"
                   alt="test"
                   id="8"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="3D Character Animation"
                   tag1="Character Animation"
                   link="https://new.express.adobe.com/webpage/uCGIoX4RiwBev"
@@ -107,7 +113,7 @@ function Work() {
 
                 {/*
 
-                <WorkCardHorz
+                <WorkCard
                   title="Home to Stay 🛠️"
                   tag1="Brand Design"
                   link=""
@@ -116,7 +122,7 @@ function Work() {
                   id="10"
                 />
 
-                <WorkCardHorz
+                <WorkCard
                   title="Fundamentals First"
                   tag1="UI/UX"
                   tag2="Website Design"

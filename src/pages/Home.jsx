@@ -2,7 +2,7 @@ import ShowcaseCard from "../components/ShowcaseCard.jsx";
 import Lottie from "lottie-react";
 
 import animationData from "../assets/personalLogoIdleAnim.json"; // Adjust path as needed
-import WorkCardHorz from "../components/WorkCardHorz.jsx";
+import WorkCard from "../components/WorkCard.jsx";
 
 function Home() {
   return (
@@ -24,12 +24,13 @@ function Home() {
       </div>
       
       <div id="websiteSectionContainer" className="showreelSection">
-        <WorkCardHorz 
+        <WorkCard 
           title="Showreel 2024"
           tag1="Video"
           tag2="Motion Graphics"
           tag3="3D"
           ytLink="https://www.youtube.com/embed/vR6UzOTT4pQ?si=I7oWSh-v05VGoKec"
+          videoOrientation="H"
           vid="showreel_preview.mp4"
           alt="test"
           id="0"
@@ -69,7 +70,8 @@ function Home() {
             tag1="Documentary"
             tag2="Video"
             para="A story about Chinese-Canadian immigrants that comments on the interconnected relationship between work and family told through my father's perspective."
-            link="https://youtu.be/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
+            ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
+            videoOrientation="H"
             img="clocking-out-thumb-large.jpg"
             alt="Film Project"
           />
@@ -90,7 +92,8 @@ function Home() {
             tag1="3D Animation"
             tag2="Blender"
             para="A school project with the goal to create a 30-second PSA to bring social change using motion graphics in a vertical video format. Whether big or small, communicate a call to action to the viewer persuasively and engagingly. I wanted to bring more awareness to the simple practice of getting morning sunlight after waking up to improve your day. Additionally, this was an opportunity to deliver the message using 3D animation to challenge my skills within the medium."
-            link="https://youtube.com/shorts/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
+            ytLink="https://www.youtube.com/embed/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
+            videoOrientation="V"
             img="start-with-sun-thumb-large.jpg"
             alt="Real-Time Environments"
           />

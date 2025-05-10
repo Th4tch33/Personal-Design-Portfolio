@@ -3,8 +3,7 @@ import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
 
-import WorkCardHorz from "../components/WorkCardHorz.jsx";
-import WorkCardVert from "../components/WorkCardVert.jsx";
+import WorkCard from "../components/WorkCard.jsx";
 
 function workVBall() {
     return (
@@ -25,29 +24,32 @@ function workVBall() {
                 </div>
                 
                 <div className="threeGridImage">
-                    <WorkCardVert
+                    <WorkCard
                         title="Bumpin Sports Holiday Tournament Highlights"
                         tag1="Sports"
                         tag2="After Effects"
                         vimeoLink="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        videoOrientation="V"
                         vid="bumpin_tourney_preview.mp4"
                         alt="test"
                         id="0"
                     />
-                    <WorkCardVert
+                    <WorkCard
                         title="UWaterloo Volleyball Varsity Team Highlights"
                         tag1="Sports"
                         tag2="After Effects"
                         vimeoLink="https://player.vimeo.com/video/1067479261?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        videoOrientation="V"
                         vid="uw_varsity_preview.mp4"
                         alt="test"
                         id="1"
                     />
-                    <WorkCardVert
+                    <WorkCard
                         title="Bumpin Sports League Highlights"
                         tag1="Sports"
                         tag2="After Effects"
                         vimeoLink="https://player.vimeo.com/video/1067482314?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        videoOrientation="V"
                         vid="bumpin_league_preview.mp4"
                         alt="test"
                         id="2"
@@ -55,25 +57,28 @@ function workVBall() {
                 </div>
 
                 <div className="threeGridImage">
-                    <WorkCardVert
+                    <WorkCard
                         title="Bumpin Sports One Shot Clip"
                         tag1="Sports"
                         ytLink="https://www.youtube-nocookie.com/embed/qsqpqxkn2Gw?si=1PXzurIGCJ25We4e"
+                        videoOrientation="V"
                         vid="bumpin_tourney_clip_preview.mp4"
                         alt="test"
                         id="3"
                     />
-                    <WorkCardVert
+                    <WorkCard
                         title="UWaterloo Volleyball Club Highlights"
                         tag1="Sports"
                         ytLink="https://www.youtube-nocookie.com/embed/bWi7J2Vljo4?si=HrSi1YqduPTPREjO"
+                        videoOrientation="V"
                         vid="stank_tournament_preview.mp4"
                         alt="test"
                         id="4"
                     />
-                    <WorkCardVert
+                    <WorkCard
                         title="Bumpin Sports Jan 27th Tournament Highlights"
                         tag1="Sports"
+                        videoOrientation="V"
                         ytLink="https://www.youtube-nocookie.com/embed/xtqNKx1-vrY?si=cHhs4bOBJwIHqhcJ"
                         vid="bumpin_tourney_second_preview.mp4"
                         alt="test"

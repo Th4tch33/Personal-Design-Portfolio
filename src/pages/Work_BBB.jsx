@@ -3,8 +3,7 @@ import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
 
-import WorkCardHorz from "../components/WorkCardHorz.jsx";
-import WorkCardVert from "../components/WorkCardVert.jsx";
+import WorkCard from "../components/WorkCard.jsx";
 
 function workBBB() {
     return (
@@ -73,12 +72,13 @@ function workBBB() {
                     </div>
                 </div>
 
-                <WorkCardVert
+                <WorkCard
                     title="MSM Discord Announcement"
                     tag1="Commercial Shoot"
                     tag2="After Effects"
                     tag3="Blender 3D"
                     ytLink="https://www.youtube-nocookie.com/embed/-ftTtS5OJFM?si=RWXKyeAYPD-l3Shy"
+                    videoOrientation="V"
                     vid="msm_discord_preview.mp4"
                     alt="test"
                     id="1"
