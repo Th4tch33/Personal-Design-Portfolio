@@ -363,8 +363,8 @@ a {
         padding-top: 5vh;
 
         img {
-            width: auto;
-            max-height: 75vh;
+            width: 85vw;
+            max-height: auto;
             margin: auto;
         }
     }
@@ -1154,10 +1154,15 @@ a {
             border-radius: 3vw;
         }
     }
+    
+    .workCardHorz {
+        max-width: 100%;
+    }
 
     .workCardText {
         opacity: 100%;
         padding: 2vw;
+        border-radius: 3vw;
     }
 
     .workCardTags {
