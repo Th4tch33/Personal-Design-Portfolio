@@ -336,16 +336,14 @@ a {
         display: block;
     }
 
-    .threeGridImage {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr ;
-        grid-row-gap: 5vh;
-        grid-column-gap: 0vh;
-
-        padding-top: 5vh;
+    //Fullscreen Image
+    .fullScreenImage {
+        img {
+            width: 100%;
+            max-height: auto;
+        }
     }
-    
+
     .splitScreenImage {
         width: 100%;
         display: grid;
@@ -354,6 +352,23 @@ a {
     
         padding-top: 5vh;
     }
+
+    .threeGridImage {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-row-gap: 5vh;
+        grid-column-gap: 0vh;
+
+        padding-top: 5vh;
+
+        img {
+            width: auto;
+            max-height: 75vh;
+            margin: auto;
+        }
+    }
+    
 }
 
 //Website Section
@@ -704,16 +719,20 @@ a {
     background-color: $dark;
 
     display: flex;
-    justify-content: center;  /* Horizontal centering */
-    align-items: center;
+    align-items: center; /* centers horizontally */
+    justify-content: center; /* centers vertically */
 
     transition: 0.5s;
     opacity: 0%;
 }
 
+.mediaPlayerMobileStyles {
+    flex-direction: column;
+}
+
 .mediaPlayerVideoHorz {
     display: block;
-    margin: auto;
+    margin: 0;
     border: none;
 
     aspect-ratio: 16/9;
@@ -746,7 +765,7 @@ a {
     text-align: center;            /* Centers text horizontally */
 
     transition: opacity 0.25s;
-    opacity: 0%;
+    opacity: 100%;
 
     h1 {
         display: inline;
@@ -754,6 +773,33 @@ a {
         font-weight: 100;
         font-size: 4em;
         color: $yellow;
+    }
+}
+
+.exitCursorMobileStyling {
+    position: static !important;
+    margin-top: 1vh;
+}
+
+@media screen and (max-device-width: 768px) {
+    .mediaPlayerVideoHorz {
+        width: 85vw;
+    }
+
+    .mediaPlayerVideoVert {
+        height: 70vh;
+    }
+
+    #exitCursor {
+        font-size: 1.5em;
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    .exitCursorMobileStyling {
+        margin-top: 3vh;
     }
 }
 

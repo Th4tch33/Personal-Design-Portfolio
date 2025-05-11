@@ -1,3 +1,7 @@
+import Bowser from 'bowser';
+
+const parser = Bowser.getParser(navigator.userAgent);
+
 let exitCursorActive = false;
 let mouseX;
 let mouseY;
@@ -17,12 +21,7 @@ function WorkCardClicked(videoLink, videoOrientation) {
 
         const mediaPlayer = document.createElement('div');
         mediaPlayer.id = "mediaPlayer";
-        document.body.appendChild(mediaPlayer);  
-
-        const exitCursor = document.createElement('div');
-        exitCursor.id = "exitCursor";
-        exitCursor.innerHTML = "CLOSE VIDEO<h1>X</h1>";
-        mediaPlayer.appendChild(exitCursor); 
+        document.body.appendChild(mediaPlayer);   
 
         mediaPlayer.addEventListener('click', () => {WorkCardClose()});
         mediaPlayer.addEventListener('mousemove', () => {WorkCardExitCusor()});
@@ -57,6 +56,16 @@ function WorkCardClicked(videoLink, videoOrientation) {
         }
         else {
             console.log("failed to generate video using link: " + videoLink);
+        }
+
+        const exitCursor = document.createElement('div');
+        exitCursor.id = "exitCursor";
+        exitCursor.innerHTML = "CLOSE VIDEO<h1>X</h1>";
+        mediaPlayer.appendChild(exitCursor);
+
+        if(parser.getPlatformType() === 'mobile') {
+            mediaPlayer.className = "mediaPlayerMobileStyles";
+            exitCursor.className = "exitCursorMobileStyling";
         }
 
         iframe.addEventListener('mouseenter', () => {ExitCursorHoverOff()});
@@ -102,6 +111,15 @@ function ExitCursorHoverOn() {
 }
 
 function ExitCursorHoverOff() {
-    document.getElementById("exitCursor").style.opacity = 0;
-    document.getElementById("mediaPlayer").style.cursor = "auto";
+
+    if (parser.getPlatformType() === 'mobile') {
+        document.getElementById("exitCursor").style.opacity = 1;
+        document.getElementById("mediaPlayer").style.cursor = "auto";
+    }
+    else {
+        document.getElementById("exitCursor").style.opacity = 0;
+        document.getElementById("mediaPlayer").style.cursor = "auto";
+    }
+
+    
 }

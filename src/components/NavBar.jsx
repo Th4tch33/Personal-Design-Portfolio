@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import WorkCardClose from "../components/WorkCard.jsx";
+
 CustomLink.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
@@ -25,12 +27,20 @@ export default function NavBar() {
 
 	const showNavbar = () => {
 		navRef.current.classList.toggle("popOut");
+
+    closeMediaPlayer();
 	};
+
+  const closeMediaPlayer = () => {
+    if(document.getElementById("mediaPlayer")) {
+      WorkCardClose();
+    }
+  }
 
   return (
     <header id="navContainer">
 
-      <Link to="/">cadenchan.design</Link>
+      <Link to="/" onClick={closeMediaPlayer}>cadenchan.design</Link>
 
       <nav ref={navRef}>
 
