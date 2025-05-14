@@ -44,15 +44,15 @@ function Footer() {
           </div>
         </div>
         <div id="captionWrapper">
-          <caption className="caption white">
+          <div className="caption white">
             © Caden Chan. All Rights Reserved. All Lefts Up For Grabs.
-          </caption>
-          <caption className="caption white">
+          </div>
+          <div className="caption white">
             A website made with love by yours truely{" "}
             <b>
               <i>xoxo</i>
             </b>
-          </caption>
+          </div>
         </div>
       </div>
     </>

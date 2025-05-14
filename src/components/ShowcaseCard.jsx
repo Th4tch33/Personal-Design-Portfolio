@@ -16,7 +16,7 @@ ShowcaseCard.propTypes = {
   videoOrientation: PropTypes.string,
   img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 ShowcaseLink.propTypes = {
@@ -62,25 +62,25 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLin
 
               {link ? (
               <Link to={link}>
-                <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                  <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                <svg width="100%" height="100%">
+                  <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
                 </svg>
-                <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
-                  <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                  <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                  <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                <svg width="4vh" height="4vh">
+                  <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
+                  <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
+                  <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
                 </svg>
                 <p>Check It Out!</p>
               </Link>
               ) : (
                 <a>
-                    <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                    <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                    <svg width="100%" height="100%">
+                    <line x1="1%" y1="50%" x2="100%" y2="50%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
                   </svg>
-                  <svg width="4vh" height="4vh" viewBox="0 0 100% 100%">
-                    <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" stroke-width="5" stroke-linecap="round"/>
+                  <svg width="4vh" height="4vh">
+                    <line x1="0%" y1="50%" x2="90%" y2="50%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
+                    <line x1="90%" y1="50%" x2="10%" y2="7%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
+                    <line x1="90%" y1="50%" x2="10%" y2="93%" stroke="#FFC43D" strokeWidth="5" strokeLinecap="round"/>
                   </svg>
                   <p>Check It Out!</p>
                 </a>

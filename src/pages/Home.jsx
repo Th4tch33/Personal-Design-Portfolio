@@ -25,13 +25,13 @@ function Home() {
       
       <div id="websiteSectionContainer" className="showreelSection">
         <WorkCard 
-          title="Showreel 2024"
+          title="Showreel 2025"
           tag1="Video"
           tag2="Motion Graphics"
           tag3="3D"
-          ytLink="https://www.youtube.com/embed/vR6UzOTT4pQ?si=I7oWSh-v05VGoKec"
+          ytLink="https://www.youtube.com/embed/CJAkoo-nidw?si=5HWdZHNaqTJTxwjC"
           videoOrientation="H"
-          vid="showreel_preview.mp4"
+          vid="showreel_2025_preview.mp4"
           alt="test"
           id="0"
         />
