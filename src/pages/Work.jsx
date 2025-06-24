@@ -10,20 +10,29 @@ function Work() {
             <div id="workWrapper">
 
                 <WorkCard
+                  title="NACBAIT 2025"
+                  tag1="Sports"
+                  tag2="Event Coverage"
+                  link="/workNACBAIT"
+                  vid="nacbait_preview.mp4"
+                  id="0"
+                />
+
+                <WorkCard
                   title="My Singing Monsters"
                   tag1="Internship"
                   tag2="Content Creation"
                   link="/workBBB"
                   vid="msm_preview.mp4"
                   alt="test"
-                  id="0"
+                  id="1"
                 />
 
                 <WorkCard
                   title="Action Sports Filmmaking"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
-                  link="/WorkVBall"
+                  link="/workVBall"
                   vid="bumpin_matt_preview.mp4"
                   alt="test"
                   id="2"

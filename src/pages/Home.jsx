@@ -43,6 +43,16 @@ function Home() {
         <div id="spotlightWrapper">
 
           <ShowcaseCard
+              title="NACBAIT 2025"
+              tag1="Sports"
+              tag2="Event Coverage"
+              para="NACBAIT 2025 is a three-day annual basketball tournament that celebrates Chinese heritage and fosters competitive play. I was brought on as a one-man media team to produce event photography, video coverage, and animated visuals."
+              link="/workNACBAIT"
+              img="nacbait-thumb-med.jpg"
+              alt="Photography and Videography"
+          />
+
+          <ShowcaseCard
               title="My Singing Monsters"
               tag1="Marketing"
               tag2="Video"
@@ -59,7 +69,7 @@ function Home() {
             tag2="Video"
             tag3="Photo"
             para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
-            link="/WorkVBall"
+            link="/workVBall"
             img="bumpin-matt-thumb-large.jpg"
             alt="Photography and Videography"
             id="0"
