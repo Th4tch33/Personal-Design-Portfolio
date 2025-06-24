@@ -95,6 +95,24 @@ function workVBall() {
                         <img src="/falling-objects/object8.svg" alt="" loading="lazy"  />
                     </div>
                 </div>
+
+                <div className="fullScreenImage">
+                    <img src="/Images/Sports/soccer-full02.jpg" alt="" loading="lazy" />
+                </div> 
+
+                <div className="splitScreenImage">
+                    <img src="/Images/Sports/soccer-full03.jpg" alt="" loading="lazy" />
+                    <img src="/Images/Sports/soccer-full04.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="splitScreenImage">        
+                    <img src="/Images/Sports/soccer-full06.jpg" alt="" loading="lazy" />
+                    <img src="/Images/Sports/soccer-full07.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="fullScreenImage">
+                    <img src="/Images/Sports/soccer-full01.jpg" alt="" loading="lazy" />
+                </div> 
         
                 <div className="threeGridImage">        
                     <img src="/Images/Sports/commentator-portrait01.jpg" alt="" loading="lazy" />
@@ -112,13 +130,10 @@ function workVBall() {
                     <img src="/Images/Sports/ultamite-portrait03.jpg" alt="" loading="lazy" />
                 </div>
 
-                <div className="fullScreenImage">
-                    <img src="/Images/Sports/vball-full04.jpg" alt="" loading="lazy" />
-                </div> 
 
                 <div className="threeGridImage">        
-                    <img src="/Images/Sports/vball-portrait01.jpg" alt="" loading="lazy" />
                     <img src="/Images/Sports/vball-portrait02.jpg" alt="" loading="lazy" />
+                    <img src="/Images/Sports/vball-portrait04.jpg" alt="" loading="lazy" />
                     <img src="/Images/Sports/vball-portrait03.jpg" alt="" loading="lazy" />
                 </div>
 
