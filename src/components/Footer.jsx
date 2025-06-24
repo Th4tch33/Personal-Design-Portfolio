@@ -8,7 +8,7 @@ function Footer() {
           ⬆
         </div>
 
-        <h1 className="center white">Stay Awesome</h1>
+        <h1 className="center white">All Things Design</h1>
 
         <div id="idWrapper">
           <div>
