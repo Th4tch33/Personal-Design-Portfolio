@@ -129,32 +129,92 @@ a {
 !Template Styles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-.introInfoContainer video {
+.introModuleContainer {
+  width: 100vw;
+  height: 100vh;
+}
+.introModuleContainer video {
   width: 100%;
 }
 
+.introModuleBG img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -5;
+}
+
+.introModuleTextContainer {
+  display: flex;
+  align-items: center; /* vertical centering */
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  width: 50vw;
+  height: 100vh;
+  padding: 0 5vw;
+}
+
+.introModuleTextWrapper {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr;
+  color: #ffffff;
+}
+
 .introTitle {
-  font-size: 6em;
+  font-size: 4em;
   font-family: "Lora", serif;
   font-weight: 700;
   font-style: italic;
 }
 
 .introSubTitle {
+  font-size: 1.33em;
+  font-family: "Sora", serif;
+  font-weight: 300;
+}
+
+.introModuleTags {
   display: flex;
+  padding: 2vh 0;
+}
+.introModuleTags h4 {
+  font-family: "Staatliches", system-ui;
+  font-weight: 100;
+  font-size: 1em;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  padding: 0.3vw;
+  border-radius: 0.4vw;
+  margin-right: 0.5vw;
+}
+
+.introModuleSigilWrapper {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  font-size: 2em;
-  font-family: "Sora", sans-serif;
-  font-weight: 700;
-  padding: 0.5em 0;
+}
+.introModuleSigilWrapper img {
+  margin: 0 auto;
+}
+
+.introInfoDetailWrapper {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  justify-content: center; /* center children vertically */
 }
 
 .introInfoPara {
   display: flex;
   margin: auto;
-  padding: 10vh 0;
+  padding-top: 15vh;
   grid-column-gap: 2em;
-  width: 75%;
+  width: 50%;
 }
 .introInfoPara .introTitle {
   font-size: 3em;
@@ -164,29 +224,65 @@ a {
   padding-top: 0;
 }
 
-.introInfoDetailWrapper {
-  display: grid;
-  grid-template-columns: 3fr 3fr 1fr 1fr;
-  grid-column-gap: 3vw;
-  padding-top: 4vh;
-  font-size: 1em;
-}
-
 @media screen and (max-device-width: 768px) {
+  .introModuleTextContainer {
+    width: 75vw;
+  }
+  .introModuleTextWrapper {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+    color: #ffffff;
+  }
   .introTitle {
-    font-size: 5em;
+    font-size: 4em;
   }
   .introSubTitle {
-    display: block;
-    font-size: 2em;
-    font-weight: 500;
-    padding: 0.5em 0;
+    font-size: 1.5em;
+  }
+  .introModuleTags {
+    display: flex;
+    padding: 0;
+  }
+  .introModuleTags h4 {
+    font-size: 1.5em;
+    padding: 0.5vw 1vw;
+    border: 3px solid #ffffff;
+    border-radius: 1vw;
+    margin-right: 1vw;
+  }
+  .introInfoDetailWrapper {
+    row-gap: 2vh;
+  }
+}
+@media screen and (max-device-width: 481px) {
+  .introModuleTextContainer {
+    width: 100vw;
+  }
+  .introModuleTextWrapper {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+    color: #ffffff;
+  }
+  .introTitle {
+    font-size: 3em;
+  }
+  .introSubTitle {
+    font-size: 1em;
+  }
+  .introModuleTags h4 {
+    font-size: 1em;
+    padding: 0.5vw 2vw;
+    margin-right: 2vw;
+  }
+  .introInfoDetailWrapper {
+    row-gap: 2vh;
   }
   .introInfoPara {
     display: grid;
-    padding: 10vh 0;
-    grid-row-gap: 2em;
-    width: 100%;
+    grid-row-gap: 5vh;
+    width: 75%;
   }
 }
 .fullScreenImage {
@@ -247,7 +343,7 @@ a {
   color: #1D50D0;
   text-align: center;
   justify-content: center;
-  margin: 15vw auto;
+  margin: 15vh auto;
   white-space: nowrap;
 }
 
@@ -568,23 +664,8 @@ a {
 }
 
 @media screen and (max-device-width: 768px) {
-  .introInfoDetailWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 3vh;
-  }
   #websiteSectionContainer {
     padding: 10vh 5vw;
-  }
-  .introInfoPara {
-    font-size: 1.2em;
-    padding-top: 5vh;
-  }
-  .introInfoDetailWrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-top: 5vh;
-    font-size: 1em;
   }
 }
 @media screen and (max-device-width: 481px) {

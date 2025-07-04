@@ -1,4 +1,4 @@
-import VBallIntroModule from "../components/work_modules/VBallIntroModule.jsx"
+import IntroModule from "../components/work_modules/IntroModule.jsx"
 import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
@@ -8,9 +8,15 @@ import WorkCard from "../components/WorkCard.jsx";
 function workVBall() {
     return (
         <>
-            <div id="websiteSectionContainer">
-                <VBallIntroModule />
 
+            <IntroModule 
+                title="Sports Media Production"
+                sub1="Videography and Photography"
+                para="Sports has been a huge part of my life as a volleyball player growing up. There's a story at every practice, game, and tournament that I've lived through and cherish. That's why I do my best to take on sports videography and jobs, to capture those moments for others to enjoy!"
+                heroImage="sports-hero.jpg"
+            />
+
+            <div id="websiteSectionContainer">
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
@@ -111,7 +117,7 @@ function workVBall() {
                 </div>
 
                 <div className="fullScreenImage">
-                    <img src="/Images/Sports/soccer-full01.jpg" alt="" loading="lazy" />
+                    <img src="/Images/Sports/nacbait-full01.jpg" alt="" loading="lazy" />
                 </div> 
         
                 <div className="threeGridImage">        

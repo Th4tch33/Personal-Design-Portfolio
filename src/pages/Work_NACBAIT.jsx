@@ -8,14 +8,18 @@ import WorkCard from "../components/WorkCard.jsx";
 function workNACBAIT() {
     return (
         <>
-            <div id="websiteSectionContainer">
-                <IntroModule 
-                    title="NACBAIT 2025"
-                    sub1="Basketball Tournament & Awards Ceremony"
-                    sub2="May 2025"
-                    para="I was brought on as a one-man media team by the North American Chinese Basketball Association (NACBA) and the Chinese Canadian Youth Athletic Association (CCYAA) to document a three-day tournament and awards ceremony. Balancing roles as photographer, videographer, interviewer, and storyteller, I captured the energy, key moments, and atmosphere of the event. My deliverables included a curated photo gallery, highlight videos, a 10-minute documentary, and custom stage visuals for the awards ceremony."
-                />
+            <IntroModule 
+                title="NACBAIT 2025"
+                sub1="Basketball Tournament & Awards Ceremony"
+                sub2="May 2025"
+                para="I was brought on as a one-man media team by the North American Chinese Basketball Association (NACBA) and the Chinese Canadian Youth Athletic Association (CCYAA) to document a three-day tournament and awards ceremony. Balancing roles as photographer, videographer, interviewer, and storyteller, I captured the energy, key moments, and atmosphere of the event. My deliverables included a curated photo gallery, highlight videos, a 10-minute documentary, and custom stage visuals for the awards ceremony."
+                tag1="Sports"
+                tag2="Event Coverage"
+                heroImage="nacbait-hero.jpg"
+            />
 
+            <div id="websiteSectionContainer">
+                
                 <WorkCard
                     title="Chinese Basketball At Its Finest || NACBAIT 2025"
                     tag1="Event Coverage"
