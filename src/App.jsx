@@ -3,7 +3,7 @@ import Home from "./pages/Home.jsx";
 import Work from "./pages/Work.jsx";
 import About from "./pages/About.jsx";
 import WorkBBB from "./pages/Work_BBB.jsx";
-import WorkVBall from "./pages/Work_VBall.jsx";
+import Sports from "./pages/Work_Sports.jsx";
 import WorkNACBAIT from "./pages/Work_NACBAIT.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -37,7 +37,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/workBBB" element={<WorkBBB />} />
-            <Route path="/workVBall" element={<WorkVBall />} />
+            <Route path="/sports" element={<Sports />} />
             <Route path="/workNACBAIT" element={<WorkNACBAIT />} />
           </Routes>
       </div>

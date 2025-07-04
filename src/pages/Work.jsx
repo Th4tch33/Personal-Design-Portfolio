@@ -32,7 +32,7 @@ function Work() {
                   title="Action Sports Filmmaking"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
-                  link="/workVBall"
+                  link="/sports"
                   vid="bumpin_matt_preview.mp4"
                   alt="test"
                   id="2"

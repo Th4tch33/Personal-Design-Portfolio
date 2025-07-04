@@ -64,12 +64,12 @@ function Home() {
           />
  
           <ShowcaseCard
-            title="Action Sports Filmmaking"
+            title="Sports Media Production"
             tag1="Sports"
             tag2="Video"
             tag3="Photo"
             para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
-            link="/workVBall"
+            link="/sports"
             img="bumpin-matt-thumb-large.jpg"
             alt="Photography and Videography"
             id="0"
