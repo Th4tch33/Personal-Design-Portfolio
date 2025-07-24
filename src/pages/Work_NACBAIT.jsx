@@ -32,30 +32,27 @@ function workNACBAIT() {
                     id="0"
                 />
 
-            {/*
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object7.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
                     </div>
-                    Promo Video
+                    Promotional Video
                     <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object8.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
                     </div>
                 </div>
 
-                <div className="fullScreenImage">
-                    <WorkCard
-                        title="Bumpin Sports Holiday Tournament Highlights"
-                        tag1="Sports"
-                        tag2="After Effects"
-                        vimeoLink="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                        videoOrientation="V"
-                        vid="bumpin_tourney_preview.mp4"
-                        alt="test"
-                        id="0"
-                    />
-                </div>
-            */}
+                <WorkCard
+                    title="Chinese Basketball At Its Finest || NACBAIT 2025"
+                    tag1="Event Coverage"
+                    tag2="Interviews"
+                    tag3="Highlight Reel"
+                    ytLink="https://youtube.com/shorts/0SVQORsAj6g?si=QSViyz_yuKpLe3Qq"
+                    videoOrientation="V"
+                    vid="nacbait_frank_preview.mp4"
+                    alt="test"
+                    id="1"
+                />
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
@@ -105,7 +102,7 @@ function workNACBAIT() {
                 </div>
 
                 <div className="splitScreenImage">
-                    <div style={{ position: "relative", paddingTop: "56.25%", border: "2px solid black" }}>
+                    <div style={{ position: "relative", paddingTop: "56.25%", border: "1px solid black" }}>
                         <iframe
                             src="https://player.vimeo.com/video/1095787293?autoplay=1&background=1&controls=0&muted=1&loop=1&playsinline=1"
                             style={{
@@ -122,7 +119,7 @@ function workNACBAIT() {
                         ></iframe>
                     </div>
 
-                    <div style={{ position: "relative", paddingTop: "56.25%", border: "2px solid black" }}>
+                    <div style={{ position: "relative", paddingTop: "56.25%", border: "1px solid black" }}>
                         <iframe
                             src="https://player.vimeo.com/video/1095787797?autoplay=1&background=1&controls=0&muted=1&loop=1&playsinline=1"
                             style={{

@@ -12,11 +12,15 @@ function workBBB() {
                     title="My Singing Monsters"
                     sub1="Marketing Specialist @  Big Blue Bubble"
                     sub2="May 2024  -  Aug 2024"
-                    para={"I worked at a mobile games company during a 4 month co-op as a marketing specialist for their flagship title My Singing Monsters! My job was to continually create captivating digital content to be posted across their social media platform to engage their unique audience."
-                        + <br/> + <br/> + 
-                        "My work would be posted to multiple 100k+ follower social media accounts that I would also help manage including Instagram, Twitter, TikTok, and YouTube."
-                        + <br/> + <br/> + 
-                        "My work is multi-disciplinary spanning many mediums like graphic design, illustration, product photography, 3D modeling, and filming. Below is what I was able to get done during my internship, hop you enjoy the view!"}
+                    para={
+                        <>
+                            I worked at a mobile games company during a 4 month co-op as a marketing specialist for their flagship title My Singing Monsters! My job was to continually create captivating digital content to be posted across their social media platform to engage their unique audience.
+                            <br /><br />
+                            My work would be posted to multiple 100k+ follower social media accounts that I would also help manage including Instagram, Twitter, TikTok, and YouTube.
+                            <br /><br />
+                            My work is multi-disciplinary spanning many mediums like graphic design, illustration, product photography, 3D modeling, and filming. Below is what I was able to get done during my internship, hope you enjoy the view!
+                        </>
+                        }
                     
                     tag1="Internship"
                     tag2="Social Media Marketing"
@@ -37,7 +41,27 @@ function workBBB() {
                     id="0"
                 />
 
-                
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object1.svg" alt="" loading="lazy"  />
+                    </div>
+                    Animation + Video
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
+                    </div>
+                </div>
+
+                <WorkCard
+                    title="MSM Discord Announcement"
+                    tag1="Commercial Shoot"
+                    tag2="After Effects"
+                    tag3="Blender 3D"
+                    ytLink="https://www.youtube-nocookie.com/embed/-ftTtS5OJFM?si=RWXKyeAYPD-l3Shy"
+                    videoOrientation="V"
+                    vid="msm_discord_preview.mp4"
+                    alt="test"
+                    id="1"
+                />
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
@@ -89,28 +113,6 @@ function workBBB() {
                     <img src="/Images/BBB/BBB_Product_BTS_Front.jpg" alt="" loading="lazy" />
                     <img src="/Images/BBB/BBB_Product_BTS_Back.jpg" alt="" loading="lazy" />
                 </div>
-
-                <div className="sectionHead">
-                    <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object1.svg" alt="" loading="lazy"  />
-                    </div>
-                    Animation + Video
-                    <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
-                    </div>
-                </div>
-
-                <WorkCard
-                    title="MSM Discord Announcement"
-                    tag1="Commercial Shoot"
-                    tag2="After Effects"
-                    tag3="Blender 3D"
-                    ytLink="https://www.youtube-nocookie.com/embed/-ftTtS5OJFM?si=RWXKyeAYPD-l3Shy"
-                    videoOrientation="V"
-                    vid="msm_discord_preview.mp4"
-                    alt="test"
-                    id="1"
-                />
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
