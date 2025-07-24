@@ -964,6 +964,15 @@ a {
   padding-top: 5vh;
 }
 
+.workWrapperRowWithVertVideo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 8vw;
+       column-gap: 8vw;
+  row-gap: 1vw;
+  padding: 0 4vw;
+}
+
 .workCardWrapper {
   position: relative;
   padding: 0;
@@ -1005,14 +1014,14 @@ a {
 }
 .workCardVert video, .workCardVert img {
   display: flex;
-  max-height: 85vh;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .workCardVert a {
   position: relative;
   display: inline-block;
-  max-height: 85vh;
+  max-height: 100%;
 }
 
 .workCardText {

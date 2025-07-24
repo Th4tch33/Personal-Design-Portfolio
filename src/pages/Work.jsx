@@ -27,7 +27,7 @@ function Work() {
                   alt="test"
                   id="1"
                 />
-
+                
                 <WorkCard
                   title="Action Sports Filmmaking"
                   tag1="Camerawork"
@@ -37,6 +37,32 @@ function Work() {
                   alt="test"
                   id="2"
                 />
+
+                <div className="workWrapperRowWithVertVideo">
+                  
+
+                  <WorkCard
+                    title="Vision Clarity Optical Clinic"
+                    tag1="Clinic Ad"
+                    tag2="Branding"
+                    ytLink="https://youtube.com/embed/wabmSDuyhTw?si=nCrpu3TG9BApIXxZ"
+                    videoOrientation="V"
+                    vid="vision_clarity_preview.mp4"
+                    alt="test"
+                    id="10"
+                  />
+
+                  <WorkCard
+                    title="Master Tako Grand Opening"
+                    tag1="Resturant Ad"
+                    tag2="Branding"
+                    vimeoLink="https://player.vimeo.com/video/1103982042?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                    videoOrientation="V"
+                    vid="master_tako_preview.mp4"
+                    alt="test"
+                    id="11"
+                  />
+                </div>
 
                 <WorkCard
                   title="Warriors vs Gee-Gees"
@@ -94,7 +120,7 @@ function Work() {
                   title="Brown Justin Beiber"
                   tag1="Lyric Video"
                   tag2="Motion Graphics"
-                  vimeoLink="https://player.vimeo.com/video/516726385?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                  ytLink="https://www.youtube.com/embed/kb1t50_HrqY?si=-mEHYMWcctfVg6H9"
                   videoOrientation="H"
                   vid="brown_justin_bieber_preview.mp4"
                   alt="test"

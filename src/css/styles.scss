@@ -1132,6 +1132,14 @@ a {
     padding-top: 5vh;
 }
 
+.workWrapperRowWithVertVideo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8vw;
+    row-gap: 1vw;
+    padding: 0 4vw;
+}
+
 .workCardWrapper 
 {
     position: relative;
@@ -1178,14 +1186,14 @@ a {
 
     video, img {
         display: flex;
-        max-height: 85vh;
+        height: 100%;
         object-fit: cover;
     }
 
     a {
         position: relative;
         display: inline-block;
-        max-height: 85vh;
+        max-height: 100%;
     }
 }
 
