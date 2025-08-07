@@ -56,45 +56,10 @@ function workNACBAIT() {
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object7.svg" alt="" loading="lazy"  />
-                    </div>
-                    Stills
-                    <div className="sectionHeadDesigns">
-                        <img src="/falling-objects/object8.svg" alt="" loading="lazy"  />
-                    </div>
-                </div>
-
-                <div className="splitScreenImage">
-                    <img src="/Images/NACBAIT/nacbait-still02.jpg" alt="" loading="lazy" />
-                    <img src="/Images/NACBAIT/nacbait-still04.jpg" alt="" loading="lazy" />
-                </div>
-
-                <div className="splitScreenImage">
-                    <img src="/Images/NACBAIT/nacbait-still03.jpg" alt="" loading="lazy" />
-                    <img src="/Images/NACBAIT/nacbait-still05.jpg" alt="" loading="lazy" />
-                </div>
-
-                <div className="splitScreenImage">
-                    <img src="/Images/NACBAIT/nacbait-still09.jpg" alt="" loading="lazy" />
-                    <img src="/Images/NACBAIT/nacbait-still10.jpg" alt="" loading="lazy" />
-                </div>
-
-                <div className="splitScreenImage">
-                    <img src="/Images/NACBAIT/nacbait-still13.jpg" alt="" loading="lazy" />
-                    <img src="/Images/NACBAIT/nacbait-still14.jpg" alt="" loading="lazy" />
-                </div>
-
-                <div className="splitScreenImage">
-                    <img src="/Images/NACBAIT/nacbait-still15.jpg" alt="" loading="lazy" />
-                    <img src="/Images/NACBAIT/nacbait-still18.jpg" alt="" loading="lazy" />
-                </div>
-
-                <div className="sectionHead">
-                    <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
                         <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
                     </div>
-                    Banquet Visuals
+                    Stage Visuals
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object2.svg" alt="" loading="lazy"  />
                         <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
@@ -135,6 +100,45 @@ function workNACBAIT() {
                             title="2025Nacbait Banquetanimation Final"
                         ></iframe>
                     </div>
+                </div>
+
+                <div className="fullScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-stage-visuals.jpg" alt="" loading="lazy" />
+                </div> 
+
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object7.svg" alt="" loading="lazy"  />
+                    </div>
+                    Stills
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object8.svg" alt="" loading="lazy"  />
+                    </div>
+                </div>
+
+                <div className="splitScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-still02.jpg" alt="" loading="lazy" />
+                    <img src="/Images/NACBAIT/nacbait-still04.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="splitScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-still03.jpg" alt="" loading="lazy" />
+                    <img src="/Images/NACBAIT/nacbait-still05.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="splitScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-still09.jpg" alt="" loading="lazy" />
+                    <img src="/Images/NACBAIT/nacbait-still10.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="splitScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-still13.jpg" alt="" loading="lazy" />
+                    <img src="/Images/NACBAIT/nacbait-still14.jpg" alt="" loading="lazy" />
+                </div>
+
+                <div className="splitScreenImage">
+                    <img src="/Images/NACBAIT/nacbait-still15.jpg" alt="" loading="lazy" />
+                    <img src="/Images/NACBAIT/nacbait-still18.jpg" alt="" loading="lazy" />
                 </div>
                 
                 <div className="sectionHead">
