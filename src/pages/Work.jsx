@@ -19,17 +19,7 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="My Singing Monsters"
-                  tag1="Internship"
-                  tag2="Content Creation"
-                  link="/workBBB"
-                  vid="msm_preview.mp4"
-                  alt="test"
-                  id="1"
-                />
-                
-                <WorkCard
-                  title="Action Sports Filmmaking"
+                  title="Sports Media Production"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
                   link="/sports"
@@ -39,8 +29,6 @@ function Work() {
                 />
 
                 <div className="workWrapperRowWithVertVideo">
-                  
-
                   <WorkCard
                     title="Vision Clarity Optical Clinic"
                     tag1="Clinic Ad"
@@ -63,6 +51,16 @@ function Work() {
                     id="11"
                   />
                 </div>
+                
+                <WorkCard
+                  title="My Singing Monsters"
+                  tag1="Internship"
+                  tag2="Content Creation"
+                  link="/workBBB"
+                  vid="msm_preview.mp4"
+                  alt="test"
+                  id="1"
+                />
 
                 <WorkCard
                   title="Warriors vs Gee-Gees"

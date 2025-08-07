@@ -50,6 +50,30 @@ function workVBall() {
                         alt="test"
                         id="1"
                     />
+
+                    <WorkCard
+                        title="Matt Jen's Short Kings League"
+                        tag1="Volleyball"
+                        tag2="After Effects"
+                        ytLink="https://www.youtube-nocookie.com/embed/QMxiVvCMbn4?si=vPWZY1xZ3194jP7k"
+                        videoOrientation="V"
+                        vid="MJ_SKL_preview.mp4"
+                        alt="test"
+                        id="3"
+                    />
+                </div>
+
+                <div className="threeGridImage">
+                    
+                    <WorkCard
+                        title="UWaterloo Volleyball Club Highlights"
+                        tag1="Sports"
+                        ytLink="https://www.youtube-nocookie.com/embed/bWi7J2Vljo4?si=HrSi1YqduPTPREjO"
+                        videoOrientation="V"
+                        vid="stank_tournament_preview.mp4"
+                        alt="test"
+                        id="4"
+                    />
                     <WorkCard
                         title="Bumpin Sports League Highlights"
                         tag1="Sports"
@@ -59,27 +83,6 @@ function workVBall() {
                         vid="bumpin_league_preview.mp4"
                         alt="test"
                         id="2"
-                    />
-                </div>
-
-                <div className="threeGridImage">
-                    <WorkCard
-                        title="Bumpin Sports One Shot Clip"
-                        tag1="Sports"
-                        ytLink="https://www.youtube-nocookie.com/embed/qsqpqxkn2Gw?si=1PXzurIGCJ25We4e"
-                        videoOrientation="V"
-                        vid="bumpin_tourney_clip_preview.mp4"
-                        alt="test"
-                        id="3"
-                    />
-                    <WorkCard
-                        title="UWaterloo Volleyball Club Highlights"
-                        tag1="Sports"
-                        ytLink="https://www.youtube-nocookie.com/embed/bWi7J2Vljo4?si=HrSi1YqduPTPREjO"
-                        videoOrientation="V"
-                        vid="stank_tournament_preview.mp4"
-                        alt="test"
-                        id="4"
                     />
                     <WorkCard
                         title="Bumpin Sports Jan 27th Tournament Highlights"
