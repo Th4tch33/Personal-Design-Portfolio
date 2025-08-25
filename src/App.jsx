@@ -5,6 +5,7 @@ import About from "./pages/About.jsx";
 import WorkBBB from "./pages/Work_BBB.jsx";
 import Sports from "./pages/Work_Sports.jsx";
 import WorkNACBAIT from "./pages/Work_NACBAIT.jsx";
+import WorkWraptitude from "./pages/Work_Wraptitude.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
@@ -36,9 +37,10 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/workBBB" element={<WorkBBB />} />
+            <Route path="/mysingingmonsters" element={<WorkBBB />} />
+            <Route path="/wraptitude" element={<WorkWraptitude />} />
             <Route path="/sports" element={<Sports />} />
-            <Route path="/workNACBAIT" element={<WorkNACBAIT />} />
+            <Route path="/NACBAIT" element={<WorkNACBAIT />} />
           </Routes>
       </div>
       <Footer />

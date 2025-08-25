@@ -13,9 +13,19 @@ function Work() {
                   title="NACBAIT 2025"
                   tag1="Sports"
                   tag2="Event Coverage"
-                  link="/workNACBAIT"
+                  link="/NACBAIT"
                   vid="nacbait_preview.mp4"
                   id="0"
+                />
+
+                <WorkCard
+                  title="Racing For Good"
+                  tag1="Automotive"
+                  tag2="Charity"
+                  tag3="Event Coverage"
+                  link="/wraptitude"
+                  vid="wraptitude_preview.mp4"
+                  id="1"
                 />
 
                 <WorkCard
@@ -37,7 +47,7 @@ function Work() {
                     videoOrientation="V"
                     vid="vision_clarity_preview.mp4"
                     alt="test"
-                    id="10"
+                    id="3"
                   />
 
                   <WorkCard
@@ -48,7 +58,7 @@ function Work() {
                     videoOrientation="V"
                     vid="master_tako_preview.mp4"
                     alt="test"
-                    id="11"
+                    id="4"
                   />
                 </div>
                 
@@ -56,10 +66,10 @@ function Work() {
                   title="My Singing Monsters"
                   tag1="Internship"
                   tag2="Content Creation"
-                  link="/workBBB"
+                  link="/mysingingmonsters"
                   vid="msm_preview.mp4"
                   alt="test"
-                  id="1"
+                  id="5"
                 />
 
                 <WorkCard
@@ -70,7 +80,7 @@ function Work() {
                   videoOrientation="H"
                   vid="UWvOGG_preview.mp4"
                   alt="test"
-                  id="3"
+                  id="6"
                 />
 
                 <WorkCard
@@ -81,17 +91,7 @@ function Work() {
                   videoOrientation="H"
                   vid="clocking_out_preview.mp4"
                   alt="test"
-                  id="1"
-                />
-
-                <WorkCard
-                  title="The Little Things in Life"
-                  tag1="Cinematography"
-                  ytLink="https://www.youtube.com/embed/p0GQrReJH3Q?si=GzBISJVqJSop3Fq7"
-                  videoOrientation="H"
-                  vid="little_things_preview.mp4"
-                  alt="test"
-                  id="4"
+                  id="7"
                 />
 
                 <WorkCard
@@ -101,7 +101,7 @@ function Work() {
                   link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
                   vid="ancient_idol_preview.mp4"
                   alt="test"
-                  id="5"
+                  id="8"
                 />
 
                 <WorkCard
@@ -111,7 +111,7 @@ function Work() {
                   videoOrientation="H"
                   img="start-with-sun-thumb-large.jpg"
                   alt="test"
-                  id="6"
+                  id="9"
                 />
 
                 <WorkCard
@@ -122,7 +122,19 @@ function Work() {
                   videoOrientation="H"
                   vid="brown_justin_bieber_preview.mp4"
                   alt="test"
-                  id="7"
+                  id="10"
+                />
+
+                {/*
+
+                <WorkCard
+                  title="The Little Things in Life"
+                  tag1="Cinematography"
+                  ytLink="https://www.youtube.com/embed/p0GQrReJH3Q?si=GzBISJVqJSop3Fq7"
+                  videoOrientation="H"
+                  vid="little_things_preview.mp4"
+                  alt="test"
+                  id="4"
                 />
 
                 <WorkCard
@@ -144,8 +156,6 @@ function Work() {
                   id="9"
                 />
 
-                {/*
-
                 <WorkCard
                   title="Home to Stay 🛠️"
                   tag1="Brand Design"
@@ -163,7 +173,9 @@ function Work() {
                   img="fun-first-thumb-large.png"
                   alt="test"
                   id="11"
-                /> */}
+                />
+                
+                */}
           </div>
 
         </div>

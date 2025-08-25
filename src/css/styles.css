@@ -285,6 +285,16 @@ a {
     width: 75%;
   }
 }
+.videoDisplay {
+  display: block;
+  margin: 0;
+  border: none;
+  aspect-ratio: 16/9;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
 .fullScreenImage {
   text-align: center;
   margin-top: 5vw;

@@ -335,6 +335,18 @@ a {
     }
 }
 
+.videoDisplay {
+    display: block;
+    margin: 0;
+    border: none;
+
+    aspect-ratio: 16/9;
+    width: auto;
+    height: auto;
+
+    pointer-events: none;
+}
+
 //Fullscreen Image
 .fullScreenImage {
     text-align: center;
