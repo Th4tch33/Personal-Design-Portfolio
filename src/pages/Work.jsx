@@ -10,12 +10,13 @@ function Work() {
             <div id="workWrapper">
 
                 <WorkCard
-                  title="NACBAIT 2025"
-                  tag1="Sports"
-                  tag2="Event Coverage"
-                  link="/NACBAIT"
-                  vid="nacbait_preview.mp4"
-                  id="0"
+                  title="Sports Media Production"
+                  tag1="Camerawork"
+                  tag2="Motion Graphics"
+                  link="/sports"
+                  vid="sports_preview.mp4"
+                  alt="test"
+                  id="2"
                 />
 
                 <WorkCard
@@ -27,15 +28,14 @@ function Work() {
                   vid="wraptitude_preview.mp4"
                   id="1"
                 />
-
+                
                 <WorkCard
-                  title="Sports Media Production"
-                  tag1="Camerawork"
-                  tag2="Motion Graphics"
-                  link="/sports"
-                  vid="bumpin_matt_preview.mp4"
-                  alt="test"
-                  id="2"
+                  title="NACBAIT 2025"
+                  tag1="Sports"
+                  tag2="Event Coverage"
+                  link="/NACBAIT"
+                  vid="nacbait_preview.mp4"
+                  id="0"
                 />
 
                 <div className="workWrapperRowWithVertVideo">
