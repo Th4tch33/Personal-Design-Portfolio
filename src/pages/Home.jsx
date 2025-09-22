@@ -43,11 +43,23 @@ function Home() {
         <div id="spotlightWrapper">
 
           <ShowcaseCard
+            title="Sports Media Production"
+            tag1="Sports"
+            tag2="Video"
+            tag3="Photo"
+            para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
+            link="/sports"
+            img="bumpin-matt-thumb-large.jpg"
+            alt="Photography and Videography"
+            id="0"
+          />
+
+          <ShowcaseCard
               title="NACBAIT 2025"
               tag1="Sports"
               tag2="Event Coverage"
               para="NACBAIT 2025 is a three-day annual basketball tournament that celebrates Chinese heritage and fosters competitive play. I was brought on as a one-man media team to produce event photography, video coverage, and animated visuals."
-              link="/workNACBAIT"
+              link="/NACBAIT"
               img="nacbait-thumb-med.jpg"
               alt="Photography and Videography"
           />
@@ -58,21 +70,9 @@ function Home() {
               tag2="Video"
               tag3="Graphic"
               para="My Singing Monsters is a mobile game with 50+ million downloads and millions of followers across their socials. I worked as a marketing specialist responsible for engaging the fanbase with creative and entertaining content."
-              link="/workBBB"
+              link="/mysingingmonsters"
               img="msm-thumb-large.jpg"
               alt="Photography and Videography"
-          />
- 
-          <ShowcaseCard
-            title="Sports Media Production"
-            tag1="Sports"
-            tag2="Video"
-            tag3="Photo"
-            para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
-            link="/sports"
-            img="bumpin-matt-thumb-large.jpg"
-            alt="Photography and Videography"
-            id="0"
           />
 
           <ShowcaseCard
