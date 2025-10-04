@@ -18,29 +18,27 @@ function Home() {
               autoplay={true} // Start automatically
             />
 
-            <h3 id="personalLogoSubheadWrapper">ALL THINGS DESIGN</h3>
+            <h3 id="personalLogoSubheadWrapper">I’m a freelance filmmaker with a multidisciplinary background, dedicated to capturing your story in a beautiful and meaningful way.</h3>
+
           </div>
         <div id="backIconGroup"></div>
-      </div>
-      
-      <div id="websiteSectionContainer" className="showreelSection">
-        <WorkCard 
-          title="Showreel 2025"
-          tag1="Video"
-          tag2="Motion Graphics"
-          tag3="3D"
-          ytLink="https://www.youtube.com/embed/CJAkoo-nidw?si=5HWdZHNaqTJTxwjC"
-          videoOrientation="H"
-          vid="showreel_2025_preview.mp4"
-          alt="test"
-          id="0"
-        />
       </div>
 
       <div id="websiteSectionContainer">
         <h1>Best Work</h1>
 
         <div id="spotlightWrapper">
+
+          <ShowcaseCard
+            title="Brand Content"
+            tag1="Social Media"
+            tag2="Ads"
+            para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
+            link="/brands"
+            img="bumpin-matt-thumb-large.jpg"
+            alt="Photography and Videography"
+            id="0"
+          />
 
           <ShowcaseCard
             title="Sports Media Production"
@@ -51,7 +49,7 @@ function Home() {
             link="/sports"
             img="bumpin-matt-thumb-large.jpg"
             alt="Photography and Videography"
-            id="0"
+            id="1"
           />
 
           <ShowcaseCard
@@ -62,6 +60,7 @@ function Home() {
               link="/NACBAIT"
               img="nacbait-thumb-med.jpg"
               alt="Photography and Videography"
+              id="2"
           />
 
           <ShowcaseCard
@@ -73,6 +72,7 @@ function Home() {
               link="/mysingingmonsters"
               img="msm-thumb-large.jpg"
               alt="Photography and Videography"
+              id="3"
           />
 
           <ShowcaseCard
@@ -84,7 +84,10 @@ function Home() {
             videoOrientation="H"
             img="clocking-out-thumb-large.jpg"
             alt="Film Project"
+            id="4"
           />
+
+          {/*
 
           <ShowcaseCard
             title="Ancient Idols"
@@ -107,6 +110,8 @@ function Home() {
             img="start-with-sun-thumb-large.jpg"
             alt="Real-Time Environments"
           />
+
+          */}
 
         </div>
       </div>

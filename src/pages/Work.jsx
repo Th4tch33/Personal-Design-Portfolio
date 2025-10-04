@@ -37,7 +37,8 @@ function Work() {
                   vid="nacbait_preview.mp4"
                   id="0"
                 />
-
+                
+                {/*
                 <div className="workWrapperRowWithVertVideo">
                   <WorkCard
                     title="Vision Clarity Optical Clinic"
@@ -61,6 +62,8 @@ function Work() {
                     id="4"
                   />
                 </div>
+
+                */}
                 
                 <WorkCard
                   title="My Singing Monsters"

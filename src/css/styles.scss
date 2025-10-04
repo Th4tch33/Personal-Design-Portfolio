@@ -498,6 +498,7 @@ a {
 //Website Section
 #websiteSectionContainer {
     padding: 15vh $horzMarginSize;
+    z-index: 10000;
 }
 
 //Loading Screen Styles
@@ -936,16 +937,14 @@ a {
 }
 
 #personalLogoSubheadWrapper {
-    width: fit-content;
-    background-color: $blue;
-    color: $yellow;
+    width: 65vw;
+    color: $blue;
+    font-weight: 500;
 
-    font-size: 2em;
+    font-size: 1.5em;
 
     margin: 2vh auto;
     padding: 1vh 3vw;
-
-    border-radius: 100vw;
 }
 
 .showreelSection {
@@ -1089,7 +1088,8 @@ a {
     }
 
     #personalLogoSubheadWrapper {
-        font-size: 5vw;
+        width: 75vw;
+        font-size: 1.25em;
     }
 
     .spotlightInfo {

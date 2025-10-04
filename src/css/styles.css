@@ -420,6 +420,7 @@ a {
 }
 #websiteSectionContainer {
   padding: 15vh 5vw;
+  z-index: 10000;
 }
 
 #loadingScreen {
@@ -800,14 +801,12 @@ a {
 }
 
 #personalLogoSubheadWrapper {
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #1D50D0;
-  color: #FFC43D;
-  font-size: 2em;
+  width: 65vw;
+  color: #1D50D0;
+  font-weight: 500;
+  font-size: 1.5em;
   margin: 2vh auto;
   padding: 1vh 3vw;
-  border-radius: 100vw;
 }
 
 .showreelSection {
@@ -932,7 +931,8 @@ a {
     height: auto;
   }
   #personalLogoSubheadWrapper {
-    font-size: 5vw;
+    width: 75vw;
+    font-size: 1.25em;
   }
   .spotlightInfo {
     padding-top: 10vh;

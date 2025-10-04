@@ -1,3 +1,6 @@
+import ShowcaseCard from "../components/ShowcaseCard.jsx";
+import WorkCard from "../components/WorkCard.jsx";
+
 function About() {
   return (
     <>
@@ -24,9 +27,28 @@ function About() {
             </p>
           </div>
 
+          <div id="websiteSectionContainer" className="showreelSection">
+            <WorkCard 
+              title="Showreel 2025"
+              tag1="Video"
+              tag2="Motion Graphics"
+              tag3="3D"
+              ytLink="https://www.youtube.com/embed/CJAkoo-nidw?si=5HWdZHNaqTJTxwjC"
+              videoOrientation="H"
+              vid="showreel_2025_preview.mp4"
+              alt="test"
+              id="0"
+            />
+          </div>
+
           <div id="aboutMeExperience">
             <h1>Experience</h1>
             <div id="experienceList">
+              <div className="experienceListItem">
+                <h3>Freelance Filmmaker</h3>
+                <p>2025 - Present</p>
+              </div>
+
               <div className="experienceListItem">
                 <h3>Marketing Specialist Intern @ Big Blue Bubble &<br></br> My Singing Monsters</h3>
                 <p>2024 Summer</p>
@@ -44,11 +66,10 @@ function About() {
 
               <div className="experienceListItem">
                 <h3>Full Resume 📄</h3>
-                <a href="/Caden_Chan_Resume_2025.pdf" rel="noreferrer" target="_blank">
-                  <div className="button">Click to View</div>
-                </a>
+                  <a href="/Caden_Chan_Resume_2025.pdf" rel="noreferrer" target="_blank">
+                    <div className="button">Click to View</div>
+                  </a>
               </div>
-
             </div>
           </div>
         </div>

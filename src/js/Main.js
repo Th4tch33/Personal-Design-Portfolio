@@ -14,10 +14,10 @@ let showreelActive = false;
 
 
 //Icon Home Screen Variables
-let numIconsFront = 3;
-let numIconsMid = 6;
-let numIconsBack = 20;
-let numIconsFarBack = 35;
+let numIconsFront = 3; //3
+let numIconsMid = 6; //6
+let numIconsBack = 20; //20
+let numIconsFarBack = 35; //35
 
 let iconFrontSize = 7;
 let iconMidSize = 3.5;
@@ -56,7 +56,7 @@ const iconCeiling = -250;
 const icons = [];
 
 class iconBuilder {
-    constructor(x, y, direction, vX, vY , r , vR, s) {
+    constructor(x, y, direction, vX, vY , r , vR, s, o) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -64,7 +64,8 @@ class iconBuilder {
         this.vY = vY;
         this.r = r;
         this.vR = vR;
-        this.s = s
+        this.s = s;
+        this.o = o;
     }
 }
 
@@ -236,8 +237,8 @@ function buildIcons () {
             
         //DOMs in large icons
         if (i < numIconsFront){
-            //x, y, direction, vX, vY, r, vR, s
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+            //x, y, direction, vX, vY, r, vR, s, o
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize, 1);
 
             //color, order, size, x
             createWarningImage(getRandomInt(11), i, iconFrontSize, icons[i].x);
@@ -245,7 +246,7 @@ function buildIcons () {
 
         //DOMs in medium icons
         else if (i < numIconsMid + numIconsFront){
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconMidSize, getRandomInt(360), getRandomInt(rotationSpeed), iconMidSize, 1);
             
             createWarningImage(getRandomInt(11), i, iconMidSize, icons[i].x);
         }
@@ -253,14 +254,14 @@ function buildIcons () {
         //DOMs in small icons
         else if (i < numIconsBack + numIconsMid + numIconsFront){
             
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin) * iconBackSize, getRandomInt(360), getRandomInt(rotationSpeed), iconBackSize, 1);
             
             createWarningImage(getRandomInt(11), i, iconBackSize, icons[i].x);
         }
 
         //DOMs in extra small icons
         else {
-            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize);
+            icons[i] = new iconBuilder(getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow), getRandomIntRange(iconFloor, iconCeiling), getRandomBool(), 0, getRandomIntRange(initialFallMax, initialFallMin), getRandomInt(360), getRandomInt(rotationSpeed), iconFarBackSize, 1);
             
             createWarningImage(getRandomInt(11), i, iconFarBackSize, icons[i].x);
         }
@@ -280,7 +281,7 @@ function homeBehaviors() {
     heroMouseInfluence();
 
     //updates positions of all icons
-    if (scrollY <= iconFloor) {
+    if (scrollY <= iconFloor + 250) {
         for(let i = 0; i < numOfIcons; i++) {
             const focusDiv = document.getElementById("icon" + i);
 
@@ -299,14 +300,20 @@ function homeBehaviors() {
             //applies changes to html element
             focusDiv.style.left = icons[i].x + influenceAnchor * icons[i].s +'px';
             focusDiv.style.top = icons[i].y + 'px';
+            focusDiv.style.opacity = icons[i].o;
 
             focusDiv.style.transform = "rotate(" + icons[i].r + "deg)";
+
+            if(icons[i].y < iconFloor && iconFloor - icons[i].y <= 100) {
+                icons[i].o = (iconFloor - icons[i].y) / 100;
+            }
 
             //resets icons once they hit the ground
             if(icons[i].y > iconFloor){
                 icons[i].vY = getRandomIntRange(initialFallMax, initialFallMin) * icons[i].s;
                 icons[i].y = iconCeiling;
                 icons[i].x = getRandomIntRange(windowWidth + iconXSpawnOverflow, -iconXSpawnOverflow);
+                icons[i].o = 1;
             }
         }
     }
