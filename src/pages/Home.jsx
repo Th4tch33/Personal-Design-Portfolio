@@ -33,9 +33,9 @@ function Home() {
             title="Brand Content"
             tag1="Social Media"
             tag2="Ads"
-            para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
+            para="Whether it’s sales, recognition, or relevance, every key business activity relies on a meaningful story that connects customers to your brand. My job is to bring your vision to life through visual marketing that makes what you offer feel invaluable."
             link="/brands"
-            img="bumpin-matt-thumb-large.jpg"
+            img="brands-hero.webp"
             alt="Photography and Videography"
             id="0"
           />

@@ -15,7 +15,7 @@ function WorkBrands() {
                 tag1="Corporate"
                 tag2="Social Media"
                 tag3="Branding"
-                heroImage="nacbait-hero.jpg"
+                heroImage="brands-hero.webp"
             />
 
             <div id="websiteSectionContainer">
