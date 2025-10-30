@@ -33,6 +33,42 @@ function WorkBrands() {
                 </div>
 
                 <div className="threeGridImage">
+                  <WorkCard
+                    title="Marry Me Mochi | Grand Opening"
+                    tag1="Dessert Store"
+                    tag2="Branding"
+                    ytLink="https://www.youtube-nocookie.com/embed/iZ5QErtGxRs?si=csahpoRlkJ2Y5YbX"
+                    videoOrientation="V"
+                    vid="marrymemochi_preview.mp4"
+                    alt="test"
+                    id="5"
+                  />
+
+                  <WorkCard
+                    title="Arc World Halftime Show | MC Jin"
+                    tag1="Music Performance"
+                    tag2="Motion Graphics"
+                    tag3="Hype"
+                    ytLink="https://www.youtube-nocookie.com/embed/T2HPf4TNjy4?si=Nkm-ec85ESLLYuza"
+                    videoOrientation="V"
+                    vid="mcjin_preview.mp4"
+                    alt="test"
+                    id="6"
+                />
+
+                <WorkCard
+                    title="Master Tako | Grand Opening"
+                    tag1="Resturant Ad"
+                    tag2="Branding"
+                    vimeoLink="https://player.vimeo.com/video/1103982042?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                    videoOrientation="V"
+                    vid="master_tako_preview.mp4"
+                    alt="test"
+                    id="2"
+                  />
+                </div>
+
+                <div className="threeGridImage">
                     <WorkCard
                     title="Vision Clarity Optical Clinic"
                     tag1="Clinic Ad"
@@ -44,41 +80,54 @@ function WorkBrands() {
                     id="1"
                   />
 
-                  <WorkCard
-                    title="Master Tako Grand Opening"
-                    tag1="Resturant Ad"
-                    tag2="Branding"
-                    vimeoLink="https://player.vimeo.com/video/1103982042?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                    videoOrientation="V"
-                    vid="master_tako_preview.mp4"
-                    alt="test"
-                    id="2"
-                  />
+                    <WorkCard
+                        title="MSM Discord Advertisement"
+                        tag1="Commercial Shoot"
+                        tag2="After Effects"
+                        tag3="Blender 3D"
+                        ytLink="https://www.youtube-nocookie.com/embed/-ftTtS5OJFM?si=RWXKyeAYPD-l3Shy"
+                        videoOrientation="V"
+                        vid="msm_discord_preview.mp4"
+                        alt="test"
+                        id="3"
+                    />
 
                   <WorkCard
-                    title="MSM Discord Announcement"
-                    tag1="Commercial Shoot"
-                    tag2="After Effects"
-                    tag3="Blender 3D"
-                    ytLink="https://www.youtube-nocookie.com/embed/-ftTtS5OJFM?si=RWXKyeAYPD-l3Shy"
+                    title="CNE & ATTA Technologies | Event Recap"
+                    tag1="Tech Company"
+                    tag2="Events"
+                    ytLink="https://youtube.com/embed/n7TW2LbwWSM?si=0T_BCL2cSeog42Ww"
                     videoOrientation="V"
-                    vid="msm_discord_preview.mp4"
+                    vid="attacne_preview.mp4"
                     alt="test"
-                    id="3"
-                />
+                    id="4"
+                  />
                 </div>
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
                     </div>
-                    Event Coverage
+                    Marketing Content
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
                     </div>
                 </div>
 
-                
+                <div className="fullScreenImage">
+                    <WorkCard
+                        title="Senovva x Bet99 | BTS Commercial Shoot"
+                        tag1="Commercial Shoot"
+                        tag2="After Effects"
+                        tag3="Davinci Resolve"
+                        ytLink="https://www.youtube.com/embed/JU2ag2IMcZ0?si=ZCbEq-cdXj6zKxOl"
+                        videoOrientation="H"
+                        vid="senovvabet99bts_preview.mp4"
+                        alt="test"
+                        id="8"
+                    />
+                </div>
+
                 <div className="fullScreenImage">
                     <WorkCard
                         title="MSM 10th Anniversary Livestream Intro"
@@ -89,7 +138,7 @@ function WorkBrands() {
                         videoOrientation="H"
                         vid="msm_preview.mp4"
                         alt="test"
-                        id="6"
+                        id="7"
                     />
                 </div>
 
@@ -103,7 +152,7 @@ function WorkBrands() {
                         videoOrientation="H"
                         vid="wraptitude_preview.mp4"
                         alt="test"
-                        id="7"
+                        id="8"
                     />
                 </div>
 
