@@ -20,6 +20,16 @@ function Work() {
                 />
 
                 <WorkCard
+                  title="Wedding Films"
+                  tag1="Camerawork"
+                  tag2="Video Editing"
+                  link="/Weddings"
+                  vid="J&LWedding_preview.mp4"
+                  alt="test"
+                  id="3"
+                />
+
+                <WorkCard
                   title="Racing For Good"
                   tag1="Automotive"
                   tag2="Charity"

@@ -37,6 +37,17 @@ function Home() {
             link="/brands"
             img="brands-hero.webp"
             alt="Photography and Videography"
+            id="1"
+          />
+
+          <ShowcaseCard
+            title="Wedding Films"
+            tag1="Cinematic"
+            tag2="Live Coverage"
+            para="Whether it’s sales, recognition, or relevance, every key business activity relies on a meaningful story that connects customers to your brand. My job is to bring your vision to life through visual marketing that makes what you offer feel invaluable."
+            link="/weddings"
+            img="weddings_thumb.webp"
+            alt="Photography and Videography"
             id="0"
           />
 
@@ -49,7 +60,7 @@ function Home() {
             link="/sports"
             img="bumpin-matt-thumb-large.jpg"
             alt="Photography and Videography"
-            id="1"
+            id="2"
           />
 
           <ShowcaseCard
@@ -60,7 +71,7 @@ function Home() {
               link="/NACBAIT"
               img="nacbait-thumb-med.jpg"
               alt="Photography and Videography"
-              id="2"
+              id="3"
           />
 
           <ShowcaseCard
@@ -72,7 +83,7 @@ function Home() {
               link="/mysingingmonsters"
               img="msm-thumb-large.jpg"
               alt="Photography and Videography"
-              id="3"
+              id="4"
           />
 
           <ShowcaseCard
@@ -84,7 +95,7 @@ function Home() {
             videoOrientation="H"
             img="clocking-out-thumb-large.jpg"
             alt="Film Project"
-            id="4"
+            id="5"
           />
 
           {/*

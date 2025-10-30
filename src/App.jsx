@@ -6,6 +6,7 @@ import WorkBBB from "./pages/Work_BBB.jsx";
 import Sports from "./pages/Work_Sports.jsx";
 import WorkNACBAIT from "./pages/Work_NACBAIT.jsx";
 import WorkBrands from "./pages/Work_Brands.jsx";
+import WorkWeddings from "./pages/Work_Weddings.jsx";
 import WorkWraptitude from "./pages/Work_Wraptitude.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -43,6 +44,7 @@ function App() {
             <Route path="/sports" element={<Sports />} />
             <Route path="/NACBAIT" element={<WorkNACBAIT />} />
             <Route path="/brands" element={<WorkBrands />} />
+            <Route path="/weddings" element={<WorkWeddings />} />
           </Routes>
       </div>
       <Footer />
