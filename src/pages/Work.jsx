@@ -96,17 +96,6 @@ function Work() {
                 />
 
                 <WorkCard
-                  title="Warriors vs Gee-Gees"
-                  tag1="Sport Videography"
-                  tag2="Video Editing"
-                  ytLink="https://www.youtube.com/embed/0w7El6HVczI?si=GoPvgkRJo3uaw6EH"
-                  videoOrientation="H"
-                  vid="UWvOGG_preview.mp4"
-                  alt="test"
-                  id="6"
-                />
-
-                <WorkCard
                   title="Clocking Out"
                   tag1="Cinematography"
                   tag2="Mini Documentary"

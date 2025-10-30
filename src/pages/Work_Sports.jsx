@@ -98,6 +98,18 @@ function workVBall() {
                     />
                 </div>
 
+                <div className="fullScreenImage">
+                    <WorkCard
+                        title="Waterloo Warriors vs Ottawa Gee-Gee's"
+                        tag1="Football"
+                        videoOrientation="H"
+                        ytLink="https://www.youtube.com/embed/0w7El6HVczI?si=KvKqOUmWG9dsOnJR"
+                        vid="UWvOGG_preview.mp4"
+                        alt="test"
+                        id="6"
+                    />
+                </div> 
+
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object7.svg" alt="" loading="lazy"  />
