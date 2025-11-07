@@ -2,6 +2,7 @@ import IntroModule from "../components/work_modules/IntroModule.jsx"
 import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
+import ShowcaseCard from "../components/ShowcaseCard.jsx";
 
 import WorkCard from "../components/WorkCard.jsx";
 
@@ -17,6 +18,30 @@ function workVBall() {
             />
 
             <div id="websiteSectionContainer">
+
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
+                    </div>
+                    Campaigns
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object2.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
+                    </div>
+                </div>
+
+                <ShowcaseCard
+                    title="NACBAIT 2025"
+                    tag1="Sports"
+                    tag2="Event Coverage"
+                    para="NACBAIT 2025 is a three-day annual basketball tournament that celebrates Chinese heritage and fosters competitive play. I was brought on as a one-man media team to produce event photography, video coverage, and animated visuals."
+                    link="/NACBAIT"
+                    img="nacbait-thumb-med.jpg"
+                    alt="Photography and Videography"
+                    id="3"
+                />
+
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
