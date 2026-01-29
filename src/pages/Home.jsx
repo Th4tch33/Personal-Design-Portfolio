@@ -18,7 +18,7 @@ function Home() {
               autoplay={true} // Start automatically
             />
 
-            <h3 id="personalLogoSubheadWrapper">I’m a freelance filmmaker with a multidisciplinary background, dedicated to capturing your story in a beautiful and meaningful way.</h3>
+            <h3 id="personalLogoSubheadWrapper">End-to-End Video Production</h3>
 
           </div>
         <div id="backIconGroup"></div>
