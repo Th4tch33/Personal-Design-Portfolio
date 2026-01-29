@@ -10,16 +10,6 @@ function Work() {
             <div id="workWrapper">
 
               <WorkCard
-                  title="Brand Content"
-                  tag1="Social Media"
-                  tag2="Marketing"
-                  link="/brands"
-                  vid="senovvabet99bts_preview.mp4"
-                  alt="test"
-                  id="4"
-                />
-
-                <WorkCard
                   title="Sports Media Production"
                   tag1="Camerawork"
                   tag2="Motion Graphics"
@@ -27,6 +17,16 @@ function Work() {
                   vid="sports_preview.mp4"
                   alt="test"
                   id="2"
+                />
+
+              <WorkCard
+                  title="Brand Content"
+                  tag1="Social Media"
+                  tag2="Marketing"
+                  link="/brands"
+                  vid="senovvabet99bts_preview.mp4"
+                  alt="test"
+                  id="4"
                 />
 
                 <WorkCard

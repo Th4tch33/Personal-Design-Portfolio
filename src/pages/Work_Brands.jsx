@@ -57,18 +57,19 @@ function WorkBrands() {
                 />
 
                 <WorkCard
-                    title="Master Tako | Grand Opening"
-                    tag1="Resturant Ad"
-                    tag2="Branding"
-                    vimeoLink="https://player.vimeo.com/video/1103982042?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                    title="Cinematic Barber Shop Haircut"
+                    tag1="Barber Shop"
+                    tag2="Cinematic"
+                    ytLink="https://www.youtube-nocookie.com/embed/72trKwXSOm8?si=CVGQbGtgW4yYqPIx"
                     videoOrientation="V"
-                    vid="master_tako_preview.mp4"
+                    vid="jzcuts_preview.mp4"
                     alt="test"
-                    id="2"
+                    id="9"
                   />
                 </div>
-
+                
                 <div className="threeGridImage">
+                    {/*
                     <WorkCard
                     title="Vision Clarity Optical Clinic"
                     tag1="Clinic Ad"
@@ -78,6 +79,18 @@ function WorkBrands() {
                     vid="vision_clarity_preview.mp4"
                     alt="test"
                     id="1"
+                  />
+                  */}
+
+                  <WorkCard
+                    title="Master Tako | Grand Opening"
+                    tag1="Resturant Ad"
+                    tag2="Branding"
+                    vimeoLink="https://player.vimeo.com/video/1103982042?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                    videoOrientation="V"
+                    vid="master_tako_preview.mp4"
+                    alt="test"
+                    id="2"
                   />
 
                     <WorkCard

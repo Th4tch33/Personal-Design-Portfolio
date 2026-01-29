@@ -2,6 +2,7 @@ import IntroModule from "../components/work_modules/IntroModule.jsx"
 import FullImage from "../components/work_modules/FullImage.jsx"
 import SplitImage from "../components/work_modules/SplitImage.jsx"
 import SectionHead from "../components/work_modules/SectionHead.jsx"
+import ShowcaseCard from "../components/ShowcaseCard.jsx";
 
 import WorkCard from "../components/WorkCard.jsx";
 
@@ -17,6 +18,30 @@ function workVBall() {
             />
 
             <div id="websiteSectionContainer">
+
+                <div className="sectionHead">
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object6.svg" alt="" loading="lazy"  />
+                    </div>
+                    Campaigns
+                    <div className="sectionHeadDesigns">
+                        <img src="/falling-objects/object2.svg" alt="" loading="lazy"  />
+                        <img src="/falling-objects/object11.svg" alt="" loading="lazy"  />
+                    </div>
+                </div>
+
+                <ShowcaseCard
+                    title="NACBAIT 2025"
+                    tag1="Sports"
+                    tag2="Event Coverage"
+                    para="NACBAIT 2025 is a three-day annual basketball tournament that celebrates Chinese heritage and fosters competitive play. I was brought on as a one-man media team to produce event photography, video coverage, and animated visuals."
+                    link="/NACBAIT"
+                    img="nacbait-thumb-med.jpg"
+                    alt="Photography and Videography"
+                    id="3"
+                />
+
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
                         <img src="/falling-objects/object9.svg" alt="" loading="lazy"  />
@@ -29,17 +54,18 @@ function workVBall() {
                     </div>
                 </div>
                 
-                <div className="threeGridImage">
+                <div className="splitScreenImage">
                     <WorkCard
-                        title="Bumpin Sports Holiday Tournament Highlights"
-                        tag1="Sports"
+                        title="ARC NEXT 2025"
+                        tag1="Show"
                         tag2="After Effects"
-                        vimeoLink="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        ytLink="https://www.youtube-nocookie.com/embed/kZBohbnHpIU"
                         videoOrientation="V"
-                        vid="bumpin_tourney_preview.mp4"
+                        vid="arcnext_preview.mp4"
                         alt="test"
-                        id="0"
+                        id="4"
                     />
+                    
                     <WorkCard
                         title="UWaterloo Volleyball Varsity Team Highlights"
                         tag1="Sports"
@@ -51,51 +77,6 @@ function workVBall() {
                         id="1"
                     />
 
-                    <WorkCard
-                        title="Matt Jen's Short Kings League"
-                        tag1="Volleyball"
-                        tag2="After Effects"
-                        ytLink="https://www.youtube-nocookie.com/embed/QMxiVvCMbn4?si=vPWZY1xZ3194jP7k"
-                        videoOrientation="V"
-                        vid="MJ_SKL_preview.mp4"
-                        alt="test"
-                        id="3"
-                    />
-                </div>
-
-                <div className="threeGridImage">
-
-                    <WorkCard
-                        title="Bumpin Sports League Highlights"
-                        tag1="Sports"
-                        tag2="After Effects"
-                        vimeoLink="https://player.vimeo.com/video/1067482314?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                        videoOrientation="V"
-                        vid="bumpin_league_preview.mp4"
-                        alt="test"
-                        id="2"
-                    />
-
-                    <WorkCard
-                        title="ARC NEXT 2025"
-                        tag1="Show"
-                        tag2="After Effects"
-                        ytLink="https://www.youtube-nocookie.com/embed/kZBohbnHpIU"
-                        videoOrientation="V"
-                        vid="arcnext_preview.mp4"
-                        alt="test"
-                        id="4"
-                    />
-
-                    <WorkCard
-                        title="Bumpin Sports Jan 27th Tournament Highlights"
-                        tag1="Sports"
-                        videoOrientation="V"
-                        ytLink="https://www.youtube-nocookie.com/embed/xtqNKx1-vrY?si=cHhs4bOBJwIHqhcJ"
-                        vid="bumpin_tourney_second_preview.mp4"
-                        alt="test"
-                        id="5"
-                    />
                 </div>
 
                 <div className="fullScreenImage">
@@ -109,6 +90,54 @@ function workVBall() {
                         id="6"
                     />
                 </div> 
+
+                <div className="splitScreenImage">
+
+                    <WorkCard
+                        title="Matt Jen's Short Kings League"
+                        tag1="Volleyball"
+                        tag2="After Effects"
+                        ytLink="https://www.youtube-nocookie.com/embed/QMxiVvCMbn4?si=vPWZY1xZ3194jP7k"
+                        videoOrientation="V"
+                        vid="MJ_SKL_preview.mp4"
+                        alt="test"
+                        id="3"
+                    />
+
+                    <WorkCard
+                        title="Bumpin Sports Holiday Tournament Highlights"
+                        tag1="Sports"
+                        tag2="After Effects"
+                        vimeoLink="https://player.vimeo.com/video/1067477932?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        videoOrientation="V"
+                        vid="bumpin_tourney_preview.mp4"
+                        alt="test"
+                        id="0"
+                    />
+
+                    {/*
+                    <WorkCard
+                        title="Bumpin Sports League Highlights"
+                        tag1="Sports"
+                        tag2="After Effects"
+                        vimeoLink="https://player.vimeo.com/video/1067482314?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        videoOrientation="V"
+                        vid="bumpin_league_preview.mp4"
+                        alt="test"
+                        id="2"
+                    />
+
+                    <WorkCard
+                        title="Bumpin Sports Jan 27th Tournament Highlights"
+                        tag1="Sports"
+                        videoOrientation="V"
+                        ytLink="https://www.youtube-nocookie.com/embed/xtqNKx1-vrY?si=cHhs4bOBJwIHqhcJ"
+                        vid="bumpin_tourney_second_preview.mp4"
+                        alt="test"
+                        id="5"
+                    />
+                     */}
+                </div>
 
                 <div className="sectionHead">
                     <div className="sectionHeadDesigns">
