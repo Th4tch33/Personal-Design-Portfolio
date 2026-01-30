@@ -1,9 +1,11 @@
 import { backToTop } from "../js/footer.js";
+import { loadImages } from "../js/logoLoader.js";
 
 import Lottie from "lottie-react";
 import animationData from "../assets/personalLogoIdleAnim.json";
 
 import ArrowLink from "../assets/arrow-link.jsx";
+import CarouselCard from "./CrouselCard.jsx";
 
 import IGButton from "../assets/IGButton.jsx";
 import YTButton from "../assets/YTButton.jsx";
@@ -11,17 +13,29 @@ import MailButton from "../assets/MailButton.jsx";
 import LinkedInButton from "../assets/LinkedInButton.jsx";
 
 function Footer() {
+  const images = loadImages();
+
   return (
     <>
-      <div id="footerContainer" className="grid">
-        <div id="backToTop" onClick={backToTop}>
-          ⬆
-        </div>
+    <div id="footer-motto">
+      Telling Stories With Each And Every Frame
+    </div>
 
-        <div id="footer-motto">
-          Working with Brands to Make Something Memorable
-        </div>
-          
+    <div id="flare-section-carousel-wrapper">
+      <div class="flare-section-card-group">
+        {images.map((src, i) => (
+          <CarouselCard key={i} src={src} alt="" />
+        ))}
+      </div>
+      <div class="flare-section-card-group">
+        {images.map((src, i) => (
+          <CarouselCard key={i} src={src} alt="" />
+        ))}
+      </div>
+    </div>
+
+      <div id="footerContainer" className="grid">
+
         <div className="footer-pages-wrapper">
             <a href="/" className="footer-page"><ArrowLink />Home</a>
             <a href="/work" className="footer-page"><ArrowLink />Work</a>
@@ -43,10 +57,21 @@ function Footer() {
         </div>
 
         <div id="captionWrapper">
-          <div className="caption white">
+          <div className="caption white caption-left">
             © Caden Chan. All Rights Reserved. All Lefts Up For Grabs.
           </div>
-          <div className="caption white">
+
+           <div className="footer-up-button-wrapper">
+            <img className="footer-star-group" src="/Icons/star_group_left.svg" />
+            
+            <div id="backToTop" onClick={backToTop}>
+              ⬆
+            </div>
+
+            <img className="footer-star-group" src="/Icons/star_group_right.svg" />
+          </div>
+
+          <div className="caption white caption-right">
             A website made with love by yours truely{" "}
             <b>
               <i>xoxo</i>

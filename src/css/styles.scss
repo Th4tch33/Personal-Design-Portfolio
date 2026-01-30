@@ -728,16 +728,34 @@ a {
     background-color: $blue;
 }
 
-#backToTop {
+.footer-up-button-wrapper{
+    grid-column: 5 / span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.footer-star-group {
     grid-column: span 1;
     width: 100%;
+}
+
+#backToTop {
+
+    grid-column: span 2;
+    
+    display: flex;
+    width: 50%;
     height: auto;
     margin: auto;
     aspect-ratio: 1/1;
 
     text-align: center;
+    align-items: center;
+    justify-content: center;
       
-    background-color: $blue;
+    background-color: $light;
     color: $yellow;
     font-size: clamp(45px, 4vw, 100vw);
     border-radius: 100%;
@@ -759,7 +777,7 @@ a {
     font-family: "Staatliches", system-ui;
     font-size: 3rem;
     font-weight: 100;
-    color: $light;
+    color: $blue;
     text-align: center;
 }
 
@@ -891,9 +909,68 @@ a {
 
 #captionWrapper {
     grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    vertical-align: bottom;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.caption-left {
+    grid-column: span 4;
+    text-align: left;
+}
+
+.caption-right {
+    grid-column: span 4;
+    text-align: right;
+}
+
+.image-gallery {
+    grid-column: span 12;
+}
+
+#flare-section-carousel-wrapper {
+    grid-column: 1 / -1;
+    display: flex; 
+    align-items: center;
+    overflow-x: hidden;
+
+    margin-top: 2rem;
+}
+
+.flare-section-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 2rem;
+
+  column-gap: 4rem;
+  animation: carousel-scroll 25s infinite linear;
+}
+
+@keyframes carousel-scroll{
+  from {translate: 0;}
+  to {translate: -100%;}
+}
+
+.flare-section-card {
+  padding-bottom: 2.5rem;
+
+  img {
+    width: 10vw;
+    height: auto;
+    object-fit: contain;
+
+    transition: filter 0.5s ease;
+
+    &:hover {
+      filter: grayscale(0);
+
+      transition: filter 0.5s ease;
+    }
+  }
 }
 
 @media screen and (max-device-width: 768px) {
@@ -1046,9 +1123,10 @@ a {
 #personalLogoSubheadWrapper {
     width: 65vw;
     color: $blue;
+    font-family: "Staatliches", system-ui;
     font-weight: 500;
 
-    font-size: 1.5em;
+    font-size: 3rem;
 
     margin: 2vh auto;
     padding: 1vh 3vw;
@@ -1410,18 +1488,16 @@ a {
 */
 
 #aboutMeWrapper {
-    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+
+    width: 100%;
     margin: auto;
-    margin-bottom: 20vh;
     text-align: center;
 
     h1 {
         line-height: 1em;
-    }
-
-    img {
-        width: 100%;
-        padding-bottom: 5vh;
     }
 
     p {
@@ -1429,13 +1505,79 @@ a {
     }
 }
 
+.about-hero-image {
+    grid-column: 1 / span 6;
+    width: 100%;
+}
+
+.about-info-wrapper {
+    grid-column: 7 / span 6;
+    text-align: left;
+}
+
+#about-client-display-header {
+    grid-column: 4 / span 6;
+
+    font-family: "Staatliches", system-ui;
+    font-size: 3rem;
+    font-weight: 100;
+    color: $blue;
+    text-align: center;
+}
+
+#flare-section-carousel-wrapper {
+    grid-column: 1 / -1;
+    display: flex; 
+    align-items: center;
+    overflow-x: hidden;
+
+    margin-top: 2rem;
+}
+
+.flare-section-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 2rem;
+
+  column-gap: 4rem;
+  animation: carousel-scroll 25s infinite linear;
+}
+
+@keyframes carousel-scroll{
+  from {translate: 0;}
+  to {translate: -100%;}
+}
+
+.flare-section-card {
+  padding-bottom: 2.5rem;
+
+  img {
+    width: 10vw;
+    height: auto;
+    object-fit: contain;
+
+    transition: filter 0.5s ease;
+
+    &:hover {
+      filter: grayscale(0);
+
+      transition: filter 0.5s ease;
+    }
+  }
+}
+
 #aboutMeText {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
 
     padding-top: 5vh;
     text-align: left;
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
 }
 
 #aboutMeExperience {
