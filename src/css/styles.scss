@@ -1258,7 +1258,22 @@ a {
         transform: scale(1);
     }
 
+    video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+        border: 0vw solid $blue;
+        transition: all 0.25s;
+        transform: scale(1);
+    }
+
     img:hover {
+        border: 0.5vw solid $blue;
+        transform: scale(1.1);
+    }
+
+    video:hover {
         border: 0.5vw solid $blue;
         transform: scale(1.1);
     }

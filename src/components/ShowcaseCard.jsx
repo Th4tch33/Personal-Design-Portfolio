@@ -9,14 +9,15 @@ ShowcaseCard.propTypes = {
   tag1: PropTypes.string,
   tag2: PropTypes.string,
   tag3: PropTypes.string,
-  para: PropTypes.string,
+  para: PropTypes.object,
   link: PropTypes.string,
   ytLink: PropTypes.string,
   vimeoLink: PropTypes.string,
   videoOrientation: PropTypes.string,
-  img: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  id: PropTypes.string,
+  img: PropTypes.string,
+  vid: PropTypes.string,
+  alt: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 ShowcaseLink.propTypes = {
@@ -36,7 +37,7 @@ function ShowcaseLink({ to, children, ...props }) {
   );
 }
 
-function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLink, vimeoLink, videoOrientation}) {
+function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, vid, alt, id, ytLink, vimeoLink, videoOrientation}) {
   return (
     <>
       <div className="ShowcaseCardContainer">
@@ -49,7 +50,7 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLin
             {tag3 && (<h4>{tag3}</h4>)}
           </div>
 
-          <p> {para} </p>
+          {para}
           
             <div className="arrowWrapper"
               onClick={() => {
@@ -101,13 +102,15 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLin
             {link ? (
               <Link to={link}>
                 <div className="spotlightIMGWrapper">
-                  <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
+                  {img && <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />}
+                  {vid && <video className="showcaseIMG" autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
                 </div>
               </Link>
             ) : (
               <a>
                 <div className="spotlightIMGWrapper">
-                  <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />
+                  {img && <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />}
+                  {vid && <video className="showcaseIMG" autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
                 </div>
               </a>
             )}
@@ -120,31 +123,3 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, alt, id, ytLin
 }
 
 export default ShowcaseCard;
-/*
-{link ? (
-          <Link to={link}>
-            {img && <img src={"/Thumbnails/" + img} />}
-            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
-            <div className="workCardText">
-              {title && <h3>{title}</h3>}
-              <div className="workCardTags">
-                {tag1 && <p>{tag1}</p>}
-                {tag2 && <p>{tag2}</p>}
-                {tag3 && <p>{tag3}</p>}
-              </div>
-            </div>
-          </Link>
-        ) : (
-          <a>
-            {img && <img src={"/Thumbnails/" + img} />}
-            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
-            <div className="workCardText">
-              {title && <h3>{title}</h3>}
-              <div className="workCardTags">
-                {tag1 && <p>{tag1}</p>}
-                {tag2 && <p>{tag2}</p>}
-                {tag3 && <p>{tag3}</p>}
-              </div>
-            </div>
-          </a>
-        )}*/

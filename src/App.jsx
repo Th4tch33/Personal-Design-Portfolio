@@ -7,7 +7,7 @@ import Sports from "./pages/Work_Sports.jsx";
 import WorkNACBAIT from "./pages/Work_NACBAIT.jsx";
 import WorkBrands from "./pages/Work_Brands.jsx";
 import WorkWeddings from "./pages/Work_Weddings.jsx";
-import WorkWraptitude from "./pages/Work_Wraptitude.jsx";
+import WorkAutomotive from "./pages/Work_Automotive.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
@@ -41,7 +41,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/mysingingmonsters" element={<WorkBBB />} />
             <Route path="/workBBB" element={<WorkBBB />} />
-            <Route path="/wraptitude" element={<WorkWraptitude />} />
+            <Route path="/automotive" element={<WorkAutomotive />} />
             <Route path="/sports" element={<Sports />} />
             <Route path="/NACBAIT" element={<WorkNACBAIT />} />
             <Route path="/brands" element={<WorkBrands />} />

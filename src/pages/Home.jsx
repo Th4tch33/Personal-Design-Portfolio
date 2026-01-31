@@ -34,37 +34,26 @@ function Home() {
         <div id="spotlightWrapper">
 
           <ShowcaseCard
-            title="Sports Media Production"
-            tag1="Sports"
-            tag2="Video"
-            tag3="Photo"
+            title="Automotive x SEMA 2025"
+            tag1="Brand Content"
+            tag2="Event Coverage"
+            tag3="Video"
             para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
-            link="/sports"
-            img="bumpin-matt-thumb-large.jpg"
+            link="/automotive"
+            vid="svg/svg-sema-720-55cq-av1.webm"
             alt="Photography and Videography"
             id="2"
           />
 
           <ShowcaseCard
-            title="Brand Content"
+            title="Asian Roots Collective"
             tag1="Social Media"
             tag2="Ads"
             para="Whether it’s sales, recognition, or relevance, every key business activity relies on a meaningful story that connects customers to your brand. My job is to bring your vision to life through visual marketing that makes what you offer feel invaluable."
             link="/brands"
-            img="brands-hero.webp"
+            vid="arc/sports_preview.mp4"
             alt="Photography and Videography"
             id="1"
-          />
-
-          <ShowcaseCard
-            title="Wedding Films"
-            tag1="Cinematic"
-            tag2="Live Coverage"
-            para="Whether it’s sales, recognition, or relevance, every key business activity relies on a meaningful story that connects customers to your brand. My job is to bring your vision to life through visual marketing that makes what you offer feel invaluable."
-            link="/weddings"
-            img="weddings_thumb.webp"
-            alt="Photography and Videography"
-            id="0"
           />
 
           <ShowcaseCard
@@ -77,56 +66,6 @@ function Home() {
               alt="Photography and Videography"
               id="3"
           />
-
-          <ShowcaseCard
-              title="My Singing Monsters"
-              tag1="Marketing"
-              tag2="Video"
-              tag3="Graphic"
-              para="My Singing Monsters is a mobile game with 50+ million downloads and millions of followers across their socials. I worked as a marketing specialist responsible for engaging the fanbase with creative and entertaining content."
-              link="/mysingingmonsters"
-              img="msm-thumb-large.jpg"
-              alt="Photography and Videography"
-              id="4"
-          />
-
-          <ShowcaseCard
-            title="Clocking Out"
-            tag1="Documentary"
-            tag2="Video"
-            para="A story about Chinese-Canadian immigrants that comments on the interconnected relationship between work and family told through my father's perspective."
-            ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=Pg1BYMiw10VkHDix"
-            videoOrientation="H"
-            img="clocking-out-thumb-large.jpg"
-            alt="Film Project"
-            id="5"
-          />
-
-          {/*
-
-          <ShowcaseCard
-            title="Ancient Idols"
-            tag1="3D"
-            tag2="Unreal Engine"
-            tag3="Documentation"
-            para="This is documentation of a hands-on class taken at the Queensland University of Technologoy (QUT) to create real-time environments using industry practices. This 12-week course took us from planning to final render using Maya, Mudbox, and Unreal Engine."
-            link="https://sites.google.com/view/caden-chan-3d-production-blog/assignments"
-            img="ancient-idol-thumb-large.jpg"
-            alt="Real-Time Environments"
-          />
-
-          <ShowcaseCard
-            title="Start Your Day With Sun"
-            tag1="3D Animation"
-            tag2="Blender"
-            para="A school project with the goal to create a 30-second PSA to bring social change using motion graphics in a vertical video format. Whether big or small, communicate a call to action to the viewer persuasively and engagingly. I wanted to bring more awareness to the simple practice of getting morning sunlight after waking up to improve your day. Additionally, this was an opportunity to deliver the message using 3D animation to challenge my skills within the medium."
-            ytLink="https://www.youtube.com/embed/o3pfyFR_2LA?si=vZlKktK3VpnGu-BS"
-            videoOrientation="V"
-            img="start-with-sun-thumb-large.jpg"
-            alt="Real-Time Environments"
-          />
-
-          */}
 
         </div>
       </div>
