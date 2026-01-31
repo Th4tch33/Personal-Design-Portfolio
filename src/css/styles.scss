@@ -65,6 +65,14 @@ body {
     }
 }
 
+@media screen and (max-device-width: 481px) {
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 h1 {
     font-family: "Lora", serif;
     font-style: italic;
@@ -1007,6 +1015,10 @@ a {
     #websiteSectionContainer {
         padding: 10vh $horzMarginSize;
     }
+
+    .flare-section-card img {
+        width: 15vw !important;
+    }
 }
 
 @media screen and (max-device-width: 481px) {
@@ -1016,6 +1028,33 @@ a {
 
     #idWrapper{
         width: 100%;
+    }
+
+    #footer-motto {
+        grid-column: 4 / span 6;
+        width: 90%;
+        margin: auto;
+    }
+
+    .flare-section-card img {
+        width: 25vw !important;
+    }
+
+    #footer-logo {
+        margin: 2.5rem 0;
+    }
+
+    .footer-contacts-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .footer-up-button-wrapper{
+        display: grid;
+        grid-template-columns:1fr;
+        column-gap: 0;
+        align-items: center;
     }
 
     #captionWrapper {
@@ -1662,20 +1701,22 @@ a {
 }
 
 @media screen and (max-device-width: 768px) {
-    #aboutMeWrapper{
-        padding: 0;
-        margin: 0;
+    #aboutMeWrapper {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0rem;
+        row-gap: 2.5rem;
 
         width: 100%;
-        
+        margin: auto;
+        text-align: center;
+
         h1 {
-            text-align: left;
+            line-height: 1em;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            padding-bottom: 5vh;
+        p {
+            width: auto;
         }
     }
 
@@ -1747,11 +1788,11 @@ a {
 
 @media screen and (max-device-width: 768px) {
     #contactHead {
-        text-align: left;
+        text-align: center;
     }
     
     #contactSubHead {
-        text-align: left;
+        text-align: center;
     }
 }
 
