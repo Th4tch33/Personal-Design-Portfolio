@@ -11,7 +11,7 @@ function Home() {
         <div id="frontIconGroup"></div>
           <div id="personalLogoContainer">
 
-            <img src="public/assets/personal-logo-blue.svg" id="home-hero-logo"/>
+            <img src="assets/personal-logo-blue.svg" id="home-hero-logo"/>
 
             {/*
             <Lottie 
