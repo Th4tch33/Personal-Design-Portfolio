@@ -1,15 +1,22 @@
+import { FilloutStandardEmbed } from "@fillout/react";
+
 function Contact() {
   return (
     <>
       <div id="websiteSectionContainer">
-        <h1 id="contactHead">Open To Chat</h1>
+        <h1 id="contactHead">Let's Connect!</h1>
 
         <div id="contactSubHead">
-          Hit me up if you like what I’m about!
-          <br/>
-          I’m currently seeking work and internship opportunities.
+          Got a project coming up and need a hand? Send me an email or fillout the <br/>form below and I'll get back to you ASAP.
         </div>
 
+        <div id="contactMail">
+          <a href="mailto:caden.perry.chan@gmail.com" rel="noreferrer" target="_blank">caden.perry.chan@gmail.com</a>
+        </div>
+
+        <FilloutStandardEmbed dynamicResize filloutId="7EAWcQk3c7us" />
+
+        {/*
         <div id="socialAnimIconContainer">
           <div id="animIconWrapper">
             <a href="https://www.instagram.com/cadenchan.design/">
@@ -51,9 +58,7 @@ function Contact() {
           </div>
         </div>
 
-        <div id="contactMail">
-          <a href="mailto:caden.perry.chan@gmail.com" rel="noreferrer" target="_blank">Mail To: caden.perry.chan@gmail.com</a>
-        </div>
+        */}
       </div>
     </>
   );

@@ -962,6 +962,13 @@ a {
   height: auto; /* Maintain aspect ratio */
 }
 
+#home-hero-logo {
+  max-width: 70vw; /* Set maximum width */
+  max-height: 55vh; /* Set maximum height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+}
+
 #personalLogoSubheadWrapper {
   width: 65vw;
   color: #1D50D0;
@@ -1450,6 +1457,7 @@ a {
   font-size: 2em;
   text-align: center;
   color: #1D50D0;
+  margin: 2rem 0;
 }
 #contactMail a {
   text-decoration: none;

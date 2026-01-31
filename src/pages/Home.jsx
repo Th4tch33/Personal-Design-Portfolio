@@ -11,12 +11,16 @@ function Home() {
         <div id="frontIconGroup"></div>
           <div id="personalLogoContainer">
 
+            <img src="public/assets/personal-logo-blue.svg" id="home-hero-logo"/>
+
+            {/*
             <Lottie 
               animationData={animationData} 
               id="lottieAnim"
               loop={true} // Play once
               autoplay={true} // Start automatically
             />
+            */}
 
             <h3 id="personalLogoSubheadWrapper">End-to-End Video Production</h3>
 
