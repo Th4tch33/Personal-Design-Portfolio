@@ -45,13 +45,13 @@ function WorkBrands() {
                   />
 
                   <WorkCard
-                    title="Arc World Halftime Show | MC Jin"
-                    tag1="Music Performance"
-                    tag2="Motion Graphics"
-                    tag3="Hype"
-                    ytLink="https://www.youtube-nocookie.com/embed/iZ5QErtGxRs?si=csahpoRlkJ2Y5YbX"
+                    title="Raptors x ARC Merch Drop"
+                    tag1="Merchandise"
+                    tag2="Social Media"
+                    ytLink="https://youtube.com/embed/CWVkI78kRFQ?si=eZi9SasPrF3t2x0F"
                     videoOrientation="V"
-                    vid="mcjin_preview.mp4"
+                    vidAV1="arc/raptors-arc-march-720-55cq-av1.webm"
+                    vid="arc/raptors-arc-march-720-28cq-h264.mp4"
                     alt="test"
                     id="6"
                 />

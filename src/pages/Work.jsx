@@ -14,9 +14,9 @@ function Work() {
                   tag1="Camerawork"
                   tag2="Motion Graphics"
                   link="/sports"
-                  vid="sports_preview.mp4"
+                  img="bumpin-matt-thumb-large.jpg"
                   alt="test"
-                  id="2"
+                  id="0"
                 />
 
               <WorkCard
@@ -26,27 +26,28 @@ function Work() {
                   link="/brands"
                   vid="senovvabet99bts_preview.mp4"
                   alt="test"
-                  id="4"
-                />
-
-                <WorkCard
-                  title="Wedding Films"
-                  tag1="Camerawork"
-                  tag2="Video Editing"
-                  link="/Weddings"
-                  vid="J&LWedding_preview.mp4"
-                  alt="test"
-                  id="3"
-                />
-
-                <WorkCard
-                  title="Racing For Good"
-                  tag1="Automotive"
-                  tag2="Charity"
-                  tag3="Event Coverage"
-                  link="/wraptitude"
-                  vid="wraptitude_preview.mp4"
                   id="1"
+                />
+
+                <WorkCard
+                  title="SVG x Wraptitude at SEMA 2025"
+                  tag1="Automotive"
+                  tag2="Brand Content"
+                  tag3="Event Coverage"
+                  link="/automotive"
+                  vidAV1="svg/svg-sema-720-55cq-av1.webm"
+                  vid="svg/svg-sema-720-28cq-h264.mp4"
+                  id="2"
+                />
+
+                <WorkCard
+                  title="Asian Roots Collective"
+                  tag1="Social Media"
+                  tag2="Ads"
+                  link="/asian-roots-collective"
+                  vid="arc/sports_preview.mp4"
+                  alt="Photography and Videography"
+                  id="3"
                 />
                 
                 <WorkCard
@@ -54,8 +55,62 @@ function Work() {
                   tag1="Sports"
                   tag2="Event Coverage"
                   link="/NACBAIT"
-                  vid="nacbait_preview.mp4"
-                  id="0"
+                  vidAV1="nacbait2025/nacbait-preview-720-55cq-av1.webm"
+                  vid="nacbait2025/nacbait-preview-720-28cq-h264.mp4"
+                  id="4"
+                />
+
+                <WorkCard
+                  title="uOttaHack 8 Event Showcase"
+                  tag1="Hackathon"
+                  tag2="Event Coverage"
+                  ytLink="https://www.youtube.com/embed/49bopmLP3Q4?si=REmtJ75t7wwNHQ-L"
+                  videoOrientation="H"
+                  vidAV1="uottahack/uottahack-720-55cq-av1.webm"
+                  vid="uottahack/uottahack-720-28cq-h264.mp4"
+                  id="5"
+                />
+
+                <WorkCard
+                  title="My Singing Monsters"
+                  tag1="Internship"
+                  tag2="Content Creation"
+                  link="/mysingingmonsters"
+                  vid="msm_preview.mp4"
+                  alt="test"
+                  id="6"
+                />
+
+                <WorkCard
+                  title="Wedding Films"
+                  tag1="Camerawork"
+                  tag2="Video Editing"
+                  link="https://studioflashpoint.com/"
+                  vid="J&LWedding_preview.mp4"
+                  alt="test"
+                  id="7"
+                />
+
+                <WorkCard
+                  title="Clocking Out"
+                  tag1="Cinematography"
+                  tag2="Mini Documentary"
+                  ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=zwIwbzsn5UlaZWvU"
+                  videoOrientation="H"
+                  vid="clocking_out_preview.mp4"
+                  alt="test"
+                  id="8"
+                />
+
+                <WorkCard
+                  title="Brown Justin Beiber"
+                  tag1="Lyric Video"
+                  tag2="Motion Graphics"
+                  ytLink="https://www.youtube.com/embed/kb1t50_HrqY?si=-mEHYMWcctfVg6H9"
+                  videoOrientation="H"
+                  vid="brown_justin_bieber_preview.mp4"
+                  alt="test"
+                  id="9"
                 />
                 
                 {/*
@@ -83,29 +138,6 @@ function Work() {
                   />
                 </div>
 
-                */}
-                
-                <WorkCard
-                  title="My Singing Monsters"
-                  tag1="Internship"
-                  tag2="Content Creation"
-                  link="/mysingingmonsters"
-                  vid="msm_preview.mp4"
-                  alt="test"
-                  id="5"
-                />
-
-                <WorkCard
-                  title="Clocking Out"
-                  tag1="Cinematography"
-                  tag2="Mini Documentary"
-                  ytLink="https://www.youtube.com/embed/phUrAwCt-ko?si=zwIwbzsn5UlaZWvU"
-                  videoOrientation="H"
-                  vid="clocking_out_preview.mp4"
-                  alt="test"
-                  id="7"
-                />
-
                 <WorkCard
                   title="Ancient Idol"
                   tag1="3D Asset Creation"
@@ -126,16 +158,7 @@ function Work() {
                   id="9"
                 />
 
-                <WorkCard
-                  title="Brown Justin Beiber"
-                  tag1="Lyric Video"
-                  tag2="Motion Graphics"
-                  ytLink="https://www.youtube.com/embed/kb1t50_HrqY?si=-mEHYMWcctfVg6H9"
-                  videoOrientation="H"
-                  vid="brown_justin_bieber_preview.mp4"
-                  alt="test"
-                  id="10"
-                />
+                */}
 
                 {/*
 

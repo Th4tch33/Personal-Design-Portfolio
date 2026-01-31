@@ -59,9 +59,10 @@ function workVBall() {
                         title="ARC NEXT 2025"
                         tag1="Show"
                         tag2="After Effects"
-                        ytLink="https://www.youtube-nocookie.com/embed/kZBohbnHpIU"
+                        ytLink="https://www.youtube-nocookie.com/embed/NosfhExanB8"
                         videoOrientation="V"
-                        vid="arcnext_preview.mp4"
+                        vidAV1="mjvb/mjvb-100spikes-720-55cq-av1.webm"
+                        vid="mjvb/mjvb-100spikes-720-28cq-h264.mp4"
                         alt="test"
                         id="4"
                     />
@@ -99,7 +100,7 @@ function workVBall() {
                         tag2="After Effects"
                         ytLink="https://www.youtube-nocookie.com/embed/QMxiVvCMbn4?si=vPWZY1xZ3194jP7k"
                         videoOrientation="V"
-                        vid="MJ_SKL_preview.mp4"
+                        vid="mjvb/MJ_SKL_preview.mp4"
                         alt="test"
                         id="3"
                     />
