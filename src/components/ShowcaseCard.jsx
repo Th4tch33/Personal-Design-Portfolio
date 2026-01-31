@@ -16,6 +16,8 @@ ShowcaseCard.propTypes = {
   videoOrientation: PropTypes.string,
   img: PropTypes.string,
   vid: PropTypes.string,
+  vidAV1: PropTypes.string,
+  vidH264: PropTypes.string,
   alt: PropTypes.string,
   id: PropTypes.string.isRequired,
 };
@@ -37,7 +39,10 @@ function ShowcaseLink({ to, children, ...props }) {
   );
 }
 
-function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, vid, alt, id, ytLink, vimeoLink, videoOrientation}) {
+function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, vid, vidAV1, vidH264, alt, id, ytLink, vimeoLink, videoOrientation}) {
+  console.log("vid:", vid);
+console.log("vidAV1:", vidAV1);
+
   return (
     <>
       <div className="ShowcaseCardContainer">
@@ -103,14 +108,40 @@ function ShowcaseCard({ title, tag1, tag2, tag3, para, link, img, vid, alt, id, 
               <Link to={link}>
                 <div className="spotlightIMGWrapper">
                   {img && <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />}
-                  {vid && <video className="showcaseIMG" autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+                  {(vid || vidAV1) && (
+                    <video
+                      className="showcaseIMG"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      aria-label={alt}
+                    >
+                      {vidAV1 && <source src={`/Videos/${vidAV1}`} type="video/webm" />}
+                      
+                      <source src={`/Videos/${vid}`} type="video/mp4" />
+                    </video>
+                  )}
                 </div>
               </Link>
             ) : (
               <a>
                 <div className="spotlightIMGWrapper">
                   {img && <img className="showcaseIMG" src={"/Thumbnails/" + img} alt={alt} />}
-                  {vid && <video className="showcaseIMG" autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+                  {(vid || vidAV1) && (
+                    <video
+                      className="showcaseIMG"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      aria-label={alt}
+                    >
+                      {vidAV1 && <source src={`/Videos/${vidAV1}`} type="video/webm" />}
+                      
+                      <source src={`/Videos/${vid}`} type="video/mp4" />
+                    </video>
+                  )}
                 </div>
               </a>
             )}

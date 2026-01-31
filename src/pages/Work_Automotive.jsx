@@ -61,7 +61,8 @@ function workAutomotive() {
                         tag3="Product Review"
                         ytLink="https://www.youtube-nocookie.com/embed/3A1pZZOvRrM?si=uvvmR6VxIGqO5W1o"
                         videoOrientation="V"
-                        vid="svg/svg-nick-720-55cq-av1.webm"
+                        vidAV1="svg/svg-nick-720-55cq-av1.webm"
+                        vid="svg/svg-nick-720-28cq-h264.mp4"
                         alt="test"
                         id="1"
                     />
@@ -72,7 +73,8 @@ function workAutomotive() {
                         tag3="Product Review"
                         ytLink="https://www.youtube-nocookie.com/embed/sNmddtklz4U?si=VZ7bt6z9PhdrHc8A"
                         videoOrientation="V"
-                        vid="svg/svg-josh-720-55cq-av1.webm"
+                        vidAV1="svg/svg-josh-720-55cq-av1.webm"
+                        vid="svg/svg-josh-720-28cq-h264.mp4"
                         alt="test"
                         id="2"
                     />
@@ -83,7 +85,8 @@ function workAutomotive() {
                         tag3="Product Review"
                         ytLink="https://www.youtube-nocookie.com/embed/aghCI1HUcOg?si=kpG1Cw8geVahdYuW"
                         videoOrientation="V"
-                        vid="svg/svg-sumo-720-55cq-av1.webm"
+                        vidAV1="svg/svg-sumo-720-55cq-av1.webm"
+                        vid="svg/svg-sumo-720-28cq-h264.mp4"
                         alt="test"
                         id="3"
                     />

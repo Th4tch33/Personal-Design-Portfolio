@@ -98,9 +98,6 @@ function WorkCardExitCusor() {
     mouseX = event.clientX;
     mouseY = event.clientY;
 
-    console.log(mouseX);
-    console.log(mouseY);
-
     exitCursor.style.left = mouseX - (exitCursor.getBoundingClientRect().width) / 2 + "px";
     exitCursor.style.top = mouseY - (exitCursor.getBoundingClientRect().height) / 2 + "px";
 }

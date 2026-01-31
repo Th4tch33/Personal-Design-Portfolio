@@ -304,6 +304,32 @@ a {
   pointer-events: none;
 }
 
+.fullScreenImage {
+  width: 100%;
+  padding-top: 5vw;
+}
+.fullScreenImage img {
+  width: 100%;
+  max-height: auto;
+}
+
+.splitScreenImage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 10vh;
+  grid-column-gap: 10vh;
+  padding-top: 5vw;
+}
+.splitScreenImage img {
+  width: 100%;
+  height: auto;
+}
+.splitScreenImage video {
+  width: 100%;
+  height: auto;
+}
+
 .threeGridImage {
   width: 100%;
   display: grid;

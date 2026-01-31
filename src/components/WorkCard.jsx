@@ -17,6 +17,7 @@ WorkCard.propTypes = {
   vimeoLink: PropTypes.string,
   videoOrientation: PropTypes.string,
   vid: PropTypes.string,
+  vidAV1: PropTypes.string,
   img: PropTypes.string,
   alt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
@@ -39,7 +40,7 @@ function WorkLink({ to, children, ...props }) {
   );
 }
 
-function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink, vimeoLink, videoOrientation }) {
+function WorkCard({ title, tag1, tag2, tag3, link, img, vid, vidAV1, alt, id, ytLink, vimeoLink, videoOrientation }) {
 
   return (
     <>
@@ -66,7 +67,18 @@ function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink, vi
         {link ? (
           <Link to={link}>
             {img && <img src={"/Thumbnails/" + img} />}
-            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+            {(vid || vidAV1) && (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                aria-label={alt}
+              >
+                {vidAV1 && <source src={`/Videos/${vidAV1}`} type="video/webm" />}
+                <source src={`/Videos/${vid}`} type="video/mp4" />
+              </video>
+            )}
             <div className="workCardText">
               {title && <h3>{title}</h3>}
               <div className="workCardTags">
@@ -79,7 +91,18 @@ function WorkCard({ title, tag1, tag2, tag3, link, img, vid, alt, id, ytLink, vi
         ) : (
           <a>
             {img && <img src={"/Thumbnails/" + img} />}
-            {vid && <video autoPlay loop muted src={"/Videos/" + vid} type="video/mp4" alt={alt} />}
+            {(vid || vidAV1) && (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                aria-label={alt}
+              >
+                {vidAV1 && <source src={`/Videos/${vidAV1}`} type="video/webm" />}
+                <source src={`/Videos/${vid}`} type="video/mp4" />
+              </video>
+            )}
             <div className="workCardText">
               {title && <h3>{title}</h3>}
               <div className="workCardTags">

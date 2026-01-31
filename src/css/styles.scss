@@ -356,6 +356,36 @@ a {
     pointer-events: none;
 }
 
+.fullScreenImage {
+    width: 100%;
+    padding-top: 5vw;
+    
+    img {
+        width: 100%;
+        max-height: auto;
+    }
+}
+
+.splitScreenImage {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10vh;
+    grid-column-gap: 10vh;
+
+    padding-top: 5vw;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
 //3x3 Grid Image
 .threeGridImage {
     width: 100%;

@@ -60,7 +60,8 @@ function WorkBrands() {
                         tag2="Social Media"
                         ytLink="https://youtube.com/embed/CWVkI78kRFQ?si=eZi9SasPrF3t2x0F"
                         videoOrientation="V"
-                        vid="arc/raptors-arc-march-720-55cq-av1.webm"
+                        vidAV1="arc/raptors-arc-march-720-55cq-av1.webm"
+                        vid="arc/raptors-arc-march-720-28cq-h264.mp4"
                         alt="test"
                         id="1"
                     />

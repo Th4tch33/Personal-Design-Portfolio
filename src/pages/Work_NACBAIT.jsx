@@ -27,7 +27,8 @@ function workNACBAIT() {
                     tag3="Highlight Reel"
                     ytLink="https://www.youtube.com/embed/xXyCo4LELMY?si=pE9XnQTSCI-PAySL"
                     videoOrientation="H"
-                    vid="nacbait_preview.mp4"
+                    vidAV1="nacbait2025/nacbait-preview-720-55cq-av1.webm"
+                    vid="nacbait2025/nacbait-preview-720-28cq-h264.mp4"
                     alt="test"
                     id="0"
                 />
@@ -49,7 +50,8 @@ function workNACBAIT() {
                     tag3="Highlight Reel"
                     ytLink="https://youtube.com/shorts/0SVQORsAj6g?si=QSViyz_yuKpLe3Qq"
                     videoOrientation="V"
-                    vid="nacbait_frank_preview.mp4"
+                    vidAV1="nacbait2025/nacbait-frank-preview-720-55cq-av1.webm"
+                    vid="nacbait2025/nacbait-frank-preview-720-28cq-h264.mp4"
                     alt="test"
                     id="1"
                 />
@@ -67,39 +69,27 @@ function workNACBAIT() {
                 </div>
 
                 <div className="splitScreenImage">
-                    <div style={{ position: "relative", paddingTop: "56.25%", border: "1px solid black" }}>
-                        <iframe
-                            src="https://player.vimeo.com/video/1095787293?autoplay=1&background=1&controls=0&muted=1&loop=1&playsinline=1"
-                            style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            }}
-                            frameBorder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowFullScreen
-                            title="2025Nacbait Banquetanimation Final"
-                        ></iframe>
-                    </div>
+                    <video autoPlay muted loop playsInline style={{border: "1px solid black"}}>
+                        <source
+                        src="Videos/nacbait2025/nacbait-anim01-720-55cq-av1.webm"
+                        type="video/webm"
+                        />
+                        <source
+                        src="Videos/nacbait2025/nacbait-anim01-720-28cq-h264.mp4"
+                        type="video/mp4"
+                        />
+                    </video>
 
-                    <div style={{ position: "relative", paddingTop: "56.25%", border: "1px solid black" }}>
-                        <iframe
-                            src="https://player.vimeo.com/video/1095787797?autoplay=1&background=1&controls=0&muted=1&loop=1&playsinline=1"
-                            style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            }}
-                            frameBorder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowFullScreen
-                            title="2025Nacbait Banquetanimation Final"
-                        ></iframe>
-                    </div>
+                    <video autoPlay muted loop playsInline style={{border: "1px solid black"}}>
+                        <source
+                        src="Videos/nacbait2025/nacbait-anim02-720-55cq-av1.webm"
+                        type="video/webm"
+                        />
+                        <source
+                        src="Videos/nacbait2025/nacbait-anim02-720-28cq-h264.mp4"
+                        type="video/mp4"
+                        />
+                    </video>
                 </div>
 
                 <div className="fullScreenImage">
@@ -179,8 +169,6 @@ function workNACBAIT() {
                     <img src="/Images/NACBAIT/nacbait-full06.jpg" alt="" loading="lazy" />
                     <img src="/Images/NACBAIT/nacbait-full07.jpg" alt="" loading="lazy" />
                 </div>
-        
-                
             </div>
         </>
     );

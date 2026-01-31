@@ -42,7 +42,8 @@ function Home() {
                 The culmination of that work was attending SEMA 2025 to capture the brand's presence at the convention.
               "
             link="/automotive"
-            vid="svg/svg-sema-720-55cq-av1.webm"
+            vidAV1="svg/svg-sema-720-55cq-av1.webm"
+            vid="svg/svg-sema-720-28cq-h264.mp4"
             alt="Photography and Videography"
             id="0"
           />
