@@ -34,15 +34,17 @@ function Home() {
         <div id="spotlightWrapper">
 
           <ShowcaseCard
-            title="Automotive x SEMA 2025"
+            title="SVG x Wraptitude at SEMA 2025"
             tag1="Brand Content"
             tag2="Event Coverage"
-            tag3="Video"
-            para="I work as a photographer and videographer to capture the highlights of sporting events. To emphasize the stories captured on camera, I use mulitple mediums including videography, photography, and motion graphics."
+            para="
+                I worked as the sole videographer and photographer to capture pivotal brand moments for SVG and Wraptitude.
+                The culmination of that work was attending SEMA 2025 to capture the brand's presence at the convention.
+              "
             link="/automotive"
             vid="svg/svg-sema-720-55cq-av1.webm"
             alt="Photography and Videography"
-            id="2"
+            id="0"
           />
 
           <ShowcaseCard
@@ -50,7 +52,7 @@ function Home() {
             tag1="Social Media"
             tag2="Ads"
             para="Whether it’s sales, recognition, or relevance, every key business activity relies on a meaningful story that connects customers to your brand. My job is to bring your vision to life through visual marketing that makes what you offer feel invaluable."
-            link="/brands"
+            link="/asian-roots-collective"
             vid="arc/sports_preview.mp4"
             alt="Photography and Videography"
             id="1"
@@ -64,7 +66,7 @@ function Home() {
               link="/NACBAIT"
               img="nacbait-thumb-med.jpg"
               alt="Photography and Videography"
-              id="3"
+              id="2"
           />
 
         </div>

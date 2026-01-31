@@ -5,6 +5,7 @@ import About from "./pages/About.jsx";
 import WorkBBB from "./pages/Work_BBB.jsx";
 import Sports from "./pages/Work_Sports.jsx";
 import WorkNACBAIT from "./pages/Work_NACBAIT.jsx";
+import AsianRootsCollective from "./pages/asian-roots-collective.jsx";
 import WorkBrands from "./pages/Work_Brands.jsx";
 import WorkWeddings from "./pages/Work_Weddings.jsx";
 import WorkAutomotive from "./pages/Work_Automotive.jsx";
@@ -44,6 +45,7 @@ function App() {
             <Route path="/automotive" element={<WorkAutomotive />} />
             <Route path="/sports" element={<Sports />} />
             <Route path="/NACBAIT" element={<WorkNACBAIT />} />
+            <Route path="/asian-roots-collective" element={<AsianRootsCollective />} />
             <Route path="/brands" element={<WorkBrands />} />
             <Route path="/weddings" element={<WorkWeddings />} />
           </Routes>
