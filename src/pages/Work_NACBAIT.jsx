@@ -48,7 +48,7 @@ function workNACBAIT() {
                     tag1="Event Coverage"
                     tag2="Interviews"
                     tag3="Highlight Reel"
-                    ytLink="https://youtube.com/shorts/0SVQORsAj6g?si=QSViyz_yuKpLe3Qq"
+                    ytLink="https://www.youtube-nocookie.com/embed/0SVQORsAj6g"
                     videoOrientation="V"
                     vidAV1="nacbait2025/nacbait-frank-preview-720-55cq-av1.webm"
                     vid="nacbait2025/nacbait-frank-preview-720-28cq-h264.mp4"
