@@ -74,7 +74,7 @@ function Home() {
               title="My Singing Monsters"
               tag1="Internship"
               tag2="Content Creation"
-              para="NACBAIT 2025 is a three-day annual basketball tournament that celebrates Chinese heritage and fosters competitive play. I was brought on as a one-man media team to produce event photography, video coverage, and animated visuals."
+              para="."
               link="/mysingingmonsters"
               vid="msm_preview.mp4"
               alt="Photography and Videography"
