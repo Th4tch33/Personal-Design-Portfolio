@@ -74,7 +74,7 @@ function Home() {
               title="My Singing Monsters"
               tag1="Internship"
               tag2="Content Creation"
-              para="."
+              para="I worked at a mobile games company during a 4 month co-op as a marketing specialist for their flagship title My Singing Monsters!"
               link="/mysingingmonsters"
               vid="msm_preview.mp4"
               alt="Photography and Videography"

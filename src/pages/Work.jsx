@@ -10,31 +10,11 @@ function Work() {
             <div id="workWrapper">
 
               <WorkCard
-                  title="Sports Media Production"
-                  tag1="Camerawork"
-                  tag2="Motion Graphics"
-                  link="/sports"
-                  img="bumpin-matt-thumb-large.jpg"
-                  alt="test"
-                  id="0"
-                />
-
-              <WorkCard
-                  title="Brand Content"
-                  tag1="Social Media"
-                  tag2="Marketing"
-                  link="/brands"
-                  vid="senovvabet99bts_preview.mp4"
-                  alt="test"
-                  id="1"
-              />
-
-              <WorkCard
                   title="BTS Films"
                   tag1="Internship"
                   tag2="Content Creation"
                   link="/bts"
-                  vid="msm_preview.mp4"
+                  vid="bts/bts-superstitious-1080-55cq-av1.webm"
                   alt="test"
                   id="10"
                 />
@@ -59,6 +39,26 @@ function Work() {
                   alt="Photography and Videography"
                   id="3"
                 />
+
+                <WorkCard
+                  title="Sports Media Production"
+                  tag1="Camerawork"
+                  tag2="Motion Graphics"
+                  link="/sports"
+                  img="bumpin-matt-thumb-large.jpg"
+                  alt="test"
+                  id="0"
+                />
+
+              <WorkCard
+                  title="Brand Content"
+                  tag1="Social Media"
+                  tag2="Marketing"
+                  link="/brands"
+                  vid="senovvabet99bts_preview.mp4"
+                  alt="test"
+                  id="1"
+              />
                 
                 <WorkCard
                   title="NACBAIT 2025"

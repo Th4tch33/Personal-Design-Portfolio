@@ -15,7 +15,7 @@ function WorkBTS() {
                 tag1="Commercial"
                 tag2="Brand Content"
                 tag3="Filmmaking"
-                heroImage="weddings_thumb.webp"
+                heroImage="bts-hero.webp"
             />
 
             <div id="websiteSectionContainer">
@@ -38,7 +38,7 @@ function WorkBTS() {
                         tag3="Documentary"
                         ytLink="https://youtube.com/embed/47t3HRU5tts?si=sceSgzkMIDU1ajAW"
                         videoOrientation="H"
-                        vid="J&LWedding_trailer_preview.mp4"
+                        vid="bts/bts-dtd-1080-55cq-av1.webm"
                         alt="test"
                         id="6"
                     />
@@ -52,7 +52,7 @@ function WorkBTS() {
                         tag3="Documentary"
                         ytLink="https://youtube.com/embed/czoweAykAQI?si=k5Jrv6khIvTfWwbk"
                         videoOrientation="H"
-                        vid="J&LWedding_trailer_preview.mp4"
+                        vid="bts/bts-superstitious-1080-55cq-av1.webm"
                         alt="test"
                         id="6"
                     />
@@ -66,7 +66,7 @@ function WorkBTS() {
                         tag3="Documentary"
                         ytLink="https://youtube.com/embed/JU2ag2IMcZ0?si=9zv0jaxUhfVawbEL"
                         videoOrientation="H"
-                        vid="J&LWedding_preview.mp4"
+                        vid="bts/bts-poorbob-1080-55cq-av1.webm"
                         alt="test"
                         id="7"
                     />
