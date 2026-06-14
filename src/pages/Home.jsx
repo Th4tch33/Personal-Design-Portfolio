@@ -22,7 +22,7 @@ function Home() {
             />
             */}
 
-            <h3 id="personalLogoSubheadWrapper">End-to-End Video Production</h3>
+            <h3 id="personalLogoSubheadWrapper">FREELANCE VIDEOGRAPHER</h3>
 
           </div>
         <div id="backIconGroup"></div>

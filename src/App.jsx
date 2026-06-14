@@ -12,6 +12,7 @@ import WorkAutomotive from "./pages/Work_Automotive.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import WorkBTS from "./pages/Work_BTS.jsx";
 
 import "./js/Main.js";
 import "./css/styles.css";
@@ -48,6 +49,7 @@ function App() {
             <Route path="/asian-roots-collective" element={<AsianRootsCollective />} />
             <Route path="/brands" element={<WorkBrands />} />
             <Route path="/weddings" element={<WorkWeddings />} />
+            <Route path="/bts" element={<WorkBTS />} />
           </Routes>
       </div>
       <Footer />

@@ -27,6 +27,16 @@ function Work() {
                   vid="senovvabet99bts_preview.mp4"
                   alt="test"
                   id="1"
+              />
+
+              <WorkCard
+                  title="BTS Films"
+                  tag1="Internship"
+                  tag2="Content Creation"
+                  link="/bts"
+                  vid="msm_preview.mp4"
+                  alt="test"
+                  id="10"
                 />
 
                 <WorkCard

@@ -18,7 +18,7 @@ function Footer() {
   return (
     <>
     <div id="footer-motto">
-      Telling Stories With Each And Every Frame
+      MAKING FILMS WITH THESE FUN PEOPLE
     </div>
 
     <div id="flare-section-carousel-wrapper">
